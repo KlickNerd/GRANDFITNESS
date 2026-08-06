@@ -231,6 +231,23 @@ h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
   .hero-media.framed { outline-offset: 8px; }
 }
 
+/* Photo-background hero with gradient blend */
+.hero-photo {
+  position: relative;
+  background:
+    linear-gradient(90deg, var(--black) 0%, rgba(10,10,10,0.92) 34%, rgba(10,10,10,0.45) 62%, rgba(10,10,10,0.15) 100%),
+    linear-gradient(180deg, rgba(10,10,10,0.55) 0%, transparent 30%, transparent 55%, var(--black) 96%),
+    url('/img/hero-bg.jpg') center right / cover no-repeat;
+}
+.hero-photo .hero-content { max-width: 620px; }
+@media (max-width: 760px) {
+  .hero-photo {
+    background:
+      linear-gradient(180deg, rgba(10,10,10,0.82) 0%, rgba(10,10,10,0.6) 45%, var(--black) 96%),
+      url('/img/hero-bg.jpg') center top / cover no-repeat;
+  }
+}
+
 /* Sub-page hero (shorter) */
 .hero-sub { min-height: 62vh; padding-top: 10rem; }
 
