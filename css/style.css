@@ -801,3 +801,8 @@ h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
 .infographic { margin: 2.2rem 0; }
 .infographic svg { border: 1px solid var(--line); }
 .infographic figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem; line-height: 1.5; }
+
+/* ---------- Language Switch ---------- */
+.lang-switch { font-size: 0.75rem; letter-spacing: 0.12em; border: 1px solid var(--line);
+  padding: 0.4rem 0.7rem; color: var(--muted) !important; transition: all 0.2s; }
+.lang-switch:hover { border-color: var(--gold); color: var(--gold) !important; }
