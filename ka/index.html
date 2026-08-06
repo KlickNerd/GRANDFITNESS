@@ -2,21 +2,54 @@
 <html lang="ka">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ფიტნეს კლუბი ბათუმში | გრანდ ფიტნესი — Better Than Yesterday</title>
 <meta name="description" content="გრანდ ფიტნესი — ბათუმის პრემიუმ ფიტნეს კლუბი: 9 სერტიფიცირებული მწვრთნელი, 6 ჯგუფური ვარჯიში, საუნა. ღიაა ყოველდღე 08:00–24:00. პირველი ვარჯიში უფასოა!">
 <link rel="canonical" href="https://grandfitness.ge/ka/">
 <link rel="alternate" hreflang="en" href="https://grandfitness.ge/">
 <link rel="alternate" hreflang="ka" href="https://grandfitness.ge/ka/">
 <link rel="alternate" hreflang="x-default" href="https://grandfitness.ge/">
-<meta property="og:title" content="გრანდ ფიტნესი — ფიტნეს კლუბი ბათუმში">
-<meta property="og:description" content="9 მწვრთნელი, 6 ჯგუფური ვარჯიში, საუნა. პირველი ვარჯიში უფასოა!">
-<meta property="og:image" content="https://grandfitness.ge/img/og-cover.jpg">
+<!-- ka canonical set above -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://grandfitness.ge/ka/">
+<meta property="og:title" content="Gym in Batumi | Grand Fitness — Better Than Yesterday">
+<meta property="og:description" content="Batumi's premier fitness club. 9 expert coaches, Boxing, CrossFit, Pilates, Armwrestling & more. Open daily 08:00–24:00. Your first session is free.">
+<meta property="og:url" content="https://grandfitness.ge/">
+<meta property="og:site_name" content="Grand Fitness">
+<meta property="og:image" content="https://grandfitness.ge/img/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/img/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,200..1000;1,9..40,200..1000&family=Noto+Sans+Georgian:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+Georgian:wght@300;400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthClub",
+  "name": "Grand Fitness",
+  "slogan": "Better Than Yesterday",
+  "url": "https://grandfitness.ge",
+  "telephone": "+995557192727",
+  "email": "info@grandfitness.ge",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "196 Bagrationi St",
+    "addressLocality": "Batumi",
+    "postalCode": "6000",
+    "addressCountry": "GE"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 41.639, "longitude": 41.626 },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "08:00",
+    "closes": "24:00"
+  },
+  "sameAs": [
+    "https://www.instagram.com/grand_fitness_batumi/",
+    "https://www.facebook.com/61585147224532/"
+  ]
+}
+</script>
 <style>
 #gf-home * { box-sizing: border-box; margin: 0; padding: 0; }
 body { margin: 0; background: #0a0a0a; }
@@ -311,20 +344,23 @@ html[lang="ka"] #gf-home .hero-title, html[lang="ka"] #gf-home .section-title,
 html[lang="ka"] #gf-home .welcome-title, html[lang="ka"] #gf-home .goal-title,
 html[lang="ka"] #gf-home .fd-title, html[lang="ka"] #gf-home .free-title,
 html[lang="ka"] #gf-home .cta-title, html[lang="ka"] #gf-home .course-name,
-html[lang="ka"] #gf-home .coach-name-tile {
-  font-weight: 800; letter-spacing: 0.01em;
-}
-html[lang="ka"] #gf-home body, html[lang="ka"] #gf-home { font-family: 'Noto Sans Georgian', 'DM Sans', sans-serif; }
+html[lang="ka"] #gf-home .coach-name, html[lang="ka"] #gf-home .usp-num,
 html[lang="ka"] #gf-home .btn-primary, html[lang="ka"] #gf-home .btn-outline,
 html[lang="ka"] #gf-home .btn-ghost, html[lang="ka"] #gf-home .btn-black,
-html[lang="ka"] #gf-home .nav-cta { font-family: 'Noto Sans Georgian', sans-serif; font-weight: 800; letter-spacing: 0.04em; font-size: 1rem; }
+html[lang="ka"] #gf-home .nav-cta, html[lang="ka"] #gf-home .footer-logo {
+  font-weight: 800; letter-spacing: 0.01em;
+}
+html[lang="ka"] #gf-home .btn-primary, html[lang="ka"] #gf-home .btn-outline,
+html[lang="ka"] #gf-home .btn-ghost, html[lang="ka"] #gf-home .btn-black,
+html[lang="ka"] #gf-home .nav-cta { font-size: 0.95rem; letter-spacing: 0.05em; }
 </style>
 </head>
 <body>
 <div id="gf-home">
 
-  <nav class="nav" id="gfNav">
-    <a class="nav-logo" href="/ka/">GRAND<span>FITNESS</span></a>
+  <!-- NAV -->
+  <nav class="gf-nav" id="gfNav">
+    <a href="/ka/" class="nav-logo">GRAND<em>FITNESS</em></a>
     <div class="nav-links">
       <a href="/ka/about/">ჩვენ შესახებ</a>
       <a href="/ka/goals/">მიზნები</a>
@@ -332,36 +368,40 @@ html[lang="ka"] #gf-home .nav-cta { font-family: 'Noto Sans Georgian', sans-seri
       <a href="/ka/classes/">ვარჯიშები</a>
       <a href="/ka/pricing/">ფასები</a>
       <a class="lang-switch" href="/">EN</a>
-      <a class="nav-cta" href="/ka/contact/">შემოგვიერთდი</a>
+      <a href="/ka/contact/" class="nav-cta">შემოგვიერთდი</a>
     </div>
-    <button class="nav-burger" id="gfBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="nav-burger" id="gfBurger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
-  <div class="mobile-menu" id="gfMobile">
+  <div class="mobile-menu" id="gfMenu">
+    <a href="/ka/">მთავარი</a>
     <a href="/ka/about/">ჩვენ შესახებ</a>
     <a href="/ka/goals/">მიზნები</a>
     <a href="/ka/coaches/">მწვრთნელები</a>
     <a href="/ka/classes/">ვარჯიშები</a>
     <a href="/ka/pricing/">ფასები</a>
     <a href="/">English Version</a>
-    <a class="nav-cta" href="/ka/contact/">შემოგვიერთდი</a>
+    <a href="/ka/contact/">შემოგვიერთდი</a>
   </div>
 
   <!-- HERO -->
-  <header class="hero">
-    <div class="hero-media-side">
-      <img src="/img/hero-bg.jpg" alt="გრანდ ფიტნესის მიღება ლოგოთი" fetchpriority="high">
-    </div>
-    <div class="hero-inner">
+  <div class="hero">
+    <div class="hero-bg"><div class="hero-bg-img"></div></div>
+    <div class="hero-content">
       <p class="hero-eyebrow">ბათუმის პრემიუმ ფიტნეს კლუბი</p>
-      <h1 class="hero-title">BETTER THAN<br><em>YESTERDAY.</em></h1>
-      <p class="hero-sub">პირველი ვარჯიშია თუ ახალ რეკორდს ეძებ — ეს ადგილი შენთვის შეიქმნა. გამოცდილი მწვრთნელები, პრემიუმ აღჭურვილობა და პირველი ვარჯიში ჩვენს ხარჯზე.</p>
+      <h1 class="hero-title">BETTER<br>THAN<em>YESTERDAY.</em></h1>
+      <p class="hero-sub">პირველი ვარჯიშია თუ ახალ პირად რეკორდს ეძებ — ეს ადგილი შენთვის შეიქმნა. გამოცდილი მწვრთნელები, პრემიუმ აღჭურვილობა და პირველი ვარჯიში ჩვენს ხარჯზე.</p>
       <div class="hero-actions">
         <a href="/ka/contact/" class="btn-primary">მიიღე უფასო ვარჯიში</a>
         <a href="/ka/coaches/" class="btn-ghost">გაიცანი მწვრთნელები →</a>
       </div>
     </div>
-    <div class="scroll-line"></div>
-  </header>
+    <div class="hero-scroll">
+      <span class="scroll-label">ჩამოწიე</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
 
   <!-- USP BAR -->
   <div class="usp-bar">
@@ -372,11 +412,11 @@ html[lang="ka"] #gf-home .nav-cta { font-family: 'Noto Sans Georgian', sans-seri
       </div>
       <div class="usp-item">
         <span class="usp-num">6</span>
-        <div class="usp-text"><span class="usp-label">ჯგუფური ვარჯიში</span><span class="usp-desc">ყველა შედის აბონემენტში</span></div>
+        <div class="usp-text"><span class="usp-label">ჯგუფური ვარჯიში</span><span class="usp-desc">ყველა დონისთვის</span></div>
       </div>
       <div class="usp-item">
         <span class="usp-num">7</span>
-        <div class="usp-text"><span class="usp-label">დღე კვირაში</span><span class="usp-desc">08:00 – 24:00</span></div>
+        <div class="usp-text"><span class="usp-label">დღე კვირაში</span><span class="usp-desc">08:00 – 24:00 ყოველდღე</span></div>
       </div>
       <a class="usp-item" href="/ka/contact/">
         <span class="usp-num">1-ლი</span>
@@ -425,7 +465,7 @@ html[lang="ka"] #gf-home .nav-cta { font-family: 'Noto Sans Georgian', sans-seri
           <div class="goal-bg" style="background-image:url('/img/space/cardio-zone.jpg');"></div>
           <div class="goal-body">
             <div class="goal-kicker">წონის კლება</div>
-            <div class="goal-title">იგრძენი თავი შესანიშნავად</div>
+            <div class="goal-title">იგრძენი თავი კარგად</div>
             <div class="goal-desc">კარდიო ხედით, ვარჯიშები კარგი მუსიკით და გეგმა, რომელიც ბოლოს და ბოლოს მუშაობს.</div>
             <span class="goal-link">გაიგე მეტი →</span>
           </div>
@@ -445,7 +485,7 @@ html[lang="ka"] #gf-home .nav-cta { font-family: 'Noto Sans Georgian', sans-seri
             <div class="goal-kicker">ქალებისთვის</div>
             <div class="goal-title">ქალთა ფიტნესი</div>
             <div class="goal-desc">ძალა და თავდაჯერებულობა ვარჯიშებზე, რომლებიც ქალებისთვის შეიქმნა — მწვრთნელ სალომესთან.</div>
-            <span class="goal-link">გაიგე მეტი →</span>
+            <span class="goal-link">გაიცანი სალომე →</span>
           </div>
         </a>
         <a class="goal-card" href="/goals/get-started/">
@@ -454,7 +494,7 @@ html[lang="ka"] #gf-home .nav-cta { font-family: 'Noto Sans Georgian', sans-seri
             <div class="goal-kicker">პირველად?</div>
             <div class="goal-title">უბრალოდ დაიწყე</div>
             <div class="goal-desc">დარბაზში პირველად? შესანიშნავია. განსჯის და ზეწოლის გარეშე — პირველი ვარჯიში უფასოა და მწვრთნელი გელოდება.</div>
-            <span class="goal-link">გაიგე მეტი →</span>
+            <span class="goal-link">დაჯავშნე უფასოდ →</span>
           </div>
         </a>
       </div>
@@ -463,18 +503,31 @@ html[lang="ka"] #gf-home .nav-cta { font-family: 'Noto Sans Georgian', sans-seri
 
   <!-- ABOUT -->
   <section class="about-section">
-    <div class="container about-grid">
-      <div class="about-text">
-        <span class="section-label">გრანდ ფიტნესის შესახებ</span>
-        <h2 class="section-title">მეტი, ვიდრე<br>დარბაზი.</h2>
-        <p>გრანდ ფიტნესი ერთი რწმენით შეიქმნა: შენ იმსახურებ ადგილს, სადაც საკუთარი თავის უკეთესი ვერსია გახდები. არა მხოლოდ კარგი აღჭურვილობით — არამედ სწორი ადამიანებით, ნამდვილი მხარდაჭერით და გარემოთი, სადაც მოსვლა გინდა.</p>
-        <p>ჩვენ ბათუმის ყველაზე ამბიციური ფიტნეს კლუბი ვართ — და ვინც არ უნდა იყო, აქ შენი ადგილია. ჩვენი 9 სერტიფიცირებული მწვრთნელი მუშაობს სპორტსმენებთან, სრულ დამწყებებთან და ყველასთან მათ შორის — რადგან მნიშვნელოვანი მხოლოდ შენი პროგრესია.</p>
-        <a href="/ka/about/" class="btn-outline">გაიგე მეტი ჩვენ შესახებ</a>
-      </div>
-      <div class="about-visual">
-        <div class="about-img-main"><img src="/img/about-main.jpg" alt="სავარჯიშო დარბაზი Better Than Yesterday კედლით" loading="lazy"></div>
-        <div class="about-img-accent"><img src="/img/about-accent.jpg" alt="გრანდ ფიტნესის მიღება" loading="lazy"></div>
-        <span class="about-caption">EST. 2026 — ბათუმი, საქართველო</span>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-media">
+          <span class="about-caption">დაარსდა 2026 · ბათუმი</span>
+          <div class="about-img-main">
+            <img src="/img/about-main.jpg" alt="Training floor with Better Than Yesterday mural at Grand Fitness" loading="lazy">
+          </div>
+          <div class="about-img-accent">
+            <img src="/img/about-accent.jpg" alt="Grand Fitness reception desk" loading="lazy">
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="section-label">გრანდ ფიტნესის შესახებ</span>
+          <h2 class="section-title">მეტი, ვიდრე<br>დარბაზი.</h2>
+          <p>გრანდ ფიტნესი ერთი რწმენით შეიქმნა: შენ იმსახურებ ადგილს, სადაც საკუთარი თავის უკეთესი ვერსია გახდები. არა მხოლოდ კარგი აღჭურვილობით — არამედ სწორი ადამიანებით, ნამდვილი მხარდაჭერით და გარემოთი, სადაც მოსვლა გინდა.</p>
+          <p>ჩვენ ბათუმის ყველაზე ამბიციური ფიტნეს კლუბი ვართ — და ვინც არ უნდა იყო, აქ შენი ადგილია. ჩვენი 9 სერტიფიცირებული მწვრთნელი მუშაობს სპორტსმენებთან, სრულ დამწყებებთან და ყველასთან მათ შორის.</p>
+          <div class="about-values">
+            <div class="value-item"><div class="value-title">ჯერ საზოგადოება</div><div class="value-desc">აქ ყველას თავისი ადგილი აქვს</div></div>
+            <div class="value-item"><div class="value-title">შედეგზე ორიენტირებული</div><div class="value-desc">გაზომვადი პროგრესი</div></div>
+            <div class="value-item"><div class="value-title">პროფესიონალური ქოუჩინგი</div><div class="value-desc">სერტიფიცირებული მწვრთნელები</div></div>
+            <div class="value-item"><div class="value-title">პრემიუმ სივრცე</div><div class="value-desc">უახლესი აღჭურვილობა</div></div>
+          </div>
+          <br>
+          <a href="/ka/about/" class="btn-ghost">ჩვენი ისტორია →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -507,7 +560,7 @@ html[lang="ka"] #gf-home .nav-cta { font-family: 'Noto Sans Georgian', sans-seri
           <div class="fd-body">
             <div class="fd-num">03</div>
             <div class="fd-title">ივარჯიშე უფასოდ</div>
-            <div class="fd-text">სრული დარბაზი, ნებისმიერი ჯგუფური ვარჯიში, მწვრთნელი შენს გვერდით — ყველაფერი ჩვენს ხარჯზე.</div>
+            <div class="fd-text">სრული დარბაზი, ნებისმიერი ვარჯიში, მწვრთნელი შენს გვერდით — ყველაფერი ჩვენს ხარჯზე.</div>
           </div>
         </div>
         <div class="fd-card">
@@ -542,67 +595,76 @@ html[lang="ka"] #gf-home .nav-cta { font-family: 'Noto Sans Georgian', sans-seri
       </div>
     </div>
     <div class="coaches-grid">
-      <a class="coach-tile" href="/coaches/gurgen/">
-        <img src="/img/coaches/gurgen.jpg" alt="გურგენი — მთავარი მწვრთნელი, გრანდ ფიტნესი" loading="lazy">
-        <div class="coach-tile-overlay">
-          <span class="coach-role-tile">მთავარი მწვრთნელი</span>
-          <span class="coach-name-tile">გურგენი</span>
+      <a class="coach-card" href="/coaches/gurgen/">
+        <img src="/img/coaches/gurgen.jpg" alt="Coach Gurgen" loading="lazy">
+        <div class="coach-info">
+          <div class="coach-specialty">ძალა და კონდიცია</div>
+          <div class="coach-name">გურგენი</div>
+          <span class="coach-link">პროფილი (EN) →</span>
         </div>
       </a>
-      <a class="coach-tile" href="/coaches/mariam/">
-        <img src="/img/coaches/mariam.jpg" alt="მარიამი — პერსონალური მწვრთნელი, გრანდ ფიტნესი" loading="lazy">
-        <div class="coach-tile-overlay">
-          <span class="coach-role-tile">პერსონალური მწვრთნელი</span>
-          <span class="coach-name-tile">მარიამი</span>
+      <a class="coach-card" href="/coaches/mariam/">
+        <img src="/img/coaches/mariam.jpg" alt="Coach Mariam" loading="lazy">
+        <div class="coach-info">
+          <div class="coach-specialty">პერსონალური ვარჯიში · ქალთა ფიტნესი</div>
+          <div class="coach-name">მარიამი</div>
+          <span class="coach-link">პროფილი (EN) →</span>
         </div>
       </a>
-      <a class="coach-tile" href="/coaches/otar/">
-        <img src="/img/coaches/otar.jpg" alt="ოთარი — ქროსფიტი, გრანდ ფიტნესი" loading="lazy">
-        <div class="coach-tile-overlay">
-          <span class="coach-role-tile">ქროსფიტი</span>
-          <span class="coach-name-tile">ოთარი</span>
+      <a class="coach-card" href="/coaches/otar/">
+        <img src="/img/coaches/otar.jpg" alt="Coach Otar" loading="lazy">
+        <div class="coach-info">
+          <div class="coach-specialty">ქროსფიტი · ფუნქციური ვარჯიში</div>
+          <div class="coach-name">ოთარი</div>
+          <span class="coach-link">პროფილი (EN) →</span>
         </div>
       </a>
-      <a class="coach-tile" href="/coaches/goga/">
-        <img src="/img/coaches/goga.jpg" alt="გოგა — კრივი, გრანდ ფიტნესი" loading="lazy">
-        <div class="coach-tile-overlay">
-          <span class="coach-role-tile">კრივი</span>
-          <span class="coach-name-tile">გოგა</span>
+      <a class="coach-card" href="/coaches/goga/">
+        <img src="/img/coaches/goga.jpg" alt="Coach Goga" loading="lazy">
+        <div class="coach-info">
+          <div class="coach-specialty">კრივი · საბრძოლო სპორტი</div>
+          <div class="coach-name">გოგა</div>
+          <span class="coach-link">პროფილი (EN) →</span>
         </div>
       </a>
-      <a class="coach-tile" href="/coaches/nika/">
-        <img src="/img/coaches/nika.jpg" alt="ნიკა — პერსონალური მწვრთნელი, გრანდ ფიტნესი" loading="lazy">
-        <div class="coach-tile-overlay">
-          <span class="coach-role-tile">პერსონალური მწვრთნელი</span>
-          <span class="coach-name-tile">ნიკა</span>
+      <a class="coach-card" href="/coaches/nika/">
+        <img src="/img/coaches/nika.jpg" alt="Coach Nika" loading="lazy">
+        <div class="coach-info">
+          <div class="coach-specialty">ძალა · კუნთის ზრდა</div>
+          <div class="coach-name">ნიკა</div>
+          <span class="coach-link">პროფილი (EN) →</span>
         </div>
       </a>
-      <a class="coach-tile" href="/coaches/rezo/">
-        <img src="/img/coaches/rezo.jpg" alt="რეზო — მკლავჭიდი, გრანდ ფიტნესი" loading="lazy">
-        <div class="coach-tile-overlay">
-          <span class="coach-role-tile">მკლავჭიდი</span>
-          <span class="coach-name-tile">რეზო</span>
+      <a class="coach-card" href="/coaches/rezo/">
+        <img src="/img/coaches/rezo.jpg" alt="Coach Rezo" loading="lazy">
+        <div class="coach-info">
+          <div class="coach-specialty">მკლავჭიდი · ძალა</div>
+          <div class="coach-name">რეზო</div>
+          <span class="coach-link">პროფილი (EN) →</span>
         </div>
       </a>
-      <a class="coach-tile" href="/coaches/ninutsa/">
-        <img src="/img/coaches/ninutsa.jpg" alt="ნინუცა — პილატესი, გრანდ ფიტნესი" loading="lazy">
-        <div class="coach-tile-overlay">
-          <span class="coach-role-tile">პილატესი</span>
-          <span class="coach-name-tile">ნინუცა</span>
+      <a class="coach-card" href="/coaches/ninutsa/">
+        <img src="/img/coaches/ninutsa.jpg" alt="Coach Ninutsa" loading="lazy">
+        <div class="coach-info">
+          <div class="coach-specialty">პილატესი · მოქნილობა</div>
+          <div class="coach-name">ნინუცა</div>
+          <span class="coach-link">პროფილი (EN) →</span>
         </div>
       </a>
-      <a class="coach-tile" href="/coaches/joni/">
-        <img src="/img/coaches/joni.jpg" alt="ჯონი — ჯგუფური ფიტნესი, გრანდ ფიტნესი" loading="lazy">
-        <div class="coach-tile-overlay">
-          <span class="coach-role-tile">ჯგუფური ფიტნესი</span>
-          <span class="coach-name-tile">ჯონი</span>
+      <a class="coach-card" href="/coaches/joni/">
+        <img src="/img/coaches/joni.jpg" alt="Coach Joni" loading="lazy">
+        <div class="coach-info">
+          <div class="coach-specialty">აერობიკა · ჯგუფური ფიტნესი</div>
+          <div class="coach-name">ჯონი</div>
+          <span class="coach-link">პროფილი (EN) →</span>
         </div>
       </a>
-      <a class="coach-tile" href="/coaches/salome/">
-        <img src="/img/coaches/salome.jpg" alt="სალომე — ქალთა ფიტნესი, გრანდ ფიტნესი" loading="lazy">
-        <div class="coach-tile-overlay">
-          <span class="coach-role-tile">ქალთა ფიტნესი</span>
-          <span class="coach-name-tile">სალომე</span>
+      <a class="coach-card" href="/coaches/salome/">
+        <img src="/img/coaches/salome.jpg" alt="Coach Salome" loading="lazy">
+        <div class="coach-info">
+          <div class="coach-specialty">ქალთა ფიტნესი</div>
+          <div class="coach-name">სალომე</div>
+          <span class="coach-link">პროფილი (EN) →</span>
         </div>
       </a>
     </div>
@@ -616,47 +678,47 @@ html[lang="ka"] #gf-home .nav-cta { font-family: 'Noto Sans Georgian', sans-seri
           <span class="section-label">ჯგუფური ვარჯიშები</span>
           <h2 class="section-title">იპოვე შენი<br>ვარჯიში.</h2>
           <p class="section-sub" style="max-width:640px;">გახსოვს, „მეტი ვიდრე დარბაზი" რომ ვთქვით? ზუსტად ამას ვგულისხმობდით. ზოგ მიზანს ტრენაჟორზე მეტი სჭირდება — ტექნიკა, კარგი მუსიკა, მწვრთნელის თვალი და ხალხი, ვინც შენთან ერთად ვარჯიშობს.</p>
-          <p class="section-sub" style="max-width:640px; margin-top:14px;">ამიტომ ექვსივე ჯგუფური ვარჯიში ყველა აბონემენტში შედის. დამატებითი გადასახადების გარეშე — უბრალოდ აირჩიე, რაც მოგწონს, და მოდი.</p>
+          <p class="section-sub" style="max-width:640px; margin-top:14px;">ამიტომ ექვსივე ვარჯიში ყველა აბონემენტში შედის. დამატებითი გადასახადების გარეშე — უბრალოდ აირჩიე, რაც მოგწონს, და მოდი.</p>
           <div class="course-tags" style="margin-top:22px;"><span class="tag">ყველა შედის</span><span class="tag">ყველა დონე</span><span class="tag">ჯავშნის გარეშე</span></div>
         </div>
         <a href="/ka/classes/" class="link-all">ყველა ვარჯიში →</a>
       </div>
       <div class="courses-grid">
         <a class="course-card" href="/classes/boxing/">
-          <span class="course-num">01</span>
+          <div class="course-num">01</div>
           <div class="course-name">კრივი</div>
-          <p class="course-desc">ტექნიკა, ტომრები და რაუნდები — სპარინგის გარეშე. ქალაქის საუკეთესო კარდიო.</p>
-          <span class="course-coach">მწვრთნელი: გოგა</span>
+          <div class="course-desc">ტექნიკა, ძალა და მთელი სხეულის კონდიცია კრივის მწვრთნელებთან ერთად — სპარინგის გარეშე.</div>
+          <div class="course-tags"><span class="tag">ყველა დონე</span><span class="tag">მწვრთნელი: გოგა</span></div>
         </a>
         <a class="course-card" href="/classes/group-exercise/">
-          <span class="course-num">02</span>
+          <div class="course-num">02</div>
           <div class="course-name">ჯგუფური ვარჯიში</div>
-          <p class="course-desc">ძალა და კარდიო ერთ მაღალენერგიულ ვარჯიშში — არასდროს ერთნაირი.</p>
-          <span class="course-coach">მწვრთნელი: ჯონი</span>
+          <div class="course-desc">მაღალენერგიული ვარჯიშები, სადაც ძალა და კარდიო ერთდროულად შენდება — არასდროს ერთნაირი.</div>
+          <div class="course-tags"><span class="tag">ყველა დონე</span><span class="tag">მწვრთნელი: ჯონი</span></div>
         </a>
         <a class="course-card" href="/classes/aerobic/">
-          <span class="course-num">03</span>
+          <div class="course-num">03</div>
           <div class="course-name">აერობიკა</div>
-          <p class="course-desc">მუსიკაზე აგებული კარდიო, რომელიც თხუთმეტ წუთად გრძნობა.</p>
-          <span class="course-coach">მწვრთნელი: ჯონი</span>
+          <div class="course-desc">კლასიკური აერობიკა გამძლეობისა და წონის კლებისთვის — შესანიშნავი მუსიკის თანხლებით.</div>
+          <div class="course-tags"><span class="tag">ყველა დონე</span><span class="tag">მწვრთნელი: ჯონი</span></div>
         </a>
         <a class="course-card" href="/classes/pilates/">
-          <span class="course-num">04</span>
+          <div class="course-num">04</div>
           <div class="course-name">პილატესი</div>
-          <p class="course-desc">ღრმა კუნთები, სწორი პოზა და მოქნილობა — საძირკველი ყველაფრისთვის.</p>
-          <span class="course-coach">მწვრთნელი: ნინუცა</span>
+          <div class="course-desc">ბირთვის ძალა, სწორი პოზა და სხეულის შეგრძნება — საძირკველი, რომელსაც უმეტესობა გამოტოვებს.</div>
+          <div class="course-tags"><span class="tag">ყველა დონე</span><span class="tag">მწვრთნელი: ნინუცა</span></div>
         </a>
         <a class="course-card" href="/classes/armwrestling/">
-          <span class="course-num">05</span>
+          <div class="course-num">05</div>
           <div class="course-name">მკლავჭიდი</div>
-          <p class="course-desc">ერთადერთი მკლავჭიდის ვარჯიში ბათუმში — ტექნიკა ძალას ამარცხებს.</p>
-          <span class="course-coach">მწვრთნელი: რეზო</span>
+          <div class="course-desc">უნიკალური გრანდ ფიტნესში — მკლავჭიდის სტრუქტურირებული ვარჯიში: ტექნიკა, მტევნის ძალა და სპორტი.</div>
+          <div class="course-tags"><span class="tag">ყველა დონე</span><span class="tag">მწვრთნელი: რეზო</span></div>
         </a>
         <a class="course-card" href="/classes/crossfit/">
-          <span class="course-num">06</span>
+          <div class="course-num">06</div>
           <div class="course-name">ქროსფიტი</div>
-          <p class="course-desc">ყოველდღე ახალი WOD — შენს დონეზე მორგებული ინტენსივობა.</p>
-          <span class="course-coach">მწვრთნელი: ოთარი</span>
+          <div class="course-desc">მუდმივად ცვალებადი ფუნქციური ვარჯიშები მაღალი ინტენსივობით — ყველაზე მრავალმხრივი ფიტნესი.</div>
+          <div class="course-tags"><span class="tag">საშუალო დონე</span><span class="tag">მწვრთნელი: ოთარი</span></div>
         </a>
       </div>
     </div>
@@ -674,24 +736,67 @@ html[lang="ka"] #gf-home .nav-cta { font-family: 'Noto Sans Georgian', sans-seri
   </div>
 
   <!-- TESTIMONIALS -->
-  <section class="testimonials-section">
+  <section class="testi-section">
     <div class="container">
       <span class="section-label">რას ამბობენ წევრები</span>
       <h2 class="section-title">ნამდვილი შედეგები.<br>ნამდვილი ადამიანები.</h2>
       <p class="section-sub" style="margin-bottom:48px;">ყველა მათგანი ერთი უფასო ვარჯიშით დაიწყო. აი, რა მოხდა შემდეგ.</p>
-      <div class="testimonials-grid">
-        <div class="quote-card">
-          <p class="quote-text">„სრული დამწყები ვიყავი და ძალიან ვნერვიულობდი. ახლა ეს ადგილი ჩემი დღის საყვარელი ნაწილია. ეგოს გარეშე — მხოლოდ ნამდვილი შრომა."</p>
-          <span class="quote-who">— თამარი, 26 · ბათუმი</span>
+      <div class="testi-grid">
+        <div class="testi-card featured">
+          <div class="testi-stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
+          <p class="testi-text">„ბევრი დარბაზი მაქვს გამოცდილი — გრანდ ფიტნესი პირველია, რომელიც მართლა განსხვავებულია. მწვრთნელებმა იციან შენი სახელი, შენი მიზნები, შენი ლიმიტები — და მაინც უფრო შორს გიბიძგებენ. აქ 2 თვეში იმაზე მეტს მივაღწიე, ვიდრე მთელ წინა წელს."</p>
+          <span class="testi-author">— გიორგი მ., 31 · წევრი 2026 წლიდან</span>
         </div>
-        <div class="quote-card">
-          <p class="quote-text">„გურგენმა ზუსტად დაინახა, რისი უნარიც მქონდა, სანამ მე თვითონ დავინახავდი — და იქამდე მიმიყვანა."</p>
-          <span class="quote-who">— ლევანი, 28 · ბათუმი</span>
+        <div class="testi-card">
+          <div class="testi-stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
+          <p class="testi-text">„სრული დამწყები ვიყავი და ძალიან ვნერვიულობდი. ახლა ეს ადგილი ჩემი დღის საყვარელი ნაწილია. ეგოს გარეშე — მხოლოდ ნამდვილი შრომა."</p>
+          <span class="testi-author">— თამარ კ., 26</span>
         </div>
-        <div class="quote-card">
-          <p class="quote-text">„სამი დარბაზი გამოვცვალე და ორ კვირაში ყველგან ვწყვეტდი. სალომესთან რვა თვეა ვვარჯიშობ და ვარჯიშს ველოდები ხოლმე."</p>
-          <span class="quote-who">— მარიამი, 29 · ბათუმი</span>
+        <div class="testi-card">
+          <div class="testi-stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
+          <p class="testi-text">„მკლავჭიდის ვარჯიშები ბათუმში ნანახი არაფრის მსგავსია. რეზო წარმოუდგენლად კომპეტენტურია და ატმოსფერო შესანიშნავი."</p>
+          <span class="testi-author">— დავით ს., 29</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAGAZINE -->
+  <section class="magazine-section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-label">გრანდ ფიტნესის ჟურნალი</span>
+          <h2 class="section-title">ბოლო<br>სტატიები.</h2>
+          <p class="section-sub">პრაქტიკული სტატიები შენი მწვრთნელებისგან — ვარჯიში, კვება და აღდგენა. (ამჟამად ინგლისურად)</p>
+        </div>
+        <a href="/magazine/" class="link-all">ყველა სტატია →</a>
+      </div>
+      <div class="mag-grid">
+        <a class="mag-card featured" href="/magazine/better-than-yesterday/">
+          <div class="mag-thumb" style="background:url(&quot;/img/mag/slow-success.jpg&quot;) center/cover;"><span class="mag-cat">Training</span></div>
+          <div class="mag-body">
+            <div class="mag-date">March 2026</div>
+            <div class="mag-title">Better Than Yesterday: How Small Daily Wins Build Championship Bodies</div>
+            <div class="mag-excerpt">Progress doesn't happen in dramatic leaps — it happens in the small, consistent choices made every single day. Our coaches break down the mindset and methods that actually work long-term.</div>
+          </div>
+        </a>
+        <a class="mag-card" href="/magazine/protein-timing/">
+          <div class="mag-thumb" style="background:url(&quot;/img/mag/dumbbells.jpg&quot;) center/cover;"><span class="mag-cat">Nutrition</span></div>
+          <div class="mag-body">
+            <div class="mag-date">March 2026</div>
+            <div class="mag-title">Protein Timing: When to Eat for Maximum Results</div>
+            <div class="mag-excerpt">It's not just what you eat — it's when. Here's what the science actually says.</div>
+          </div>
+        </a>
+        <a class="mag-card" href="/magazine/sleep-recovery/">
+          <div class="mag-thumb" style="background:url(&quot;/img/mag/sauna.jpg&quot;) center/cover;"><span class="mag-cat">Recovery</span></div>
+          <div class="mag-body">
+            <div class="mag-date">Feb 2026</div>
+            <div class="mag-title">Why Sleep Is Your Most Important Supplement</div>
+            <div class="mag-excerpt">No pre-workout replaces 8 hours of real sleep. The science behind recovery.</div>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -699,9 +804,9 @@ html[lang="ka"] #gf-home .nav-cta { font-family: 'Noto Sans Georgian', sans-seri
   <!-- CTA -->
   <section class="cta-section">
     <div class="container">
-      <span class="section-label">მზად ხარ?</span>
+      <p class="cta-eyebrow">მზად ხარ, გუშინდელზე უკეთესი გახდე?</p>
       <h2 class="cta-title">დაიწყე<br><em>დღეს.</em></h2>
-      <p class="cta-sub">გუშინდელი დღე დასრულდა. მოდი და ნახე, რისი უნარიც გაქვს — პირველი ვარჯიში ჩვენს ხარჯზეა.</p>
+      <p class="cta-sub">პირველი ვარჯიში სრულიად უფასოა — ვალდებულების და კონტრაქტის გარეშე. უბრალოდ შემოდი, ივარჯიშე და ნახე, რისი უნარიც გაქვს.</p>
       <div class="cta-actions">
         <a href="/ka/pricing/" class="btn-primary">აირჩიე აბონემენტი</a>
         <a href="/ka/contact/" class="btn-outline">დაჯავშნე უფასო ვარჯიში</a>
@@ -711,41 +816,54 @@ html[lang="ka"] #gf-home .nav-cta { font-family: 'Noto Sans Georgian', sans-seri
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="gf-footer">
     <div class="footer-grid">
       <div>
-        <a class="footer-logo" href="/ka/">GRAND<span>FITNESS</span></a>
-        <p class="footer-tag">შენი პრემიუმ ფიტნეს კლუბი ბათუმში. გახდი დღეს უკეთესი, ვიდრე გუშინ იყავი.</p>
+        <span class="footer-logo">GRAND<em>FITNESS</em></span>
+        <span class="footer-slogan">Better Than Yesterday</span>
+        <p class="footer-about">ბათუმის პრემიუმ ფიტნეს კლუბი — 9 მწვრთნელი, 6 ჯგუფური ვარჯიში და საზოგადოება ერთი საერთო მიზნით: ყოველდღე გახდე უკეთესი.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/grand_fitness_batumi/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">IG</a>
+          <a href="https://www.facebook.com/61585147224532/" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">FB</a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>ნავიგაცია</h4>
-        <a href="/ka/about/">ჩვენ შესახებ</a>
-        <a href="/ka/goals/">მიზნები</a>
-        <a href="/ka/coaches/">მწვრთნელები</a>
-        <a href="/ka/classes/">ვარჯიშები</a>
-        <a href="/ka/pricing/">ფასები</a>
-        <a href="/ka/contact/">კონტაქტი</a>
+        <ul>
+          <li><a href="/ka/about/">ჩვენ შესახებ</a></li>
+          <li><a href="/ka/coaches/">მწვრთნელები</a></li>
+          <li><a href="/ka/classes/">ვარჯიშები</a></li>
+          <li><a href="/ka/pricing/">ფასები</a></li>
+          <li><a href="/magazine/">ჟურნალი (EN)</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>სამუშაო საათები</h4>
+        <ul>
+          <li><a>ორშაბათი – კვირა</a></li>
+          <li><a style="color:var(--gold)">08:00 – 24:00</a></li>
+          <li><a>ღიაა ყოველდღე</a></li>
+        </ul>
       </div>
       <div class="footer-col">
         <h4>კონტაქტი</h4>
-        <a href="tel:+995557192727">+995 557 19 27 27</a>
-        <a href="mailto:info@grandfitness.ge">info@grandfitness.ge</a>
-        <span>ბაგრატიონის ქ. 196, ბათუმი</span>
-        <span>ყოველდღე 08:00 – 24:00</span>
-      </div>
-      <div class="footer-col">
-        <h4>სოციალური ქსელები</h4>
-        <a href="https://www.instagram.com/grand_fitness_batumi/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.facebook.com/61585147224532/" target="_blank" rel="noopener">Facebook</a>
+        <div class="footer-address">
+          Grand Fitness<br>
+          ბაგრატიონის ქ. 196<br>
+          ბათუმი 6000, საქართველო<br><br>
+          <a href="tel:+995557192727" style="color:var(--white);text-decoration:none;">+995 557 19 27 27</a><br>
+          <a href="mailto:info@grandfitness.ge" style="color:var(--muted);text-decoration:none;">info@grandfitness.ge</a>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">&copy; 2026 Grand Fitness · ბათუმი, საქართველო</span>
+      <span class="footer-copy">© 2026 Grand Fitness · ბათუმი, საქართველო</span>
       <span class="footer-copy"><a href="/privacy/" style="color:inherit;">Privacy Policy</a> · <a href="/imprint/" style="color:inherit;">Imprint</a></span>
     </div>
   </footer>
 
 </div>
+
 <script>
 (function() {
   var nav = document.getElementById('gfNav');
