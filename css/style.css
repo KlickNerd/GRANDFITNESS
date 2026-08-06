@@ -272,6 +272,19 @@ h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
 }
 .hero-sub .wrap { position: relative; z-index: 2; }
 
+/* Contact hero: kompakt, Foto präsenter, Quick-Links */
+.hero-contact { min-height: auto; padding: 9.5rem 0 4rem; }
+.hero-contact .hero-bg-sub { opacity: 0.55; }
+.hero-contact .hero-bg-sub::after { background: linear-gradient(180deg, rgba(10,10,10,0.65) 0%, rgba(10,10,10,0.35) 45%, var(--black) 100%); }
+.quick-contact { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 2rem; }
+.quick-contact a {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  border: 1px solid var(--gold); color: var(--gold);
+  padding: 0.6rem 1.1rem; font-size: 0.85rem; font-weight: 600;
+  letter-spacing: 0.04em; transition: all 0.2s;
+}
+.quick-contact a:hover { background: var(--gold); color: var(--black); transform: translateY(-2px); }
+
 /* Class photos */
 .class-photo {
   width: 100%;
