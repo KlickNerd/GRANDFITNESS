@@ -806,3 +806,8 @@ h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
 .lang-switch { font-size: 0.75rem; letter-spacing: 0.12em; border: 1px solid var(--line);
   padding: 0.4rem 0.7rem; color: var(--muted) !important; transition: all 0.2s; }
 .lang-switch:hover { border-color: var(--gold); color: var(--gold) !important; }
+
+/* Language switch as flag */
+.lang-switch { display: inline-flex; align-items: center; padding: 0.35rem 0.45rem; line-height: 0; opacity: 0.75; }
+.lang-switch svg { display: block; border-radius: 1px; }
+.lang-switch:hover { opacity: 1; border-color: var(--gold); }
