@@ -136,16 +136,16 @@ body { margin: 0; background: #0a0a0a; }
 #gf-home .usp-label { font-size: 0.85rem; font-weight: 600; color: var(--black); line-height: 1.2; }
 #gf-home .usp-desc { font-size: 0.78rem; color: rgba(0,0,0,0.55); }
 
-#gf-home .goals-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
-#gf-home .goal-card { position: relative; aspect-ratio: 3/3.7; overflow: hidden; display: block; text-decoration: none; background: var(--card); }
+#gf-home .goals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+#gf-home .goal-card { position: relative; aspect-ratio: 16 / 9; overflow: hidden; display: block; text-decoration: none; background: var(--card); }
 #gf-home .goal-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.6s; }
-#gf-home .goal-card:hover .goal-bg { transform: scale(1.05); }
-#gf-home .goal-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.4) 55%, rgba(10,10,10,0.15) 100%); }
-#gf-home .goal-body { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px; z-index: 2; }
-#gf-home .goal-kicker { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-#gf-home .goal-title { font-family: var(--font-display); font-size: 1.9rem; letter-spacing: 0.03em; color: var(--white); line-height: 1; margin-bottom: 8px; }
-#gf-home .goal-desc { font-size: 0.85rem; font-weight: 300; color: #b8b8b0; line-height: 1.55; margin-bottom: 12px; }
-#gf-home .goal-link { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); opacity: 0; transition: opacity 0.3s; }
+#gf-home .goal-card:hover .goal-bg { transform: scale(1.04); }
+#gf-home .goal-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.3) 55%, rgba(10,10,10,0.05) 100%); }
+#gf-home .goal-body { position: absolute; left: 0; right: 0; bottom: 0; padding: 36px 40px; z-index: 2; }
+#gf-home .goal-kicker { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+#gf-home .goal-title { font-family: var(--font-display); font-size: clamp(2rem, 2.6vw, 2.9rem); letter-spacing: 0.03em; color: var(--white); line-height: 1; margin-bottom: 10px; }
+#gf-home .goal-desc { font-size: 0.95rem; font-weight: 300; color: #c4c4bc; line-height: 1.6; max-width: 480px; margin-bottom: 14px; }
+#gf-home .goal-link { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); opacity: 0; transition: opacity 0.3s; }
 #gf-home .goal-card:hover .goal-link { opacity: 1; }
 
 #gf-home .free-band { background: var(--gold); }
@@ -155,13 +155,14 @@ body { margin: 0; background: #0a0a0a; }
 #gf-home .btn-black { display: inline-block; background: var(--black); color: var(--gold); font-family: var(--font-display); font-size: 1.25rem; letter-spacing: 0.12em; text-decoration: none; padding: 18px 46px; transition: opacity 0.2s, transform 0.2s; white-space: nowrap; }
 #gf-home .btn-black:hover { opacity: 0.88; transform: translateY(-2px); }
 @media (max-width: 1024px) {
-  #gf-home .goals-grid { grid-template-columns: repeat(2, 1fr); }
   #gf-home .free-inner { padding: 44px 32px; }
+  #gf-home .goal-body { padding: 26px 28px; }
 }
 @media (max-width: 768px) {
   #gf-home .goals-grid { grid-template-columns: 1fr; }
   #gf-home .goal-card { aspect-ratio: 16/10; }
   #gf-home .goal-link { opacity: 1; }
+  #gf-home .goal-desc { max-width: none; }
 }
 
 #gf-home section { padding: 100px 0; }
