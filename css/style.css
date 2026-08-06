@@ -256,7 +256,42 @@ h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
 }
 
 /* Sub-page hero (shorter) */
-.hero-sub { min-height: 62vh; padding-top: 10rem; }
+.hero-sub { min-height: 62vh; padding-top: 10rem; position: relative; overflow: hidden; }
+.hero-bg-sub {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+}
+.hero-bg-sub::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.3) 40%, var(--black) 97%);
+}
+.hero-sub .wrap { position: relative; z-index: 2; }
+
+/* Class photos */
+.class-photo {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--line);
+  margin-top: 1.2rem;
+  transition: border-color 0.25s;
+}
+.class-block:hover .class-photo { border-color: var(--gold); }
+
+/* Article banner */
+.article-hero {
+  aspect-ratio: 21 / 9;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--line);
+  margin: 1.8rem 0 0.5rem;
+}
 
 /* ---------- Sections ---------- */
 
@@ -340,7 +375,7 @@ h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
 /* Class rows */
 .class-block {
   display: grid;
-  grid-template-columns: 80px 1fr auto;
+  grid-template-columns: 80px 1.4fr 300px;
   gap: 2rem;
   align-items: start;
   padding: 3rem 0;
