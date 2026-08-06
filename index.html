@@ -136,6 +136,34 @@ body { margin: 0; background: #0a0a0a; }
 #gf-home .usp-label { font-size: 0.85rem; font-weight: 600; color: var(--black); line-height: 1.2; }
 #gf-home .usp-desc { font-size: 0.78rem; color: rgba(0,0,0,0.55); }
 
+#gf-home .goals-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+#gf-home .goal-card { position: relative; aspect-ratio: 3/3.7; overflow: hidden; display: block; text-decoration: none; background: var(--card); }
+#gf-home .goal-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.6s; }
+#gf-home .goal-card:hover .goal-bg { transform: scale(1.05); }
+#gf-home .goal-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.4) 55%, rgba(10,10,10,0.15) 100%); }
+#gf-home .goal-body { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px; z-index: 2; }
+#gf-home .goal-kicker { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+#gf-home .goal-title { font-family: var(--font-display); font-size: 1.9rem; letter-spacing: 0.03em; color: var(--white); line-height: 1; margin-bottom: 8px; }
+#gf-home .goal-desc { font-size: 0.85rem; font-weight: 300; color: #b8b8b0; line-height: 1.55; margin-bottom: 12px; }
+#gf-home .goal-link { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); opacity: 0; transition: opacity 0.3s; }
+#gf-home .goal-card:hover .goal-link { opacity: 1; }
+
+#gf-home .free-band { background: var(--gold); }
+#gf-home .free-inner { max-width: 1200px; margin: 0 auto; padding: 56px 60px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+#gf-home .free-title { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.6rem); letter-spacing: 0.02em; color: var(--black); line-height: 0.95; }
+#gf-home .free-sub { color: rgba(0,0,0,0.65); max-width: 520px; font-size: 0.95rem; line-height: 1.6; margin-top: 10px; }
+#gf-home .btn-black { display: inline-block; background: var(--black); color: var(--gold); font-family: var(--font-display); font-size: 1.25rem; letter-spacing: 0.12em; text-decoration: none; padding: 18px 46px; transition: opacity 0.2s, transform 0.2s; white-space: nowrap; }
+#gf-home .btn-black:hover { opacity: 0.88; transform: translateY(-2px); }
+@media (max-width: 1024px) {
+  #gf-home .goals-grid { grid-template-columns: repeat(2, 1fr); }
+  #gf-home .free-inner { padding: 44px 32px; }
+}
+@media (max-width: 768px) {
+  #gf-home .goals-grid { grid-template-columns: 1fr; }
+  #gf-home .goal-card { aspect-ratio: 16/10; }
+  #gf-home .goal-link { opacity: 1; }
+}
+
 #gf-home section { padding: 100px 0; }
 #gf-home .container { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
 #gf-home .section-label { font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
@@ -308,9 +336,9 @@ body { margin: 0; background: #0a0a0a; }
     <div class="hero-content">
       <p class="hero-eyebrow">Batumi's Premier Fitness Club</p>
       <h1 class="hero-title">BETTER<br>THAN<em>YESTERDAY.</em></h1>
-      <p class="hero-sub">Expert coaches, premium equipment, and a community that shows up for you — every single day.</p>
+      <p class="hero-sub">Whether it's your first workout ever or you're chasing a new personal record — this place was built for you. Expert coaches, premium equipment, and your first session on us.</p>
       <div class="hero-actions">
-        <a href="/pricing/" class="btn-primary">Start Today</a>
+        <a href="/contact/" class="btn-primary">Get Your Free Session</a>
         <a href="/coaches/" class="btn-ghost">Meet the Coaches →</a>
       </div>
     </div>
@@ -341,6 +369,52 @@ body { margin: 0; background: #0a0a0a; }
       </div>
     </div>
   </div>
+
+  <!-- YOUR GOAL -->
+  <section class="goals-section">
+    <div class="container">
+      <span class="section-label">What brings you here?</span>
+      <h2 class="section-title">YOUR GOAL.<br>OUR JOB.</h2>
+      <div class="goals-grid">
+        <a class="goal-card" href="/classes/#crossfit">
+          <div class="goal-bg" style="background-image:url('/img/space/free-weights.jpg');"></div>
+          <div class="goal-body">
+            <div class="goal-kicker">Strength</div>
+            <div class="goal-title">GET STRONGER</div>
+            <div class="goal-desc">Racks, barbells, and coaches who know the science of strength. Your numbers are about to go up.</div>
+            <span class="goal-link">See how →</span>
+          </div>
+        </a>
+        <a class="goal-card" href="/classes/#aerobic">
+          <div class="goal-bg" style="background-image:url('/img/space/cardio-zone.jpg');"></div>
+          <div class="goal-body">
+            <div class="goal-kicker">Fat Loss &amp; Fitness</div>
+            <div class="goal-title">FEEL GREAT AGAIN</div>
+            <div class="goal-desc">Cardio with a view, classes with great music, and a plan that finally sticks.</div>
+            <span class="goal-link">See how →</span>
+          </div>
+        </a>
+        <a class="goal-card" href="/classes/#boxing">
+          <div class="goal-bg" style="background-image:url('/img/classes/boxing.jpg');"></div>
+          <div class="goal-body">
+            <div class="goal-kicker">Combat Sports</div>
+            <div class="goal-title">LEARN TO BOX</div>
+            <div class="goal-desc">Real technique, real power, and the best conditioning workout in Batumi — no sparring required.</div>
+            <span class="goal-link">See how →</span>
+          </div>
+        </a>
+        <a class="goal-card" href="/contact/">
+          <div class="goal-bg" style="background-image:url('/img/space/studio.jpg');"></div>
+          <div class="goal-body">
+            <div class="goal-kicker">First Time?</div>
+            <div class="goal-title">JUST GET STARTED</div>
+            <div class="goal-desc">New to the gym? Perfect. No judgment, no pressure — your first session is free and your coach is waiting.</div>
+            <span class="goal-link">Book free session →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- ABOUT -->
   <section class="about-section">
@@ -510,6 +584,17 @@ body { margin: 0; background: #0a0a0a; }
       </div>
     </div>
   </section>
+
+  <!-- FREE SESSION BAND -->
+  <div class="free-band">
+    <div class="free-inner">
+      <div>
+        <div class="free-title">YOUR FIRST SESSION IS FREE.</div>
+        <div class="free-sub">No contract. No pressure. No "perfect shape" required. Come in, train with us once, and decide for yourself if we've earned you.</div>
+      </div>
+      <a href="/contact/" class="btn-black">Claim Your Free Session</a>
+    </div>
+  </div>
 
   <!-- TESTIMONIALS -->
   <section class="testi-section">
