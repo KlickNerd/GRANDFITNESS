@@ -207,6 +207,30 @@ h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
 .hero-media img { width: 100%; height: 100%; object-fit: cover; }
 .hero p.lead { margin: 1.6rem 0 2.2rem; }
 
+.hero-media.framed { outline: 1px solid rgba(212, 175, 55, 0.55); outline-offset: 14px; }
+.media-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(10, 10, 10, 0.8) 100%);
+  pointer-events: none;
+}
+.media-badge {
+  position: absolute;
+  left: 1.2rem;
+  bottom: 1.2rem;
+  z-index: 2;
+  background: rgba(10, 10, 10, 0.85);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--display);
+  font-size: 1.05rem;
+  letter-spacing: 0.1em;
+  padding: 0.5rem 1.1rem;
+}
+@media (max-width: 760px) {
+  .hero-media.framed { outline-offset: 8px; }
+}
+
 /* Sub-page hero (shorter) */
 .hero-sub { min-height: 62vh; padding-top: 10rem; }
 
