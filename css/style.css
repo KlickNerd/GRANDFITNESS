@@ -796,3 +796,8 @@ h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
   .price-banner { padding: 1.6rem; }
   .profile-stats { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 }
+
+/* ---------- Infographics ---------- */
+.infographic { margin: 2.2rem 0; }
+.infographic svg { border: 1px solid var(--line); }
+.infographic figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem; line-height: 1.5; }
