@@ -147,8 +147,24 @@ body { margin: 0; background: #0a0a0a; }
 
 #gf-home .about-section { background: var(--dark); }
 #gf-home .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-#gf-home .about-image { position: relative; aspect-ratio: 4/5; overflow: hidden; background: var(--card); }
-#gf-home .about-image img { width: 100%; height: 100%; object-fit: cover; }
+#gf-home .about-media { position: relative; margin: 20px 0 48px 20px; }
+#gf-home .about-media::before { content: ''; position: absolute; top: -20px; left: -20px; right: 20px; bottom: 20px; border: 1px solid rgba(240,192,32,0.45); pointer-events: none; }
+#gf-home .about-img-main { position: relative; aspect-ratio: 4/5; overflow: hidden; background: var(--card); }
+#gf-home .about-img-main img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+#gf-home .about-media:hover .about-img-main img { transform: scale(1.04); }
+#gf-home .about-img-accent { position: absolute; bottom: -44px; right: -28px; width: 48%; aspect-ratio: 4/3; overflow: hidden; border: 6px solid var(--black); outline: 1px solid rgba(240,192,32,0.6); box-shadow: 0 24px 60px rgba(0,0,0,0.6); transition: transform 0.4s ease; }
+#gf-home .about-img-accent img { width: 100%; height: 100%; object-fit: cover; object-position: center 34%; }
+#gf-home .about-media:hover .about-img-accent { transform: translateY(-6px); }
+#gf-home .about-caption { position: absolute; top: 0; left: -52px; writing-mode: vertical-rl; font-size: 0.62rem; letter-spacing: 0.4em; text-transform: uppercase; color: #666; }
+#gf-home .about-caption::after { content: ''; display: block; width: 1px; height: 48px; background: var(--gold); margin-top: 14px; }
+@media (max-width: 1024px) {
+  #gf-home .about-media { margin: 20px 20px 64px 20px; }
+}
+@media (max-width: 768px) {
+  #gf-home .about-caption { display: none; }
+  #gf-home .about-media { margin: 12px 12px 56px 0; }
+  #gf-home .about-img-accent { width: 54%; bottom: -32px; right: -8px; }
+}
 #gf-home .about-content p { color: #b0b0a8; font-weight: 300; font-size: 1.05rem; line-height: 1.85; margin-bottom: 24px; }
 #gf-home .about-values { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
 #gf-home .value-item { padding: 20px 24px; border: 1px solid var(--border); border-left: 3px solid var(--gold); }
@@ -330,8 +346,14 @@ body { margin: 0; background: #0a0a0a; }
   <section class="about-section">
     <div class="container">
       <div class="about-grid">
-        <div class="about-image">
-          <img src="/img/hero.jpg" alt="Training floor at Grand Fitness Batumi" loading="lazy">
+        <div class="about-media">
+          <span class="about-caption">Est. 2026 · Batumi</span>
+          <div class="about-img-main">
+            <img src="/img/hero.jpg" alt="Training floor at Grand Fitness Batumi" loading="lazy">
+          </div>
+          <div class="about-img-accent">
+            <img src="/img/hero-bg.jpg" alt="Grand Fitness reception with logo wall" loading="lazy">
+          </div>
         </div>
         <div class="about-content">
           <span class="section-label">About Grand Fitness</span>
