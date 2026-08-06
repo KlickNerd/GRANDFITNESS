@@ -318,13 +318,14 @@ h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
 .stat { padding: 2.2rem 1.5rem; text-align: center; }
 .stat + .stat { border-left: 1px solid var(--line); }
 .stat .num {
+  display: block;
   font-family: var(--display);
   font-size: 3rem;
   color: var(--gold);
   line-height: 1;
 }
-.stat .label { font-weight: 600; margin-top: 0.4rem; }
-.stat .sub { font-size: 0.85rem; color: var(--muted); }
+.stat .label { display: block; font-weight: 600; margin-top: 0.5rem; }
+.stat .sub { display: block; font-size: 0.85rem; color: var(--muted); margin-top: 0.15rem; }
 
 /* ---------- Cards & grids ---------- */
 
