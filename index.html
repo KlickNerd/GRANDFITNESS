@@ -159,6 +159,18 @@ body { margin: 0; background: #0a0a0a; }
 #gf-home .welcome-divider { width: 1px; height: 56px; margin: 40px auto 26px; background: linear-gradient(to bottom, transparent, var(--gold)); }
 #gf-home .welcome-lead { font-size: 0.95rem; color: var(--white); letter-spacing: 0.04em; }
 #gf-home .goals-section { padding-top: 48px; }
+
+#gf-home .firstday-section { background: var(--dark); padding-top: 0; }
+#gf-home .firstday-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+#gf-home .fd-card { background: var(--card); }
+#gf-home .fd-photo { aspect-ratio: 16/10; background-size: cover; background-position: center; border-bottom: 1px solid var(--border); }
+#gf-home .fd-body { padding: 22px 24px 26px; }
+#gf-home .fd-num { font-family: var(--font-display); font-size: 2.2rem; line-height: 1; color: rgba(240,192,32,0.4); }
+#gf-home .fd-title { font-family: var(--font-display); font-size: 1.45rem; letter-spacing: 0.04em; color: var(--white); margin: 8px 0 8px; }
+#gf-home .fd-text { font-size: 0.87rem; font-weight: 300; color: var(--muted); line-height: 1.6; }
+#gf-home .firstday-outro { text-align: center; margin-top: 64px; }
+#gf-home .firstday-outro .welcome-divider { margin: 0 auto 24px; }
+#gf-home .firstday-lead { font-size: 0.95rem; color: var(--white); letter-spacing: 0.04em; }
 #gf-home .free-inner { max-width: 1200px; margin: 0 auto; padding: 56px 60px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
 #gf-home .free-title { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.6rem); letter-spacing: 0.02em; color: var(--black); line-height: 0.95; }
 #gf-home .free-sub { color: rgba(0,0,0,0.65); max-width: 520px; font-size: 0.95rem; line-height: 1.6; margin-top: 10px; }
@@ -168,9 +180,11 @@ body { margin: 0; background: #0a0a0a; }
   #gf-home .free-inner { padding: 44px 32px; }
   #gf-home .goals-grid { grid-template-columns: repeat(2, 1fr); }
   #gf-home .goal-body { padding: 24px 26px; }
+  #gf-home .firstday-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
   #gf-home .goals-grid { grid-template-columns: 1fr; }
+  #gf-home .firstday-grid { grid-template-columns: 1fr; }
   #gf-home .goal-card { aspect-ratio: 16/10; }
   #gf-home .goal-link { opacity: 1; }
   #gf-home .goal-desc { max-width: none; }
@@ -491,6 +505,53 @@ body { margin: 0; background: #0a0a0a; }
           <br>
           <a href="/about/" class="btn-ghost">Our Story →</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YOUR FIRST DAY -->
+  <section class="firstday-section">
+    <div class="container">
+      <span class="section-label">Your free first session</span>
+      <h2 class="section-title">YOUR FIRST DAY,<br>ON US.</h2>
+      <p class="section-sub" style="margin-top:-32px; margin-bottom:48px;">We want you to feel at home from minute one — so your entire first visit costs nothing and covers everything. Here's how it goes:</p>
+      <div class="firstday-grid">
+        <div class="fd-card">
+          <div class="fd-photo" style="background-image:url('/img/space/reception.jpg');"></div>
+          <div class="fd-body">
+            <div class="fd-num">01</div>
+            <div class="fd-title">WALK IN</div>
+            <div class="fd-text">No appointment stress, no paperwork marathon. Come by 08:00 – 24:00, say hi at reception, and we'll take it from there.</div>
+          </div>
+        </div>
+        <div class="fd-card">
+          <div class="fd-photo" style="background-image:url('/img/coaches/mariam.jpg'); background-position: center 25%;"></div>
+          <div class="fd-body">
+            <div class="fd-num">02</div>
+            <div class="fd-title">MEET YOUR COACH</div>
+            <div class="fd-text">Tell us about you — where you're at, what you want. Together you'll define your goal and the way to get there.</div>
+          </div>
+        </div>
+        <div class="fd-card">
+          <div class="fd-photo" style="background-image:url('/img/space/floor-wide.jpg');"></div>
+          <div class="fd-body">
+            <div class="fd-num">03</div>
+            <div class="fd-title">TRAIN FOR FREE</div>
+            <div class="fd-text">Full floor, any class, real coaching by your side — your complete first session is on us. No strings attached.</div>
+          </div>
+        </div>
+        <div class="fd-card">
+          <div class="fd-photo" style="background-image:url('/img/space/sauna.jpg');"></div>
+          <div class="fd-body">
+            <div class="fd-num">04</div>
+            <div class="fd-title">RELAX IN THE SAUNA</div>
+            <div class="fd-text">Finish your first day the right way: unwind in our sauna, let it all sink in — and notice how much you're looking forward to day two.</div>
+          </div>
+        </div>
+      </div>
+      <div class="firstday-outro">
+        <div class="welcome-divider"></div>
+        <p class="firstday-lead">And the people guiding you through all of it? Meet them:</p>
       </div>
     </div>
   </section>
