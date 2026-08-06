@@ -172,6 +172,12 @@ body { margin: 0; background: #0a0a0a; }
 #gf-home .section-header .section-title { margin-bottom: 0; }
 #gf-home .link-all { font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 4px; white-space: nowrap; transition: color 0.2s, border-color 0.2s; }
 #gf-home .link-all:hover { color: var(--gold); border-color: var(--gold); }
+#gf-home .section-sub { font-size: 0.95rem; font-weight: 300; color: #a0a098; max-width: 560px; line-height: 1.65; margin-top: 18px; }
+#gf-home .section-header .section-sub { margin-bottom: 0; }
+#gf-home a.usp-item { text-decoration: none; transition: background 0.2s; }
+#gf-home a.usp-item:hover { background: rgba(0,0,0,0.06); }
+#gf-home .cta-info { margin-top: 40px; font-size: 0.85rem; letter-spacing: 0.06em; color: var(--muted); position: relative; z-index: 2; }
+#gf-home .cta-info a { color: var(--gold); text-decoration: none; }
 
 #gf-home .about-section { background: var(--dark); }
 #gf-home .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
@@ -363,10 +369,10 @@ body { margin: 0; background: #0a0a0a; }
         <span class="usp-num">7</span>
         <div class="usp-text"><span class="usp-label">Days a Week</span><span class="usp-desc">08:00 – 24:00 daily</span></div>
       </div>
-      <div class="usp-item">
+      <a class="usp-item" href="/contact/">
         <span class="usp-num">1st</span>
-        <div class="usp-text"><span class="usp-label">Session Free</span><span class="usp-desc">Come try it out</span></div>
-      </div>
+        <div class="usp-text"><span class="usp-label">Session Free</span><span class="usp-desc">Book yours now →</span></div>
+      </a>
     </div>
   </div>
 
@@ -432,8 +438,8 @@ body { margin: 0; background: #0a0a0a; }
         <div class="about-content">
           <span class="section-label">About Grand Fitness</span>
           <h2 class="section-title">MORE THAN<br>A GYM.</h2>
-          <p>Grand Fitness was built on one belief: every person deserves a place to become a better version of themselves. Not just with good equipment — but with the right people around them, the right guidance, and an environment that makes showing up feel worth it.</p>
-          <p>We're Batumi's newest and most ambitious fitness club. Our team of 9 certified coaches works with athletes, beginners, and everyone in between — because progress looks different for everyone, and that's exactly the point.</p>
+          <p>Grand Fitness was built on one belief: you deserve a place where becoming a better version of yourself actually feels possible. Not just good equipment — but the right people around you, real guidance, and an environment that makes you want to show up.</p>
+          <p>We're Batumi's most ambitious fitness club — and whoever you are, you fit in here. Our 9 certified coaches work with athletes, complete beginners, and everyone in between, because your progress is the only progress that matters.</p>
           <div class="about-values">
             <div class="value-item"><div class="value-title">Community First</div><div class="value-desc">Everyone belongs here</div></div>
             <div class="value-item"><div class="value-title">Results Driven</div><div class="value-desc">Measurable progress</div></div>
@@ -454,6 +460,7 @@ body { margin: 0; background: #0a0a0a; }
         <div>
           <span class="section-label">The Team</span>
           <h2 class="section-title">MEET THE<br>COACHES.</h2>
+          <p class="section-sub">Nine people whose job is to know your name, your goals, and exactly how far you can go.</p>
         </div>
         <a href="/coaches/" class="link-all">View all coaches →</a>
       </div>
@@ -541,6 +548,7 @@ body { margin: 0; background: #0a0a0a; }
         <div>
           <span class="section-label">Group Classes</span>
           <h2 class="section-title">FIND YOUR<br>CLASS.</h2>
+          <p class="section-sub">Six ways to train, all included in every membership. Just pick what sounds like fun — your coach handles the rest.</p>
         </div>
         <a href="/classes/" class="link-all">View all classes →</a>
       </div>
@@ -601,6 +609,7 @@ body { margin: 0; background: #0a0a0a; }
     <div class="container">
       <span class="section-label">What our members say</span>
       <h2 class="section-title">REAL RESULTS.<br>REAL PEOPLE.</h2>
+      <p class="section-sub" style="margin-bottom:48px;">They all started with one free session. Here's what happened next.</p>
       <div class="testi-grid">
         <div class="testi-card featured">
           <div class="testi-stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
@@ -628,6 +637,7 @@ body { margin: 0; background: #0a0a0a; }
         <div>
           <span class="section-label">Grand Fitness Magazine</span>
           <h2 class="section-title">LATEST<br>READS.</h2>
+          <p class="section-sub">Practical reads from your coaches — training, food and recovery, without the nonsense.</p>
         </div>
         <a href="/magazine/" class="link-all">All articles →</a>
       </div>
@@ -670,6 +680,7 @@ body { margin: 0; background: #0a0a0a; }
         <a href="/pricing/" class="btn-primary">Choose a Membership</a>
         <a href="/contact/" class="btn-outline">Book Your Free Session</a>
       </div>
+      <p class="cta-info">196 Bagrationi St, Batumi &nbsp;·&nbsp; Open daily 08:00 – 24:00 &nbsp;·&nbsp; <a href="tel:+995557192727">+995 557 19 27 27</a></p>
     </div>
   </section>
 
