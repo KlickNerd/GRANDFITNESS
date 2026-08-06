@@ -103,7 +103,7 @@ body { margin: 0; background: #0a0a0a; }
 #gf-home .mobile-menu a:hover { color: var(--gold); }
 #gf-home .hero { min-height: 100vh; position: relative; display: flex; align-items: flex-end; overflow: hidden; background: var(--black); }
 #gf-home .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #1a1000 0%, #0a0a0a 40%, #0a0a0a 60%, #001a0a 100%); }
-#gf-home .hero-bg-img { position: absolute; inset: 0; background-image: url('/img/hero.jpg'); background-size: cover; background-position: center; opacity: 0.45; animation: heroZoom 16s ease-in-out infinite alternate; }
+#gf-home .hero-bg-img { position: absolute; inset: 0; background-image: url('/img/hero-bg.jpg'); background-size: cover; background-position: center 30%; opacity: 0.55; animation: heroZoom 16s ease-in-out infinite alternate; }
 @keyframes heroZoom { from { transform: scale(1.0); } to { transform: scale(1.07); } }
 #gf-home .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, var(--black) 0%, rgba(10,10,10,0.5) 40%, transparent 70%), linear-gradient(to right, rgba(10,10,10,0.6) 0%, transparent 60%); }
 #gf-home .hero-content { position: relative; z-index: 2; padding: 0 60px 100px; max-width: 900px; }
@@ -330,7 +330,7 @@ body { margin: 0; background: #0a0a0a; }
     <div class="container">
       <div class="about-grid">
         <div class="about-image">
-          <img src="/img/hero-bg.jpg" alt="Grand Fitness reception in Batumi" loading="lazy">
+          <img src="/img/hero.jpg" alt="Training floor at Grand Fitness Batumi" loading="lazy">
         </div>
         <div class="about-content">
           <span class="section-label">About Grand Fitness</span>
