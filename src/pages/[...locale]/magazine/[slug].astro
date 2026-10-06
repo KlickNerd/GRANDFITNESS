@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+import ArticleCard from "@/components/magazine/ArticleCard.astro";
+import ArticleMeta from "@/components/magazine/ArticleMeta.astro";
+import { articleHref, articlesFor, relatedArticles, type Article } from "@/components/magazine/articles";
+import CtaButton from "@/components/ui/CtaButton.astro";
+import CtaSection from "@/components/ui/CtaSection.astro";
+import Section from "@/components/ui/Section.astro";
+import SectionHead from "@/components/ui/SectionHead.astro";
+import TextLink from "@/components/ui/TextLink.astro";
+import { entryPaths } from "@/collections/entries";
+import type { Locale } from "@/i18n/config";
+import { copies } from "@/i18n/pages/magazine";
+import { localizeHref } from "@/i18n/routes";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { img } from "@/lib/images";
+
+export const getStaticPaths = async () => entryPaths(await getCollection("magazine"));
+
+const { entry, locale } = Astro.props as { entry: Article; locale: Locale };
+const t = (copies as Partial<Record<Locale, (typeof copies)["en"]>>)[locale] ?? copies.en;
+const a = entry.data;
+const { Content } = await render(entry);
+const related = relatedArticles(entry, await articlesFor(locale));
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: a.title,
+  datePublished: a.datePublished,
+  author: { "@type": "Organization", name: t.article.jsonLd.author },
+  publisher: { "@type": "Organization", name: t.article.jsonLd.publisher, url: t.article.jsonLd.publisherUrl },
+  mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
+};
+---
+
+<BaseLayout
+  locale={locale}
+  title={a.metaTitle ?? a.title + t.article.titleSuffix}
+  description={a.description}
+  ogImage={a.ogImage}
+  ogType="article"
+  jsonLd={jsonLd}
+>
+  <article class="mx-auto max-w-[760px] px-6 pt-44 pb-20">
+    <ArticleMeta category={a.category} items={[a.date, a.author]} />
+    <h1 class="mt-4 mb-6 text-[clamp(2.8rem,6vw,4.5rem)]">{a.title}</h1>
+    <Image
+      src={img(a.image)}
+      alt=""
+      widths={[480, 760, 1520]}
+      sizes="(min-width: 760px) 712px, 100vw"
+      loading="eager"
+      fetchpriority="high"
+      class="mt-[1.8rem] mb-2 aspect-21/9 w-full border border-line object-cover"
+    />
+    <div
+      class:list={[
+        "prose max-w-none text-[17px] leading-[1.7] text-white prose-invert marker:text-body",
+        "prose-headings:text-white prose-headings:font-normal prose-headings:leading-[0.95]",
+        "prose-h2:mt-12 prose-h2:mb-4 prose-h2:text-[2.2rem]",
+        "prose-h3:mt-[2.2rem] prose-h3:mb-[0.8rem] prose-h3:text-[1.6rem]",
+        "prose-p:my-[1.1rem] prose-p:text-body",
+        "prose-ul:my-[1.1rem] prose-ul:ms-[1.2rem] prose-ul:ps-0 prose-ul:text-body",
+        "prose-li:my-[0.4rem] prose-li:ps-0",
+        "prose-strong:font-bold prose-strong:text-white",
+        "prose-a:text-inherit prose-a:no-underline prose-a:[font-weight:inherit]",
+      ]}
+    >
+      <Content />
+    </div>
+    <p class="mt-12"><TextLink href={localizeHref("/magazine/", locale)}>{t.article.allArticles}</TextLink></p>
+  </article>
+
+  <Section tone="dark">
+    <SectionHead eyebrow={t.article.keepReading.eyebrow} title={t.article.keepReading.title} />
+    <div class="grid gap-8 md:grid-cols-2">
+      {
+        related.map((other) => (
+          <ArticleCard
+            href={localizeHref(articleHref(other), locale)}
+            category={other.data.category}
+            date={other.data.date}
+            title={other.data.title}
+            readMore={t.readMore}
+            compact
+          />
+        ))
+      }
+    </div>
+  </Section>
+
+  <CtaSection eyebrow={t.article.cta.eyebrow} title={t.article.cta.title} lead={t.article.cta.lead}>
+    {t.article.cta.buttons.map((cta) => <CtaButton cta={cta} locale={locale} />)}
+  </CtaSection>
+</BaseLayout>
