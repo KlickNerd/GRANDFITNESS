@@ -17,7 +17,7 @@ const { items, name = "faq", class: className } = Astro.props;
   {
     items.map((item) => (
       <details name={name || undefined} class="group border-b border-line">
-        <summary class="relative cursor-pointer list-none py-[1.6rem] pr-12 font-display text-2xl tracking-[0.03em] [&::-webkit-details-marker]:hidden">
+        <summary class="relative cursor-pointer list-none py-[1.6rem] pr-12 font-display text-2xl leading-[1.7] tracking-[0.03em] [&::-webkit-details-marker]:hidden">
           <Fragment set:html={item.q} />
           <span
             aria-hidden="true"

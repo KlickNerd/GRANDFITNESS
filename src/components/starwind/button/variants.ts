@@ -34,7 +34,8 @@ export const button = tv({
       icon: "size-11 [&_svg:not([class*='size-'])]:size-4.5",
       "icon-lg": "size-12 [&_svg:not([class*='size-'])]:size-5",
       // Original .btn: Bebas Neue, 1.25rem, wide tracking
-      brand: "h-auto px-[2.4rem] py-[0.85rem] font-display text-xl font-normal tracking-[0.08em] duration-250",
+      // Wraps like the original instead of overflowing (long Georgian labels on phones)
+      brand: "h-auto px-[2.4rem] py-[0.85rem] text-center font-display text-xl leading-[1.7] font-normal tracking-[0.08em] whitespace-normal duration-250",
     },
   },
   defaultVariants: {

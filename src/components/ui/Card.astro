@@ -1,6 +1,7 @@
 ---
 import { Card as StarwindCard } from "@/components/starwind/card";
 import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
 
 interface Props extends HTMLAttributes<"div"> {
   /** Gold border (original .featured). */
@@ -22,7 +23,7 @@ const classes = [
 
 {
   href ? (
-    <a href={href} class:list={["flex flex-col", ...classes]} data-slot="card" {...rest}>
+    <a href={href} class={twMerge("flex flex-col", ...classes.filter((c) => typeof c === "string"))} data-slot="card" {...rest}>
       <slot />
     </a>
   ) : (
