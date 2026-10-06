@@ -10,7 +10,6 @@
 @plugin "@tailwindcss/typography";
 
 /* Only scan the real source, never the old static site or research notes. */
-@source not "../../legacy";
 @source not "../../reports";
 @source not "../../research_notes";
 

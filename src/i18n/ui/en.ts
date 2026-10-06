@@ -35,6 +35,8 @@ const en = {
     imprint: "Imprint",
   },
   consent: {
+    /** Language the banner text is written in (lets a not-yet-translated banner keep English styling). */
+    lang: "en",
     label: "Privacy notice",
     title: "Your privacy, plainly.",
     text: "No tracking cookies on this site — only technically necessary storage and external services like Google Fonts.",

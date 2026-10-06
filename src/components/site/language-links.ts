@@ -7,6 +7,8 @@ import { switchToLabel } from "@/i18n/ui";
  * otherwise that language's homepage (the original site's behaviour).
  */
 export function languageLinks(current: Locale, path: string) {
+  // A 404 has no counterpart URL: send visitors to the other language's homepage.
+  if (/^\/404(\.html|\/)?$/.test(path)) path = "/";
   return locales
     .filter((l) => l !== current && isLiveLocale(l))
     .map((l) => ({

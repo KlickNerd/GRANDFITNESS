@@ -47,6 +47,7 @@ src/collections/               collection schemas
 src/components/site/           Nav, Footer, Consent (used by BaseLayout)
 src/components/ui/             shared blocks: Section, SectionHead, PageHero, Card, CtaButton,
                                CtaSection, Faq, Photo, Stats, QuoteCard, Pill, Tag, …
+src/components/<section>/      blocks used by one section: home, coaches, classes, goals, magazine, pages
 src/components/starwind/       Starwind UI components (copied into the repo, ours to edit)
 src/layouts/BaseLayout.astro   <head>, SEO, hreflang, skip link, <main>, nav, footer
 ```

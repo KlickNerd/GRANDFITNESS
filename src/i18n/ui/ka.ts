@@ -35,6 +35,7 @@ const ka = {
   },
   // Not translated yet: the original banner was English on every page.
   consent: {
+    lang: "en",
     label: "Privacy notice",
     title: "Your privacy, plainly.",
     text: "No tracking cookies on this site — only technically necessary storage and external services like Google Fonts.",
