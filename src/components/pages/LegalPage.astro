@@ -1,0 +1,42 @@
+---
+import PageHero from "@/components/ui/PageHero.astro";
+import Section from "@/components/ui/Section.astro";
+import type { Locale } from "@/i18n/config";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { LegalCopy } from "./legal";
+
+interface Props {
+  locale: Locale;
+  copy: LegalCopy;
+}
+
+const { locale, copy: t } = Astro.props;
+---
+
+<!-- Legal page layout (original .article-content inside an 820px column). -->
+<BaseLayout locale={locale} title={t.meta.title} description={t.meta.description}>
+  <PageHero variant="compact" eyebrow={t.hero.eyebrow} title={t.hero.title} lead={t.hero.lead} />
+
+  <Section class="pt-4 md:pt-4">
+    <div
+      class:list={[
+        "mx-auto max-w-[772px]",
+        "[&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:text-[2.2rem]",
+        "[&_h3]:mt-[2.2rem] [&_h3]:mb-[0.8rem] [&_h3]:text-[1.6rem]",
+        "[&_p]:my-[1.1rem] [&_p]:text-body",
+        "[&_ul]:my-[1.1rem] [&_ul]:ml-[1.2rem] [&_ul]:list-disc [&_ul]:text-body [&_li]:my-[0.4rem]",
+        "[&_strong]:text-white",
+      ]}
+    >
+      {t.updated && <p class="text-[0.9rem] text-muted-foreground!">{t.updated}</p>}
+      {
+        t.sections.map((section) => (
+          <>
+            <h2>{section.title}</h2>
+            <Fragment set:html={section.body} />
+          </>
+        ))
+      }
+    </div>
+  </Section>
+</BaseLayout>
