@@ -1,0 +1,134 @@
+---
+import { Image } from "astro:assets";
+import Card from "@/components/ui/Card.astro";
+import CtaButton from "@/components/ui/CtaButton.astro";
+import CtaSection from "@/components/ui/CtaSection.astro";
+import Eyebrow from "@/components/ui/Eyebrow.astro";
+import Lead from "@/components/ui/Lead.astro";
+import PageHero from "@/components/ui/PageHero.astro";
+import Photo from "@/components/ui/Photo.astro";
+import Section from "@/components/ui/Section.astro";
+import SectionHead from "@/components/ui/SectionHead.astro";
+import Stats from "@/components/ui/Stats.astro";
+import Tag from "@/components/ui/Tag.astro";
+import TextLink from "@/components/ui/TextLink.astro";
+import { copies } from "@/i18n/pages/about";
+import type { Copy } from "@/i18n/pages/about/types";
+import { localizeHref } from "@/i18n/routes";
+import { staticPathsFor } from "@/i18n/static-paths";
+import type { Locale } from "@/i18n/config";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { img } from "@/lib/images";
+
+export const getStaticPaths = () => staticPathsFor<Copy>(copies);
+
+const { locale, copy } = Astro.props as { locale: Locale; copy: Copy };
+const t = copy;
+---
+
+<BaseLayout locale={locale} title={t.meta.title} description={t.meta.description}>
+  <PageHero image={t.hero.image} eyebrow={t.hero.eyebrow} title={t.hero.title} lead={t.hero.lead} />
+
+  {
+    t.statsFirst && (
+      <section class="wrap">
+        <Stats items={t.stats} />
+      </section>
+    )
+  }
+
+  <Section>
+    <div class="grid items-center gap-16 md:grid-cols-2">
+      <div data-reveal>
+        <Eyebrow>{t.story.eyebrow}</Eyebrow>
+        <h2 set:html={t.story.title} />
+        {
+          t.story.paragraphs.map((paragraph, i) => (
+            <Lead class={i === 0 ? "mt-[1.4rem]" : "mt-4"}>
+              <Fragment set:html={paragraph} />
+            </Lead>
+          ))
+        }
+        {
+          t.story.link && (
+            <p class="mt-8">
+              <TextLink href={localizeHref(t.story.link.href, locale)}>{t.story.link.label}</TextLink>
+            </p>
+          )
+        }
+      </div>
+      <Photo src={t.story.image} alt={t.story.imageAlt} aspect="4/4.4" reveal />
+    </div>
+  </Section>
+
+  {
+    !t.statsFirst && (
+      <section class="wrap">
+        <Stats items={t.stats} />
+      </section>
+    )
+  }
+
+  <Section tone="dark">
+    <SectionHead eyebrow={t.space.eyebrow} title={t.space.title} />
+    <div class="mb-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {
+        t.space.photos.map((photo) => (
+          <Photo
+            src={photo.image}
+            alt={photo.alt}
+            aspect="16/11"
+            sizes="(min-width: 1001px) 380px, (min-width: 761px) 50vw, 100vw"
+            reveal
+          />
+        ))
+      }
+    </div>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {
+        t.space.areas.map((area) => (
+          <Card flush data-reveal>
+            <Image
+              src={img(area.image)}
+              alt=""
+              widths={[400, 700]}
+              sizes="(min-width: 1001px) 280px, (min-width: 761px) 50vw, 100vw"
+              class="aspect-16/10 w-full border-b border-line object-cover"
+            />
+            <div class="p-6">
+              <Tag>{area.tag}</Tag>
+              <h3 class="mt-[0.4rem] mb-[0.8rem]">{area.title}</h3>
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
+
+  {
+    t.values && (
+      <Section>
+        <SectionHead eyebrow={t.values.eyebrow} title={t.values.title} />
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {t.values.items.map((item) => (
+            <Card data-reveal>
+              <h3 class="mt-[0.6rem] mb-[0.8rem]">{item.title}</h3>
+              <p class="text-[0.98rem] text-muted-foreground">{item.text}</p>
+            </Card>
+          ))}
+        </div>
+      </Section>
+    )
+  }
+
+  <Section tone={t.values ? "dark" : "default"}>
+    <SectionHead eyebrow={t.team.eyebrow} title={t.team.title}>
+      <TextLink slot="action" href={localizeHref(t.team.link.href, locale)}>{t.team.link.label}</TextLink>
+    </SectionHead>
+    <Photo src={t.team.image} alt={t.team.imageAlt} aspect="21/9" sizes="(min-width: 1201px) 1152px, 100vw" reveal />
+  </Section>
+
+  <CtaSection eyebrow={t.cta.eyebrow} title={t.cta.title} lead={t.cta.lead}>
+    {t.cta.buttons.map((cta) => <CtaButton cta={cta} locale={locale} />)}
+  </CtaSection>
+</BaseLayout>

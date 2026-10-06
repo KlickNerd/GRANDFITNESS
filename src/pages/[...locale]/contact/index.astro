@@ -1,0 +1,155 @@
+---
+import ChevronDown from "@tabler/icons/outline/chevron-down.svg";
+import { Button } from "@/components/starwind/button";
+import { Input } from "@/components/starwind/input";
+import { Label } from "@/components/starwind/label";
+import { NativeSelect, NativeSelectOption } from "@/components/starwind/native-select";
+import { Textarea } from "@/components/starwind/textarea";
+import Card from "@/components/ui/Card.astro";
+import CheckList from "@/components/ui/CheckList.astro";
+import Eyebrow from "@/components/ui/Eyebrow.astro";
+import Lead from "@/components/ui/Lead.astro";
+import PageHero from "@/components/ui/PageHero.astro";
+import Photo from "@/components/ui/Photo.astro";
+import Section from "@/components/ui/Section.astro";
+import Tag from "@/components/ui/Tag.astro";
+import TextLink from "@/components/ui/TextLink.astro";
+import { copies } from "@/i18n/pages/contact";
+import type { Copy } from "@/i18n/pages/contact/types";
+import { staticPathsFor } from "@/i18n/static-paths";
+import type { Locale } from "@/i18n/config";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+export const getStaticPaths = () => staticPathsFor<Copy>(copies);
+
+const { locale, copy } = Astro.props as { locale: Locale; copy: Copy };
+const t = copy;
+const f = t.form;
+
+// Original .form styles: uppercase muted labels, dark boxed fields with a gold focus border.
+const labelClass =
+  "mt-[1.2rem] mb-[0.45rem] block text-[0.78rem] leading-[1.7] font-semibold tracking-[0.14em] text-muted-foreground uppercase";
+const fieldClass =
+  "h-auto border-line bg-dark px-4 py-[0.9rem] text-base leading-[normal] text-white shadow-none transition-[border-color] duration-200 focus-visible:border-gold focus-visible:ring-0 focus-visible:outline-none dark:bg-dark";
+const subheadClass = "text-[clamp(2rem,4vw,3rem)]";
+// Phone/email/hours values and the IG/FB boxes stay in Bebas Neue on every language
+// (font-display switches to Noto Sans Georgian on /ka/, which wraps the phone number).
+const bebas = "font-['Bebas_Neue','Noto_Sans_Georgian',sans-serif]";
+---
+
+<BaseLayout locale={locale} title={t.meta.title} description={t.meta.description}>
+  <PageHero variant="compact" image={t.hero.image} eyebrow={t.hero.eyebrow} title={t.hero.title} lead={t.hero.lead} />
+
+  <Section class="pt-8 md:pt-8">
+    <div class="grid items-start gap-16 md:grid-cols-2">
+      <div data-reveal>
+        <Eyebrow>{f.eyebrow}</Eyebrow>
+        <h2 class={subheadClass} set:html={f.title} />
+        <form class="mt-6" action="https://formsubmit.co/info@grandfitness.ge" method="POST">
+          <input type="hidden" name="_subject" value={f.subject} />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" />
+
+          <Label for="cf-name" class={labelClass}>{f.name.label}</Label>
+          <Input id="cf-name" type="text" name="name" required placeholder={f.name.placeholder} class={fieldClass} />
+
+          <Label for="cf-email" class={labelClass}>{f.email.label}</Label>
+          <Input id="cf-email" type="email" name="email" required placeholder={f.email.placeholder} class={fieldClass} />
+
+          <Label for="cf-phone" class={labelClass}>{f.phone.label}</Label>
+          <Input id="cf-phone" type="tel" name="phone" placeholder={f.phone.placeholder} class={fieldClass} />
+
+          <Label for="cf-topic" class={labelClass}>{f.topic.label}</Label>
+          <div class="*:data-[slot=native-select-wrapper]:w-full">
+            <NativeSelect id="cf-topic" name="topic" class:list={[fieldClass, "pr-12"]}>
+              {f.topic.options.map((option) => <NativeSelectOption>{option}</NativeSelectOption>)}
+              <ChevronDown
+                slot="icon"
+                aria-hidden="true"
+                class="pointer-events-none absolute top-1/2 right-4 size-4 -translate-y-1/2 text-gold"
+              />
+            </NativeSelect>
+          </div>
+
+          <Label for="cf-msg" class={labelClass}>{f.message.label}</Label>
+          <Textarea
+            id="cf-msg"
+            name="message"
+            required
+            placeholder={f.message.placeholder}
+            class:list={[fieldClass, "min-h-[150px] resize-y"]}
+          />
+
+          <Button type="submit" variant="gold" size="brand" class="mt-[1.6rem] w-full px-8 py-4 leading-[normal]">{f.submit}</Button>
+          <p class="mt-[0.9rem] text-[0.85rem] text-muted-foreground">{f.note}</p>
+        </form>
+      </div>
+
+      <div data-reveal>
+        <Eyebrow>{t.channels.eyebrow}</Eyebrow>
+        <h2 class={subheadClass} set:html={t.channels.title} />
+        <div class="mt-[1.8rem] grid gap-[1.2rem] md:grid-cols-2">
+          {
+            t.channels.items.map((item) => {
+              const valueClass = [bebas, "text-gold", item.small ? "text-[1.35rem]" : "text-[1.9rem]"];
+              return (
+                <Card class="gap-[0.4rem]">
+                  <Tag>{item.tag}</Tag>
+                  {item.href ? (
+                    <a class:list={valueClass} href={item.href}>
+                      {item.value}
+                    </a>
+                  ) : (
+                    <span class:list={valueClass}>{item.value}</span>
+                  )}
+                  <span class="text-muted-foreground">{item.note}</span>
+                  {item.link && (
+                    <TextLink class="mt-[0.6rem]" href={item.link.href} target="_blank" rel="noopener">
+                      {item.link.label}
+                    </TextLink>
+                  )}
+                </Card>
+              );
+            })
+          }
+        </div>
+
+        <Card class="mt-[1.2rem]">
+          <Tag>{t.social.tag}</Tag>
+          <h3 class="mt-2 mb-[0.8rem] text-2xl">{t.social.title}</h3>
+          <p class="text-[0.98rem] text-muted-foreground">{t.social.text}</p>
+          <div class="mt-[1.2rem] flex flex-wrap gap-4">
+            {
+              t.social.links.map((link) => (
+                <a
+                  class="group inline-flex items-center gap-[0.7rem] border border-line px-[1.4rem] py-[0.85rem] font-semibold text-white transition-[border-color,color,translate] duration-200 hover:-translate-y-0.5 hover:border-gold hover:text-gold"
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span class:list={[bebas, "inline-flex size-[30px] items-center justify-center border border-gold text-base text-gold"]}>
+                    {link.icon}
+                  </span>
+                  {link.label}
+                </a>
+              ))
+            }
+          </div>
+        </Card>
+      </div>
+    </div>
+  </Section>
+
+  <Section tone="dark">
+    <div class="grid items-center gap-16 md:grid-cols-2">
+      <Photo src={t.walkIn.image} alt={t.walkIn.imageAlt} aspect="16/10" reveal />
+      <div data-reveal>
+        <Eyebrow>{t.walkIn.eyebrow}</Eyebrow>
+        <h2 class={subheadClass} set:html={t.walkIn.title} />
+        <Lead class="mt-[1.2rem]">{t.walkIn.lead}</Lead>
+        <CheckList items={t.walkIn.items} class="mt-[1.4rem]" />
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

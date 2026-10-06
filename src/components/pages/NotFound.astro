@@ -1,0 +1,22 @@
+---
+import CtaButton from "@/components/ui/CtaButton.astro";
+import CtaSection from "@/components/ui/CtaSection.astro";
+import type { Locale } from "@/i18n/config";
+import { copies } from "@/i18n/pages/404";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+interface Props {
+  locale: keyof typeof copies & Locale;
+}
+
+const { locale } = Astro.props;
+const t = copies[locale];
+---
+
+<!-- "Page not found" body shared by src/pages/404.astro and src/pages/ka/404.astro. -->
+<BaseLayout locale={locale} title={t.meta.title} description={t.meta.description} noindex>
+  <!-- pt-[7.5rem] keeps the text clear of the fixed nav on phones (md:py-32 still applies above 760px). -->
+  <CtaSection eyebrow={t.eyebrow} title={t.title} lead={t.lead} class="pt-[7.5rem]">
+    {t.buttons.map((cta) => <CtaButton cta={cta} locale={locale} class="whitespace-normal" />)}
+  </CtaSection>
+</BaseLayout>
