@@ -1,13 +1,43 @@
 # Grand Fitness — grandfitness.ge
 
-Static website for Grand Fitness, Batumi. Black & gold design system, Bebas Neue + DM Sans.
+Website for Grand Fitness, Batumi. Black & gold design, Bebas Neue + DM Sans (+ Noto Sans Georgian).
 
-## Structure
-- Every page lives at `<path>/index.html` so URLs match the old WordPress site exactly (`/about/`, `/coaches/mariam/`, …)
-- Shared styles: `css/style.css` · Shared behaviour: `js/main.js` · Photos: `img/` (see `img/README.md`)
+Built with [Astro](https://astro.build) (static output), [Tailwind CSS v4](https://tailwindcss.com) and
+[Starwind UI](https://starwind.dev), hosted on Cloudflare Workers. No UI framework, almost no JavaScript:
+menus, dialogs and FAQs use native HTML (`popover`, `<dialog>`, `<details>`).
+
+## Languages
+
+| Language | URL | Status |
+|---|---|---|
+| English | `/` | all pages |
+| Georgian | `/ka/` | home, about, goals, coaches, classes, pricing, contact, 404 |
+| Russian | `/ru/` | ready to be added, no pages yet |
+
+Each page's text lives in one file per language (`src/i18n/pages/<page>/<locale>.ts`), separate from the
+layout. Adding a translation is described in [`src/i18n/pages/README.md`](src/i18n/pages/README.md).
+hreflang tags, the sitemap and the language switcher update themselves.
 
 ## Editing
-All changes are made through Claude: describe the change, Claude edits the files and pushes to `main`. The host (Cloudflare Pages / GitHub Pages) deploys automatically on every push.
 
-## Local preview
-Open any `index.html` in a browser, or run `python3 -m http.server` in the repo root and visit http://localhost:8000.
+Changes are made through Claude: describe the change, Claude edits the files and pushes.
+The rules Claude follows are in [`CLAUDE.md`](CLAUDE.md).
+
+## Local development
+
+With Nix: `nix develop` opens a shell with Node 22. Without Nix: install Node ≥ 22.12.
+
+```sh
+npm install
+npm run dev       # http://localhost:4321
+npm run build     # static site in dist/
+npm run check     # type check (missing translation fields fail here)
+```
+
+## Deployment
+
+`npm run deploy` builds the site and uploads `dist/` to Cloudflare Workers (static assets, see
+`wrangler.jsonc`). Connect the GitHub repo in the Cloudflare dashboard (Workers → Import a repository,
+build command `npm run build`, deploy command `npx wrangler deploy`) to deploy on every push to `main`.
+
+URLs are identical to the old site (`/about/`, `/coaches/mariam/`, `/ka/pricing/`, …).
