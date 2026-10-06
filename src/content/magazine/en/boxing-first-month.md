@@ -8,15 +8,15 @@ datePublished: "2026-05-12"
 author: "Grand Fitness Coaching Team"
 image: "classes/boxing.jpg"
 ---
-Everyone who\'s curious about boxing training has the same two thoughts, usually in this order: *\"That looks amazing\"* and *\"I would definitely get punched.\"* Let\'s kill the second thought immediately: in our classes, nobody spars and nobody gets hit — everything happens on bags, pads and in shadowboxing. Now, here\'s what your first month actually looks like.
+Everyone who's curious about boxing training has the same two thoughts, usually in this order: *"That looks amazing"* and *"I would definitely get punched."* Let's kill the second thought immediately: in our classes, nobody spars and nobody gets hit — everything happens on bags, pads and in shadowboxing. Now, here's what your first month actually looks like.
 
 ## Week 1: Your body meets its feet
 
-You\'ll learn the stance, the guard, and how to move without crossing your feet — then the two punches everything is built on: the jab and the cross. Shadowboxing in the mirror feels awkward for exactly three sessions. Expect sore shoulders (holding a guard is sneaky work), sore calves, and the surprising discovery that three minutes is a very long time.
+You'll learn the stance, the guard, and how to move without crossing your feet — then the two punches everything is built on: the jab and the cross. Shadowboxing in the mirror feels awkward for exactly three sessions. Expect sore shoulders (holding a guard is sneaky work), sore calves, and the surprising discovery that three minutes is a very long time.
 
 ## Week 2: The bag stops laughing at you
 
-Your first real rounds on the heavy bag: learning to punch *through* the target, breathe on rhythm, and stay loose between shots. The tension in your shoulders starts dissolving — and with it goes half your punching fatigue. Somewhere this week, you\'ll land one clean 1-2 that sounds right, and you\'ll be quietly hooked.
+Your first real rounds on the heavy bag: learning to punch *through* the target, breathe on rhythm, and stay loose between shots. The tension in your shoulders starts dissolving — and with it goes half your punching fatigue. Somewhere this week, you'll land one clean 1-2 that sounds right, and you'll be quietly hooked.
 
 ## Week 3: Hands start talking to each other
 
@@ -28,7 +28,7 @@ Combinations flow without a mental checklist, your feet move on autopilot, and p
 
 ## Practical bits
 
-- **Gear:** for your first sessions, training clothes and water — we sort the rest. Once hooked, your own wraps and gloves are the first buy (Goga will tell you exactly what\'s worth the money).
+- **Gear:** for your first sessions, training clothes and water — we sort the rest. Once hooked, your own wraps and gloves are the first buy (Goga will tell you exactly what's worth the money).
 - **Frequency:** two classes a week is the learning sweet spot. We run four weekly slots, all included in every membership.
 - **Fitness required:** none. Boxing is how you get fit — every drill scales, and you rest as needed in the early weeks.
 
