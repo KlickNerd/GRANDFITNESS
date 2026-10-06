@@ -1,0 +1,48 @@
+---
+import type { Locale } from "@/i18n/config";
+import { useUi } from "@/i18n/ui";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = useUi(locale).consent;
+const btn = "flex flex-1 items-center justify-center px-4 py-2.5 font-display text-[1.05rem] tracking-widest transition-colors duration-200";
+---
+
+<!--
+  Privacy notice: a non-modal native <dialog>. The page stays usable behind it,
+  and the "Got it" button closes it through the dialog form (no JS needed to close).
+-->
+<dialog
+  id="consent"
+  aria-labelledby="consent-title"
+  class="fixed inset-x-3 bottom-3 z-[9999] m-0 w-auto border border-t-[3px] border-gold/30 border-t-gold bg-[rgb(16_16_16/0.97)] px-[22px] pt-5 pb-[18px] text-white shadow-[0_16px_48px_rgb(0_0_0/0.65)] backdrop-blur-sm open:animate-in open:fade-in open:slide-in-from-bottom-6 open:duration-450 sm:right-6 sm:bottom-6 sm:left-auto sm:w-[380px] sm:max-w-[calc(100vw-32px)]"
+>
+  <h2 id="consent-title" class="mb-2 font-display text-xl font-normal tracking-widest text-gold normal-case">{c.title}</h2>
+  <p class="mb-4 text-[0.84rem] leading-relaxed font-light text-[#b8b8b0]">{c.text}</p>
+  <form method="dialog" class="flex gap-2.5">
+    <button class:list={[btn, "border border-gold bg-gold text-black hover:bg-transparent hover:text-gold"]}>{c.ok}</button>
+    <a href="/privacy/" class:list={[btn, "border border-white/25 hover:border-gold hover:text-gold"]}>{c.details}</a>
+  </form>
+</dialog>
+
+<script>
+  const KEY = "gf-consent";
+  const dialog = document.getElementById("consent") as HTMLDialogElement;
+  let seen = true;
+  try {
+    seen = Boolean(localStorage.getItem(KEY));
+  } catch {
+    // Storage blocked: don't nag on every page.
+  }
+  if (!seen) {
+    dialog.show();
+    dialog.addEventListener("close", () => {
+      try {
+        localStorage.setItem(KEY, new Date().toISOString());
+      } catch {}
+    });
+  }
+</script>

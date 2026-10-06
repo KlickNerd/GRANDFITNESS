@@ -1,0 +1,31 @@
+---
+import Eyebrow from "./Eyebrow.astro";
+import Lead from "./Lead.astro";
+
+interface Props {
+  eyebrow?: string;
+  /** May contain inline HTML such as <br> or <span class="text-gold">. */
+  title: string;
+  /** May contain inline HTML. */
+  lead?: string;
+  class?: string;
+}
+
+const { eyebrow, title, lead, class: className } = Astro.props;
+const hasAction = Astro.slots.has("action");
+---
+
+<div
+  class:list={[
+    "mb-14",
+    hasAction && "flex flex-wrap items-end justify-between gap-8",
+    className,
+  ]}
+>
+  <div>
+    {eyebrow && <Eyebrow><Fragment set:html={eyebrow} /></Eyebrow>}
+    <h2 set:html={title} />
+    {lead && <Lead class="mt-[1.2rem]"><Fragment set:html={lead} /></Lead>}
+  </div>
+  <slot name="action" />
+</div>

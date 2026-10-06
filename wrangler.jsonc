@@ -1,0 +1,14 @@
+// Cloudflare Workers, static assets only: no Worker script, no adapter.
+// Deploy with `npm run deploy` (builds, then uploads ./dist).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "grandfitness",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    // /about → /about/ (the site uses trailing-slash URLs)
+    "html_handling": "auto-trailing-slash",
+    // Unknown URLs get the nearest 404.html (so /ka/... gets the Georgian one)
+    "not_found_handling": "404-page"
+  }
+}

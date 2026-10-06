@@ -1,0 +1,19 @@
+---
+import { Button } from "@/components/starwind/button";
+import type { Locale } from "@/i18n/config";
+import { localizeHref } from "@/i18n/routes";
+import type { Cta } from "@/i18n/shared-types";
+
+interface Props {
+  cta: Cta;
+  locale: Locale;
+  /** "on-gold" for buttons placed on a gold background. */
+  surface?: "dark" | "on-gold";
+  class?: string;
+}
+
+const { cta, locale, surface = "dark", class: className } = Astro.props;
+const variant = surface === "on-gold" ? "on-gold" : cta.style === "outline" ? "gold-outline" : "gold";
+---
+
+<Button href={localizeHref(cta.href, locale)} variant={variant} size="brand" class={className}>{cta.label}</Button>

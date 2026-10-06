@@ -1,0 +1,33 @@
+---
+interface Props {
+  /** Answers may contain inline HTML. */
+  items: { q: string; a: string }[];
+  /**
+   * Exclusive accordion group name: opening one question closes the others
+   * (native <details name>). Pass false to allow several open at once.
+   */
+  name?: string | false;
+  class?: string;
+}
+
+const { items, name = "faq", class: className } = Astro.props;
+---
+
+<div class:list={["border-t border-line", className]}>
+  {
+    items.map((item) => (
+      <details name={name || undefined} class="group border-b border-line">
+        <summary class="relative cursor-pointer list-none py-[1.6rem] pr-12 font-display text-2xl tracking-[0.03em] [&::-webkit-details-marker]:hidden">
+          <Fragment set:html={item.q} />
+          <span
+            aria-hidden="true"
+            class="absolute right-2 text-gold transition-transform duration-250 group-open:rotate-45"
+          >
+            +
+          </span>
+        </summary>
+        <p class="max-w-[760px] pb-[1.8rem] text-muted-foreground" set:html={item.a} />
+      </details>
+    ))
+  }
+</div>

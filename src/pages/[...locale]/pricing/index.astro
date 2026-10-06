@@ -1,0 +1,142 @@
+---
+import { Image } from "astro:assets";
+import Card from "@/components/ui/Card.astro";
+import CtaButton from "@/components/ui/CtaButton.astro";
+import CtaSection from "@/components/ui/CtaSection.astro";
+import Faq from "@/components/ui/Faq.astro";
+import PageHero from "@/components/ui/PageHero.astro";
+import Section from "@/components/ui/Section.astro";
+import SectionHead from "@/components/ui/SectionHead.astro";
+import Tag from "@/components/ui/Tag.astro";
+import { copies } from "@/i18n/pages/pricing";
+import type { Copy } from "@/i18n/pages/pricing/types";
+import { staticPathsFor } from "@/i18n/static-paths";
+import type { Locale } from "@/i18n/config";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { img } from "@/lib/images";
+
+export const getStaticPaths = () => staticPathsFor<Copy>(copies);
+
+const { locale, copy } = Astro.props as { locale: Locale; copy: Copy };
+const t = copy;
+---
+
+<BaseLayout locale={locale} title={t.meta.title} description={t.meta.description}>
+  <PageHero image={t.hero.image} eyebrow={t.hero.eyebrow} title={t.hero.title} lead={t.hero.lead} />
+
+  {
+    t.banner && (
+      <section class="wrap">
+        <div data-reveal class="flex flex-wrap items-center justify-between gap-8 bg-gold p-[1.6rem] text-black md:px-10 md:py-8">
+          <div>
+            <div class="font-display text-[2rem] tracking-[0.04em]">{t.banner.title}</div>
+            <div class="font-semibold">{t.banner.details}</div>
+          </div>
+          <div class="font-display text-5xl">{t.banner.amount}</div>
+          <CtaButton cta={t.banner.cta} locale={locale} surface="on-gold" />
+        </div>
+      </section>
+    )
+  }
+
+  <Section class={t.plansHead ? undefined : "pt-8 md:pt-8"}>
+    {t.plansHead && <SectionHead eyebrow={t.plansHead.eyebrow} title={t.plansHead.title} />}
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {
+        t.plans.map((plan) => (
+          <Card featured={plan.featured} data-reveal class="relative">
+            {plan.badge && (
+              <span class="absolute -top-px -right-px bg-gold px-4 py-[0.4rem] text-[0.72rem] font-bold tracking-[0.12em] text-black uppercase">
+                {plan.badge}
+              </span>
+            )}
+            {plan.code && <span class="font-display text-[1.4rem] text-muted-foreground">{plan.code}</span>}
+            {plan.code ? (
+              <span class="text-[0.85rem] tracking-[0.2em] text-muted-foreground uppercase">{plan.name}</span>
+            ) : (
+              <h3 class="pr-24 text-[1.4rem]">{plan.name}</h3>
+            )}
+            <div class="mt-[0.8rem] mb-[0.2rem] font-display text-[3.4rem] text-white">
+              {plan.amount} <span class="text-[1.6rem]">{plan.currency}</span>
+            </div>
+            {plan.perDay && (
+              <div class="mb-[1.4rem] text-[0.9rem] text-muted-foreground [&_strong]:text-gold" set:html={plan.perDay} />
+            )}
+            {plan.tag && <Tag>{plan.tag}</Tag>}
+            {plan.description && <p class="mt-[0.8rem] text-[0.98rem] text-muted-foreground">{plan.description}</p>}
+            {plan.features && (
+              <ul class="mb-[1.8rem] flex-1">
+                {plan.features.map((feature) => (
+                  <li
+                    class="relative py-[0.45rem] pl-[1.4rem] text-[0.95rem] text-muted-foreground before:absolute before:left-0 before:text-gold before:content-['—']"
+                    set:html={feature}
+                  />
+                ))}
+              </ul>
+            )}
+            {plan.cta && <CtaButton cta={plan.cta} locale={locale} class="w-full" />}
+          </Card>
+        ))
+      }
+    </div>
+
+    <Card data-reveal class="mt-10 flex-row flex-wrap items-start gap-8">
+      <div class="min-w-[260px] flex-1">
+        <Tag>{t.accessItem.tag}</Tag>
+        <h3 class="mt-[0.6rem] text-[1.6rem]">{t.accessItem.title}</h3>
+        <p class="mt-[0.8rem] text-[0.98rem] text-muted-foreground" set:html={t.accessItem.text} />
+      </div>
+      {
+        t.accessItem.options && (
+          <div class="flex flex-wrap gap-4">
+            {t.accessItem.options.map((option) => (
+              <div class="min-w-[120px] border border-line px-[1.4rem] py-[1.1rem] text-center">
+                <div class="text-[1.6rem] font-extrabold text-gold">{option.price}</div>
+                <div class="mt-[0.3rem] text-[0.9rem] text-muted-foreground">{option.label}</div>
+              </div>
+            ))}
+          </div>
+        )
+      }
+    </Card>
+
+    {t.note && <p class="mt-8 text-muted-foreground">{t.note}</p>}
+  </Section>
+
+  <Section tone="dark">
+    <SectionHead eyebrow={t.includes.eyebrow} title={t.includes.title} />
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {
+        t.includes.items.map((item) => (
+          <Card flush data-reveal>
+            <Image
+              src={img(item.image)}
+              alt=""
+              widths={[400, 700]}
+              sizes="(min-width: 1001px) 280px, (min-width: 761px) 50vw, 100vw"
+              class="aspect-16/10 w-full border-b border-line object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-2xl">{item.title}</h3>
+              <p class="mt-2 text-[0.98rem] text-muted-foreground">{item.text}</p>
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
+
+  {
+    t.faq && (
+      <Section>
+        <SectionHead eyebrow={t.faq.eyebrow} title={t.faq.title} />
+        <Faq items={t.faq.items} />
+      </Section>
+    )
+  }
+
+  <CtaSection eyebrow={t.cta.eyebrow} title={t.cta.title} lead={t.cta.lead}>
+    {t.cta.buttons.map((cta) => <CtaButton cta={cta} locale={locale} />)}
+  </CtaSection>
+</BaseLayout>

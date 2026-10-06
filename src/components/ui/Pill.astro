@@ -1,0 +1,21 @@
+---
+import { Badge } from "@/components/starwind/badge";
+
+interface Props {
+  gold?: boolean;
+  class?: string;
+}
+
+const { gold = false, class: className } = Astro.props;
+---
+
+<Badge
+  variant="outline"
+  class:list={[
+    "rounded-none px-[0.9rem] py-[0.35rem] text-[0.75rem] font-semibold tracking-[0.1em] uppercase",
+    gold ? "border-gold text-gold" : "border-line text-muted-foreground",
+    className,
+  ]}
+>
+  <slot />
+</Badge>

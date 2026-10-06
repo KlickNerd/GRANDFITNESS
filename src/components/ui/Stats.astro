@@ -1,0 +1,28 @@
+---
+interface Props {
+  items: { num: string; label: string; sub?: string }[];
+  class?: string;
+}
+
+const { items, class: className } = Astro.props;
+---
+
+<!-- Stats bar (original .stats): 4 columns, 2 on mobile, hairline dividers. -->
+<div class:list={["grid grid-cols-2 border-y border-line md:grid-cols-4", className]}>
+  {
+    items.map((item, i) => (
+      <div
+        class:list={[
+          "px-6 py-[2.2rem] text-center",
+          i % 2 === 1 && "border-l border-line",
+          i >= 2 && "border-t border-line md:border-t-0",
+          i === 2 && "md:border-l",
+        ]}
+      >
+        <span class="block font-display text-5xl leading-none text-gold" set:html={item.num} />
+        <span class="mt-2 block font-semibold" set:html={item.label} />
+        {item.sub && <span class="mt-[0.15rem] block text-[0.85rem] text-muted-foreground" set:html={item.sub} />}
+      </div>
+    ))
+  }
+</div>

@@ -1,0 +1,135 @@
+---
+import { localizeHref } from "@/i18n/routes";
+import type { Locale } from "@/i18n/config";
+import { useUi } from "@/i18n/ui";
+import Flag from "./Flag.astro";
+import { languageLinks } from "./language-links";
+
+interface Props {
+  locale: Locale;
+  /** Current page path without language prefix, e.g. "/pricing/". */
+  path: string;
+}
+
+const { locale, path } = Astro.props;
+const ui = useUi(locale);
+const home = localizeHref("/", locale);
+const links = ui.nav.map((item) => ({
+  href: localizeHref(item.href, locale),
+  label: item.label,
+  current: path === item.href || path.startsWith(item.href),
+}));
+const cta = { href: localizeHref(ui.navCta.href, locale), label: ui.navCta.label };
+const languages = languageLinks(locale, path);
+
+// Georgian labels run longer, so the Georgian nav collapses to the burger earlier (≤1200px instead of ≤1000px).
+const wide = locale === "ka";
+---
+
+<nav
+  id="site-nav"
+  aria-label="Main"
+  class="fixed inset-x-0 top-0 z-100 py-[1.4rem] transition-[background-color,padding,box-shadow] duration-300 data-scrolled:bg-black/96 data-scrolled:py-[0.9rem] data-scrolled:shadow-[0_1px_0_var(--color-line)] data-scrolled:backdrop-blur-sm"
+>
+  <div class="wrap flex items-center justify-between">
+    <a href={home} class="font-display text-[1.7rem] tracking-[0.06em]">GRAND<span class="text-gold">FITNESS</span></a>
+
+    <div class:list={["hidden items-center", wide ? "gap-[1.4rem] xl:flex" : "gap-[2.2rem] lg:flex"]}>
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            aria-current={link.current ? "page" : undefined}
+            class:list={[
+              "text-[0.92rem] font-medium transition-colors duration-200 hover:text-gold aria-[current=page]:text-gold",
+              wide ? "tracking-[0.01em]" : "tracking-[0.04em]",
+            ]}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      {
+        languages.map((lang) => (
+          <a
+            href={lang.href}
+            hreflang={lang.locale}
+            lang={lang.locale}
+            title={lang.label}
+            aria-label={lang.label}
+            class="inline-flex items-center border border-line p-[0.35rem_0.45rem] leading-none opacity-75 transition-all duration-200 hover:border-gold hover:opacity-100"
+          >
+            <Flag locale={lang.locale} />
+          </a>
+        ))
+      }
+      <a
+        href={cta.href}
+        class="border border-gold px-[1.3rem] py-[0.45rem] font-display text-[1.05rem] tracking-[0.08em] text-gold transition-colors hover:bg-gold hover:text-black"
+      >
+        {cta.label}
+      </a>
+    </div>
+
+    <button
+      type="button"
+      popovertarget="site-menu"
+      aria-label={ui.menu}
+      class:list={["relative h-[26px] w-[34px]", wide ? "xl:hidden" : "lg:hidden"]}
+    >
+      <span class="absolute top-0 left-0 h-0.5 w-full bg-white"></span>
+      <span class="absolute top-3 left-0 h-0.5 w-full bg-white"></span>
+      <span class="absolute top-6 left-0 h-0.5 w-full bg-white"></span>
+    </button>
+
+    <!-- Mobile menu: native popover (Escape, outside click and aria-expanded come from the browser). -->
+    <div
+      id="site-menu"
+      popover
+      aria-label={ui.menu}
+      class="m-0 h-dvh max-h-none w-full max-w-none flex-col items-center justify-center gap-[1.4rem] border-0 bg-black/98 p-0 text-white opacity-0 transition-[opacity,display,overlay] transition-discrete duration-300 open:flex open:opacity-100 starting:open:opacity-0"
+    >
+      <button
+        type="button"
+        popovertarget="site-menu"
+        popovertargetaction="hide"
+        aria-label={ui.menu}
+        class="absolute top-[1.4rem] right-6 h-[26px] w-[34px]"
+      >
+        <span class="absolute top-3 left-0 h-0.5 w-full rotate-45 bg-white"></span>
+        <span class="absolute top-3 left-0 h-0.5 w-full -rotate-45 bg-white"></span>
+      </button>
+      <a href={home} class="font-display text-[2.6rem] tracking-[0.05em] hover:text-gold">{ui.navHome}</a>
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            aria-current={link.current ? "page" : undefined}
+            class="font-display text-[2.6rem] tracking-[0.05em] hover:text-gold"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      {
+        languages.map((lang) => (
+          <a href={lang.href} hreflang={lang.locale} lang={lang.locale} class="font-display text-[2.6rem] tracking-[0.05em] hover:text-gold">
+            {lang.label}
+          </a>
+        ))
+      }
+      <a href={cta.href} class="font-display text-[2.6rem] tracking-[0.05em] text-gold">{cta.label}</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById("site-nav")!;
+  const onScroll = () => nav.toggleAttribute("data-scrolled", window.scrollY > 60);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // Same-page anchor links don't navigate, so close the menu explicitly.
+  const menu = document.getElementById("site-menu")!;
+  menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => menu.hidePopover()));
+</script>

@@ -1,0 +1,16 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"section"> {
+  /** "dark" = the slightly lighter #111 band (original .section-dark). */
+  tone?: "default" | "dark";
+  /** Wrap children in the 1200px container (default true). */
+  wrap?: boolean;
+}
+
+const { tone = "default", wrap = true, class: className, ...rest } = Astro.props;
+---
+
+<section class:list={["py-[4.5rem] md:py-[6.5rem]", tone === "dark" && "bg-dark", className]} {...rest}>
+  {wrap ? <div class="wrap"><slot /></div> : <slot />}
+</section>

@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+import { img } from "@/lib/images";
+import Eyebrow from "./Eyebrow.astro";
+import Lead from "./Lead.astro";
+
+interface Props {
+  /** Background photo, e.g. "space/reception.jpg". */
+  image?: string;
+  eyebrow?: string;
+  /** May contain inline HTML, e.g. 'Talk<br><span class="text-gold">to us.</span>'. */
+  title: string;
+  /** May contain inline HTML. */
+  lead?: string;
+  /** "sub" = standard subpage hero, "compact" = shorter hero with a brighter photo (contact). */
+  variant?: "sub" | "compact";
+}
+
+const { image, eyebrow, title, lead, variant = "sub" } = Astro.props;
+const compact = variant === "compact";
+---
+
+<header
+  class:list={[
+    "relative flex items-center overflow-hidden",
+    compact ? "pt-[9.5rem] pb-16" : "min-h-[62vh] pt-40 pb-20",
+  ]}
+>
+  {
+    image && (
+      <div class="absolute inset-0" aria-hidden="true">
+        <Image
+          src={img(image)}
+          alt=""
+          widths={[800, 1400, 2000]}
+          sizes="100vw"
+          loading="eager"
+          fetchpriority="high"
+          class:list={["size-full object-cover", compact ? "opacity-55" : "opacity-40"]}
+        />
+        <div
+          class:list={[
+            "absolute inset-0",
+            compact
+              ? "bg-[linear-gradient(180deg,rgb(10_10_10/0.65)_0%,rgb(10_10_10/0.35)_45%,var(--color-black)_100%)]"
+              : "bg-[linear-gradient(180deg,rgb(10_10_10/0.6)_0%,rgb(10_10_10/0.3)_40%,var(--color-black)_97%)]",
+          ]}
+        />
+      </div>
+    )
+  }
+  <div class="wrap relative z-2">
+    {eyebrow && <Eyebrow><Fragment set:html={eyebrow} /></Eyebrow>}
+    <h1 set:html={title} />
+    {lead && <Lead class={compact ? "mt-[1.4rem]" : "mt-[1.6rem]"}><Fragment set:html={lead} /></Lead>}
+    <slot />
+  </div>
+</header>

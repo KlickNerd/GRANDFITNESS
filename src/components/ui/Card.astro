@@ -1,0 +1,33 @@
+---
+import { Card as StarwindCard } from "@/components/starwind/card";
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {
+  /** Gold border (original .featured). */
+  featured?: boolean;
+  /** No inner padding, for cards with a photo on top. */
+  flush?: boolean;
+  /** Render as a link card. */
+  href?: string;
+}
+
+const { featured = false, flush = false, href, class: className, ...rest } = Astro.props;
+const classes = [
+  "gap-0 py-0 ring-0 border bg-card text-white transition-[background-color,border-color,transform] duration-250 hover:border-gold hover:bg-card-hover",
+  featured ? "border-gold" : "border-line",
+  flush ? "overflow-hidden p-0" : "p-[2.2rem]",
+  className,
+];
+---
+
+{
+  href ? (
+    <a href={href} class:list={["flex flex-col", ...classes]} data-slot="card" {...rest}>
+      <slot />
+    </a>
+  ) : (
+    <StarwindCard class:list={classes} {...rest}>
+      <slot />
+    </StarwindCard>
+  )
+}

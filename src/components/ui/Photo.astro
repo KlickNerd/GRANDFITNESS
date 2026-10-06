@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+import { optionalImg } from "@/lib/images";
+
+interface Props {
+  /** Photo path, e.g. "space/sauna.jpg". A missing photo shows the dark placeholder instead. */
+  src?: string;
+  alt: string;
+  /** CSS aspect ratio, e.g. "16/11" (default 4/5). */
+  aspect?: string;
+  /** Gold outline offset around the frame (original .framed). */
+  framed?: boolean;
+  /** Dark fade at the bottom (original .media-shade). */
+  shade?: boolean;
+  /** Gold label in the bottom-left corner (original .media-badge). */
+  badge?: string;
+  sizes?: string;
+  eager?: boolean;
+  /** object-position, e.g. "center top". */
+  position?: string;
+  class?: string;
+  reveal?: boolean;
+}
+
+const {
+  src,
+  alt,
+  aspect = "4/5",
+  framed = false,
+  shade = false,
+  badge,
+  sizes = "(min-width: 1001px) 600px, 100vw",
+  eager = false,
+  position,
+  class: className,
+  reveal = false,
+} = Astro.props;
+const image = optionalImg(src);
+---
+
+<!-- Photo frame (original .hero-media). -->
+<div
+  data-reveal={reveal ? "" : undefined}
+  class:list={[
+    "relative overflow-hidden border border-line bg-[linear-gradient(160deg,var(--color-card)_0%,var(--color-dark)_100%)]",
+    framed && "outline-1 outline-offset-8 outline-gold/55 md:outline-offset-[14px]",
+    className,
+  ]}
+  style={{ aspectRatio: aspect }}
+>
+  {
+    image && (
+      <Image
+        src={image}
+        alt={alt}
+        widths={[480, 800, 1200]}
+        sizes={sizes}
+        loading={eager ? "eager" : "lazy"}
+        class="size-full object-cover"
+        style={position ? { objectPosition: position } : undefined}
+      />
+    )
+  }
+  {shade && <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgb(10_10_10/0.8)_100%)]" />}
+  {
+    badge && (
+      <span class="absolute bottom-[1.2rem] left-[1.2rem] z-2 border border-gold bg-black/85 px-[1.1rem] py-2 font-display text-[1.05rem] tracking-[0.1em] text-gold">
+        {badge}
+      </span>
+    )
+  }
+  <slot />
+</div>

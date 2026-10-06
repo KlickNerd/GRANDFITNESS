@@ -1,0 +1,9 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+---
+
+<!-- Small gold label above card titles (original .card .tag). -->
+<span class:list={["text-[0.75rem] font-semibold tracking-[0.18em] text-gold uppercase", className]}><slot /></span>

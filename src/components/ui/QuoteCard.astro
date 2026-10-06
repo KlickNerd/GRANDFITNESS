@@ -1,0 +1,23 @@
+---
+import Card from "./Card.astro";
+
+interface Props {
+  /** May contain inline HTML. */
+  quote: string;
+  who: string;
+  featured?: boolean;
+  class?: string;
+  reveal?: boolean;
+}
+
+const { quote, who, featured = false, class: className, reveal = false } = Astro.props;
+---
+
+<Card
+  featured={featured}
+  data-reveal={reveal ? "" : undefined}
+  class:list={[featured && "bg-gold-soft hover:bg-gold-soft", className]}
+>
+  <p class="text-[1.02rem] text-white" set:html={quote} />
+  <div class="mt-[1.2rem] text-[0.88rem] text-muted-foreground" set:html={who} />
+</Card>

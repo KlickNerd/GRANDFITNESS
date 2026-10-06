@@ -1,0 +1,33 @@
+---
+import Eyebrow from "./Eyebrow.astro";
+import Lead from "./Lead.astro";
+
+interface Props {
+  eyebrow?: string;
+  /** May contain inline HTML. */
+  title: string;
+  /** May contain inline HTML. */
+  lead?: string;
+  class?: string;
+}
+
+const { eyebrow, title, lead, class: className } = Astro.props;
+---
+
+<!-- Closing call to action with the soft gold glow (original .cta-section). Buttons go in the default slot. -->
+<section
+  class:list={[
+    "relative overflow-hidden py-[4.5rem] text-center md:py-32",
+    "before:pointer-events-none before:absolute before:top-1/2 before:left-1/2 before:size-[700px] before:-translate-1/2 before:bg-[radial-gradient(circle,rgb(212_175_55/0.14)_0%,transparent_65%)] before:content-['']",
+    className,
+  ]}
+>
+  <div class="wrap relative">
+    {eyebrow && <Eyebrow class="mb-[0.8rem]"><Fragment set:html={eyebrow} /></Eyebrow>}
+    <h2 set:html={title} />
+    {lead && <Lead class="mx-auto mt-[1.4rem] mb-[2.4rem]"><Fragment set:html={lead} /></Lead>}
+    <div class="flex flex-wrap justify-center gap-4">
+      <slot />
+    </div>
+  </div>
+</section>

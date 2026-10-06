@@ -1,0 +1,18 @@
+---
+interface Props {
+  /** May contain inline HTML. */
+  items: string[];
+  class?: string;
+}
+const { items, class: className } = Astro.props;
+---
+
+<ul class={className}>
+  {
+    items.map((item) => (
+      <li class="flex gap-4 border-b border-line py-4 text-muted-foreground before:font-bold before:text-gold before:content-['✓']">
+        <span set:html={item} />
+      </li>
+    ))
+  }
+</ul>
