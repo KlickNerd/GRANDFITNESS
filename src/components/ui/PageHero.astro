@@ -23,7 +23,8 @@ const compact = variant === "compact";
 <header
   class:list={[
     "relative flex items-center overflow-hidden",
-    compact ? "pt-[9.5rem] pb-16" : "min-h-[62vh] pt-40 pb-20",
+    // ≤760px: no minimum height and less top padding (original .hero mobile rule)
+    compact ? "pt-[7.5rem] pb-16 md:pt-[9.5rem]" : "pt-[7.5rem] pb-20 md:min-h-[62vh] md:pt-40",
   ]}
 >
   {
@@ -52,7 +53,7 @@ const compact = variant === "compact";
   <div class="wrap relative z-2">
     {eyebrow && <Eyebrow><Fragment set:html={eyebrow} /></Eyebrow>}
     <h1 set:html={title} />
-    {lead && <Lead class={compact ? "mt-[1.4rem]" : "mt-[1.6rem]"}><Fragment set:html={lead} /></Lead>}
+    {lead && <Lead class={compact ? "mt-[1.4rem] mb-[2.2rem]" : "mt-[1.6rem] mb-[2.2rem]"}><Fragment set:html={lead} /></Lead>}
     <slot />
   </div>
 </header>

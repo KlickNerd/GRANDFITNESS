@@ -8,6 +8,8 @@ export default defineConfig({
   // URLs keep the original site's form: /about/, /coaches/mariam/
   trailingSlash: "always",
   build: { format: "directory" },
+  // Keep quotes and dashes exactly as written (no automatic curly quotes / en dashes).
+  markdown: { smartypants: false },
   i18n: {
     locales: ["en", "ka", "ru"],
     defaultLocale: "en",
