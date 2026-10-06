@@ -39,6 +39,8 @@ const btn = "flex flex-1 items-center justify-center px-4 py-2.5 font-display te
   }
   if (!seen) {
     dialog.show();
+    // show() moves focus into the dialog; a passive notice must not steal focus on page load.
+    if (dialog.contains(document.activeElement)) (document.activeElement as HTMLElement).blur();
     dialog.addEventListener("close", () => {
       try {
         localStorage.setItem(KEY, new Date().toISOString());
