@@ -15,7 +15,10 @@ const localized404 = {
     "astro:build:done": async ({ dir }) => {
       for (const locale of ["ka", "ru"]) {
         try {
-          await rename(new URL(`${locale}/404/index.html`, dir), new URL(`${locale}/404.html`, dir));
+          await rename(
+            new URL(`${locale}/404/index.html`, dir),
+            new URL(`${locale}/404.html`, dir),
+          );
           await rm(new URL(`${locale}/404/`, dir), { recursive: true });
         } catch (error) {
           if (/** @type {NodeJS.ErrnoException} */ (error).code !== "ENOENT") throw error;
@@ -67,11 +70,28 @@ export default defineConfig({
       // No built-in fallbacks: global.css chains the families so Georgian falls through to Noto.
       fallbacks: [],
     },
+    // Bebas Neue and DM Sans have no Cyrillic: Russian letters use these look-alikes.
+    {
+      provider: fontProviders.google(),
+      name: "Oswald",
+      cssVariable: "--font-oswald",
+      weights: ["400 600"],
+      subsets: ["cyrillic", "cyrillic-ext"],
+      fallbacks: [],
+    },
+    {
+      provider: fontProviders.google(),
+      name: "Manrope",
+      cssVariable: "--font-manrope",
+      weights: ["300 700"],
+      subsets: ["cyrillic", "cyrillic-ext"],
+      fallbacks: [],
+    },
   ],
   integrations: [
     sitemap({
       filter: (page) => !/\/404\/?$/.test(page),
-      i18n: { defaultLocale: "en", locales: { en: "en", ka: "ka", ru: "ru" } },
+      i18n: { defaultLocale: "ka", locales: { en: "en", ka: "ka", ru: "ru" } },
     }),
     localized404,
   ],

@@ -36,8 +36,11 @@ Without Nix, use Node ≥ 22.12 directly.
    URLs or CSS background images.
 8. Georgian has no capital letters: `uppercase` is switched off on `/ka/` pages automatically. Keep it that way.
 9. **Fonts are self-hosted** through `fonts` in `astro.config.mjs` (no Google Fonts `<link>`s, ever).
-   The stacks in `global.css` list Bebas Neue / DM Sans first and Noto Sans Georgian second, so Latin
-   text looks identical in every language and only Georgian letters use Noto.
+   The stacks in `global.css` list Bebas Neue / DM Sans first, then Oswald / Manrope (Cyrillic) and
+   Noto Sans Georgian, so Latin text looks identical in every language and only Georgian or Russian
+   letters use the fallback fonts. Never name a font directly (`font-family="DM Sans"`, `font-['Bebas_Neue']`):
+   self-hosted fonts get generated names, so that silently falls back to a system font. Use the
+   `font-display` / `font-sans` / `font-brand` classes, also on SVG `<text>` elements.
 10. **Never write "(EN)" into a link label.** Links to pages that aren't translated get " (EN)"
     automatically (`untranslatedLabel` in `src/i18n/routes.ts`), and lose it once the page is translated.
 
@@ -61,7 +64,9 @@ src/layouts/BaseLayout.astro   <head>, SEO, hreflang, skip link, <main>, nav, fo
 
 - **Change a price or text:** edit the matching `src/i18n/pages/<page>/<locale>.ts`. Change every
   language that has the page (`index.ts` lists them).
-- **Translate a page:** see `src/i18n/pages/README.md`.
+- **Translate a page:** see `src/i18n/pages/README.md`. Every page exists in en, ka and ru: when you
+  change text in one language, change the other two as well, then run
+  `nix develop -c node scripts/check-translations.mjs`.
 - **Add a coach / class / article:** add a Markdown file to `src/content/<collection>/en/`, copying
   an existing one's frontmatter, then add its teaser card to the homepage / index copy files.
 - **Remove a coach / class / goal / article:** delete its Markdown file. Teaser cards pointing to it

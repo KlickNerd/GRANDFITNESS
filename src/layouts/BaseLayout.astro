@@ -71,6 +71,8 @@ const showAlternates = !noindex && alternates.length > 1;
     <Font cssVariable="--font-bebas-neue" preload={[{ subset: "latin" }]} />
     <Font cssVariable="--font-dm-sans" preload={locale === "ka" ? false : [{ subset: "latin", style: "normal" }]} />
     <Font cssVariable="--font-noto-sans-georgian" preload={locale === "ka" ? [{ subset: "georgian" }] : false} />
+    <Font cssVariable="--font-oswald" preload={locale === "ru" ? [{ subset: "cyrillic" }] : false} />
+    <Font cssVariable="--font-manrope" preload={locale === "ru" ? [{ subset: "cyrillic" }] : false} />
 
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 

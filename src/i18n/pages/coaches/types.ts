@@ -17,12 +17,12 @@ export interface CoachCard {
   linkLabel: string;
 }
 
-/** Coaches index page text. Optional sections only render in languages that have them. */
+/** Coaches index page text. Every language has every section (a missing one fails `npm run check`). */
 export interface Copy {
   meta: Meta;
   hero: { image: string; eyebrow: string; /** html */ title: string; lead: string };
   /** Head coach spotlight under the hero. */
-  headCoach?: {
+  headCoach: {
     image: string;
     alt: string;
     eyebrow: string;
@@ -34,7 +34,7 @@ export interface Copy {
     link: Cta;
   };
   /** Heading and quote above the coach grid. */
-  team?: {
+  team: {
     eyebrow: string;
     /** html */
     title: string;
@@ -42,15 +42,11 @@ export interface Copy {
     quote: { text: string; who: string };
   };
   coaches: CoachCard[];
-  /** Small print under the grid. */
-  note?: string;
   cta: {
     eyebrow: string;
     /** html */
     title: string;
     lead: string;
-    /** Narrower lead paragraph (560px instead of 640px), as on the original Georgian page. */
-    narrowLead?: boolean;
     buttons: Cta[];
   };
 }

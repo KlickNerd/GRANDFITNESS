@@ -29,14 +29,6 @@ const t = copy;
 <BaseLayout locale={locale} title={t.meta.title} description={t.meta.description}>
   <PageHero image={t.hero.image} eyebrow={t.hero.eyebrow} title={t.hero.title} lead={t.hero.lead} />
 
-  {
-    t.statsFirst && (
-      <section class="wrap">
-        <Stats items={t.stats} />
-      </section>
-    )
-  }
-
   <Section>
     <div class="grid items-center gap-16 md:grid-cols-2">
       <div data-reveal>
@@ -61,13 +53,9 @@ const t = copy;
     </div>
   </Section>
 
-  {
-    !t.statsFirst && (
-      <section class="wrap">
-        <Stats items={t.stats} />
-      </section>
-    )
-  }
+  <section class="wrap">
+    <Stats items={t.stats} />
+  </section>
 
   <Section tone="dark">
     <SectionHead eyebrow={t.space.eyebrow} title={t.space.title} />
@@ -105,23 +93,19 @@ const t = copy;
     </div>
   </Section>
 
-  {
-    t.values && (
-      <Section>
-        <SectionHead eyebrow={t.values.eyebrow} title={t.values.title} />
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {t.values.items.map((item) => (
-            <Card data-reveal>
-              <h3 class="mt-[0.6rem] mb-[0.8rem]">{item.title}</h3>
-              <p class="text-[0.98rem] text-muted-foreground">{item.text}</p>
-            </Card>
-          ))}
-        </div>
-      </Section>
-    )
-  }
+  <Section>
+    <SectionHead eyebrow={t.values.eyebrow} title={t.values.title} />
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {t.values.items.map((item) => (
+        <Card data-reveal>
+          <h3 class="mt-[0.6rem] mb-[0.8rem]">{item.title}</h3>
+          <p class="text-[0.98rem] text-muted-foreground">{item.text}</p>
+        </Card>
+      ))}
+    </div>
+  </Section>
 
-  <Section tone={t.values ? "dark" : "default"}>
+  <Section tone="dark">
     <SectionHead eyebrow={t.team.eyebrow} title={t.team.title}>
       <TextLink slot="action" href={localizeHref(t.team.link.href, locale)}>{t.team.link.label}</TextLink>
     </SectionHead>

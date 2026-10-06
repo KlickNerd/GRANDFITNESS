@@ -27,47 +27,36 @@ const t = copy;
 <BaseLayout locale={locale} title={t.meta.title} description={t.meta.description}>
   <PageHero image={t.hero.image} eyebrow={t.hero.eyebrow} title={t.hero.title} lead={t.hero.lead} />
 
-  {
-    t.headCoach && (
-      <Section tone="dark">
-        <div class="grid items-center gap-16 md:grid-cols-2">
-          <Photo
-            src={t.headCoach.image}
-            alt={t.headCoach.alt}
-            aspect="4/4.6"
-            reveal
-            sizes="(min-width: 1001px) 560px, (min-width: 761px) 50vw, 100vw"
-          />
-          <div data-reveal>
-            <Eyebrow>{t.headCoach.eyebrow}</Eyebrow>
-            <h2>{t.headCoach.name}</h2>
-            <p class="mt-2 text-[0.85rem] tracking-[0.18em] text-muted-foreground uppercase">{t.headCoach.role}</p>
-            <Blockquote>{t.headCoach.quote}</Blockquote>
-            <Lead>{t.headCoach.lead}</Lead>
-            <ProfileStats items={t.headCoach.stats} />
-            <CtaButton cta={t.headCoach.link} locale={locale} />
-          </div>
-        </div>
-      </Section>
-    )
-  }
+  <Section tone="dark">
+    <div class="grid items-center gap-16 md:grid-cols-2">
+      <Photo
+        src={t.headCoach.image}
+        alt={t.headCoach.alt}
+        aspect="4/4.6"
+        reveal
+        sizes="(min-width: 1001px) 560px, (min-width: 761px) 50vw, 100vw"
+      />
+      <div data-reveal>
+        <Eyebrow>{t.headCoach.eyebrow}</Eyebrow>
+        <h2>{t.headCoach.name}</h2>
+        <p class="mt-2 text-[0.85rem] tracking-[0.18em] text-muted-foreground uppercase">{t.headCoach.role}</p>
+        <Blockquote>{t.headCoach.quote}</Blockquote>
+        <Lead>{t.headCoach.lead}</Lead>
+        <ProfileStats items={t.headCoach.stats} />
+        <CtaButton cta={t.headCoach.link} locale={locale} />
+      </div>
+    </div>
+  </Section>
 
-  <Section class={t.team ? undefined : "pt-8 md:pt-8"}>
-    {
-      t.team && (
-        <>
-          <SectionHead eyebrow={t.team.eyebrow} title={t.team.title} lead={t.team.lead} />
-          <QuoteCard featured quote={t.team.quote.text} who={t.team.quote.who} class="mb-12" />
-        </>
-      )
-    }
+  <Section>
+    <SectionHead eyebrow={t.team.eyebrow} title={t.team.title} lead={t.team.lead} />
+    <QuoteCard featured quote={t.team.quote.text} who={t.team.quote.who} class="mb-12" />
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {existing(t.coaches).map((card) => <CoachCard card={card} locale={locale} />)}
     </div>
-    {t.note && <p class="mt-10 text-muted-foreground">{t.note}</p>}
   </Section>
 
-  <CtaSection eyebrow={t.cta.eyebrow} title={t.cta.title} lead={t.cta.lead} leadClass={t.cta.narrowLead ? "max-w-[560px]" : undefined}>
+  <CtaSection eyebrow={t.cta.eyebrow} title={t.cta.title} lead={t.cta.lead}>
     {t.cta.buttons.map((cta) => <CtaButton cta={cta} locale={locale} />)}
   </CtaSection>
 </BaseLayout>

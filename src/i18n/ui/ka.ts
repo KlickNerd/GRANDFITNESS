@@ -10,6 +10,7 @@ const ka = {
     { href: "/coaches/", label: "მწვრთნელები" },
     { href: "/classes/", label: "ვარჯიშები" },
     { href: "/pricing/", label: "ფასები" },
+    { href: "/magazine/", label: "ჟურნალი" },
   ],
   navHome: "მთავარი",
   navCta: { href: "/contact/", label: "შემოგვიერთდი" },

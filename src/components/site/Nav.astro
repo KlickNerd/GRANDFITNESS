@@ -22,8 +22,8 @@ const links = ui.nav.map((item) => ({
 const cta = { href: localizeHref(ui.navCta.href, locale), label: ui.navCta.label };
 const languages = languageLinks(locale, path);
 
-// Georgian labels run longer, so the Georgian nav collapses to the burger earlier (≤1200px instead of ≤1000px).
-const wide = locale === "ka";
+// Georgian and Russian labels run longer, so their nav collapses to the burger earlier (≤1200px instead of ≤1000px).
+const wide = locale !== "en";
 ---
 
 <nav
@@ -87,7 +87,7 @@ const wide = locale === "ka";
       id="site-menu"
       popover
       aria-label={ui.menu}
-      class="m-0 h-dvh max-h-none w-full max-w-none flex-col items-center justify-center gap-[1.4rem] border-0 bg-black/98 p-0 text-white opacity-0 transition-[opacity,display,overlay] transition-discrete duration-300 open:flex open:opacity-100 starting:open:opacity-0"
+      class="m-0 h-dvh max-h-none w-full max-w-none flex-col items-center justify-center-safe gap-[1.4rem] overflow-y-auto py-20 border-0 bg-black/98 p-0 text-white opacity-0 transition-[opacity,display,overlay] transition-discrete duration-300 open:flex open:opacity-100 starting:open:opacity-0"
     >
       <button
         type="button"

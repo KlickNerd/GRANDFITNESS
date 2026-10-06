@@ -15,7 +15,6 @@ export default {
   form: {
     eyebrow: "Send us a message",
     title: "We reply<br>fast.",
-    subject: "New message from grandfitness.ge",
     name: { label: "Your Name *", placeholder: "Giorgi Beridze" },
     email: { label: "Email *", placeholder: "you@example.com" },
     phone: { label: "Phone (optional)", placeholder: "+995 5XX XX XX XX" },

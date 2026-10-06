@@ -1,4 +1,5 @@
 import { getCollection } from "astro:content";
+import type { Locale } from "@/i18n/config";
 import { pageExists } from "@/i18n/routes";
 
 /**
@@ -19,4 +20,14 @@ const coaches = await getCollection("coaches");
 export function coachPhoto(href: string): string | undefined {
   const slug = href.match(/^\/coaches\/([^/]+)\/$/)?.[1];
   return coaches.find((entry) => entry.id === `en/${slug}`)?.data.photo;
+}
+
+const articles = await getCollection("magazine");
+
+/** An article's title, category and date in `locale` (src/content/magazine/<locale>/<slug>.md). */
+export function articleHead(href: string, locale: Locale) {
+  const slug = href.match(/^\/magazine\/([^/]+)\/$/)?.[1];
+  const entry = articles.find((a) => a.id === `${locale}/${slug}`) ?? articles.find((a) => a.id === `en/${slug}`);
+  const { title, category, date } = entry!.data;
+  return { title, category, date };
 }

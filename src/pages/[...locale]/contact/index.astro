@@ -25,6 +25,8 @@ export const getStaticPaths = () => staticPathsFor<Copy>(copies);
 const { locale, copy } = Astro.props as { locale: Locale; copy: Copy };
 const t = copy;
 const f = t.form;
+// Email subject for the gym's inbox: always English, tagged with the page language (FormSubmit _subject).
+const subject = `New message from grandfitness.ge${locale === "en" ? "" : ` (${locale.toUpperCase()})`}`;
 
 // Original .form styles: uppercase muted labels, dark boxed fields with a gold focus border.
 const labelClass =
@@ -46,7 +48,7 @@ const bebas = "font-brand";
         <Eyebrow>{f.eyebrow}</Eyebrow>
         <h2 class={subheadClass} set:html={f.title} />
         <form class="mt-6" action="https://formsubmit.co/info@grandfitness.ge" method="POST">
-          <input type="hidden" name="_subject" value={f.subject} />
+          <input type="hidden" name="_subject" value={subject} />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" />

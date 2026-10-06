@@ -15,7 +15,6 @@ export default {
   form: {
     eyebrow: "მოგვწერე",
     title: "სწრაფად<br>გიპასუხებთ.",
-    subject: "New message from grandfitness.ge (KA)",
     name: { label: "სახელი *", placeholder: "გიორგი ბერიძე" },
     email: { label: "ელფოსტა *", placeholder: "you@example.com" },
     phone: { label: "ტელეფონი (არასავალდებულო)", placeholder: "+995 5XX XX XX XX" },
@@ -25,7 +24,7 @@ export default {
     },
     message: { label: "შეტყობინება *", placeholder: "მოგვწერე, რას ეძებ — მიზნები, კითხვები, სასურველი დრო…" },
     submit: "გაგზავნა",
-    note: "პასუხს, როგორც წესი, იმავე დღეს გცემთ. გირჩევნია სწრაფად? დაგვირეკე ან მოგვწერე Instagram-ზე.",
+    note: "პასუხს, როგორც წესი, იმავე დღეს გცემთ. გირჩევნია სწრაფად? დაგვირეკე ან მოგვწერე Instagram-ზე — იქაც სწრაფად ვპასუხობთ.",
   },
   channels: {
     eyebrow: "ყველა გზა ჩვენამდე",
@@ -49,9 +48,9 @@ export default {
     ],
   },
   social: {
-    tag: "სოციალური ქსელები",
+    tag: "სოციალური ქსელები · მოგვწერე პირადში",
     title: "Instagram და Facebook",
-    text: "ყოველდღიური ცხოვრება დარბაზიდან, ვარჯიშების განახლებები და ყველაზე სწრაფი პასუხები — მოგვწერე პირადში.",
+    text: "ყოველდღიური ცხოვრება დარბაზიდან, ვარჯიშების სიახლეები და ბათუმში ყველაზე სწრაფი პასუხები — გამოგვყევი, მოგვწერე, მოგვნიშნე. იქაც ისევე ვპასუხობთ, როგორც აქ.",
     links: [
       { icon: "IG", label: "@grand_fitness_batumi", href: "https://www.instagram.com/grand_fitness_batumi/" },
       { icon: "FB", label: "Grand Fitness Batumi", href: "https://www.facebook.com/61585147224532/" },

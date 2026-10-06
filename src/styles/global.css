@@ -26,9 +26,9 @@
   --color-body: #c9c9c3; /* long-form article text */
 
   /* Self-hosted via astro.config.mjs → fonts (same fallback chain as the original site). */
-  --font-sans: var(--font-dm-sans), var(--font-noto-sans-georgian), sans-serif;
-  --font-display: var(--font-bebas-neue), var(--font-noto-sans-georgian), sans-serif;
-  --font-brand: var(--font-bebas-neue), sans-serif;
+  --font-sans: var(--font-dm-sans), var(--font-manrope), var(--font-noto-sans-georgian), sans-serif;
+  --font-display: var(--font-bebas-neue), var(--font-oswald), var(--font-noto-sans-georgian), sans-serif;
+  --font-brand: var(--font-bebas-neue), var(--font-oswald), sans-serif;
 
   /* Breakpoints match the original site: ≤760 mobile, ≤1000 tablet, ≤1200 wide KA nav */
   --breakpoint-sm: 640px;
@@ -179,6 +179,13 @@
 :lang(ka) .uppercase {
   text-transform: none;
 }
+/* ---------- Russian ----------
+   Cyrillic display text is set in Oswald, which looks closest to Bebas Neue at medium weight. */
+:lang(ru) :is(h1, h2, h3, .font-display) {
+  font-weight: 500;
+  font-synthesis-weight: none;
+}
+
 /* Georgian letters are tall: headings that wrap need more room than Bebas' 0.95. */
 :lang(ka) :is(h1, h2, h3) {
   line-height: 1.15;

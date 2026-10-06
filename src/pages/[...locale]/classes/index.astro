@@ -22,44 +22,32 @@ const t = copy;
 
 <BaseLayout locale={locale} title={t.meta.title} description={t.meta.description}>
   <PageHero image={t.hero.image} eyebrow={t.hero.eyebrow} title={t.hero.title} lead={t.hero.lead}>
-    {
-      t.hero.pills && (
-        <div class="mt-8 flex flex-wrap gap-[0.6rem]">
-          {t.hero.pills.map((pill) => (
-            <a
-              href={pill.href}
-              class="border border-line px-[0.9rem] py-[0.35rem] text-[0.75rem] font-semibold tracking-[0.1em] text-muted-foreground uppercase"
-            >
-              {pill.label}
-            </a>
-          ))}
-        </div>
-      )
-    }
+    <div class="mt-8 flex flex-wrap gap-[0.6rem]">
+      {t.hero.pills.map((pill) => (
+        <a
+          href={pill.href}
+          class="border border-line px-[0.9rem] py-[0.35rem] text-[0.75rem] font-semibold tracking-[0.1em] text-muted-foreground uppercase"
+        >
+          {pill.label}
+        </a>
+      ))}
+    </div>
   </PageHero>
 
   <Section class="pt-8 md:pt-8">
     {existing(t.classes, (row) => row.link.href).map((row) => <ClassBlock row={row} locale={locale} />)}
   </Section>
 
-  {
-    t.schedule && (
-      <Section tone="dark">
-        <SectionHead eyebrow={t.schedule.eyebrow} title={t.schedule.title} lead={t.schedule.lead} />
-        <WeekSchedule days={t.schedule.days} />
-        <p class="mt-[1.6rem] text-muted-foreground">{t.schedule.note}</p>
-      </Section>
-    )
-  }
+  <Section tone="dark">
+    <SectionHead eyebrow={t.schedule.eyebrow} title={t.schedule.title} lead={t.schedule.lead} />
+    <WeekSchedule days={t.schedule.days} />
+    <p class="mt-[1.6rem] text-muted-foreground">{t.schedule.note}</p>
+  </Section>
 
-  {
-    t.faq && (
-      <Section>
-        <SectionHead eyebrow={t.faq.eyebrow} title={t.faq.title} />
-        <Faq items={t.faq.items} />
-      </Section>
-    )
-  }
+  <Section>
+    <SectionHead eyebrow={t.faq.eyebrow} title={t.faq.title} />
+    <Faq items={t.faq.items} />
+  </Section>
 
   <CtaSection eyebrow={t.cta.eyebrow} title={t.cta.title} lead={t.cta.lead}>
     {t.cta.buttons.map((cta) => <CtaButton cta={cta} locale={locale} />)}

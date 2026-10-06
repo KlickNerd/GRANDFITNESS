@@ -105,6 +105,7 @@ export default {
       { price: "20 GEL", label: "Sticker" },
     ],
   },
+  note: "All prices in GEL. Memberships can be bought at reception — by card or cash.",
   includes: {
     eyebrow: "Every Membership Includes",
     title: "Everything<br>you need.",

@@ -7,7 +7,7 @@ import type { Copy } from "@/i18n/pages/home/types";
 import { staticPathsFor } from "@/i18n/static-paths";
 import type { Locale } from "@/i18n/config";
 import { localizeHref, untranslatedLabel } from "@/i18n/routes";
-import { coachPhoto, existing } from "@/collections/teasers";
+import { articleHead, coachPhoto, existing } from "@/collections/teasers";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { img, optionalImg } from "@/lib/images";
 
@@ -386,7 +386,7 @@ const positions ={ "center 25%": "object-[center_25%]" } as const;
         </HomeHead>
         <div class="grid gap-[2px] md:grid-cols-[repeat(2,1fr)] lg:grid-cols-[1.6fr_1fr_1fr]">
           {
-            existing(t.magazine.items).map((article) => (
+            existing(t.magazine.items).map((teaser) => ({ ...teaser, ...articleHead(teaser.href, locale) })).map((article) => (
               <a href={localizeHref(article.href, locale)} class="group block overflow-hidden bg-card">
                 <div
                   class:list={[

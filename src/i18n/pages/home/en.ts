@@ -257,9 +257,6 @@ export default {
       {
         href: "/magazine/better-than-yesterday/",
         image: "mag/slow-success.jpg",
-        category: "Training",
-        date: "March 2026",
-        title: "Better Than Yesterday: How Small Daily Wins Build Championship Bodies",
         excerpt:
           "Progress doesn't happen in dramatic leaps — it happens in the small, consistent choices made every single day. Our coaches break down the mindset and methods that actually work long-term.",
         featured: true,
@@ -267,17 +264,11 @@ export default {
       {
         href: "/magazine/protein-timing/",
         image: "mag/dumbbells.jpg",
-        category: "Nutrition",
-        date: "March 2026",
-        title: "Protein Timing: When to Eat for Maximum Results",
         excerpt: "It's not just what you eat — it's when. Here's what the science actually says.",
       },
       {
         href: "/magazine/sleep-recovery/",
         image: "mag/sauna.jpg",
-        category: "Recovery",
-        date: "Feb 2026",
-        title: "Why Sleep Is Your Most Important Supplement",
         excerpt: "No pre-workout replaces 8 hours of real sleep. The science behind recovery.",
       },
     ],

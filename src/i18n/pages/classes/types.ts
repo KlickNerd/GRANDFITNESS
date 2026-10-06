@@ -18,7 +18,7 @@ export interface ClassRow {
   image: string;
 }
 
-/** Classes index page text. Optional sections only render in languages that have them. */
+/** Classes index page text. Every language has every section (a missing one fails `npm run check`). */
 export interface Copy {
   meta: Meta;
   hero: {
@@ -28,11 +28,11 @@ export interface Copy {
     title: string;
     lead?: string;
     /** Category pills under the title, linking to the class rows (#boxing …). */
-    pills?: { label: string; href: string }[];
+    pills: { label: string; href: string }[];
   };
   classes: ClassRow[];
   /** Weekly timetable (original .schedule grid). */
-  schedule?: {
+  schedule: {
     eyebrow: string;
     /** html */
     title: string;
@@ -40,7 +40,7 @@ export interface Copy {
     days: { day: string; slots: { time: string; name: string; who: string }[] }[];
     note: string;
   };
-  faq?: Faq;
+  faq: Faq;
   cta: {
     eyebrow: string;
     /** html */

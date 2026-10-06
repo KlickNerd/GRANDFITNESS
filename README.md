@@ -11,9 +11,10 @@ menus, dialogs and FAQs use native HTML (`popover`, `<dialog>`, `<details>`).
 | Language | URL | Status |
 |---|---|---|
 | English | `/` | all pages |
-| Georgian | `/ka/` | home, about, goals, coaches, classes, pricing, contact, privacy, imprint, 404 |
-| Russian | `/ru/` | ready to be added, no pages yet |
+| Georgian | `/ka/` | all pages |
+| Russian | `/ru/` | all pages |
 
+Translations are checked against English with `node scripts/check-translations.mjs`.
 Each page's text lives in one file per language (`src/i18n/pages/<page>/<locale>.ts`), separate from the
 layout. Adding a translation is described in [`src/i18n/pages/README.md`](src/i18n/pages/README.md).
 hreflang tags, the sitemap and the language switcher update themselves.

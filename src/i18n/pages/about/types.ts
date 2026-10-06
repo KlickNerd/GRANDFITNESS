@@ -1,6 +1,6 @@
 import type { Cta, Meta } from "@/i18n/shared-types";
 
-/** About page text. Optional sections only render in languages that have them. */
+/** About page text. Every language has every section (a missing one fails `npm run check`). */
 export interface Copy {
   meta: Meta;
   hero: {
@@ -11,8 +11,6 @@ export interface Copy {
     title: string;
     lead: string;
   };
-  /** Show the stats bar above the story section instead of below it. */
-  statsFirst?: boolean;
   story: {
     eyebrow: string;
     /** html */
@@ -31,7 +29,7 @@ export interface Copy {
     photos: { image: string; alt: string }[];
     areas: { image: string; tag: string; title: string }[];
   };
-  values?: {
+  values: {
     eyebrow: string;
     /** html */
     title: string;

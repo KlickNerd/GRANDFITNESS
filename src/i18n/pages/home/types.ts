@@ -9,7 +9,8 @@ interface Head {
 
 /**
  * Homepage text. The teaser grids (goals, coaches, classes, magazine) keep their own
- * short texts here on purpose; they are not read from the content collections.
+ * short texts here on purpose (article teasers take only their title, category and date
+ * from the articles, so headlines always match).
  */
 export interface Copy {
   meta: Meta;
@@ -80,12 +81,10 @@ export interface Copy {
   magazine: Head & {
     lead: string;
     all: Cta;
+    /** Title, category and date come from the article itself (src/content/magazine/). */
     items: {
       href: string;
       image: string;
-      category: string;
-      date: string;
-      title: string;
       excerpt: string;
       featured?: boolean;
     }[];

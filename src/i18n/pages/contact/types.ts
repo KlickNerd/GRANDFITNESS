@@ -26,8 +26,6 @@ export interface Copy {
     eyebrow: string;
     /** html */
     title: string;
-    /** Subject line of the email FormSubmit sends (hidden field _subject). */
-    subject: string;
     name: Field;
     email: Field;
     phone: Field;
