@@ -1,0 +1,34 @@
+---
+import GoalCard from "@/components/goals/GoalCard.astro";
+import CtaButton from "@/components/ui/CtaButton.astro";
+import CtaSection from "@/components/ui/CtaSection.astro";
+import PageHero from "@/components/ui/PageHero.astro";
+import Section from "@/components/ui/Section.astro";
+import { copies } from "@/i18n/pages/goals";
+import type { Copy } from "@/i18n/pages/goals/types";
+import { localizeHref } from "@/i18n/routes";
+import { staticPathsFor } from "@/i18n/static-paths";
+import type { Locale } from "@/i18n/config";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+export const getStaticPaths = () => staticPathsFor<Copy>(copies);
+
+const { locale, copy } = Astro.props as { locale: Locale; copy: Copy };
+const t = copy;
+---
+
+<BaseLayout locale={locale} title={t.meta.title} description={t.meta.description}>
+  <PageHero image={t.hero.image} eyebrow={t.hero.eyebrow} title={t.hero.title} lead={t.hero.lead} />
+
+  <Section class="pt-8 md:pt-8">
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {t.goals.map((goal) => <GoalCard {...goal} href={localizeHref(goal.href, locale)} />)}
+    </div>
+    <p class="mt-12 text-muted-foreground" set:html={t.note} />
+  </Section>
+
+  <CtaSection eyebrow={t.cta.eyebrow} title={t.cta.title} lead={t.cta.lead}>
+    {/* whitespace-normal: long Georgian labels must wrap on phones instead of overflowing (as in the original). */}
+    {t.cta.buttons.map((cta) => <CtaButton cta={cta} locale={locale} class="whitespace-normal" />)}
+  </CtaSection>
+</BaseLayout>

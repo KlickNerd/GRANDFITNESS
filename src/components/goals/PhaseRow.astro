@@ -1,0 +1,29 @@
+---
+import Lead from "@/components/ui/Lead.astro";
+
+interface Props {
+  /** "01" … "04" */
+  num: string;
+  /** Time frame, e.g. "Weeks 1–2". */
+  when: string;
+  title: string;
+  text: string;
+}
+
+const { num, when, title, text } = Astro.props;
+---
+
+<!-- One phase of a goal's method (original .class-block without photo). -->
+<div
+  data-reveal
+  class="group grid grid-cols-1 items-start gap-[0.8rem] border-b border-line py-12 md:grid-cols-[80px_1.4fr_300px] md:gap-8"
+>
+  <span class="font-display text-[2.4rem] text-line transition-colors group-hover:text-gold">{num}</span>
+  <div>
+    <!-- Eyebrow styling with a tighter bottom margin (Eyebrow's own mb would win over a class prop). -->
+    <p class="mb-[0.4rem] font-sans text-[0.8rem] font-semibold tracking-[0.25em] text-gold uppercase">{when}</p>
+    <h2 class="text-[clamp(1.8rem,3.5vw,2.8rem)]">{title}</h2>
+    <Lead class="mt-[0.8rem] max-w-[820px]">{text}</Lead>
+  </div>
+  <div></div>
+</div>
