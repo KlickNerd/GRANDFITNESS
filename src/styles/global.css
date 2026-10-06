@@ -180,7 +180,7 @@
 :lang(ka) .uppercase {
   text-transform: none;
 }
-:lang(ka) :is(h1, h2) {
+:lang(ka) :is(header h1, [data-section-head] h2) {
   line-height: 1.1;
 }
 

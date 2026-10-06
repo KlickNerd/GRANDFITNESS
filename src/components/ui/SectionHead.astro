@@ -16,6 +16,7 @@ const hasAction = Astro.slots.has("action");
 ---
 
 <div
+  data-section-head
   class:list={[
     "mb-14",
     hasAction && "flex flex-wrap items-end justify-between gap-8",
