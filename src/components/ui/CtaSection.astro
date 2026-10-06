@@ -8,10 +8,12 @@ interface Props {
   title: string;
   /** May contain inline HTML. */
   lead?: string;
+  /** Extra classes for the lead paragraph, e.g. a narrower max-w-[560px]. */
+  leadClass?: string;
   class?: string;
 }
 
-const { eyebrow, title, lead, class: className } = Astro.props;
+const { eyebrow, title, lead, leadClass, class: className } = Astro.props;
 ---
 
 <!-- Closing call to action with the soft gold glow (original .cta-section). Buttons go in the default slot. -->
@@ -25,7 +27,7 @@ const { eyebrow, title, lead, class: className } = Astro.props;
   <div class="wrap relative">
     {eyebrow && <Eyebrow class="mb-[0.8rem]"><Fragment set:html={eyebrow} /></Eyebrow>}
     <h2 set:html={title} />
-    {lead && <Lead class="mx-auto mt-[1.4rem] mb-[2.4rem]"><Fragment set:html={lead} /></Lead>}
+    {lead && <Lead class={`mx-auto mt-[1.4rem] mb-[2.4rem] ${leadClass ?? ""}`}><Fragment set:html={lead} /></Lead>}
     <div class="flex flex-wrap justify-center gap-4">
       <slot />
     </div>

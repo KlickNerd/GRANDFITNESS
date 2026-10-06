@@ -102,6 +102,7 @@ export default {
     eyebrow: "პირველი ნაბიჯი",
     title: 'გაიცანი შენი<br><span class="text-gold">მწვრთნელი.</span>',
     lead: "შემოდი და პირველივე დღეს შეგირჩევთ მწვრთნელს, რომელიც შენს მიზნებს მოერგება.",
+    narrowLead: true,
     buttons: [
       { label: "დაჯავშნე პირველი ვარჯიში", href: "/contact/" },
       { label: "ნახე ვარჯიშები", href: "/classes/", style: "outline" },

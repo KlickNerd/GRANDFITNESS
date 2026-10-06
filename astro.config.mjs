@@ -8,6 +8,7 @@ import { rename, rm } from "node:fs/promises";
  * Astro only writes the root 404 page as 404.html; src/pages/ka/404.astro would become
  * ka/404/index.html. Cloudflare serves the nearest 404.html, so move it there.
  */
+/** @type {import("astro").AstroIntegration} */
 const localized404 = {
   name: "localized-404",
   hooks: {
@@ -17,7 +18,7 @@ const localized404 = {
           await rename(new URL(`${locale}/404/index.html`, dir), new URL(`${locale}/404.html`, dir));
           await rm(new URL(`${locale}/404/`, dir), { recursive: true });
         } catch (error) {
-          if (error.code !== "ENOENT") throw error;
+          if (/** @type {NodeJS.ErrnoException} */ (error).code !== "ENOENT") throw error;
         }
       }
     },

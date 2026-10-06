@@ -49,6 +49,8 @@ export interface Copy {
     /** html */
     title: string;
     lead: string;
+    /** Narrower lead paragraph (560px instead of 640px), as on the original Georgian page. */
+    narrowLead?: boolean;
     buttons: Cta[];
   };
 }
