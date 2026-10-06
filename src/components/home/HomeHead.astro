@@ -1,0 +1,43 @@
+---
+import type { Locale } from "@/i18n/config";
+import { localizeHref } from "@/i18n/routes";
+import type { Cta } from "@/i18n/shared-types";
+
+interface Props {
+  label: string;
+  /** May contain inline HTML (<br>). */
+  title: string;
+  /** "View all …" link on the right (original .section-header + .link-all). */
+  link?: Cta;
+  locale: Locale;
+}
+
+const { label, title, link, locale } = Astro.props;
+const labelClass = "mb-4 block text-[0.7rem] tracking-[0.35em] text-gold uppercase";
+const titleClass = "font-display text-[clamp(3rem,5vw,5rem)] leading-[0.95] tracking-[0.03em] text-white";
+---
+
+<!-- Homepage section heading (original .section-label + .section-title). Default slot = text under the title. -->
+{
+  link ? (
+    <div class="mb-14 flex items-end justify-between max-md:flex-col max-md:items-start max-md:gap-4">
+      <div>
+        <span class={labelClass}>{label}</span>
+        <h2 class={titleClass} set:html={title} />
+        <slot />
+      </div>
+      <a
+        href={localizeHref(link.href, locale)}
+        class="border-b border-line pb-1 text-[0.78rem] tracking-[0.2em] whitespace-nowrap text-muted-foreground uppercase transition-colors duration-200 hover:border-gold hover:text-gold"
+      >
+        {link.label}
+      </a>
+    </div>
+  ) : (
+    <>
+      <span class={labelClass}>{label}</span>
+      <h2 class:list={[titleClass, "mb-14"]} set:html={title} />
+      <slot />
+    </>
+  )
+}
