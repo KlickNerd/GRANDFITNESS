@@ -47,7 +47,7 @@ const threeColumns = g.classes.columns === 3;
       <div data-reveal>
         <Eyebrow>{g.intro.eyebrow}</Eyebrow>
         <h2 set:html={g.intro.title} />
-        {g.intro.paragraphs.map((p) => <Lead class="mt-4">{p}</Lead>)}
+        {g.intro.paragraphs.map((p, i) => <Lead class={i > 0 && g.intro.looseParagraphs ? "mt-[1.4rem]" : "mt-4"}>{p}</Lead>)}
         <div class="mt-[1.8rem] flex flex-wrap gap-[0.6rem]">
           {g.intro.pills.map((pill) => <Pill gold>{pill}</Pill>)}
         </div>

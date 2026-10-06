@@ -12,7 +12,6 @@ stats:
   - { num: "8+", label: "Years Experience" }
   - { num: "300+", label: "Clients Coached" }
   - { num: "100%", label: "Personal Attention" }
-  - { num: "25₾", label: "Day Pass" }
 buttons:
   - { label: "Train With Mariam", href: "/contact/" }
   - { label: "All Coaches", href: "/coaches/", style: "outline" }

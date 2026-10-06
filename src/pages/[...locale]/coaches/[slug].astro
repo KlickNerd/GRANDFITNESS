@@ -38,6 +38,7 @@ const split = Boolean(c.numbers);
 <BaseLayout locale={locale} title={c.title} description={c.description}>
   <header class="grid min-h-screen items-stretch lg:grid-cols-[0.9fr_1.1fr]">
     <div class="relative min-h-[55vh] overflow-hidden bg-[linear-gradient(160deg,#1c1c1c_0%,#101010_100%)] lg:min-h-[60vh]">
+      {!photo && <div role="img" aria-label={c.photoAlt} class="absolute inset-0" />}
       {
         photo && (
           <Image

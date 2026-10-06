@@ -65,7 +65,7 @@ const wide = locale === "ka";
       }
       <a
         href={cta.href}
-        class="border border-gold px-[1.3rem] py-[0.45rem] font-display text-[1.05rem] tracking-[0.08em] text-gold transition-colors hover:bg-gold hover:text-black"
+        class="shrink-0 border border-gold px-[1.3rem] py-[0.45rem] font-display text-[1.05rem] whitespace-nowrap tracking-[0.08em] text-gold transition-colors hover:bg-gold hover:text-black"
       >
         {cta.label}
       </a>
@@ -93,19 +93,19 @@ const wide = locale === "ka";
         type="button"
         popovertarget="site-menu"
         popovertargetaction="hide"
-        aria-label={ui.menu}
+        aria-label={ui.closeMenu}
         class="absolute top-[1.4rem] right-6 h-[26px] w-[34px]"
       >
         <span class="absolute top-3 left-0 h-0.5 w-full rotate-45 bg-white"></span>
         <span class="absolute top-3 left-0 h-0.5 w-full -rotate-45 bg-white"></span>
       </button>
-      <a href={home} class="font-display text-[2.6rem] tracking-[0.05em] hover:text-gold">{ui.navHome}</a>
+      <a href={home} class="font-display text-[2.6rem] tracking-[0.05em] [&:lang(ka)]:text-[2rem] hover:text-gold">{ui.navHome}</a>
       {
         links.map((link) => (
           <a
             href={link.href}
             aria-current={link.current ? "page" : undefined}
-            class="font-display text-[2.6rem] tracking-[0.05em] hover:text-gold"
+            class="font-display text-[2.6rem] tracking-[0.05em] [&:lang(ka)]:text-[2rem] hover:text-gold"
           >
             {link.label}
           </a>
@@ -113,12 +113,12 @@ const wide = locale === "ka";
       }
       {
         languages.map((lang) => (
-          <a href={lang.href} hreflang={lang.locale} lang={lang.locale} class="font-display text-[2.6rem] tracking-[0.05em] hover:text-gold">
+          <a href={lang.href} hreflang={lang.locale} lang={lang.locale} class="font-display text-[2.6rem] tracking-[0.05em] [&:lang(ka)]:text-[2rem] hover:text-gold">
             {lang.label}
           </a>
         ))
       }
-      <a href={cta.href} class="font-display text-[2.6rem] tracking-[0.05em] text-gold">{cta.label}</a>
+      <a href={cta.href} class="font-display text-[2.6rem] tracking-[0.05em] [&:lang(ka)]:text-[2rem] text-gold">{cta.label}</a>
     </div>
   </div>
 </nav>

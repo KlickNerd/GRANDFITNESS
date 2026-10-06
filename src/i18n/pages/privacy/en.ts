@@ -11,7 +11,7 @@ export default {
     title: "Privacy<br><span class=\"text-gold\">Policy.</span>",
     lead: "How we handle your personal data — plainly explained, in accordance with the Law of Georgia on Personal Data Protection.",
   },
-  updated: "Last updated: September 6, 2026",
+  updated: "Last updated: October 6, 2026",
   sections: [
     {
       title: "1. Who We Are (Data Controller)",
@@ -37,8 +37,8 @@ export default {
         "<p><em>Legal basis:</em> your consent, given by actively submitting the form, and the necessity of processing to respond to your request. We keep enquiry emails only as long as needed to handle your request and any legal retention obligations, after which they are deleted.</p>",
         "<h3>2.3 Contacting us directly</h3>",
         "<p>If you contact us by phone, email, Instagram or Facebook, we process the contact details and message content you provide, solely to handle your enquiry.</p>",
-        "<h3>2.4 External services embedded in this website</h3>",
-        "<p><strong>Google Fonts:</strong> to display our typography consistently, fonts are loaded from Google LLC servers. When a page loads, your browser transmits your IP address to Google. Google may process this data on servers outside Georgia. We do not transfer any further data to Google.</p>",
+        "<h3>2.4 Fonts &amp; links to third parties</h3>",
+        "<p><strong>Fonts:</strong> all fonts used on this website are hosted on our own servers. Loading a page does not transmit any data to Google or any other font provider.</p>",
         "<p><strong>Links to third parties:</strong> our website links to external services such as Instagram, Facebook and Google Maps. This privacy policy does not apply to those services — when you follow such a link, the privacy policy of the respective provider applies. We do not embed social media tracking elements (such as pixels or plugins) on this website.</p>",
         "<h3>2.5 What we do NOT do</h3>",
         "<p>We currently do not use advertising trackers, marketing pixels, or profiling of website visitors. We do not sell personal data. Should we introduce analytics in the future, this policy will be updated first.</p>",
@@ -47,13 +47,13 @@ export default {
     {
       title: "3. Cookies & Local Storage",
       body: [
-        "<p>This website does not set tracking cookies. We use one item of local browser storage (\"gf-consent\") solely to remember that you have seen and dismissed our cookie notice — this contains no personal data and is never transmitted to us. Third-party services loaded by the site (see section 2.4) may use technically necessary mechanisms of their own.</p>",
+        "<p>This website does not set tracking cookies. We use one item of local browser storage (\"gf-consent\") solely to remember that you have seen and dismissed our cookie notice — this contains no personal data and is never transmitted to us. No third-party services are loaded by this website.</p>",
       ].join("\n"),
     },
     {
       title: "4. Data Transfers Outside Georgia",
       body: [
-        "<p>Our hosting (Cloudflare), form processing (FormSubmit) and font delivery (Google) involve providers whose servers may be located outside Georgia, including in the United States and the European Union. We select providers that maintain recognized data protection and security standards, and we transmit only the minimum data technically required.</p>",
+        "<p>Our hosting (Cloudflare) and form processing (FormSubmit) involve providers whose servers may be located outside Georgia, including in the United States and the European Union. We select providers that maintain recognized data protection and security standards, and we transmit only the minimum data technically required.</p>",
       ].join("\n"),
     },
     {

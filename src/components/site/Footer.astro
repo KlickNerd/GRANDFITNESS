@@ -1,6 +1,6 @@
 ---
 import type { Locale } from "@/i18n/config";
-import { localizeHref } from "@/i18n/routes";
+import { localizeHref, untranslatedLabel } from "@/i18n/routes";
 import { useUi } from "@/i18n/ui";
 
 interface Props {
@@ -51,7 +51,7 @@ const itemClass = "py-[0.28rem] text-[0.92rem] text-muted-foreground";
             f.nav.map((item) => (
               <li class={itemClass}>
                 <a href={localizeHref(item.href, locale)} class="hover:text-gold">
-                  {item.label}
+                  {untranslatedLabel(item.label, item.href, locale)}
                 </a>
               </li>
             ))
@@ -79,7 +79,7 @@ const itemClass = "py-[0.28rem] text-[0.92rem] text-muted-foreground";
     <div class="flex flex-wrap justify-between gap-4 border-t border-line pt-[1.8rem] text-[0.82rem] text-muted-foreground">
       <span>{f.copyright}</span>
       <span>
-        <a href="/privacy/" class="hover:text-gold">{f.privacy}</a> &middot; <a href="/imprint/" class="hover:text-gold">{f.imprint}</a>
+        <a href={localizeHref("/privacy/", locale)} class="hover:text-gold">{f.privacy}</a> &middot; <a href={localizeHref("/imprint/", locale)} class="hover:text-gold">{f.imprint}</a>
       </span>
     </div>
   </div>

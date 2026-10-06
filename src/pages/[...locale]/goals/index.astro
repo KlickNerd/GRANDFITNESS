@@ -6,9 +6,10 @@ import PageHero from "@/components/ui/PageHero.astro";
 import Section from "@/components/ui/Section.astro";
 import { copies } from "@/i18n/pages/goals";
 import type { Copy } from "@/i18n/pages/goals/types";
-import { localizeHref } from "@/i18n/routes";
+import { localizeHref, untranslatedLabel } from "@/i18n/routes";
 import { staticPathsFor } from "@/i18n/static-paths";
 import type { Locale } from "@/i18n/config";
+import { existing } from "@/collections/teasers";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 export const getStaticPaths = () => staticPathsFor<Copy>(copies);
@@ -22,7 +23,7 @@ const t = copy;
 
   <Section class="pt-8 md:pt-8">
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      {t.goals.map((goal) => <GoalCard {...goal} href={localizeHref(goal.href, locale)} />)}
+      {existing(t.goals).map((goal) => <GoalCard {...goal} href={localizeHref(goal.href, locale)} linkLabel={untranslatedLabel(goal.linkLabel, goal.href, locale)} />)}
     </div>
     <p class="mt-12 text-muted-foreground" set:html={t.note} />
   </Section>

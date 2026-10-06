@@ -24,8 +24,8 @@ stats:
 - num: All
   label: Levels
   sub: Curious to competitive
-- num: Free
-  label: First Session
+- num: 25₾
+  label: Day Pass
   sub: Bring your handshake
 intro:
   eyebrow: What This Class Is

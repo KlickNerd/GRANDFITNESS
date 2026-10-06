@@ -62,7 +62,8 @@ export interface Copy {
   coaches: Head & {
     lead: string;
     all: Cta;
-    items: { href: string; image: string; alt: string; specialty: string; name: string; link: string }[];
+    /** `image` defaults to the coach's profile photo. */
+    items: { href: string; image?: string; alt: string; specialty: string; name: string; link: string }[];
   };
   classes: Head & {
     paragraphs: string[];

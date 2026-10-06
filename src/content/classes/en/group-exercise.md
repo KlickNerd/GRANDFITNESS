@@ -24,8 +24,8 @@ stats:
 - num: ∞
   label: Variety
   sub: No two sessions alike
-- num: Free
-  label: First Class
+- num: 25₾
+  label: Day Pass
   sub: Just show up
 intro:
   eyebrow: What This Class Is
@@ -157,7 +157,7 @@ magazine:
 cta:
   eyebrow: Your first class
   title: Join the room<br><span class="text-gold">this week.</span>
-  lead: One free class is all it takes to understand the waiting list. Walk in, pick your level, and let the room carry you.
+  lead: One class is all it takes to understand the waiting list. Walk in, pick your level, and let the room carry you.
   buttons:
   - label: Book Your First Session
     href: /contact/

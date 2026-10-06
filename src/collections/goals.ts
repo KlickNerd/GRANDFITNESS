@@ -49,6 +49,8 @@ export const goals = defineCollection({
       /** html */
       title: z.string(),
       paragraphs: z.array(z.string()),
+      /** Larger gap between intro paragraphs (1.4rem instead of 1rem). */
+      looseParagraphs: z.boolean().optional(),
       pills: z.array(z.string()),
       image: z.string(),
       alt: z.string(),

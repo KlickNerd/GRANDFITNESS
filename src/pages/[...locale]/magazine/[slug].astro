@@ -57,15 +57,14 @@ const jsonLd = {
     />
     <div
       class:list={[
-        "prose max-w-none text-[17px] leading-[1.7] text-white prose-invert marker:text-body",
-        "prose-headings:text-white prose-headings:font-normal prose-headings:leading-[0.95]",
-        "prose-h2:mt-12 prose-h2:mb-4 prose-h2:text-[2.2rem]",
-        "prose-h3:mt-[2.2rem] prose-h3:mb-[0.8rem] prose-h3:text-[1.6rem]",
-        "prose-p:my-[1.1rem] prose-p:text-body",
-        "prose-ul:my-[1.1rem] prose-ul:ms-[1.2rem] prose-ul:ps-0 prose-ul:text-body",
-        "prose-li:my-[0.4rem] prose-li:ps-0",
-        "prose-strong:font-bold prose-strong:text-white",
-        "prose-a:text-inherit prose-a:no-underline prose-a:[font-weight:inherit]",
+        // Article body typography (the original .article-content rules)
+        "[&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:text-[2.2rem]",
+        "[&_h3]:mt-[2.2rem] [&_h3]:mb-[0.8rem] [&_h3]:text-[1.6rem]",
+        "[&_p]:my-[1.1rem] [&_p]:text-body",
+        "[&_ul]:my-[1.1rem] [&_ul]:ml-[1.2rem] [&_ul]:list-disc [&_ul]:text-body [&_li]:my-[0.4rem]",
+        "[&_strong]:font-bold [&_strong]:text-white",
+        // Links in the text are visibly links (the original showed them as plain text)
+        "[&_p_a]:text-gold [&_p_a]:underline [&_p_a]:underline-offset-2 [&_p_a:hover]:text-white [&_li_a]:text-gold [&_li_a]:underline [&_li_a]:underline-offset-2 [&_li_a:hover]:text-white",
       ]}
     >
       <Content />

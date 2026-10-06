@@ -4,7 +4,7 @@ export default {
   meta: {
     title: "Contact | Grand Fitness Batumi",
     description:
-      "Get in touch with Grand Fitness Batumi: contact form, phone, email, Instagram & Facebook. 196 Bagrationi St, open daily 08:00-24:00. Get in touch.",
+      "Get in touch with Grand Fitness Batumi: contact form, phone, email, Instagram & Facebook. 196 Bagrationi St, open daily 08:00–24:00.",
   },
   hero: {
     image: "space/reception.jpg",
@@ -63,7 +63,7 @@ export default {
   walkIn: {
     image: "space/reception.jpg",
     imageAlt: "Grand Fitness reception, 196 Bagrationi St, Batumi",
-    eyebrow: "Your First Session Is On Us",
+    eyebrow: "Walk In Any Day",
     title: "Or skip the typing<br>and just walk in.",
     lead: "Honestly? The best way to get to know Grand Fitness is through the front door. Walk in any day between 08:00 and 24:00 and our team will take care of everything:",
     items: [

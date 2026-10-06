@@ -74,7 +74,7 @@ export default {
   cta: {
     eyebrow: "Whatever your goal",
     title: 'Ready for your<br>first <span class="text-gold">session?</span>',
-    lead: "Walk in, meet your coach, and take the first step — on us.",
+    lead: "Walk in, meet your coach, and take the first step.",
     buttons: [
       { label: "Book Your First Session", href: "/contact/" },
       { label: "Meet the Coaches", href: "/coaches/", style: "outline" },

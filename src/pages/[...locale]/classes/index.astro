@@ -11,6 +11,7 @@ import type { Locale } from "@/i18n/config";
 import { copies } from "@/i18n/pages/classes";
 import type { Copy } from "@/i18n/pages/classes/types";
 import { staticPathsFor } from "@/i18n/static-paths";
+import { existing } from "@/collections/teasers";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 export const getStaticPaths = () => staticPathsFor<Copy>(copies);
@@ -38,7 +39,7 @@ const t = copy;
   </PageHero>
 
   <Section class="pt-8 md:pt-8">
-    {t.classes.map((row) => <ClassBlock row={row} locale={locale} />)}
+    {existing(t.classes, (row) => row.link.href).map((row) => <ClassBlock row={row} locale={locale} />)}
   </Section>
 
   {

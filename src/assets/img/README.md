@@ -14,4 +14,4 @@ A typo fails the build with a clear message instead of shipping a broken image.
 | `mag/` | Magazine article photos |
 
 The social-sharing image (`og-cover.jpg`, 1200×630) lives in `public/img/`, because it needs a fixed URL.
-Missing: `public/favicon.png` (browser tab icon). The old site referenced `/img/favicon.png`, which never existed.
+Browser icons live in `public/`: `favicon.ico` (16–256px) and `apple-touch-icon.png` (180px, phone home screens).

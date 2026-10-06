@@ -2,6 +2,7 @@
 const en = {
   skipToContent: "Skip to content",
   menu: "Menu",
+  closeMenu: "Close menu",
   nav: [
     { href: "/about/", label: "About" },
     { href: "/goals/", label: "Goals" },
@@ -39,7 +40,7 @@ const en = {
     lang: "en",
     label: "Privacy notice",
     title: "Your privacy, plainly.",
-    text: "No tracking cookies on this site — only technically necessary storage and external services like Google Fonts.",
+    text: "No tracking cookies on this site — only technically necessary storage. Fonts are hosted on our own servers.",
     ok: "Got it",
     details: "Details",
   },

@@ -24,8 +24,8 @@ stats:
 - num: '0'
   label: Sparring
   sub: Nobody gets hit. Ever.
-- num: Free
-  label: First Class
+- num: 25₾
+  label: Day Pass
   sub: Gear sorted for you
 intro:
   eyebrow: What This Class Is
@@ -157,7 +157,7 @@ magazine:
 cta:
   eyebrow: Your first class
   title: Throw your first jab<br><span class="text-gold">this week.</span>
-  lead: Walk in, wrap up, and try a full boxing class with Goga in your corner — completely free. The bags are waiting.
+  lead: Walk in, wrap up, and try a full boxing class with Goga in your corner — a day pass is all it takes. The bags are waiting.
   buttons:
   - label: Book Your First Session
     href: /contact/

@@ -12,7 +12,7 @@ export default {
     image: "about-accent.jpg",
     eyebrow: "Grand Fitness · Memberships &amp; Pricing",
     title: 'Invest in<br><span class="text-gold">Yourself.</span>',
-    lead: "No hidden fees, no fine print. Just straightforward pricing for world-class training — with your first session on us.",
+    lead: "No hidden fees, no fine print. Just straightforward pricing for world-class training.",
   },
   banner: {
     title: "1 MONTH MEMBERSHIP",
@@ -166,7 +166,7 @@ export default {
     ],
   },
   cta: {
-    eyebrow: "Your first session is on us",
+    eyebrow: "No contract. No commitment.",
     title: 'Start<br><span class="text-gold">today.</span>',
     lead: "Come in, meet our coaches, and train with us. No contract, no commitment — just find out what you're capable of.",
     buttons: [

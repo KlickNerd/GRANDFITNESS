@@ -6,8 +6,6 @@
 
 @import "tailwindcss";
 @import "tw-animate-css";
-@plugin "@tailwindcss/forms";
-@plugin "@tailwindcss/typography";
 
 /* Only scan the real source, never the old static site or research notes. */
 @source not "../../reports";
@@ -27,8 +25,10 @@
   --color-gold-soft: rgb(212 175 55 / 0.12);
   --color-body: #c9c9c3; /* long-form article text */
 
-  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Bebas Neue", "DM Sans", sans-serif;
+  /* Self-hosted via astro.config.mjs → fonts (same fallback chain as the original site). */
+  --font-sans: var(--font-dm-sans), var(--font-noto-sans-georgian), sans-serif;
+  --font-display: var(--font-bebas-neue), var(--font-noto-sans-georgian), sans-serif;
+  --font-brand: var(--font-bebas-neue), sans-serif;
 
   /* Breakpoints match the original site: ≤760 mobile, ≤1000 tablet, ≤1200 wide KA nav */
   --breakpoint-sm: 640px;
@@ -167,20 +167,21 @@
    Georgian has no upper/lower case: text-transform: uppercase renders Mtavruli,
    which is only for emphasis. These rules are unlayered on purpose so they win
    over utility classes on every /ka/ page. */
-:lang(ka) {
-  --font-sans: "Noto Sans Georgian", "DM Sans", sans-serif;
-  --font-display: "Noto Sans Georgian", "Bebas Neue", sans-serif;
-}
+/* Fonts: Bebas Neue and DM Sans have no Georgian glyphs, so Latin text keeps the brand fonts on
+   every language and only Georgian letters fall through to Noto Sans Georgian (see --font-*). */
 :lang(ka) :is(h1, h2, h3, .font-display) {
   font-weight: 800;
   letter-spacing: 0.01em;
   text-transform: none;
+  /* Bebas Neue only has weight 400: never fake a bold version of the Latin letters. */
+  font-synthesis-weight: none;
 }
 :lang(ka) .uppercase {
   text-transform: none;
 }
-:lang(ka) :is(header h1, [data-section-head] h2) {
-  line-height: 1.1;
+/* Georgian letters are tall: headings that wrap need more room than Bebas' 0.95. */
+:lang(ka) :is(h1, h2, h3) {
+  line-height: 1.15;
 }
 
 /* ---------- Motion ---------- */

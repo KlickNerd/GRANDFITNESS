@@ -1,5 +1,6 @@
 ---
 import type { Locale } from "@/i18n/config";
+import { localizeHref } from "@/i18n/routes";
 import { useUi } from "@/i18n/ui";
 
 interface Props {
@@ -25,7 +26,7 @@ const btn = "flex flex-1 items-center justify-center px-4 py-2.5 font-display te
   <p class="mb-4 text-[0.84rem] leading-relaxed font-light text-[#b8b8b0]">{c.text}</p>
   <form method="dialog" class="flex gap-2.5">
     <button class:list={[btn, "border border-gold bg-gold text-black hover:bg-transparent hover:text-gold"]}>{c.ok}</button>
-    <a href="/privacy/" class:list={[btn, "border border-white/25 hover:border-gold hover:text-gold"]}>{c.details}</a>
+    <a href={localizeHref("/privacy/", locale)} class:list={[btn, "border border-white/25 hover:border-gold hover:text-gold"]}>{c.details}</a>
   </form>
 </dialog>
 

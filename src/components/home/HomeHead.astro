@@ -1,6 +1,6 @@
 ---
 import type { Locale } from "@/i18n/config";
-import { localizeHref } from "@/i18n/routes";
+import { localizeHref, untranslatedLabel } from "@/i18n/routes";
 import type { Cta } from "@/i18n/shared-types";
 
 interface Props {
@@ -30,7 +30,7 @@ const titleClass = "font-display text-[clamp(3rem,5vw,5rem)] leading-[0.95] trac
         href={localizeHref(link.href, locale)}
         class="border-b border-line pb-1 text-[0.78rem] tracking-[0.2em] whitespace-nowrap text-muted-foreground uppercase transition-colors duration-200 hover:border-gold hover:text-gold"
       >
-        {link.label}
+        {untranslatedLabel(link.label, link.href, locale)}
       </a>
     </div>
   ) : (

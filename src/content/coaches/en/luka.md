@@ -1,7 +1,7 @@
 ---
 title: "Luka Jikhadze — Personal Trainer in Batumi | Grand Fitness"
 description: "Luka Jikhadze, personal trainer at Grand Fitness Batumi — 8 years in armwrestling, powerlifting and strength sports, 5+ years of coaching. Muscle building, weight loss, strength technique."
-photo: "space/free-weights.jpg"
+photo: "coaches/luka.jpg"
 photoAlt: "Luka Jikhadze, Personal Trainer at Grand Fitness Batumi"
 eyebrow: "Grand Fitness · Personal Trainer"
 name: "Luka"

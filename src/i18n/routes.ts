@@ -61,6 +61,16 @@ export function localizeHref(href: string, locale: Locale): string {
   return pageExists(href, locale) ? localizePath(href.split(/[?#]/)[0], locale) + suffix : href;
 }
 
+/**
+ * Marks a link label with " (EN)" when its target isn't translated into `locale`,
+ * e.g. "პროფილი →" → "პროფილი (EN) →". The marker disappears by itself once the page is translated.
+ */
+export function untranslatedLabel(label: string, href: string, locale: Locale): string {
+  if (locale === defaultLocale || !href.startsWith("/") || pageExists(href, locale)) return label;
+  const [, text, arrow = ""] = label.match(/^(.*?)(\s*[→↓]\s*)?$/)!;
+  return `${text} (EN)${arrow}`;
+}
+
 /** Strips the language prefix: "/ka/pricing/" → "/pricing/". */
 export function unlocalizePath(pathname: string): string {
   for (const locale of locales) {

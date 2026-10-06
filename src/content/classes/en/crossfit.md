@@ -7,7 +7,7 @@ hero:
   image: classes/crossfit.jpg
   eyebrow: Group Class · Functional Fitness
   title: Cross<br><span class="text-gold">Fit.</span>
-  lead: 'Constantly varied functional movements at high intensity: barbells, bodyweight, engine work — combined into daily workouts that build the most complete fitness there is. our coaches''s sessions are hard. That''s the point. And every single one scales to you.'
+  lead: 'Constantly varied functional movements at high intensity: barbells, bodyweight, engine work — combined into daily workouts that build the most complete fitness there is. Our coaches'' sessions are hard. That''s the point. And every single one scales to you.'
   buttons:
   - label: Come Try It
     href: /contact/
@@ -24,8 +24,8 @@ stats:
 - num: All
   label: Levels
   sub: Everything scales
-- num: Free
-  label: First Class
+- num: 25₾
+  label: Day Pass
   sub: Come see what the fuss is
 intro:
   eyebrow: What This Class Is
@@ -50,7 +50,7 @@ session:
     text: 'The technical block: barbell work, gymnastics progressions or a strength focus — coached in detail while everyone is fresh. This is where you get better.'
   - time: Min 30–50
     title: The WOD
-    text: 'The workout of the day: a scored combination of movements against the clock. our coaches scales it live for every athlete — same workout, personal challenge, maximum effort.'
+    text: 'The workout of the day: a scored combination of movements against the clock. Our coaches scale it live for every athlete — same workout, personal challenge, maximum effort.'
   - time: Min 50–60
     title: Score, Stretch, High-Fives
     text: 'Scores on the board, mobility work, and the round of congratulations that turns strangers into training partners. Tomorrow: something completely different.'
@@ -116,7 +116,7 @@ faq:
   title: Before your<br>first class.
   items:
   - q: Isn't this kind of training dangerous?
-    a: 'Bad coaching is dangerous — in any sport. Here, technique is taught before intensity is added, every workout is scaled to your current level, and our coaches watches every rep. Train like that and functional training is not just safe: the strength and movement quality it builds actively protect you everywhere else.'
+    a: 'Bad coaching is dangerous — in any sport. Here, technique is taught before intensity is added, every workout is scaled to your current level, and our coaches watch every rep. Train like that and functional training is not just safe: the strength and movement quality it builds actively protect you everywhere else.'
   - q: Do I need to be fit before joining?
     a: We recommend a little training base — a few weeks of general gym work or our Group Exercise class — mostly so your first WODs are fun instead of purely humbling. But 'fit'? No. Scaling means a beginner and an athlete do the same workout at completely different loads and finish equally destroyed and equally happy.
   - q: What does 'scaled' actually mean?
@@ -124,7 +124,7 @@ faq:
   - q: What's a WOD and why does everyone track scores?
     a: Workout Of the Day — the scored centerpiece of every class. Times, rounds and loads go on the board, and benchmark workouts repeat every few months so you can measure exactly how much fitter you've become. Progress you can prove beats progress you can feel.
   - q: Will I learn Olympic lifting?
-    a: You'll learn the derivatives and progressions — cleans, presses, and the technique foundations — coached properly and loaded sensibly. Full snatch-and-jerk mastery is a longer journey our coaches happily guides ambitious members through in the skill blocks.
+    a: You'll learn the derivatives and progressions — cleans, presses, and the technique foundations — coached properly and loaded sensibly. Full snatch-and-jerk mastery is a longer journey our coaches happily guide ambitious members through in the skill blocks.
   - q: How often should I train this?
     a: Two to three classes a week, with rest or an easy class between them — the intensity is real and recovery is part of the program. Many members pair it with Boxing for variety or dedicated mobility work; all of it is included in your membership.
 pairs:
@@ -148,7 +148,7 @@ magazine:
 cta:
   eyebrow: Your first class
   title: Face your first WOD<br><span class="text-gold">this week.</span>
-  lead: 'One free class, scaled exactly to you, with our coaches and the crew cheering your last rep. Fair warning: the scoreboard is habit-forming.'
+  lead: 'One class, scaled exactly to you, with our coaches and the crew cheering your last rep. Fair warning: the scoreboard is habit-forming.'
   buttons:
   - label: Book Your First Session
     href: /contact/

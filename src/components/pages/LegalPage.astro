@@ -15,7 +15,13 @@ const { locale, copy: t } = Astro.props;
 
 <!-- Legal page layout (original .article-content inside an 820px column). -->
 <BaseLayout locale={locale} title={t.meta.title} description={t.meta.description}>
-  <PageHero variant="compact" eyebrow={t.hero.eyebrow} title={t.hero.title} lead={t.hero.lead} />
+  <PageHero
+    variant="compact"
+    eyebrow={t.hero.eyebrow}
+    title={t.hero.title}
+    lead={t.hero.lead}
+    titleClass="wrap-break-word [&:lang(ka)]:text-[clamp(2.2rem,6vw,4.5rem)]"
+  />
 
   <Section class="pt-4 md:pt-4">
     <div

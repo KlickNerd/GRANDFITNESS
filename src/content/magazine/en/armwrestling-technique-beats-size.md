@@ -29,4 +29,4 @@ Grip is the weak link in almost everyone's training — fix it at the table and 
 
 Here's the part we're genuinely proud of: [Grand Fitness runs the only structured armwrestling training in Batumi](/classes/armwrestling/) — three sessions a week with coach Rezo, from complete beginners to competition preparation. Georgia loves this sport; almost nobody teaches it properly. We do.
 
-**Bring your handshake:** your [book your first session](/contact/). One hour with Rezo and you'll never see an armwrestle the same way again.
+**Bring your handshake:** [book your first session](/contact/). One hour with Rezo and you'll never see an armwrestle the same way again.

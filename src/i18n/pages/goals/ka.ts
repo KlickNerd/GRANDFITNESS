@@ -1,7 +1,7 @@
 import type { Copy } from "./types";
 
-/** The detailed goal pages exist in English only, so the cards link to /goals/<slug>/. */
-const linkLabel = "გაიგე მეტი (EN) →";
+/** Links to goal pages get " (EN)" automatically while those pages exist in English only. */
+const linkLabel = "გაიგე მეტი →";
 
 export default {
   meta: {

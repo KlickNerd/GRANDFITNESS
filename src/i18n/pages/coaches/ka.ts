@@ -1,6 +1,6 @@
 import type { Copy } from "./types";
 
-const linkLabel = "პროფილი (EN) →";
+const linkLabel = "პროფილი →";
 
 export default {
   meta: {
@@ -17,7 +17,6 @@ export default {
   coaches: [
     {
       href: "/coaches/gurgen/",
-      image: "coaches/gurgen.jpg",
       alt: "გურგენი — მთავარი მწვრთნელი, გრანდ ფიტნესი ბათუმი",
       tag: "მთავარი მწვრთნელი",
       name: "გურგენი",
@@ -26,7 +25,6 @@ export default {
     },
     {
       href: "/coaches/mariam/",
-      image: "coaches/mariam.jpg",
       alt: "მარიამი — პერსონალური მწვრთნელი, გრანდ ფიტნესი ბათუმი",
       tag: "პერსონალური მწვრთნელი",
       name: "მარიამი",
@@ -35,7 +33,6 @@ export default {
     },
     {
       href: "/coaches/goga/",
-      image: "coaches/goga.jpg",
       alt: "გოგა — კრივის მწვრთნელი, გრანდ ფიტნესი ბათუმი",
       tag: "კრივის მწვრთნელი",
       name: "გოგა",
@@ -44,7 +41,6 @@ export default {
     },
     {
       href: "/coaches/nika/",
-      image: "coaches/nika.jpg",
       alt: "ნიკა — პერსონალური მწვრთნელი, გრანდ ფიტნესი ბათუმი",
       tag: "პერსონალური მწვრთნელი",
       name: "ნიკა",
@@ -53,7 +49,6 @@ export default {
     },
     {
       href: "/coaches/rezo/",
-      image: "coaches/rezo.jpg",
       alt: "რეზო თავბერიძე — პერსონალური მწვრთნელი, გრანდ ფიტნესი ბათუმი",
       tag: "პერსონალური მწვრთნელი",
       name: "რეზო",
@@ -62,7 +57,6 @@ export default {
     },
     {
       href: "/coaches/luka/",
-      image: "space/free-weights.jpg",
       alt: "ლუკა ჯიხაძე — პერსონალური მწვრთნელი, გრანდ ფიტნესი ბათუმი",
       tag: "პერსონალური მწვრთნელი",
       name: "ლუკა",
@@ -71,7 +65,6 @@ export default {
     },
     {
       href: "/coaches/ninutsa/",
-      image: "coaches/ninutsa.jpg",
       alt: "ნინო (ნინუცა) კახაძე — პერსონალური და ჯგუფური მწვრთნელი, გრანდ ფიტნესი ბათუმი",
       tag: "პერსონალური · ჯგუფური",
       name: "ნინუცა",
@@ -80,7 +73,6 @@ export default {
     },
     {
       href: "/coaches/joni/",
-      image: "coaches/joni.jpg",
       alt: "ჯონი — ჯგუფური ფიტნესის მწვრთნელი, გრანდ ფიტნესი ბათუმი",
       tag: "ჯგუფური ფიტნესის მწვრთნელი",
       name: "ჯონი",
@@ -89,7 +81,6 @@ export default {
     },
     {
       href: "/coaches/salome/",
-      image: "coaches/salome.jpg",
       alt: "სალომე — ქალთა ფიტნესის მწვრთნელი, გრანდ ფიტნესი ბათუმი",
       tag: "ქალთა ფიტნესის მწვრთნელი",
       name: "სალომე",

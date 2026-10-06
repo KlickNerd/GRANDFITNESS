@@ -14,9 +14,11 @@ interface Props {
   lead?: string;
   /** "sub" = standard subpage hero, "compact" = shorter hero with a brighter photo (contact). */
   variant?: "sub" | "compact";
+  /** Extra classes for the <h1>, e.g. a smaller size for very long words. */
+  titleClass?: string;
 }
 
-const { image, eyebrow, title, lead, variant = "sub" } = Astro.props;
+const { image, eyebrow, title, lead, variant = "sub", titleClass } = Astro.props;
 const compact = variant === "compact";
 ---
 
@@ -52,7 +54,7 @@ const compact = variant === "compact";
   }
   <div class="wrap relative z-2">
     {eyebrow && <Eyebrow><Fragment set:html={eyebrow} /></Eyebrow>}
-    <h1 set:html={title} />
+    <h1 class={titleClass} set:html={title} />
     {lead && <Lead class={compact ? "mt-[1.4rem] mb-[2.2rem]" : "mt-[1.6rem] mb-[2.2rem]"}><Fragment set:html={lead} /></Lead>}
     <slot />
   </div>

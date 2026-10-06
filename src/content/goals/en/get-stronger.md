@@ -27,6 +27,7 @@ stats:
     sub: "Coach included"
 intro:
   eyebrow: "Why Strength"
+  looseParagraphs: true
   title: "Strong changes<br>everything."
   paragraphs:
     - "Strength is the mother quality. Carrying your groceries up the stairs, playing with your kids, protecting your joints and bones as you age, standing taller in every room you enter — it all runs on strength. Build it, and every other physical goal gets easier: fat loss, muscle, sport, everyday life."

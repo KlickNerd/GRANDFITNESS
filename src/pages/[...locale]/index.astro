@@ -6,9 +6,10 @@ import { copies } from "@/i18n/pages/home";
 import type { Copy } from "@/i18n/pages/home/types";
 import { staticPathsFor } from "@/i18n/static-paths";
 import type { Locale } from "@/i18n/config";
-import { localizeHref } from "@/i18n/routes";
+import { localizeHref, untranslatedLabel } from "@/i18n/routes";
+import { coachPhoto, existing } from "@/collections/teasers";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { img } from "@/lib/images";
+import { img, optionalImg } from "@/lib/images";
 
 export const getStaticPaths = () => staticPathsFor<Copy>(copies);
 
@@ -143,7 +144,7 @@ const positions ={ "center 25%": "object-[center_25%]" } as const;
         <HomeHead label={t.goals.label} title={t.goals.title} locale={locale} />
         <div class="grid gap-[2px] md:grid-cols-[repeat(2,1fr)] lg:grid-cols-[repeat(3,1fr)]">
           {
-            t.goals.items.map((goal) => (
+            existing(t.goals.items).map((goal) => (
               <a href={localizeHref(goal.href, locale)} class="group relative block aspect-16/10 overflow-hidden bg-card md:aspect-16/11">
                 <Image
                   src={img(goal.image)}
@@ -164,7 +165,7 @@ const positions ={ "center 25%": "object-[center_25%]" } as const;
                     {goal.text}
                   </div>
                   <span class="text-[0.72rem] tracking-[0.2em] text-gold uppercase transition-opacity duration-300 group-hover:opacity-100 md:opacity-0">
-                    {goal.link}
+                    {untranslatedLabel(goal.link, goal.href, locale)}
                   </span>
                 </div>
               </a>
@@ -271,21 +272,26 @@ const positions ={ "center 25%": "object-[center_25%]" } as const;
       </div>
       <div class="grid grid-cols-[repeat(2,1fr)] gap-[2px] md:grid-cols-[repeat(3,1fr)]">
         {
-          t.coaches.items.map((coach) => (
+          existing(t.coaches.items).map((coach) => (
             <a href={localizeHref(coach.href, locale)} class="group relative block aspect-3/4 overflow-hidden bg-card">
-              <Image
-                src={img(coach.image)}
-                alt={coach.alt}
-                widths={[400, 600, 900]}
-                sizes="(min-width: 761px) 33vw, 50vw"
-                class="size-full object-cover object-top grayscale-[30%] transition-[filter,scale] duration-[400ms,600ms] group-hover:scale-104 group-hover:grayscale-0"
-              />
+              {optionalImg(coach.image ?? coachPhoto(coach.href)) ? (
+                <Image
+                  src={optionalImg(coach.image ?? coachPhoto(coach.href))!}
+                  alt={coach.alt}
+                  widths={[400, 600, 900]}
+                  sizes="(min-width: 761px) 33vw, 50vw"
+                  class="size-full object-cover object-top grayscale-[30%] transition-[filter,scale] duration-[400ms,600ms] group-hover:scale-104 group-hover:grayscale-0"
+                />
+              ) : (
+                // Photo not uploaded yet: dark placeholder, like the coach profile pages.
+                <div role="img" aria-label={coach.alt} class="size-full bg-[linear-gradient(160deg,#1c1c1c_0%,#121212_100%)]" />
+              )}
               <div class="absolute inset-0 bg-[linear-gradient(to_top,rgb(10_10_10/0.95)_0%,rgb(10_10_10/0.1)_55%,transparent_100%)] transition-opacity duration-300 group-hover:opacity-70" />
               <div class="absolute inset-x-0 bottom-0 z-2 translate-y-2 p-6 transition-transform duration-300 group-hover:translate-y-0">
                 <div class="mb-1.5 text-[0.65rem] tracking-[0.22em] text-gold uppercase">{coach.specialty}</div>
                 <div class="font-display text-[1.8rem] leading-none tracking-[0.04em] text-white">{coach.name}</div>
                 <span class="mt-2.5 inline-block text-[0.7rem] tracking-[0.2em] text-gold uppercase opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  {coach.link}
+                  {untranslatedLabel(coach.link, coach.href, locale)}
                 </span>
               </div>
             </a>
@@ -305,7 +311,7 @@ const positions ={ "center 25%": "object-[center_25%]" } as const;
         </HomeHead>
         <div class="grid gap-[2px] md:grid-cols-[repeat(2,1fr)] lg:grid-cols-[repeat(3,1fr)]">
           {
-            t.classes.items.map((item) => (
+            existing(t.classes.items).map((item) => (
               <a
                 href={localizeHref(item.href, locale)}
                 class="group relative block border-b-3 border-transparent bg-card px-9 py-10 transition-[border-color,background-color] duration-250 hover:border-gold hover:bg-[#1a1a14]"
@@ -380,7 +386,7 @@ const positions ={ "center 25%": "object-[center_25%]" } as const;
         </HomeHead>
         <div class="grid gap-[2px] md:grid-cols-[repeat(2,1fr)] lg:grid-cols-[1.6fr_1fr_1fr]">
           {
-            t.magazine.items.map((article) => (
+            existing(t.magazine.items).map((article) => (
               <a href={localizeHref(article.href, locale)} class="group block overflow-hidden bg-card">
                 <div
                   class:list={[

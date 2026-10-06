@@ -15,6 +15,7 @@ import { copies } from "@/i18n/pages/coaches";
 import type { Copy } from "@/i18n/pages/coaches/types";
 import { staticPathsFor } from "@/i18n/static-paths";
 import type { Locale } from "@/i18n/config";
+import { existing } from "@/collections/teasers";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 export const getStaticPaths = () => staticPathsFor<Copy>(copies);
@@ -61,7 +62,7 @@ const t = copy;
       )
     }
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      {t.coaches.map((card) => <CoachCard card={card} locale={locale} />)}
+      {existing(t.coaches).map((card) => <CoachCard card={card} locale={locale} />)}
     </div>
     {t.note && <p class="mt-10 text-muted-foreground">{t.note}</p>}
   </Section>

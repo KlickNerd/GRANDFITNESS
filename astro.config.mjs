@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { rename, rm } from "node:fs/promises";
@@ -37,6 +37,37 @@ export default defineConfig({
     defaultLocale: "en",
     routing: { prefixDefaultLocale: false },
   },
+  // Fonts are downloaded at build time and served from grandfitness.ge (no requests to Google).
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: "Bebas Neue",
+      cssVariable: "--font-bebas-neue",
+      weights: [400],
+      subsets: ["latin", "latin-ext"],
+      // No built-in fallbacks: global.css chains the families so Georgian falls through to Noto.
+      fallbacks: [],
+    },
+    {
+      provider: fontProviders.google(),
+      name: "DM Sans",
+      cssVariable: "--font-dm-sans",
+      weights: ["300 700"],
+      styles: ["normal", "italic"],
+      subsets: ["latin", "latin-ext"],
+      // No built-in fallbacks: global.css chains the families so Georgian falls through to Noto.
+      fallbacks: [],
+    },
+    {
+      provider: fontProviders.google(),
+      name: "Noto Sans Georgian",
+      cssVariable: "--font-noto-sans-georgian",
+      weights: ["300 800"],
+      subsets: ["georgian", "latin"],
+      // No built-in fallbacks: global.css chains the families so Georgian falls through to Noto.
+      fallbacks: [],
+    },
+  ],
   integrations: [
     sitemap({
       filter: (page) => !/\/404\/?$/.test(page),

@@ -3,8 +3,9 @@ import { Image } from "astro:assets";
 import Card from "@/components/ui/Card.astro";
 import Tag from "@/components/ui/Tag.astro";
 import type { Locale } from "@/i18n/config";
-import { localizeHref } from "@/i18n/routes";
+import { localizeHref, untranslatedLabel } from "@/i18n/routes";
 import { optionalImg } from "@/lib/images";
+import { coachPhoto } from "@/collections/teasers";
 import type { CoachCard } from "@/i18n/pages/coaches/types";
 
 interface Props {
@@ -13,7 +14,7 @@ interface Props {
 }
 
 const { card, locale } = Astro.props;
-const image = optionalImg(card.image);
+const image = optionalImg(card.image ?? coachPhoto(card.href));
 ---
 
 <!-- Coach teaser card (original .coach-card): photo on top, tag, name, role, text, link label. -->
@@ -28,12 +29,13 @@ const image = optionalImg(card.image);
           sizes="(min-width: 1001px) 380px, (min-width: 761px) 50vw, 100vw"
           class="size-full object-cover object-top transition-transform duration-400 group-hover:scale-105"
         />
+      ) : card.symbol ? (
+        <div class="flex size-full items-center justify-center">
+          <span class="font-display text-[5rem] text-gold">{card.symbol}</span>
+        </div>
       ) : (
-        card.symbol && (
-          <div class="flex size-full items-center justify-center">
-            <span class="font-display text-[5rem] text-gold">{card.symbol}</span>
-          </div>
-        )
+        // Photo not uploaded yet: the dark placeholder still describes the coach.
+        <div role="img" aria-label={card.alt ?? card.name} class="size-full" />
       )
     }
   </div>
@@ -42,6 +44,6 @@ const image = optionalImg(card.image);
     <div class="font-display text-[2rem] tracking-[0.04em] [:lang(ka)_&]:text-[1.6rem]">{card.name}</div>
     {card.role && <div class="mt-[0.2rem] mb-[0.9rem] text-[0.85rem] text-muted-foreground">{card.role}</div>}
     <p class="text-[0.98rem] text-muted-foreground">{card.text}</p>
-    <span class="mt-4 inline-block font-semibold tracking-[0.04em] text-gold hover:underline">{card.linkLabel}</span>
+    <span class="mt-4 inline-block font-semibold tracking-[0.04em] text-gold hover:underline">{untranslatedLabel(card.linkLabel, card.href, locale)}</span>
   </div>
 </Card>

@@ -1,7 +1,7 @@
 import type { Copy } from "./types";
 
 const pills = (minutes: string, level = "ყველა დონე") => [level, minutes, "შედის ყველა აბონემენტში"];
-const link = (slug: string) => ({ label: "სრული გვერდი (EN) →", href: `/classes/${slug}/` });
+const link = (slug: string) => ({ label: "სრული გვერდი →", href: `/classes/${slug}/` });
 
 export default {
   meta: {

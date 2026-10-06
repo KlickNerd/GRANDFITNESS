@@ -6,7 +6,7 @@ import Pill from "@/components/ui/Pill.astro";
 import TextLink from "@/components/ui/TextLink.astro";
 import type { Locale } from "@/i18n/config";
 import type { ClassRow } from "@/i18n/pages/classes/types";
-import { localizeHref } from "@/i18n/routes";
+import { localizeHref, untranslatedLabel } from "@/i18n/routes";
 import { img } from "@/lib/images";
 
 interface Props {
@@ -32,7 +32,7 @@ const coachClass = "font-display text-[1.8rem] tracking-[0.04em] text-gold [&:la
     <div class="mt-[1.2rem] flex flex-wrap gap-[0.6rem]">
       {row.pills.map((pill) => <Pill>{pill}</Pill>)}
     </div>
-    <p class="mt-[1.2rem]"><TextLink href={localizeHref(row.link.href, locale)}>{row.link.label}</TextLink></p>
+    <p class="mt-[1.2rem]"><TextLink href={localizeHref(row.link.href, locale)}>{untranslatedLabel(row.link.label, row.link.href, locale)}</TextLink></p>
   </div>
   <div class="text-right">
     <Eyebrow class="mb-[0.3rem]!">{row.coachLabel}</Eyebrow>

@@ -61,6 +61,7 @@ const image = optionalImg(src);
       />
     )
   }
+  {!image && alt && <div role="img" aria-label={alt} class="absolute inset-0" />}
   {shade && <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgb(10_10_10/0.8)_100%)]" />}
   {
     badge && (

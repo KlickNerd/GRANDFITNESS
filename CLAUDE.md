@@ -35,6 +35,11 @@ Without Nix, use Node ≥ 22.12 directly.
    `img()` / `optionalImg()` from `@/lib/images`, `<Photo>` or `<Image>`. Never use `/img/...`
    URLs or CSS background images.
 8. Georgian has no capital letters: `uppercase` is switched off on `/ka/` pages automatically. Keep it that way.
+9. **Fonts are self-hosted** through `fonts` in `astro.config.mjs` (no Google Fonts `<link>`s, ever).
+   The stacks in `global.css` list Bebas Neue / DM Sans first and Noto Sans Georgian second, so Latin
+   text looks identical in every language and only Georgian letters use Noto.
+10. **Never write "(EN)" into a link label.** Links to pages that aren't translated get " (EN)"
+    automatically (`untranslatedLabel` in `src/i18n/routes.ts`), and lose it once the page is translated.
 
 ## Where things are
 
@@ -58,7 +63,11 @@ src/layouts/BaseLayout.astro   <head>, SEO, hreflang, skip link, <main>, nav, fo
   language that has the page (`index.ts` lists them).
 - **Translate a page:** see `src/i18n/pages/README.md`.
 - **Add a coach / class / article:** add a Markdown file to `src/content/<collection>/en/`, copying
-  an existing one's frontmatter.
+  an existing one's frontmatter, then add its teaser card to the homepage / index copy files.
+- **Remove a coach / class / goal / article:** delete its Markdown file. Teaser cards pointing to it
+  disappear from the homepage and index pages automatically (`existing()` in `src/collections/teasers.ts`).
+- **Coach photos** are set once, in the profile (`photo:` in `src/content/coaches/en/<slug>.md`);
+  teaser cards use it. A coach without a photo shows a dark placeholder.
 - **Scroll fade-in:** add the `data-reveal` attribute to an element.
 - Strings that may contain inline HTML (`<br>`, `<span class="text-gold">`) are marked `html` in
   the page's `types.ts` and rendered with `set:html`.

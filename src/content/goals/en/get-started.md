@@ -155,7 +155,7 @@ testimonials:
       who: "— Tamar K., 26 · Batumi"
       featured: true
     - quote: "„I was terrified to step into a gym for the first time. Mariam made the whole experience feel safe and exciting. Three months in, I'm stronger than I've ever been.“"
-      who: "— Tamar, 27 · Batumi"
+      who: "— Member, 27 · Batumi"
 faq:
   eyebrow: "Questions & Answers"
   title: "Before you<br>ask."
@@ -171,7 +171,7 @@ faq:
     - q: "Do I have to book my first session?"
       a: "No — just walk in any day between 08:00 and 24:00 and we'll take care of you. If you'd rather have a fixed time or a specific coach, call +995 557 19 27 27 or email us and we'll set it up."
     - q: "What if I try it and it's just not for me?"
-      a: "Then you shake hands and owe us nothing — there are no strings and no follow-up pressure. But fair warning from experience: the combination of a good first workout, a coach who gets you, and that first sauna has an extremely high conversion rate. 😉"
+      a: "Then you shake hands and that's it — no contract, no strings and no follow-up pressure. But fair warning from experience: the combination of a good first workout, a coach who gets you, and that first sauna has an extremely high conversion rate. 😉"
 magazine:
   href: "/magazine/gym-beginners-guide-batumi/"
   tag: "From the Magazine"

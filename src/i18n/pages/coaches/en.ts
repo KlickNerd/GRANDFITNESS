@@ -42,7 +42,6 @@ export default {
   coaches: [
     {
       href: "/coaches/mariam/",
-      image: "coaches/mariam.jpg",
       alt: "Mariam, Personal Trainer at Grand Fitness Batumi",
       tag: "Personal Training · Women's Fitness",
       name: "Mariam",
@@ -52,7 +51,6 @@ export default {
     },
     {
       href: "/coaches/goga/",
-      image: "coaches/goga.jpg",
       alt: "Goga, Boxing Coach at Grand Fitness Batumi",
       tag: "Boxing · Combat Sports",
       name: "Goga",
@@ -62,7 +60,6 @@ export default {
     },
     {
       href: "/coaches/nika/",
-      image: "coaches/nika.jpg",
       alt: "Nika, Personal Fitness Trainer at Grand Fitness Batumi",
       tag: "Strength · Muscle · Transformation",
       name: "Nika",
@@ -72,7 +69,6 @@ export default {
     },
     {
       href: "/coaches/rezo/",
-      image: "coaches/rezo.jpg",
       alt: "Rezo Tavberidze, Personal Trainer at Grand Fitness Batumi",
       tag: "Personal Training · Conditioning",
       name: "Rezo",
@@ -82,7 +78,6 @@ export default {
     },
     {
       href: "/coaches/luka/",
-      image: "space/free-weights.jpg",
       alt: "Luka Jikhadze, Personal Trainer at Grand Fitness Batumi",
       tag: "Strength · Personal Training",
       name: "Luka",
@@ -92,27 +87,24 @@ export default {
     },
     {
       href: "/coaches/ninutsa/",
-      image: "coaches/ninutsa.jpg",
       alt: "Nino (Ninutsa) Kakhadze, Personal & Group Fitness Trainer at Grand Fitness Batumi",
       tag: "Personal & Group Fitness",
       name: "Ninutsa",
       role: "Personal & Group Fitness Trainer",
-      text: "The foundation every athlete overlooks. Ninutsa's mobility sessions build the core strength, posture, and body control that make every other discipline easier.",
+      text: "Proper technique, individual programs and progress you can actually see. Ninutsa trains clients one-on-one and in groups — safe, effective and genuinely enjoyable.",
       linkLabel,
     },
     {
       href: "/coaches/salome/",
-      image: "coaches/salome.jpg",
-      alt: "Salome, Women's Fitness Coach at Grand Fitness Batumi",
+      alt: "Salome, Certified Personal Trainer at Grand Fitness Batumi",
       tag: "Women's Fitness · Strength for Women",
       name: "Salome",
-      role: "Women's Fitness Coach",
+      role: "Certified Personal Trainer",
       text: "Salome builds training around women, for women — strength, confidence and community in sessions where every woman feels she belongs from minute one.",
       linkLabel,
     },
     {
       href: "/coaches/joni/",
-      image: "coaches/joni.jpg",
       alt: "Joni, Group Fitness Coach at Grand Fitness Batumi",
       tag: "Aerobic · Group Exercise",
       name: "Joni",

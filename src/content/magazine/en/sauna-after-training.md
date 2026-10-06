@@ -26,4 +26,4 @@ Every membership at Grand Fitness includes the sauna, and members quickly split 
 
 ## The best part of the deal
 
-In many gyms, the sauna is an upsell. Here it's simply included — with every membership and even with your [free first session](/contact/), where it's literally step four of [your first day](/goals/get-started/). Train, stretch, sit in the heat, let it sink in. We're fairly sure it's the most convincing ten minutes in the building.
+In many gyms, the sauna is an upsell. Here it's simply included — with every membership and even with a single [day pass](/pricing/), where it's literally step four of [your first day](/goals/get-started/). Train, stretch, sit in the heat, let it sink in. We're fairly sure it's the most convincing ten minutes in the building.

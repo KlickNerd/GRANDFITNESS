@@ -24,8 +24,8 @@ stats:
 - num: ~500
   label: kcal Burned
   sub: Depending on your effort
-- num: Free
-  label: First Class
+- num: 25₾
+  label: Day Pass
   sub: Just show up
 intro:
   eyebrow: What This Class Is
@@ -157,7 +157,7 @@ magazine:
 cta:
   eyebrow: Your first class
   title: Catch the beat<br><span class="text-gold">this week.</span>
-  lead: One free class with Joni and you'll understand why people set alarms for Monday 08:00. Comfortable shoes on — we'll handle the rest.
+  lead: One class with Joni and you'll understand why people set alarms for Monday 08:00. Comfortable shoes on — we'll handle the rest.
   buttons:
   - label: Book Your First Session
     href: /contact/
