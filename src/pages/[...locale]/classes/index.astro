@@ -1,0 +1,66 @@
+---
+import ClassBlock from "@/components/classes/ClassBlock.astro";
+import WeekSchedule from "@/components/classes/WeekSchedule.astro";
+import CtaButton from "@/components/ui/CtaButton.astro";
+import CtaSection from "@/components/ui/CtaSection.astro";
+import Faq from "@/components/ui/Faq.astro";
+import PageHero from "@/components/ui/PageHero.astro";
+import Section from "@/components/ui/Section.astro";
+import SectionHead from "@/components/ui/SectionHead.astro";
+import type { Locale } from "@/i18n/config";
+import { copies } from "@/i18n/pages/classes";
+import type { Copy } from "@/i18n/pages/classes/types";
+import { staticPathsFor } from "@/i18n/static-paths";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+export const getStaticPaths = () => staticPathsFor<Copy>(copies);
+
+const { locale, copy } = Astro.props as { locale: Locale; copy: Copy };
+const t = copy;
+---
+
+<BaseLayout locale={locale} title={t.meta.title} description={t.meta.description}>
+  <PageHero image={t.hero.image} eyebrow={t.hero.eyebrow} title={t.hero.title} lead={t.hero.lead}>
+    {
+      t.hero.pills && (
+        <div class="mt-8 flex flex-wrap gap-[0.6rem]">
+          {t.hero.pills.map((pill) => (
+            <a
+              href={pill.href}
+              class="border border-line px-[0.9rem] py-[0.35rem] text-[0.75rem] font-semibold tracking-[0.1em] text-muted-foreground uppercase"
+            >
+              {pill.label}
+            </a>
+          ))}
+        </div>
+      )
+    }
+  </PageHero>
+
+  <Section class="pt-8 md:pt-8">
+    {t.classes.map((row) => <ClassBlock row={row} locale={locale} />)}
+  </Section>
+
+  {
+    t.schedule && (
+      <Section tone="dark">
+        <SectionHead eyebrow={t.schedule.eyebrow} title={t.schedule.title} lead={t.schedule.lead} />
+        <WeekSchedule days={t.schedule.days} />
+        <p class="mt-[1.6rem] text-muted-foreground">{t.schedule.note}</p>
+      </Section>
+    )
+  }
+
+  {
+    t.faq && (
+      <Section>
+        <SectionHead eyebrow={t.faq.eyebrow} title={t.faq.title} />
+        <Faq items={t.faq.items} />
+      </Section>
+    )
+  }
+
+  <CtaSection eyebrow={t.cta.eyebrow} title={t.cta.title} lead={t.cta.lead}>
+    {t.cta.buttons.map((cta) => <CtaButton cta={cta} locale={locale} />)}
+  </CtaSection>
+</BaseLayout>
