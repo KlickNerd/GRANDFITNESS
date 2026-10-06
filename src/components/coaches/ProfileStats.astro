@@ -1,0 +1,20 @@
+---
+interface Props {
+  items: { num: string; label: string }[];
+  class?: string;
+}
+
+const { items, class: className } = Astro.props;
+---
+
+<!-- Coach key numbers (original .profile-stats): 4 auto-width columns, 2 on mobile. -->
+<div class:list={["my-10 grid grid-cols-2 gap-6 md:grid-cols-[repeat(4,auto)] md:gap-10", className]}>
+  {
+    items.map((item) => (
+      <div>
+        <span class="font-display text-[2.4rem] leading-none text-gold">{item.num}</span>
+        <span class="text-[0.8rem] text-muted-foreground">{item.label}</span>
+      </div>
+    ))
+  }
+</div>

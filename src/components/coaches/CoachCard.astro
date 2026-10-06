@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+import Card from "@/components/ui/Card.astro";
+import Tag from "@/components/ui/Tag.astro";
+import type { Locale } from "@/i18n/config";
+import { localizeHref } from "@/i18n/routes";
+import { optionalImg } from "@/lib/images";
+import type { CoachCard } from "@/i18n/pages/coaches/types";
+
+interface Props {
+  card: CoachCard;
+  locale: Locale;
+}
+
+const { card, locale } = Astro.props;
+const image = optionalImg(card.image);
+---
+
+<!-- Coach teaser card (original .coach-card): photo on top, tag, name, role, text, link label. -->
+<Card href={localizeHref(card.href, locale)} flush data-reveal class="group">
+  <div class="relative aspect-[3/3.4] overflow-hidden bg-[linear-gradient(160deg,#1c1c1c_0%,#121212_100%)]">
+    {
+      image ? (
+        <Image
+          src={image}
+          alt={card.alt ?? ""}
+          widths={[400, 700]}
+          sizes="(min-width: 1001px) 380px, (min-width: 761px) 50vw, 100vw"
+          class="size-full object-cover object-top transition-transform duration-400 group-hover:scale-105"
+        />
+      ) : (
+        card.symbol && (
+          <div class="flex size-full items-center justify-center">
+            <span class="font-display text-[5rem] text-gold">{card.symbol}</span>
+          </div>
+        )
+      )
+    }
+  </div>
+  <div class="px-[1.6rem] pt-6 pb-[1.8rem]">
+    <Tag>{card.tag}</Tag>
+    <div class="font-display text-[2rem] tracking-[0.04em] [:lang(ka)_&]:text-[1.6rem]">{card.name}</div>
+    {card.role && <div class="mt-[0.2rem] mb-[0.9rem] text-[0.85rem] text-muted-foreground">{card.role}</div>}
+    <p class="text-[0.98rem] text-muted-foreground">{card.text}</p>
+    <span class="mt-4 inline-block font-semibold tracking-[0.04em] text-gold hover:underline">{card.linkLabel}</span>
+  </div>
+</Card>
