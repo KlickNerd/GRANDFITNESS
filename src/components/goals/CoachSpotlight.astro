@@ -1,0 +1,53 @@
+---
+import Blockquote from "@/components/ui/Blockquote.astro";
+import CtaButton from "@/components/ui/CtaButton.astro";
+import Eyebrow from "@/components/ui/Eyebrow.astro";
+import Lead from "@/components/ui/Lead.astro";
+import Photo from "@/components/ui/Photo.astro";
+import Section from "@/components/ui/Section.astro";
+import type { Locale } from "@/i18n/config";
+import type { Cta } from "@/i18n/shared-types";
+
+interface Props {
+  locale: Locale;
+  eyebrow: string;
+  name: string;
+  role: string;
+  quote: string;
+  bio: string;
+  image: string;
+  alt: string;
+  stats: { num: string; label: string }[];
+  buttons: Cta[];
+}
+
+const { locale, eyebrow, name, role, quote, bio, image, alt, stats, buttons } = Astro.props;
+---
+
+<!-- "Your coach for this goal": photo left, quote, bio and numbers right. -->
+<Section tone="dark" wrap={false}>
+  <div class="wrap grid items-center gap-16 md:grid-cols-2">
+    <Photo src={image} alt={alt} aspect="4/4.6" reveal sizes="(min-width: 1201px) 544px, (min-width: 761px) 45vw, 100vw" />
+    <div data-reveal>
+      <Eyebrow>{eyebrow}</Eyebrow>
+      <h2>{name}</h2>
+      <p class="mt-2 text-[0.85rem] tracking-[0.18em] text-muted-foreground uppercase">{role}</p>
+      <!-- leading-[1.7]: text-xl in Blockquote would otherwise shrink the original 1.7 line height. -->
+      <Blockquote class="leading-[1.7]">{quote}</Blockquote>
+      <Lead>{bio}</Lead>
+      <div class="my-10 grid grid-cols-2 gap-6 md:grid-cols-[repeat(4,auto)] md:gap-10">
+        {
+          stats.map((stat) => (
+            <div>
+              <span class="font-display text-[2.4rem] leading-none text-gold">{stat.num}</span>
+              <span class="text-[0.8rem] text-muted-foreground">{stat.label}</span>
+            </div>
+          ))
+        }
+      </div>
+      <div class="flex flex-wrap gap-4">
+        {buttons.map((cta) => <CtaButton cta={cta} locale={locale} />)}
+      </div>
+    </div>
+  </div>
+</Section>

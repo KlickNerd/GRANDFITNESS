@@ -1,0 +1,27 @@
+---
+import Card from "@/components/ui/Card.astro";
+import Section from "@/components/ui/Section.astro";
+import Tag from "@/components/ui/Tag.astro";
+
+interface Props {
+  /** Already localized link to the article. */
+  href: string;
+  tag: string;
+  title: string;
+  linkLabel: string;
+}
+
+const { href, tag, title, linkLabel } = Astro.props;
+---
+
+<!-- "From the Magazine" link strip above the closing CTA. -->
+<Section class="pt-0 md:pt-0">
+  <!-- The ! overrides beat Card's own link-card flex-col / gap-0 / py-0 (link cards are not class-merged). -->
+  <Card href={href} data-reveal class="flex-row! flex-wrap items-center justify-between gap-6! py-[2.2rem]!">
+    <div>
+      <Tag>{tag}</Tag>
+      <h3 class="mt-[0.4rem] mb-[0.8rem] text-[1.5rem]">{title}</h3>
+    </div>
+    <span class="font-semibold tracking-[0.04em] text-gold">{linkLabel}</span>
+  </Card>
+</Section>

@@ -1,0 +1,160 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import CoachSpotlight from "@/components/goals/CoachSpotlight.astro";
+import MagazineBanner from "@/components/goals/MagazineBanner.astro";
+import PhaseRow from "@/components/goals/PhaseRow.astro";
+import PhotoCard from "@/components/goals/PhotoCard.astro";
+import Card from "@/components/ui/Card.astro";
+import CtaButton from "@/components/ui/CtaButton.astro";
+import CtaSection from "@/components/ui/CtaSection.astro";
+import Eyebrow from "@/components/ui/Eyebrow.astro";
+import Faq from "@/components/ui/Faq.astro";
+import Lead from "@/components/ui/Lead.astro";
+import PageHero from "@/components/ui/PageHero.astro";
+import Photo from "@/components/ui/Photo.astro";
+import Pill from "@/components/ui/Pill.astro";
+import QuoteCard from "@/components/ui/QuoteCard.astro";
+import Section from "@/components/ui/Section.astro";
+import SectionHead from "@/components/ui/SectionHead.astro";
+import Stats from "@/components/ui/Stats.astro";
+import Tag from "@/components/ui/Tag.astro";
+import TextLink from "@/components/ui/TextLink.astro";
+import { entryPaths } from "@/collections/entries";
+import type { Locale } from "@/i18n/config";
+import { localizeHref } from "@/i18n/routes";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+export const getStaticPaths = async () => entryPaths(await getCollection("goals"));
+
+const { entry, locale } = Astro.props as { entry: CollectionEntry<"goals">; locale: Locale };
+const g = entry.data;
+const threeColumns = g.classes.columns === 3;
+---
+
+<BaseLayout locale={locale} title={g.title} description={g.description}>
+  <PageHero image={g.hero.image} eyebrow={g.hero.eyebrow} title={g.hero.title} lead={g.hero.lead}>
+    <div class="flex flex-wrap gap-4">
+      {g.hero.buttons.map((cta) => <CtaButton cta={cta} locale={locale} />)}
+    </div>
+  </PageHero>
+
+  <section class="wrap">
+    <Stats items={g.stats} />
+  </section>
+
+  <Section wrap={false}>
+    <div class="wrap grid items-center gap-16 md:grid-cols-2">
+      <div data-reveal>
+        <Eyebrow>{g.intro.eyebrow}</Eyebrow>
+        <h2 set:html={g.intro.title} />
+        {g.intro.paragraphs.map((p) => <Lead class="mt-4">{p}</Lead>)}
+        <div class="mt-[1.8rem] flex flex-wrap gap-[0.6rem]">
+          {g.intro.pills.map((pill) => <Pill gold>{pill}</Pill>)}
+        </div>
+      </div>
+      <Photo src={g.intro.image} alt={g.intro.alt} aspect="4/4.4" reveal sizes="(min-width: 1201px) 544px, (min-width: 761px) 45vw, 100vw" />
+    </div>
+  </Section>
+
+  <Section tone="dark" id="method">
+    <SectionHead eyebrow={g.method.eyebrow} title={g.method.title} lead={g.method.lead} />
+    {
+      g.method.phases.map((phase, i) => (
+        <PhaseRow num={String(i + 1).padStart(2, "0")} when={phase.when} title={phase.title} text={phase.text} />
+      ))
+    }
+  </Section>
+
+  <Section>
+    <SectionHead eyebrow={g.principles.eyebrow} title={g.principles.title} lead={g.principles.lead} />
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {
+        g.principles.items.map((item) => (
+          <Card data-reveal>
+            <h3 class="mt-[0.6rem] text-[1.5rem]">{item.title}</h3>
+            <p class="mt-[0.8rem] text-[0.98rem] text-muted-foreground">{item.text}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section tone="dark">
+    <SectionHead eyebrow={g.session.eyebrow} title={g.session.title} lead={g.session.lead} />
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {
+        g.session.items.map((item) => (
+          <Card data-reveal>
+            <Pill gold class="self-start">{item.time}</Pill>
+            <h3 class="mt-4 text-[1.5rem]">{item.title}</h3>
+            <p class="mt-[0.8rem] text-[0.98rem] text-muted-foreground">{item.text}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section>
+    <SectionHead eyebrow={g.spaces.eyebrow} title={g.spaces.title} lead={g.spaces.lead} />
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {
+        g.spaces.items.map((item) => (
+          <PhotoCard image={item.image}>
+            <h3 class="mt-[0.6rem] text-[1.4rem]">{item.title}</h3>
+            <p class="mt-[0.8rem] text-[0.92rem] text-muted-foreground">{item.text}</p>
+          </PhotoCard>
+        ))
+      }
+    </div>
+  </Section>
+
+  <CoachSpotlight locale={locale} {...g.coach} />
+
+  <Section>
+    <SectionHead eyebrow={g.classes.eyebrow} title={g.classes.title} lead={g.classes.lead}>
+      <TextLink slot="action" href={localizeHref(g.classes.all.href, locale)}>{g.classes.all.label}</TextLink>
+    </SectionHead>
+    <div class:list={["grid gap-8 md:grid-cols-2", threeColumns && "lg:grid-cols-3"]}>
+      {
+        g.classes.items.map((item) => (
+          <PhotoCard
+            image={item.image}
+            href={localizeHref(item.href, locale)}
+            aspect={threeColumns ? "aspect-16/10" : "aspect-16/9"}
+            sizes={threeColumns ? "(min-width: 1001px) 370px, (min-width: 761px) 50vw, 100vw" : "(min-width: 761px) 50vw, 100vw"}
+            bodyClass="p-[1.6rem]"
+          >
+            <Tag>{item.tag}</Tag>
+            <h3 class="mt-[0.4rem] text-[1.6rem]">{item.title}</h3>
+            <p class="mt-[0.8rem] text-[0.98rem] text-muted-foreground">{item.text}</p>
+            <span class="mt-[0.8rem] inline-block font-semibold tracking-[0.04em] text-gold">{item.linkLabel}</span>
+          </PhotoCard>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section tone="dark">
+    <SectionHead eyebrow={g.testimonials.eyebrow} title={g.testimonials.title} lead={g.testimonials.lead} />
+    <div class="grid gap-8 md:grid-cols-2">
+      {g.testimonials.items.map((item) => <QuoteCard quote={item.quote} who={item.who} featured={item.featured} reveal />)}
+    </div>
+  </Section>
+
+  <Section>
+    <SectionHead eyebrow={g.faq.eyebrow} title={g.faq.title} lead={g.faq.lead} />
+    <!-- Original summary line height (1.7); the shared Faq uses text-2xl, which brings its own tighter one. -->
+    <Faq items={g.faq.items} class="[&_summary]:leading-[1.7]" />
+  </Section>
+
+  <MagazineBanner
+    href={localizeHref(g.magazine.href, locale)}
+    tag={g.magazine.tag}
+    title={g.magazine.title}
+    linkLabel={g.magazine.linkLabel}
+  />
+
+  <CtaSection eyebrow={g.cta.eyebrow} title={g.cta.title} lead={g.cta.lead}>
+    {g.cta.buttons.map((cta) => <CtaButton cta={cta} locale={locale} />)}
+  </CtaSection>
+</BaseLayout>

@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+import Card from "@/components/ui/Card.astro";
+import { img } from "@/lib/images";
+
+interface Props {
+  /** Photo path, e.g. "space/sauna.jpg". Decorative (the card title says what it is). */
+  image: string;
+  /** CSS aspect-ratio class of the photo strip. */
+  aspect?: "aspect-16/10" | "aspect-16/9";
+  /** Makes the whole card a link. */
+  href?: string;
+  sizes?: string;
+  /** Padding of the text area. */
+  bodyClass?: string;
+}
+
+const {
+  image,
+  aspect = "aspect-16/10",
+  href,
+  sizes = "(min-width: 1001px) 280px, (min-width: 761px) 50vw, 100vw",
+  bodyClass = "px-[1.6rem] py-[1.4rem]",
+} = Astro.props;
+---
+
+<!-- Card with a photo strip on top (original .card with an inline background-image div). -->
+<Card flush href={href} data-reveal>
+  <Image
+    src={img(image)}
+    alt=""
+    widths={[400, 700, 1000]}
+    sizes={sizes}
+    class:list={["w-full border-b border-line object-cover", aspect]}
+  />
+  <div class={bodyClass}>
+    <slot />
+  </div>
+</Card>
