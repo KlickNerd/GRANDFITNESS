@@ -32,8 +32,7 @@ const { locale, eyebrow, name, role, quote, bio, image, alt, stats, buttons } = 
       <Eyebrow>{eyebrow}</Eyebrow>
       <h2>{name}</h2>
       <p class="mt-2 text-[0.85rem] tracking-[0.18em] text-muted-foreground uppercase">{role}</p>
-      <!-- leading-[1.7]: text-xl in Blockquote would otherwise shrink the original 1.7 line height. -->
-      <Blockquote class="leading-[1.7]">{quote}</Blockquote>
+      <Blockquote>{quote}</Blockquote>
       <Lead>{bio}</Lead>
       <div class="my-10 grid grid-cols-2 gap-6 md:grid-cols-[repeat(4,auto)] md:gap-10">
         {

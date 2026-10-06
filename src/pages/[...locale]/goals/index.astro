@@ -28,7 +28,6 @@ const t = copy;
   </Section>
 
   <CtaSection eyebrow={t.cta.eyebrow} title={t.cta.title} lead={t.cta.lead}>
-    {/* whitespace-normal: long Georgian labels must wrap on phones instead of overflowing (as in the original). */}
-    {t.cta.buttons.map((cta) => <CtaButton cta={cta} locale={locale} class="whitespace-normal" />)}
+    {t.cta.buttons.map((cta) => <CtaButton cta={cta} locale={locale} />)}
   </CtaSection>
 </BaseLayout>

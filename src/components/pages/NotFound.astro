@@ -17,6 +17,6 @@ const t = copies[locale];
 <BaseLayout locale={locale} title={t.meta.title} description={t.meta.description} noindex>
   <!-- pt-[7.5rem] keeps the text clear of the fixed nav on phones (md:py-32 still applies above 760px). -->
   <CtaSection eyebrow={t.eyebrow} title={t.title} lead={t.lead} class="pt-[7.5rem]">
-    {t.buttons.map((cta) => <CtaButton cta={cta} locale={locale} class="whitespace-normal" />)}
+    {t.buttons.map((cta) => <CtaButton cta={cta} locale={locale} />)}
   </CtaSection>
 </BaseLayout>
