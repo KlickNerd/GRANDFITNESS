@@ -1,0 +1,16 @@
+---
+interface Props {
+  category: string;
+  /** Muted items after the category, e.g. the date and the byline. */
+  items: string[];
+  class?: string;
+}
+
+const { category, items, class: className } = Astro.props;
+---
+
+<!-- Category + date row (original .article-meta). -->
+<div class:list={["flex gap-4 text-[0.78rem] tracking-[0.12em] uppercase", className]}>
+  <span class="font-bold text-gold">{category}</span>
+  {items.map((item) => <span class="text-muted-foreground">{item}</span>)}
+</div>
