@@ -1,0 +1,33 @@
+---
+import type { Locale } from "@/i18n/config";
+import { localizeHref } from "@/i18n/routes";
+import type { Cta } from "@/i18n/shared-types";
+
+interface Props {
+  cta: Cta;
+  locale: Locale;
+  /**
+   * Homepage button styles (original .btn-primary / .btn-outline / .btn-ghost / .btn-black).
+   * Defaults to the Cta's own style: "outline" → outline, otherwise primary.
+   */
+  variant?: "primary" | "outline" | "ghost" | "black";
+  class?: string;
+}
+
+const { cta, locale, variant = cta.style === "outline" ? "outline" : "primary", class: className } = Astro.props;
+
+// Display font through the variable (not .font-display), so Georgian keeps the homepage's own
+// button sizing: 0.95rem, extra bold, 0.05em tracking.
+const display =
+  "font-(family-name:--font-display) [&:lang(ka)]:text-[0.95rem] [&:lang(ka)]:font-extrabold [&:lang(ka)]:tracking-[0.05em]";
+
+const variants = {
+  primary: `${display} inline-block bg-gold px-12 py-[18px] text-[1.2rem] tracking-[0.12em] text-black transition-[background-color,translate] duration-200 hover:-translate-y-0.5 hover:bg-[#bb9a30]`,
+  outline: `${display} inline-block border border-white/20 px-11 py-[17px] text-[1.1rem] tracking-[0.12em] text-white transition-colors duration-200 hover:border-gold hover:text-gold`,
+  black: `${display} inline-block bg-black px-[46px] py-[18px] text-[1.25rem] tracking-[0.12em] whitespace-nowrap text-gold transition-[opacity,translate] duration-200 hover:-translate-y-0.5 hover:opacity-88`,
+  ghost:
+    "inline-flex items-center gap-2.5 border-b border-white/30 pb-1 text-[0.85rem] tracking-[0.15em] text-white uppercase transition-colors duration-200 hover:border-gold hover:text-gold [&:lang(ka)]:text-[0.95rem] [&:lang(ka)]:font-extrabold [&:lang(ka)]:tracking-[0.05em]",
+};
+---
+
+<a href={localizeHref(cta.href, locale)} class:list={[variants[variant], className]}>{cta.label}</a>
