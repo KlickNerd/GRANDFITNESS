@@ -1,0 +1,19 @@
+---
+interface Props {
+  items: string[];
+  class?: string;
+}
+
+const { items, class: className } = Astro.props;
+---
+
+<!-- Gold-star list of certifications or qualities (original .cert-list). -->
+<ul class={className}>
+  {
+    items.map((item) => (
+      <li class="relative border-b border-line py-[0.55rem] pl-[1.6rem] text-muted-foreground before:absolute before:left-0 before:text-[0.8rem] before:text-gold before:content-['★']">
+        {item}
+      </li>
+    ))
+  }
+</ul>

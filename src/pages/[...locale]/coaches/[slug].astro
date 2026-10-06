@@ -1,0 +1,228 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import ProfileStats from "@/components/coaches/ProfileStats.astro";
+import StarList from "@/components/coaches/StarList.astro";
+import Blockquote from "@/components/ui/Blockquote.astro";
+import Card from "@/components/ui/Card.astro";
+import CtaButton from "@/components/ui/CtaButton.astro";
+import CtaSection from "@/components/ui/CtaSection.astro";
+import Eyebrow from "@/components/ui/Eyebrow.astro";
+import Lead from "@/components/ui/Lead.astro";
+import Pill from "@/components/ui/Pill.astro";
+import QuoteCard from "@/components/ui/QuoteCard.astro";
+import Section from "@/components/ui/Section.astro";
+import SectionHead from "@/components/ui/SectionHead.astro";
+import Tag from "@/components/ui/Tag.astro";
+import { entryPaths } from "@/collections/entries";
+import type { Locale } from "@/i18n/config";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { optionalImg } from "@/lib/images";
+
+export const getStaticPaths = async () => entryPaths(await getCollection("coaches"));
+
+const { entry, locale } = Astro.props as { entry: CollectionEntry<"coaches">; locale: Locale };
+const c = entry.data;
+const photo = optionalImg(c.photo);
+const { Content } = await render(entry);
+
+// Column heading inside two-column sections (smaller than a section heading).
+const colTitle = "text-[clamp(2rem,4vw,3rem)]";
+const gridCols = "grid gap-16 md:grid-cols-2";
+const cardGrid = "grid gap-8 md:grid-cols-2 lg:grid-cols-3";
+// With `numbers` in the about column, the qualifications move next to the options in a dark band,
+// so the testimonials after it switch to the default background.
+const split = Boolean(c.numbers);
+---
+
+<BaseLayout locale={locale} title={c.title} description={c.description}>
+  <header class="grid min-h-screen items-stretch lg:grid-cols-[0.9fr_1.1fr]">
+    <div class="relative min-h-[55vh] overflow-hidden bg-[linear-gradient(160deg,#1c1c1c_0%,#101010_100%)] lg:min-h-[60vh]">
+      {
+        photo && (
+          <Image
+            src={photo}
+            alt={c.photoAlt}
+            widths={[600, 900, 1300]}
+            sizes="(min-width: 1001px) 43vw, 100vw"
+            loading="eager"
+            fetchpriority="high"
+            class="size-full object-cover object-top"
+          />
+        )
+      }
+      <div
+        class="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,var(--color-black)_100%)] lg:bg-[linear-gradient(90deg,transparent_55%,var(--color-black)_100%)]"
+      >
+      </div>
+    </div>
+    <div class="flex flex-col justify-center px-6 py-14 lg:px-[6vw] lg:pt-36 lg:pb-20">
+      <Eyebrow>{c.eyebrow}</Eyebrow>
+      <h1 class="text-[clamp(3.5rem,7vw,6rem)]">
+        {c.name}{c.surname && <>{" "}<span class="text-gold">{c.surname}</span></>}
+      </h1>
+      <p class="mt-[0.8rem] text-[0.9rem] font-semibold tracking-[0.2em] text-muted-foreground uppercase">{c.role}</p>
+      <Blockquote>{c.quote}</Blockquote>
+      <ProfileStats items={c.stats} />
+      <div class="flex flex-wrap gap-4">
+        {c.buttons.map((cta) => <CtaButton cta={cta} locale={locale} />)}
+      </div>
+    </div>
+  </header>
+
+  <Section>
+    <div class={gridCols}>
+      <div data-reveal>
+        <Eyebrow>{c.about.eyebrow}</Eyebrow>
+        <h2 class={colTitle} set:html={c.about.title} />
+        <div class="[&>p]:mt-4 [&>p]:max-w-[640px] [&>p]:text-[1.15rem] [&>p]:text-muted-foreground">
+          <Content />
+        </div>
+        {
+          c.about.traits && (
+            <div class="mt-[1.8rem] flex flex-wrap gap-[0.6rem]">
+              {c.about.traits.map((trait) => <Pill gold>{trait}</Pill>)}
+            </div>
+          )
+        }
+      </div>
+      <div data-reveal>
+        {
+          c.numbers ? (
+            <>
+              <Eyebrow>{c.numbers.eyebrow}</Eyebrow>
+              <h2 class={colTitle} set:html={c.numbers.title} />
+              <div class="mt-[1.8rem] grid gap-4 md:grid-cols-2">
+                {c.numbers.items.map((item) => (
+                  <Card class="p-[1.6rem] text-center">
+                    <span class="block font-display text-[2.6rem] leading-none text-gold">{item.value}</span>
+                    <span class="font-semibold">{item.label}</span>
+                    {item.sub && <span class="block text-[0.8rem] text-muted-foreground">{item.sub}</span>}
+                  </Card>
+                ))}
+              </div>
+              {c.numbers.note && <p class="mt-[1.4rem] text-[0.95rem] text-muted-foreground">{c.numbers.note}</p>}
+            </>
+          ) : (
+            <>
+              <Eyebrow>{c.qualifications.eyebrow}</Eyebrow>
+              <h2 class={colTitle} set:html={c.qualifications.title} />
+              <StarList items={c.qualifications.items} class="mt-6" />
+            </>
+          )
+        }
+      </div>
+    </div>
+  </Section>
+
+  <Section tone="dark">
+    <SectionHead eyebrow={c.specialties.eyebrow} title={c.specialties.title} />
+    <div class={cardGrid}>
+      {
+        c.specialties.items.map((item) => (
+          <Card data-reveal>
+            <h3 class:list={["mt-[0.6rem] mb-[0.8rem]", c.specialties.compact && "text-[1.5rem]"]}>{item.title}</h3>
+            <p class="text-[0.98rem] text-muted-foreground">{item.text}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
+
+  {
+    c.qualities && (
+      <Section>
+        <div class:list={[gridCols, "items-start"]}>
+          <div data-reveal>
+            <Eyebrow>{c.qualities.eyebrow}</Eyebrow>
+            <h2 class={colTitle} set:html={c.qualities.title} />
+          </div>
+          <div data-reveal>
+            <StarList items={c.qualities.items} class="mt-6" />
+          </div>
+        </div>
+      </Section>
+    )
+  }
+
+  {
+    c.process && (
+      <Section>
+        <SectionHead eyebrow={c.process.eyebrow} title={c.process.title} />
+        {c.process.steps.map((step, i) => (
+          <div
+            data-reveal
+            class="group grid items-start gap-[0.8rem] border-b border-line py-12 md:grid-cols-[80px_1.4fr_300px] md:gap-8"
+          >
+            <span class="font-display text-[2.4rem] text-line transition-colors group-hover:text-gold">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <div>
+              <Eyebrow class="mb-[0.4rem]">{step.eyebrow}</Eyebrow>
+              <h2 class="text-[clamp(1.8rem,3.5vw,2.8rem)]">{step.title}</h2>
+              <Lead class="mt-[0.8rem] max-w-[820px]!">{step.text}</Lead>
+            </div>
+            <div />
+          </div>
+        ))}
+      </Section>
+    )
+  }
+
+  {
+    split ? (
+      <Section tone="dark">
+        <div class={gridCols}>
+          <div data-reveal>
+            <Eyebrow>{c.qualifications.eyebrow}</Eyebrow>
+            <h2 class={colTitle} set:html={c.qualifications.title} />
+            <StarList items={c.qualifications.items} class="mt-6" />
+          </div>
+          <div data-reveal>
+            <Eyebrow>{c.options.eyebrow}</Eyebrow>
+            <h2 class={colTitle} set:html={c.options.title} />
+            <div class="mt-6 flex flex-col gap-4">
+              {c.options.items.map((item) => (
+                <Card>
+                  <div><Tag>{item.tag}</Tag></div>
+                  <h3 class="mt-[0.4rem] mb-[0.8rem] text-[1.4rem]">{item.title}</h3>
+                  <p class="text-[0.98rem] text-muted-foreground">{item.text}</p>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+    ) : (
+      <Section>
+        <SectionHead eyebrow={c.options.eyebrow} title={c.options.title} />
+        <div class={cardGrid}>
+          {c.options.items.map((item) => (
+            <Card data-reveal>
+              <div><Tag>{item.tag}</Tag></div>
+              <h3 class="mt-[0.6rem] mb-[0.8rem] text-[1.5rem]">{item.title}</h3>
+              <p class="text-[0.98rem] text-muted-foreground">{item.text}</p>
+            </Card>
+          ))}
+        </div>
+      </Section>
+    )
+  }
+
+  {
+    c.testimonials && (
+      <Section tone={split ? "default" : "dark"}>
+        <SectionHead eyebrow={c.testimonials.eyebrow} title={c.testimonials.title} />
+        <div class={cardGrid}>
+          {c.testimonials.items.map((item, i) => (
+            <QuoteCard quote={item.quote} who={item.who} featured={i === 0} reveal />
+          ))}
+        </div>
+      </Section>
+    )
+  }
+
+  <CtaSection eyebrow={c.cta.eyebrow} title={c.cta.title} lead={c.cta.lead}>
+    {c.cta.buttons.map((cta) => <CtaButton cta={cta} locale={locale} />)}
+  </CtaSection>
+</BaseLayout>
