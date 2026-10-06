@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import Eyebrow from "@/components/ui/Eyebrow.astro";
+import Lead from "@/components/ui/Lead.astro";
+import Pill from "@/components/ui/Pill.astro";
+import TextLink from "@/components/ui/TextLink.astro";
+import type { Locale } from "@/i18n/config";
+import type { ClassRow } from "@/i18n/pages/classes/types";
+import { localizeHref } from "@/i18n/routes";
+import { img } from "@/lib/images";
+
+interface Props {
+  row: ClassRow;
+  locale: Locale;
+}
+
+const { row, locale } = Astro.props;
+const coachClass = "font-display text-[1.8rem] tracking-[0.04em] text-gold [&:lang(ka)]:text-[1.6rem]";
+---
+
+<!-- Numbered class row (original .class-block): number / text / coach + photo; stacks on mobile. -->
+<div
+  id={row.id}
+  data-reveal
+  class="group grid grid-cols-1 items-start gap-[0.8rem] border-b border-line py-12 md:grid-cols-[80px_1.4fr_300px] md:gap-8"
+>
+  <span class="font-display text-[2.4rem] text-line group-hover:text-gold">{row.num}</span>
+  <div>
+    <Eyebrow class="mb-[0.4rem]!">{row.category}</Eyebrow>
+    <h2 class="text-[clamp(2rem,4vw,3.2rem)]">{row.title}</h2>
+    <Lead class="mt-[0.8rem]">{row.text}</Lead>
+    <div class="mt-[1.2rem] flex flex-wrap gap-[0.6rem]">
+      {row.pills.map((pill) => <Pill>{pill}</Pill>)}
+    </div>
+    <p class="mt-[1.2rem]"><TextLink href={localizeHref(row.link.href, locale)}>{row.link.label}</TextLink></p>
+  </div>
+  <div class="text-right">
+    <Eyebrow class="mb-[0.3rem]!">{row.coachLabel}</Eyebrow>
+    {
+      row.coach.href ? (
+        <a class={coachClass} href={localizeHref(row.coach.href, locale)}>{row.coach.name}</a>
+      ) : (
+        <span class={coachClass}>{row.coach.name}</span>
+      )
+    }
+    <Image
+      src={img(row.image)}
+      alt=""
+      widths={[300, 600, 900]}
+      sizes="(min-width: 761px) 300px, 100vw"
+      class="mt-[1.2rem] aspect-16/11 w-full border border-line object-cover transition-[border-color] duration-250 group-hover:border-gold"
+    />
+  </div>
+</div>
