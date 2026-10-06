@@ -811,3 +811,15 @@ h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
 .lang-switch { display: inline-flex; align-items: center; padding: 0.35rem 0.45rem; line-height: 0; opacity: 0.75; }
 .lang-switch svg { display: block; border-radius: 1px; }
 .lang-switch:hover { opacity: 1; border-color: var(--gold); }
+
+/* ---------- Nav fit: tablets collapse to burger; Georgian labels run longer ---------- */
+@media (max-width: 1000px) {
+  .nav-links { display: none; }
+  .burger { display: block; }
+}
+html[lang="ka"] .nav-links { gap: 1.4rem; }
+html[lang="ka"] .nav-links a { letter-spacing: 0.01em; }
+@media (max-width: 1200px) {
+  html[lang="ka"] .nav-links { display: none; }
+  html[lang="ka"] .burger { display: block; }
+}
