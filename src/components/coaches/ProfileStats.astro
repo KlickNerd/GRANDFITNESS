@@ -7,13 +7,13 @@ interface Props {
 const { items, class: className } = Astro.props;
 ---
 
-<!-- Coach key numbers (original .profile-stats): 4 auto-width columns, 2 on mobile. -->
-<div class:list={["my-10 grid grid-cols-2 gap-6 md:grid-cols-[repeat(4,auto)] md:gap-10", className]}>
+<!-- Coach key numbers (original .profile-stats): 4 columns on wide screens, 2 otherwise. -->
+<div class:list={["my-10 grid grid-cols-2 gap-6 xl:grid-cols-4 xl:gap-8", className]}>
   {
     items.map((item) => (
-      <div>
-        <span class="font-display text-[2.4rem] leading-none text-gold">{item.num}</span>
-        <span class="text-[0.8rem] text-muted-foreground">{item.label}</span>
+      <div class="min-w-0">
+        <span class="block font-display text-[2.4rem] leading-none text-gold">{item.num}</span>
+        <span class="mt-1 block text-[0.8rem] leading-snug wrap-break-word text-muted-foreground">{item.label}</span>
       </div>
     ))
   }

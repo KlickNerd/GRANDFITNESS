@@ -59,7 +59,7 @@ const split = Boolean(c.numbers);
     </div>
     <div class="flex flex-col justify-center px-6 py-14 lg:px-[6vw] lg:pt-36 lg:pb-20">
       <Eyebrow>{c.eyebrow}</Eyebrow>
-      <h1 class="text-[clamp(3.5rem,7vw,6rem)]">
+      <h1 class="text-[clamp(3.5rem,7vw,6rem)] [&:is(:lang(ka),:lang(ru))]:text-[clamp(2.4rem,7vw,6rem)]">
         {c.name}{c.surname && <>{" "}<span class="text-gold">{c.surname}</span></>}
       </h1>
       <p class="mt-[0.8rem] text-[0.9rem] font-semibold tracking-[0.2em] text-muted-foreground uppercase">{c.role}</p>
@@ -122,7 +122,7 @@ const split = Boolean(c.numbers);
       {
         c.specialties.items.map((item) => (
           <Card data-reveal>
-            <h3 class:list={["mt-[0.6rem] mb-[0.8rem]", c.specialties.compact && "text-[1.5rem]"]}>{item.title}</h3>
+            <h3 class:list={["mt-[0.6rem] mb-[0.8rem] [&:lang(ka)]:text-[1.5rem]", c.specialties.compact && "text-[1.5rem]"]}>{item.title}</h3>
             <p class="text-[0.98rem] text-muted-foreground">{item.text}</p>
           </Card>
         ))

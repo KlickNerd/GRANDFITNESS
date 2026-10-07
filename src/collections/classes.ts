@@ -96,7 +96,7 @@ export const classes = defineCollection({
       .optional(),
     /** "From the Magazine" banner linking to an article. */
     magazine: z
-      .object({ tag: z.string(), title: z.string(), href: z.string(), linkLabel: z.string() })
+      .object({ tag: z.string(), href: z.string(), linkLabel: z.string() })
       .optional(),
     cta: head.extend({ buttons: z.array(cta) }),
   }),

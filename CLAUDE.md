@@ -11,6 +11,7 @@ Without Nix, use Node ≥ 22.12 directly.
 - `npm run dev` — local preview at http://localhost:4321
 - `npm run build` — must pass before every commit
 - `npm run check` — type check (catches missing translation fields)
+- `npm run translations` — compare every Georgian/Russian text with English
 - `npm run deploy` — build and upload to Cloudflare
 
 ## Hard rules
@@ -65,14 +66,15 @@ src/layouts/BaseLayout.astro   <head>, SEO, hreflang, skip link, <main>, nav, fo
 - **Change a price or text:** edit the matching `src/i18n/pages/<page>/<locale>.ts`. Change every
   language that has the page (`index.ts` lists them).
 - **Translate a page:** see `src/i18n/pages/README.md`. Every page exists in en, ka and ru: when you
-  change text in one language, change the other two as well, then run
-  `nix develop -c node scripts/check-translations.mjs`.
-- **Add a coach / class / article:** add a Markdown file to `src/content/<collection>/en/`, copying
-  an existing one's frontmatter, then add its teaser card to the homepage / index copy files.
-- **Remove a coach / class / goal / article:** delete its Markdown file. Teaser cards pointing to it
+  change text in one language, change the other two as well, then run `npm run translations`.
+- **Add a coach / class / goal / article:** add a Markdown file to `src/content/<collection>/en/`,
+  copying an existing one's frontmatter, plus its translations in `ka/` and `ru/` (same file name and
+  keys), then add its teaser card to the homepage / index copy files in all three languages.
+- **Remove a coach / class / goal / article:** delete its Markdown files (en, ka, ru). Teaser cards pointing to it
   disappear from the homepage and index pages automatically (`existing()` in `src/collections/teasers.ts`).
-- **Coach photos** are set once, in the profile (`photo:` in `src/content/coaches/en/<slug>.md`);
-  teaser cards use it. A coach without a photo shows a dark placeholder.
+- **Coach photos** are set in the profile (`photo:` in `src/content/coaches/<locale>/<slug>.md`, the same
+  path in all three languages — the translation checker enforces it); teaser cards use the English one.
+  A coach without a photo (currently Luka) shows a dark placeholder.
 - **Scroll fade-in:** add the `data-reveal` attribute to an element.
 - Strings that may contain inline HTML (`<br>`, `<span class="text-gold">`) are marked `html` in
   the page's `types.ts` and rendered with `set:html`.

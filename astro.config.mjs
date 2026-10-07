@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig, fontProviders } from "astro/config";
+import { satteri } from "@astrojs/markdown-satteri";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { rename, rm } from "node:fs/promises";
@@ -34,7 +35,7 @@ export default defineConfig({
   trailingSlash: "always",
   build: { format: "directory" },
   // Keep quotes and dashes exactly as written (no automatic curly quotes / en dashes).
-  markdown: { smartypants: false },
+  markdown: { processor: satteri({ features: { smartPunctuation: false } }) },
   i18n: {
     locales: ["en", "ka", "ru"],
     defaultLocale: "en",
@@ -91,7 +92,7 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) => !/\/404\/?$/.test(page),
-      i18n: { defaultLocale: "ka", locales: { en: "en", ka: "ka", ru: "ru" } },
+      i18n: { defaultLocale: "en", locales: { en: "en", ka: "ka", ru: "ru" } },
     }),
     localized404,
   ],

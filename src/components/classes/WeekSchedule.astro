@@ -12,7 +12,7 @@ const { days, class: className } = Astro.props;
   {
     days.map((day) => (
       <div class="bg-card px-4 py-[1.4rem]">
-        <h4 class="mb-4 font-display text-[1.3rem] tracking-[0.1em] text-gold">{day.day}</h4>
+        <h3 class="mb-4 text-[1.3rem] leading-[1.7] tracking-[0.1em] text-gold">{day.day}</h3>
         {day.slots.map((slot) => (
           <div class="border-t border-line py-2 text-[0.82rem]">
             <span class="font-semibold text-gold">{slot.time}</span> {slot.name}

@@ -36,9 +36,9 @@ export default {
     {
       href: "/goals/feel-great/",
       image: "space/cardio-zone.jpg",
-      alt: "Снова почувствуй себя отлично в Grand Fitness Батуми",
+      alt: "Вернись в форму в Grand Fitness Батуми",
       tag: "Похудение и форма",
-      title: "Снова чувствовать себя отлично",
+      title: "Снова в форме",
       text: "Кардио с видом, тренировки под отличную музыку и план, которого наконец получится придерживаться.",
       linkLabel,
     },

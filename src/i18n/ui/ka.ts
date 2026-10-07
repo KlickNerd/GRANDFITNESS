@@ -3,6 +3,7 @@ import type { UiStrings } from "./en";
 const ka = {
   skipToContent: "გადასვლა შინაარსზე",
   menu: "მენიუ",
+  navLabel: "მთავარი ნავიგაცია",
   closeMenu: "მენიუს დახურვა",
   nav: [
     { href: "/about/", label: "ჩვენ შესახებ" },

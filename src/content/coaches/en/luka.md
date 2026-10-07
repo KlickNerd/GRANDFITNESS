@@ -7,7 +7,7 @@ eyebrow: "Grand Fitness · Personal Trainer"
 name: "Luka"
 surname: "Jikhadze"
 role: "Personal Trainer"
-quote: "„Proper, safe, results-oriented — that is the whole philosophy.“"
+quote: "“Proper, safe, results-oriented — that is the whole philosophy.”"
 stats:
   - { num: "8", label: "Years in Strength Sports" }
   - { num: "5+", label: "Years Coaching" }

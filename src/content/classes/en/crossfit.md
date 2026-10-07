@@ -103,7 +103,7 @@ coach:
   eyebrow: Your Coaches
   name: The Team
   role: Grand Fitness Coaching Team
-  quote: „The workout should scare you a little. That's how you know it's working.“
+  quote: “The workout should scare you a little. That's how you know it's working.”
   bio: 'Every class is led by an experienced Grand Fitness coach: careful programming, precise scaling for every athlete in the room, and an eye that misses nothing. The sessions are relentlessly challenging and somehow always fun — even when your lungs are on fire.'
   buttons:
   - label: Join a Session
@@ -142,7 +142,6 @@ pairs:
     linkLabel: Full class page →
 magazine:
   tag: From the Magazine
-  title: 'WOD, AMRAP, Scaled: CrossFit-Style Training Decoded'
   href: /magazine/crossfit-wod-explained/
   linkLabel: Read article →
 cta:

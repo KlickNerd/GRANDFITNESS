@@ -6,11 +6,11 @@ photoAlt: "Goga, Boxing Coach at Grand Fitness Batumi"
 eyebrow: "Grand Fitness · Boxing Coach"
 name: "Goga"
 role: "Boxing Coach"
-quote: "„Boxing teaches you the truth about yourself. Then it teaches you to improve it.“"
+quote: "“Boxing teaches you the truth about yourself. Then it teaches you to improve it.”"
 stats:
   - { num: "10+", label: "Years in Boxing" }
   - { num: "50+", label: "Amateur Bouts" }
-  - { num: "5", label: "Classes / Week" }
+  - { num: "4", label: "Classes / Week" }
   - { num: "0", label: "Punches Taken (by you)" }
 buttons:
   - { label: "Train With Goga", href: "/contact/" }
@@ -54,11 +54,11 @@ testimonials:
   eyebrow: "What clients say"
   title: "Results<br>speak."
   items:
-    - quote: "„I've done boxing classes at three gyms in Batumi. Nobody teaches technique like Goga — you actually learn to box here.“"
+    - quote: "“I've done boxing classes at three gyms in Batumi. Nobody teaches technique like Goga — you actually learn to box here.”"
       who: "— Luka A., 27 · Batumi"
-    - quote: "„Best workout I've ever had, full stop. An hour flies by and you leave completely spent and completely happy.“"
+    - quote: "“Best workout I've ever had, full stop. An hour flies by and you leave completely spent and completely happy.”"
       who: "— Mariami D., 24 · Batumi"
-    - quote: "„Patient with beginners, demanding with everyone. Exactly what a coach should be.“"
+    - quote: "“Patient with beginners, demanding with everyone. Exactly what a coach should be.”"
       who: "— Zura K., 31 · Batumi"
 cta:
   eyebrow: "Your first session"

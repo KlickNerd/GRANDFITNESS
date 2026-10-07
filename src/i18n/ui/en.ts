@@ -3,6 +3,8 @@ const en = {
   skipToContent: "Skip to content",
   menu: "Menu",
   closeMenu: "Close menu",
+  /** Screen-reader name of the main navigation. */
+  navLabel: "Main",
   nav: [
     { href: "/about/", label: "About" },
     { href: "/goals/", label: "Goals" },

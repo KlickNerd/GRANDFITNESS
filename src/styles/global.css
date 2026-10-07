@@ -1,6 +1,6 @@
 /* ==========================================================================
    GRAND FITNESS — Design system
-   Black & gold · Bebas Neue (display) · DM Sans (body) · Noto Sans Georgian (ka)
+   Black & gold · Bebas Neue (display) · DM Sans (body) · Noto Sans Georgian (ka) · Oswald / Manrope (ru)
    Dark-only by design: there is no light theme and no dark: toggle.
    ========================================================================== */
 
@@ -130,6 +130,8 @@
     font-size: 17px;
     line-height: 1.7;
     overflow-x: hidden;
+    /* Long Georgian/Russian words wrap inside narrow boxes instead of sticking out. */
+    overflow-wrap: break-word;
   }
 
   img {
@@ -143,12 +145,24 @@
     @apply font-display font-normal uppercase;
     letter-spacing: 0.02em;
     line-height: 0.95;
+    /* A word longer than the screen (Georgian, Russian) wraps instead of widening the page. */
+    overflow-wrap: anywhere;
   }
   h1 {
     font-size: clamp(3.5rem, 9vw, 7rem);
   }
   h2 {
     font-size: clamp(2.5rem, 6vw, 4.5rem);
+  }
+  /* Georgian and Cyrillic words are longer and wider than Bebas Neue's: smaller sizes on phones. */
+  :is(:lang(ka), :lang(ru)) h1 {
+    font-size: clamp(2.4rem, 9vw, 7rem);
+  }
+  :is(:lang(ka), :lang(ru)) h2 {
+    font-size: clamp(2rem, 6vw, 4.5rem);
+  }
+  :lang(ka) h3 {
+    font-size: clamp(1.4rem, 2.2vw, 1.8rem);
   }
   h3 {
     font-size: clamp(1.6rem, 3vw, 2.2rem);
@@ -180,10 +194,19 @@
   text-transform: none;
 }
 /* ---------- Russian ----------
-   Cyrillic display text is set in Oswald, which looks closest to Bebas Neue at medium weight. */
+   Cyrillic display text is set in Oswald, which looks closest to Bebas Neue at medium weight.
+   Bebas Neue only has capitals, Oswald has both: uppercase keeps Russian display text (buttons,
+   names, labels) all caps like English. Line height leaves room for the breve on Й. */
 :lang(ru) :is(h1, h2, h3, .font-display) {
   font-weight: 500;
   font-synthesis-weight: none;
+}
+/* (The homepage sets the display font through the variable: font-(family-name:--font-display).) */
+:lang(ru) :is(.font-display, [class*="--font-display"]):not(.normal-case) {
+  text-transform: uppercase;
+}
+:lang(ru) :is(h1, h2, h3) {
+  line-height: 1.05;
 }
 
 /* Georgian letters are tall: headings that wrap need more room than Bebas' 0.95. */

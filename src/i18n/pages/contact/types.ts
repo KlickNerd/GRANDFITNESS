@@ -34,6 +34,8 @@ export interface Copy {
     message: Field;
     submit: string;
     note: string;
+    /** Shown above the form after FormSubmit sends the visitor back (/contact/?sent). */
+    sent: string;
   };
   channels: {
     eyebrow: string;

@@ -108,7 +108,7 @@ coach:
   eyebrow: "Your coach for this goal"
   name: "Nika"
   role: "Strength & Hypertrophy Coach"
-  quote: "„Muscle doesn't respond to wishes. It responds to sets, reps and food — delivered on schedule. Bring me the consistency, I'll bring you the plan.“"
+  quote: "“Muscle doesn't respond to wishes. It responds to sets, reps and food — delivered on schedule. Bring me the consistency, I'll bring you the plan.”"
   bio: "Nika lives what he coaches: ten years of training, a 240kg deadlift, and three years of guiding members through structured hypertrophy — every set logged, every block reviewed, every plateau answered with an adjustment instead of a motivational quote. Training and nutrition plans included, in the gym or online."
   image: "coaches/nika.jpg"
   alt: "Nika, Strength and Hypertrophy Coach at Grand Fitness Batumi"
@@ -151,10 +151,10 @@ testimonials:
   eyebrow: "Proof over promises"
   title: "Members who<br>built it."
   items:
-    - quote: "„He tracks everything. You always know exactly why you're doing what you're doing — and the mirror shows it.“"
+    - quote: "“He tracks everything. You always know exactly why you're doing what you're doing — and the mirror shows it.”"
       who: "— Anano P., 28 · Batumi"
       featured: true
-    - quote: "„Nika taught me to squat properly at 45 years old. Strongest and most muscular I've ever been in my life.“"
+    - quote: "“Nika taught me to squat properly at 45 years old. Strongest and most muscular I've ever been in my life.”"
       who: "— Temur J., 45 · Batumi"
 faq:
   eyebrow: "Questions & Answers"
@@ -175,7 +175,6 @@ faq:
 magazine:
   href: "/magazine/how-muscle-grows/"
   tag: "From the Magazine"
-  title: "How Muscle Actually Grows — and the 5 Mistakes That Stop It"
   linkLabel: "Read article →"
 cta:
   eyebrow: "Take the first step"

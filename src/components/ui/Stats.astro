@@ -19,8 +19,8 @@ const { items, class: className } = Astro.props;
           i === 2 && "md:border-l",
         ]}
       >
-        <span class="block font-display text-5xl leading-none text-gold" set:html={item.num} />
-        <span class="mt-2 block font-semibold" set:html={item.label} />
+        <span class="block font-display text-5xl leading-none wrap-anywhere text-gold max-md:[&:lang(ka)]:text-[1.9rem]" set:html={item.num} />
+        <span class="mt-2 block font-semibold wrap-break-word" set:html={item.label} />
         {item.sub && <span class="mt-[0.15rem] block text-[0.85rem] text-muted-foreground" set:html={item.sub} />}
       </div>
     ))

@@ -4,39 +4,47 @@ Every static page keeps its text here, separate from its layout in `src/pages/[.
 
 ```
 src/i18n/pages/pricing/
-  en.ts     ← English, the reference. Defines the shape (`Copy` type).
-  ka.ts     ← Georgian. `satisfies Copy`, so a missing or extra field is a build error.
-  index.ts  ← lists the languages that exist: export const copies = { en, ka };
+  types.ts  ← the shape of the page text (`Copy` type). Strings marked /** html */ may contain inline tags.
+  en.ts     ← English, the reference.
+  ka.ts     ← Georgian.
+  ru.ts     ← Russian.
+  index.ts  ← lists the languages: export const copies = { en, ka, ru };
 ```
 
-## Add a translation (e.g. Russian pricing)
+Each language file starts with `import type { Copy } from "./types";` and ends the object with
+`} satisfies Copy;`, so a missing or extra field fails `npm run check`. Every section is required:
+all three languages show the same sections in the same order.
 
-1. Copy `en.ts` to `ru.ts`, change the first line to `import type { Copy } from "./en";`
-   and end the object with `satisfies Copy`.
-2. Translate the strings. Keep the inline HTML tags (`<br>`, `<span class="text-gold">`) as they are.
-3. Add it to `index.ts`: `export const copies = { en, ka, ru };`
+## Change text
 
-That's all: `/ru/pricing/` is built, hreflang tags appear on all language versions,
-and the language switcher links to it. A language only shows up in the switcher once its
-homepage (`src/i18n/pages/home/<locale>.ts`) exists.
+Change the same text in **all three languages** (`en.ts`, `ka.ts`, `ru.ts`). Keep the inline HTML
+tags (`<br>`, `<span class="text-gold">`) around the equivalent words.
 
 Coach profiles, class pages, goal pages and articles work the same way with Markdown:
-copy `src/content/<collection>/en/<slug>.md` to `src/content/<collection>/<locale>/<slug>.md`
-and translate the text values and the body.
+`src/content/<collection>/<locale>/<slug>.md`, one file per language with the same frontmatter keys.
+
+## Add a new page or language
+
+- New collection entry (coach, class, goal, article): add `en/<slug>.md`, then `ka/<slug>.md` and
+  `ru/<slug>.md` with the same keys, translated.
+- New language: add `<locale>.ts` next to every `en.ts`, list it in each `index.ts`, add
+  `src/i18n/ui/<locale>.ts` and the locale in `src/i18n/config.ts` / `astro.config.mjs`.
+  A language only shows up in the switcher once its homepage (`home/<locale>.ts`) exists.
 
 ## Rules for translated text
 
 - Keep image paths, `href` fields, slugs, numbers and prices exactly as in English.
 - Links written *inside* text (`href="/…"` in HTML strings, `[text](/…)` in Markdown) point to
   the translated page: `/contact/` becomes `/ka/contact/` or `/ru/contact/`.
+  Structured `href:` fields stay unprefixed; the site adds the language itself.
 - Never write "(EN)" into a label: it's added automatically when a link target isn't translated.
 
-## Check a translation
+## Check translations
 
-    nix develop -c node scripts/check-translations.mjs ru            # everything in Russian
-    nix develop -c node scripts/check-translations.mjs ka coaches    # Georgian coach files only
+    nix develop -c npm run translations                                # everything
+    nix develop -c node scripts/check-translations.mjs ru              # everything in Russian
+    nix develop -c node scripts/check-translations.mjs ka coaches      # Georgian coach files only
 
 It compares every translation with its English source: missing files, different structure,
-changed images/prices/links, and text that still looks English.
-
-Strings marked `// html` in `en.ts` are rendered with `set:html` and may contain inline tags.
+changed images/prices/links, and text that still looks English. Numbers in a translation that
+English doesn't have are printed as warnings: check the fact ("Ten years" → "10 წელი" is fine).

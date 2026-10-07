@@ -7,7 +7,7 @@ eyebrow: "Grand Fitness · Certified Personal Trainer"
 name: "Salome"
 surname: "Shakarishvili"
 role: "Certified Personal Trainer"
-quote: "„Every client deserves to feel supported, motivated and professionally guided.“"
+quote: "“Every client deserves to feel supported, motivated and professionally guided.”"
 stats:
   - { num: "8", label: "Years in Fitness" }
   - { num: "4", label: "Languages" }

@@ -108,7 +108,8 @@ export const goals = defineCollection({
     }),
     faq: z.object({ ...head, items: z.array(z.object({ q: z.string(), a: z.string() })) }),
     /** "From the Magazine" banner linking to an article. */
-    magazine: z.object({ href: z.string(), tag: z.string(), title: z.string(), linkLabel: z.string() }),
+    /** Article teaser; its title comes from the article itself. */
+    magazine: z.object({ href: z.string(), tag: z.string(), linkLabel: z.string() }),
     cta: z.object({
       eyebrow: z.string(),
       /** html */

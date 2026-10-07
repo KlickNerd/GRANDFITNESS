@@ -27,6 +27,7 @@ export default {
       placeholder: "Tell us what you're looking for — goals, questions, preferred times…",
     },
     submit: "Send Message",
+    sent: "Thanks — your message is on its way. We usually reply the same day.",
     note: "We usually reply the same day. Prefer it faster? Call us or send a DM on Instagram — we're quick there too.",
   },
   channels: {

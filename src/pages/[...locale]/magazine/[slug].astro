@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { getImage, Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
 import ArticleCard from "@/components/magazine/ArticleCard.astro";
 import ArticleMeta from "@/components/magazine/ArticleMeta.astro";
@@ -23,11 +23,15 @@ const t = (copies as Partial<Record<Locale, (typeof copies)["en"]>>)[locale] ?? 
 const a = entry.data;
 const { Content } = await render(entry);
 const related = relatedArticles(entry, await articlesFor(locale));
+// Social card (1200×630) cut from the article photo, unless the article sets its own ogImage.
+const socialImage = a.ogImage ?? (await getImage({ src: img(a.image), width: 1200, height: 630, fit: "cover", format: "jpg" })).src;
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: a.title,
+  image: new URL(socialImage, Astro.site).href,
+  inLanguage: locale,
   datePublished: a.datePublished,
   author: { "@type": "Organization", name: t.article.jsonLd.author },
   publisher: { "@type": "Organization", name: t.article.jsonLd.publisher, url: t.article.jsonLd.publisherUrl },
@@ -39,13 +43,13 @@ const jsonLd = {
   locale={locale}
   title={a.metaTitle ?? a.title + t.article.titleSuffix}
   description={a.description}
-  ogImage={a.ogImage}
+  ogImage={socialImage}
   ogType="article"
   jsonLd={jsonLd}
 >
   <article class="mx-auto max-w-[760px] px-6 pt-44 pb-20">
     <ArticleMeta category={a.category} items={[a.date, a.author]} />
-    <h1 class="mt-4 mb-6 text-[clamp(2.8rem,6vw,4.5rem)]">{a.title}</h1>
+    <h1 class="mt-4 mb-6 text-[clamp(2.8rem,6vw,4.5rem)] [&:is(:lang(ka),:lang(ru))]:text-[clamp(2.1rem,6vw,4.5rem)]">{a.title}</h1>
     <Image
       src={img(a.image)}
       alt=""

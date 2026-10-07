@@ -7,7 +7,7 @@ eyebrow: "Grand Fitness · Personal Trainer"
 name: "Rezo"
 surname: "Tavberidze"
 role: "Personal Trainer"
-quote: "„The best results come from an individual approach — your goals, your body, your program.“"
+quote: "“The best results come from an individual approach — your goals, your body, your program.”"
 stats:
   - { num: "3", label: "Professional Qualifications" }
   - { num: "60", label: "Min Per Session" }

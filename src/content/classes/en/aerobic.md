@@ -103,7 +103,7 @@ coach:
   eyebrow: Your Coach
   name: Joni
   role: Group Fitness Coach
-  quote: „If you're not smiling by the end of my class, I'll work harder next time.“
+  quote: “If you're not smiling by the end of my class, I'll work harder next time.”
   bio: 'Aerobic is where Joni''s legend was built: great music, better energy, and sequences that make complete beginners feel coordinated by week two. He reads the room like a DJ, scales every block for every level, and turns Monday 08:00 — objectively the worst timeslot in fitness — into the best-attended class of the week.'
   stats:
   - num: 7+
@@ -151,7 +151,6 @@ pairs:
     linkLabel: Full class page →
 magazine:
   tag: From the Magazine
-  title: 'Heart Rate Zones Made Simple: Train Smarter, Burn More'
   href: /magazine/cardio-heart-rate-zones/
   linkLabel: Read article →
 cta:

@@ -8,12 +8,13 @@ interface Props {
   title: string;
   /** May contain inline HTML. */
   lead?: string;
-  /** Extra classes for the lead paragraph, e.g. a narrower max-w-[560px]. */
-  leadClass?: string;
+  /** Render the title as the page's <h1> (404 page) — same size as the usual <h2>. */
+  pageTitle?: boolean;
   class?: string;
 }
 
-const { eyebrow, title, lead, leadClass, class: className } = Astro.props;
+const { eyebrow, title, lead, pageTitle = false, class: className } = Astro.props;
+const Heading = pageTitle ? "h1" : "h2";
 ---
 
 <!-- Closing call to action with the soft gold glow (original .cta-section). Buttons go in the default slot. -->
@@ -26,8 +27,8 @@ const { eyebrow, title, lead, leadClass, class: className } = Astro.props;
 >
   <div class="wrap relative">
     {eyebrow && <Eyebrow class="mb-[0.8rem]"><Fragment set:html={eyebrow} /></Eyebrow>}
-    <h2 set:html={title} />
-    {lead && <Lead class={`mx-auto mt-[1.4rem] mb-[2.4rem] ${leadClass ?? ""}`}><Fragment set:html={lead} /></Lead>}
+    <Heading class:list={[pageTitle && "text-[clamp(2.5rem,6vw,4.5rem)]"]} set:html={title} />
+    {lead && <Lead class="mx-auto mt-[1.4rem] mb-[2.4rem]"><Fragment set:html={lead} /></Lead>}
     <div class="flex flex-wrap justify-center gap-4">
       <slot />
     </div>

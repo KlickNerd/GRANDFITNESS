@@ -108,7 +108,7 @@ coach:
   eyebrow: "Your coach for this goal"
   name: "Goga"
   role: "Boxing Coach"
-  quote: "„Boxing teaches you the truth about yourself. Then it teaches you to improve it.“"
+  quote: "“Boxing teaches you the truth about yourself. Then it teaches you to improve it.”"
   bio: "Former competitive boxer, 50+ amateur bouts, and one of the most technically gifted coaches in the gym. Goga is patient with beginners and demanding with everyone — he'll break a punch down into pieces small enough for day one, and he'll still be correcting millimeters a year later. That's why people who learn here actually learn to box."
   image: "coaches/goga.jpg"
   alt: "Goga, Boxing Coach at Grand Fitness Batumi"
@@ -117,7 +117,7 @@ coach:
       label: "Years in Boxing"
     - num: "50+"
       label: "Amateur Bouts"
-    - num: "5"
+    - num: "4"
       label: "Classes / Week"
     - num: "0"
       label: "Punches Taken (by you)"
@@ -151,10 +151,10 @@ testimonials:
   eyebrow: "Proof over promises"
   title: "Members who<br>learned to box."
   items:
-    - quote: "„I've done boxing classes at three gyms in Batumi. Nobody teaches technique like Goga — you actually learn to box here.“"
+    - quote: "“I've done boxing classes at three gyms in Batumi. Nobody teaches technique like Goga — you actually learn to box here.”"
       who: "— Luka A., 27 · Batumi"
       featured: true
-    - quote: "„Best workout I've ever had, full stop. An hour flies by and you leave completely spent and completely happy.“"
+    - quote: "“Best workout I've ever had, full stop. An hour flies by and you leave completely spent and completely happy.”"
       who: "— Mariami D., 24 · Batumi"
 faq:
   eyebrow: "Questions & Answers"
@@ -175,7 +175,6 @@ faq:
 magazine:
   href: "/magazine/boxing-first-month/"
   tag: "From the Magazine"
-  title: "Your First Month of Boxing Training: What Actually Happens"
   linkLabel: "Read article →"
 cta:
   eyebrow: "Take the first step"

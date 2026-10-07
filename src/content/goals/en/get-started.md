@@ -108,7 +108,7 @@ coach:
   eyebrow: "Your coach for this goal"
   name: "Mariam"
   role: "Personal Trainer"
-  quote: "„I don't just count your reps — I explain the why behind every exercise. When you understand your training, the fear disappears.“"
+  quote: "“I don't just count your reps — I explain the why behind every exercise. When you understand your training, the fear disappears.”"
   bio: "Known across the gym for one superpower: making beginners feel at home — and then taking them further than they ever expected. Mariam explains the why behind every exercise, celebrates every first, and has walked 300+ members through the exact journey you're about to start. Day one is her favorite day."
   image: "coaches/mariam.jpg"
   alt: "Mariam, Personal Trainer at Grand Fitness Batumi"
@@ -151,10 +151,10 @@ testimonials:
   eyebrow: "Proof over promises"
   title: "Members who<br>just started."
   items:
-    - quote: "„As a complete beginner I was genuinely nervous. Now this place is my favourite part of the day. No egos, just real work.“"
+    - quote: "“As a complete beginner I was genuinely nervous. Now this place is my favourite part of the day. No egos, just real work.”"
       who: "— Tamar K., 26 · Batumi"
       featured: true
-    - quote: "„I was terrified to step into a gym for the first time. Mariam made the whole experience feel safe and exciting. Three months in, I'm stronger than I've ever been.“"
+    - quote: "“I was terrified to step into a gym for the first time. Mariam made the whole experience feel safe and exciting. Three months in, I'm stronger than I've ever been.”"
       who: "— Member, 27 · Batumi"
 faq:
   eyebrow: "Questions & Answers"
@@ -175,7 +175,6 @@ faq:
 magazine:
   href: "/magazine/gym-beginners-guide-batumi/"
   tag: "From the Magazine"
-  title: "Joining a Gym in Batumi: The Complete Beginner’s Guide"
   linkLabel: "Read article →"
 cta:
   eyebrow: "Take the first step"

@@ -1,6 +1,6 @@
 # Grand Fitness — grandfitness.ge
 
-Website for Grand Fitness, Batumi. Black & gold design, Bebas Neue + DM Sans (+ Noto Sans Georgian).
+Website for Grand Fitness, Batumi. Black & gold design, Bebas Neue + DM Sans (+ Noto Sans Georgian, Oswald and Manrope for Cyrillic).
 
 Built with [Astro](https://astro.build) (static output), [Tailwind CSS v4](https://tailwindcss.com) and
 [Starwind UI](https://starwind.dev), hosted on Cloudflare Workers. No UI framework, almost no JavaScript:
@@ -14,7 +14,7 @@ menus, dialogs and FAQs use native HTML (`popover`, `<dialog>`, `<details>`).
 | Georgian | `/ka/` | all pages |
 | Russian | `/ru/` | all pages |
 
-Translations are checked against English with `node scripts/check-translations.mjs`.
+Translations are checked against English with `npm run translations` (`scripts/check-translations.mjs`).
 Each page's text lives in one file per language (`src/i18n/pages/<page>/<locale>.ts`), separate from the
 layout. Adding a translation is described in [`src/i18n/pages/README.md`](src/i18n/pages/README.md).
 hreflang tags, the sitemap and the language switcher update themselves.
@@ -33,6 +33,8 @@ npm install
 npm run dev       # http://localhost:4321
 npm run build     # static site in dist/
 npm run check     # type check (missing translation fields fail here)
+npm run translations  # compare every translation with English
+npm run preview   # serve dist/ locally the way Cloudflare does (wrangler dev)
 ```
 
 ## Deployment

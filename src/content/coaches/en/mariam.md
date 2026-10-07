@@ -7,7 +7,7 @@ eyebrow: "Grand Fitness · Personal Trainer"
 name: "Mariam"
 surname: "Tsintsadze"
 role: "Personal Trainer"
-quote: "„I don't just count your reps — I explain the why behind every exercise.“"
+quote: "“I don't just count your reps — I explain the why behind every exercise.”"
 stats:
   - { num: "8+", label: "Years Experience" }
   - { num: "300+", label: "Clients Coached" }
@@ -64,11 +64,11 @@ testimonials:
   eyebrow: "What clients say"
   title: "Results<br>speak."
   items:
-    - quote: "„I was terrified to step into a gym for the first time. Mariam made the whole experience feel safe and exciting. Three months in, I'm stronger than I've ever been.“"
+    - quote: "“I was terrified to step into a gym for the first time. Mariam made the whole experience feel safe and exciting. Three months in, I'm stronger than I've ever been.”"
       who: "— Tamar, 27 · Batumi"
-    - quote: "„After my knee surgery I thought I'd never train properly again. Mariam built a program specifically for my recovery and I couldn't believe how quickly I progressed.“"
+    - quote: "“After my knee surgery I thought I'd never train properly again. Mariam built a program specifically for my recovery and I couldn't believe how quickly I progressed.”"
       who: "— Elene, 34 · Batumi"
-    - quote: "„I've had coaches before, but Mariam is different. She notices the small things, adjusts on the fly, and always shows up with energy that makes you push harder.“"
+    - quote: "“I've had coaches before, but Mariam is different. She notices the small things, adjusts on the fly, and always shows up with energy that makes you push harder.”"
       who: "— Ana, 41 · Batumi"
 cta:
   eyebrow: "Your first session"

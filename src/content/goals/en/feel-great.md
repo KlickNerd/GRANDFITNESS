@@ -108,7 +108,7 @@ coach:
   eyebrow: "Your coach for this goal"
   name: "Joni"
   role: "Group Fitness Coach"
-  quote: "„If you're not smiling by the end of my class, I'll work harder next time.“"
+  quote: "“If you're not smiling by the end of my class, I'll work harder next time.”"
   bio: "Pure energy, every single session — Joni's classes have a waiting list for a reason. He makes cardio genuinely something to look forward to, scales every session for every level in the room, and knows every regular by name. If enjoyment is the strategy, Joni is the secret weapon."
   image: "coaches/joni.jpg"
   alt: "Joni, Group Fitness Coach at Grand Fitness Batumi"
@@ -151,10 +151,10 @@ testimonials:
   eyebrow: "Proof over promises"
   title: "Members who<br>feel it."
   items:
-    - quote: "„I never thought I'd be a 'group class person'. Then I took one of Joni's sessions. Now I plan my week around them.“"
+    - quote: "“I never thought I'd be a 'group class person'. Then I took one of Joni's sessions. Now I plan my week around them.”"
       who: "— Eka T., 27 · Batumi"
       featured: true
-    - quote: "„The energy is unreal. An hour of cardio that feels like fifteen minutes — and I've lost 9 kilos without ever feeling like I was on a diet.“"
+    - quote: "“The energy is unreal. An hour of cardio that feels like fifteen minutes — and I've lost 9 kilos without ever feeling like I was on a diet.”"
       who: "— Nikoloz D., 30 · Batumi"
 faq:
   eyebrow: "Questions & Answers"
@@ -175,7 +175,6 @@ faq:
 magazine:
   href: "/magazine/cardio-heart-rate-zones/"
   tag: "From the Magazine"
-  title: "Heart Rate Zones Made Simple: Train Smarter, Burn More"
   linkLabel: "Read article →"
 cta:
   eyebrow: "Take the first step"

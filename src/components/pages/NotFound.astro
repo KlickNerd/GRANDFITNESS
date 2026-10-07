@@ -13,10 +13,10 @@ const { locale } = Astro.props;
 const t = copies[locale];
 ---
 
-<!-- "Page not found" body shared by src/pages/404.astro and src/pages/ka/404.astro. -->
+<!-- "Page not found" body shared by src/pages/404.astro, src/pages/ka/404.astro and src/pages/ru/404.astro. -->
 <BaseLayout locale={locale} title={t.meta.title} description={t.meta.description} noindex>
   <!-- pt-[7.5rem] keeps the text clear of the fixed nav on phones (md:py-32 still applies above 760px). -->
-  <CtaSection eyebrow={t.eyebrow} title={t.title} lead={t.lead} class="pt-[7.5rem]">
+  <CtaSection eyebrow={t.eyebrow} title={t.title} lead={t.lead} pageTitle class="pt-[7.5rem]">
     {t.buttons.map((cta) => <CtaButton cta={cta} locale={locale} />)}
   </CtaSection>
 </BaseLayout>

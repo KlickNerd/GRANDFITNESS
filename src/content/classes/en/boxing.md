@@ -103,7 +103,7 @@ coach:
   eyebrow: Your Coach
   name: Goga
   role: Boxing Coach
-  quote: „Boxing teaches you the truth about yourself. Then it teaches you to improve it.“
+  quote: “Boxing teaches you the truth about yourself. Then it teaches you to improve it.”
   bio: 'Former competitive boxer with 50+ amateur bouts and one of the most technically gifted coaches in the gym. Goga breaks a punch into pieces small enough for day one — and is still correcting millimeters a year later. Patient with beginners, demanding with everyone: exactly what a boxing coach should be.'
   stats:
   - num: 10+
@@ -151,7 +151,6 @@ pairs:
     linkLabel: Full class page →
 magazine:
   tag: From the Magazine
-  title: 'Your First Month of Boxing Training: What Actually Happens'
   href: /magazine/boxing-first-month/
   linkLabel: Read article →
 cta:

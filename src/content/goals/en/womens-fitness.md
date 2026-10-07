@@ -108,12 +108,12 @@ coach:
   eyebrow: "Your coach for this goal"
   name: "Salome"
   role: "Women's Fitness Coach"
-  quote: "„Strong looks different on every woman. My job is to help you find your version of it.“"
+  quote: "“Strong looks different on every woman. My job is to help you find your version of it.”"
   bio: "Salome knows exactly how intimidating a training floor can feel on day one — she's been there, and she built her entire coaching style around removing that feeling. 200+ women trained, endless patience, and a sharp eye that notices everything: your form, your energy, your wins. In her sessions, nobody gets lost and everybody belongs."
   image: "coaches/salome.jpg"
   alt: "Salome, Women's Fitness Coach at Grand Fitness Batumi"
   stats:
-    - num: "5+"
+    - num: "8"
       label: "Years Coaching"
     - num: "200+"
       label: "Women Trained"
@@ -151,10 +151,10 @@ testimonials:
   eyebrow: "Proof over promises"
   title: "Women who<br>own the floor."
   items:
-    - quote: "„I tried three gyms and always quit after two weeks. With Salome I'm eight months in and I actually look forward to training.“"
+    - quote: "“I tried three gyms and always quit after two weeks. With Salome I'm eight months in and I actually look forward to training.”"
       who: "— Mariam J., 29 · Batumi"
       featured: true
-    - quote: "„She notices everything — your form, your mood, your progress. You never feel lost in her sessions. And I came in wanting to lose weight; I stayed because I found out how much I love being strong.“"
+    - quote: "“She notices everything — your form, your mood, your progress. You never feel lost in her sessions. And I came in wanting to lose weight; I stayed because I found out how much I love being strong.”"
       who: "— Tiko A., 34 · Batumi"
 faq:
   eyebrow: "Questions & Answers"
@@ -175,7 +175,6 @@ faq:
 magazine:
   href: "/magazine/women-lifting-myths/"
   tag: "From the Magazine"
-  title: "5 Myths About Women and Strength Training"
   linkLabel: "Read article →"
 cta:
   eyebrow: "Take the first step"

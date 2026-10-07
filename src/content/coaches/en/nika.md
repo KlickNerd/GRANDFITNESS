@@ -6,7 +6,7 @@ photoAlt: "Nika, Personal Fitness Trainer at Grand Fitness Batumi"
 eyebrow: "Grand Fitness · Personal Fitness Trainer"
 name: "Nika"
 role: "Personal Fitness Trainer"
-quote: "„My approach is not only about completing exercises — it's about helping people discover their potential and achieve more than they thought possible.“"
+quote: "“My approach is not only about completing exercises — it's about helping people discover their potential and achieve more than they thought possible.”"
 stats:
   - { num: "10", label: "Years in Sport" }
   - { num: "3", label: "Years Coaching" }
@@ -90,11 +90,11 @@ testimonials:
   eyebrow: "What clients say"
   title: "Results<br>speak."
   items:
-    - quote: "„Added 40kg to my deadlift in six months. Every session had a purpose and every week had a plan.“"
+    - quote: "“Added 40kg to my deadlift in six months. Every session had a purpose and every week had a plan.”"
       who: "— Beka S., 30 · Batumi"
-    - quote: "„Nika taught me to squat properly at 45 years old. Strongest I've ever been in my life.“"
+    - quote: "“Nika taught me to squat properly at 45 years old. Strongest I've ever been in my life.”"
       who: "— Temur J., 45 · Batumi"
-    - quote: "„He tracks everything. You always know exactly why you're doing what you're doing.“"
+    - quote: "“He tracks everything. You always know exactly why you're doing what you're doing.”"
       who: "— Anano P., 28 · Batumi"
 cta:
   eyebrow: "Your first session"

@@ -20,7 +20,7 @@ export default {
     eyebrow: "★ Head Coach · A word from the top",
     name: "Gurgen",
     role: "Head Coach",
-    quote: "„I didn't build Grand Fitness for people who want to dabble. I built it for people who want to win.“",
+    quote: "“I didn't build Grand Fitness for people who want to dabble. I built it for people who want to win.”",
     lead: "I've been coaching for over a decade — beginners who became athletes, athletes who became champions, and people who just wanted to feel good in their own skin again. All of them had one thing in common: they needed someone who actually knew what they were doing.",
     stats: [
       { num: "10+", label: "Years Coaching" },
@@ -35,7 +35,7 @@ export default {
     title: "Hand-picked.<br>World-class.",
     lead: "Every coach at Grand Fitness was personally selected and trained by Gurgen. They share the same philosophy: no shortcuts, no excuses, just relentless focus on helping you become better.",
     quote: {
-      text: "„I didn't hire coaches. I built them. Every single person on this team has been through my program, met my standard, and earned their place. I'd trust any one of them with my own training.“",
+      text: "“I didn't hire coaches. I built them. Every single person on this team has been through my program, met my standard, and earned their place. I'd trust any one of them with my own training.”",
       who: "— Gurgen, Head Coach",
     },
   },

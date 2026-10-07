@@ -5,9 +5,8 @@ import { z } from "astro/zod";
 /**
  * magazine entries: src/content/magazine/<locale>/<slug>.md → /<locale?>/magazine/<slug>/
  *
- * The Markdown body is the article text. Infographics are raw HTML (<figure class="not-prose …">).
- * Astro's smart punctuation is on, so straight quotes and apostrophes in the body are written
- * escaped (\' and \") to keep them exactly as the original text has them.
+ * The Markdown body is the article text. Infographics are raw HTML (<figure>, inline <svg>).
+ * Smart punctuation is off (astro.config.mjs), so quotes and dashes stay exactly as written.
  *
  * The magazine index lists articles newest first (by datePublished).
  */

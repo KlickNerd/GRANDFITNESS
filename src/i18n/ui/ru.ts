@@ -4,6 +4,7 @@ const ru = {
   skipToContent: "Перейти к содержанию",
   menu: "Меню",
   closeMenu: "Закрыть меню",
+  navLabel: "Основная навигация",
   nav: [
     { href: "/about/", label: "О нас" },
     { href: "/goals/", label: "Цели" },

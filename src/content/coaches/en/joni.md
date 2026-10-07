@@ -7,7 +7,7 @@ eyebrow: "Grand Fitness · Fitness Instructor & Personal Trainer"
 name: "Joni"
 surname: "Burkadze"
 role: "Fitness Instructor & Personal Trainer"
-quote: "„Discipline, communication, responsibility — and results follow.“"
+quote: "“Discipline, communication, responsibility — and results follow.”"
 stats:
   - { num: "15", label: "Years in Sport" }
   - { num: "4+", label: "Group Classes / Week" }

@@ -7,7 +7,7 @@ eyebrow: "Grand Fitness · Personal & Group Fitness Trainer"
 name: "Nino"
 surname: "Kakhadze"
 role: "Personal & Group Fitness Trainer"
-quote: "„The journey toward the result matters as much as the result itself.“"
+quote: "“The journey toward the result matters as much as the result itself.”"
 stats:
   - { num: "2", label: "Years Practical Experience" }
   - { num: "1-on-1", label: "& Group Training" }

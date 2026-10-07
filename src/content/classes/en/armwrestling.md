@@ -100,7 +100,7 @@ coach:
   eyebrow: Your Coach
   name: Rezo
   role: Coach · Strength Background
-  quote: „At the table, technique beats muscle. With both, you're unstoppable.“
+  quote: “At the table, technique beats muscle. With both, you're unstoppable.”
   bio: Batumi's only dedicated armwrestling coach, with competitive-level expertise in a discipline most gyms don't even offer. Rezo teaches the full sport — technique, specialized strength, strategy and the joint care that keeps you at the table for years — with the patience of a teacher and the enthusiasm of a lifelong addict of the sport.
   stats:
   - num: 12+
@@ -154,7 +154,6 @@ pairs:
     linkLabel: Full class page →
 magazine:
   tag: From the Magazine
-  title: 'Armwrestling: Why Technique Beats Size at the Table'
   href: /magazine/armwrestling-technique-beats-size/
   linkLabel: Read article →
 cta:

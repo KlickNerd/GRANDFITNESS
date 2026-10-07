@@ -17,7 +17,7 @@ import TextLink from "@/components/ui/TextLink.astro";
 import { copies } from "@/i18n/pages/contact";
 import type { Copy } from "@/i18n/pages/contact/types";
 import { staticPathsFor } from "@/i18n/static-paths";
-import type { Locale } from "@/i18n/config";
+import { localizePath, type Locale } from "@/i18n/config";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 export const getStaticPaths = () => staticPathsFor<Copy>(copies);
@@ -27,6 +27,8 @@ const t = copy;
 const f = t.form;
 // Email subject for the gym's inbox: always English, tagged with the page language (FormSubmit _subject).
 const subject = `New message from grandfitness.ge${locale === "en" ? "" : ` (${locale.toUpperCase()})`}`;
+// After sending, FormSubmit returns the visitor to this page in their language, which shows `f.sent`.
+const next = new URL(`${localizePath("/contact/", locale)}?sent`, Astro.site).href;
 
 // Original .form styles: uppercase muted labels, dark boxed fields with a gold focus border.
 const labelClass =
@@ -43,12 +45,14 @@ const bebas = "font-brand";
   <PageHero variant="compact" image={t.hero.image} eyebrow={t.hero.eyebrow} title={t.hero.title} lead={t.hero.lead} />
 
   <Section class="pt-8 md:pt-8">
-    <div class="grid items-start gap-16 md:grid-cols-2">
+    <div class="grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
       <div data-reveal>
         <Eyebrow>{f.eyebrow}</Eyebrow>
         <h2 class={subheadClass} set:html={f.title} />
+        <p id="form-sent" role="status" hidden class="mt-6 border-l-3 border-gold bg-card px-5 py-4">{f.sent}</p>
         <form class="mt-6" action="https://formsubmit.co/info@grandfitness.ge" method="POST">
           <input type="hidden" name="_subject" value={subject} />
+          <input type="hidden" name="_next" value={next} />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" />
@@ -91,12 +95,12 @@ const bebas = "font-brand";
       <div data-reveal>
         <Eyebrow>{t.channels.eyebrow}</Eyebrow>
         <h2 class={subheadClass} set:html={t.channels.title} />
-        <div class="mt-[1.8rem] grid gap-[1.2rem] md:grid-cols-2">
+        <div class="mt-[1.8rem] grid gap-[1.2rem] md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
           {
             t.channels.items.map((item) => {
               const valueClass = [bebas, "text-gold", item.small ? "text-[1.35rem]" : "text-[1.9rem]"];
               return (
-                <Card class="gap-[0.4rem]">
+                <Card class="min-w-0 gap-[0.4rem] wrap-break-word">
                   <Tag>{item.tag}</Tag>
                   {item.href ? (
                     <a class:list={valueClass} href={item.href}>
@@ -155,3 +159,12 @@ const bebas = "font-brand";
     </div>
   </Section>
 </BaseLayout>
+
+<script>
+  // FormSubmit sends the visitor back to /contact/?sent after a successful submission.
+  const sent = document.getElementById("form-sent");
+  if (sent && new URLSearchParams(location.search).has("sent")) {
+    sent.hidden = false;
+    sent.scrollIntoView({ block: "center" });
+  }
+</script>

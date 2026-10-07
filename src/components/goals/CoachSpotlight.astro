@@ -1,4 +1,5 @@
 ---
+import ProfileStats from "@/components/coaches/ProfileStats.astro";
 import Blockquote from "@/components/ui/Blockquote.astro";
 import CtaButton from "@/components/ui/CtaButton.astro";
 import Eyebrow from "@/components/ui/Eyebrow.astro";
@@ -34,16 +35,7 @@ const { locale, eyebrow, name, role, quote, bio, image, alt, stats, buttons } = 
       <p class="mt-2 text-[0.85rem] tracking-[0.18em] text-muted-foreground uppercase">{role}</p>
       <Blockquote>{quote}</Blockquote>
       <Lead>{bio}</Lead>
-      <div class="my-10 grid grid-cols-2 gap-6 md:grid-cols-[repeat(4,auto)] md:gap-10">
-        {
-          stats.map((stat) => (
-            <div>
-              <span class="font-display text-[2.4rem] leading-none text-gold">{stat.num}</span>
-              <span class="text-[0.8rem] text-muted-foreground">{stat.label}</span>
-            </div>
-          ))
-        }
-      </div>
+      <ProfileStats items={stats} />
       <div class="flex flex-wrap gap-4">
         {buttons.map((cta) => <CtaButton cta={cta} locale={locale} />)}
       </div>

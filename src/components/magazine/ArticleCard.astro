@@ -20,6 +20,8 @@ interface Props {
 
 const { href, category, date, title, excerpt, image, readMore, compact = false } = Astro.props;
 const thumb = optionalImg(image);
+// Index cards sit right under the page <h1>; compact cards under the "keep reading" <h2>.
+const Heading = compact ? "h3" : "h2";
 ---
 
 <!-- Magazine card (original .article-card). -->
@@ -41,7 +43,7 @@ const thumb = optionalImg(image);
   }
   <div class="flex flex-1 flex-col p-[1.8rem]">
     <ArticleMeta category={category} items={[date]} />
-    <h3 class:list={["mt-[0.9rem] mb-[0.7rem]", compact ? "text-[1.4rem]" : "text-[1.7rem]"]}>{title}</h3>
+    <Heading class:list={["mt-[0.9rem] mb-[0.7rem]", compact ? "text-[1.4rem]" : "text-[1.7rem]"]}>{title}</Heading>
     {excerpt && <p class="flex-1 text-[0.95rem] text-muted-foreground">{excerpt}</p>}
     <span class="mt-[1.2rem] font-semibold tracking-[0.04em] text-gold hover:underline">{readMore}</span>
   </div>

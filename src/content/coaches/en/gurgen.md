@@ -6,7 +6,7 @@ photoAlt: "Gurgen, Head Coach at Grand Fitness Batumi"
 eyebrow: "Grand Fitness · Head Coach"
 name: "Gurgen"
 role: "Head Coach"
-quote: "„I didn't build Grand Fitness for people who want to dabble. I built it for people who want to win.“"
+quote: "“I didn't build Grand Fitness for people who want to dabble. I built it for people who want to win.”"
 stats:
   - { num: "10+", label: "Years Coaching" }
   - { num: "500+", label: "Clients Coached" }
@@ -55,11 +55,11 @@ testimonials:
   eyebrow: "What clients say"
   title: "Results<br>speak."
   items:
-    - quote: "„I've trained under a lot of coaches. Gurgen is the first one who saw exactly what I was capable of before I did — and then got me there.“"
+    - quote: "“I've trained under a lot of coaches. Gurgen is the first one who saw exactly what I was capable of before I did — and then got me there.”"
       who: "— Levan T., 28 · Batumi"
-    - quote: "„Direct, demanding, and worth every session. You don't guess with Gurgen. You follow the plan and you get stronger.“"
+    - quote: "“Direct, demanding, and worth every session. You don't guess with Gurgen. You follow the plan and you get stronger.”"
       who: "— Irakli B., 35 · Batumi"
-    - quote: "„He built this gym the way he coaches: no shortcuts anywhere. You feel it the moment you walk in.“"
+    - quote: "“He built this gym the way he coaches: no shortcuts anywhere. You feel it the moment you walk in.”"
       who: "— Nino G., 30 · Batumi"
 cta:
   eyebrow: "Your first session"

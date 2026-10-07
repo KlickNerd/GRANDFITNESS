@@ -4,7 +4,7 @@ export default {
   meta: {
     title: "About Us — Batumi's Most Ambitious Gym | Grand Fitness",
     description:
-      "The story behind Grand Fitness: opened 2026 in Batumi with 9 certified coaches, a full boxing ring, sauna and class studio. Built on one principle — better than yesterday.",
+      "The story behind Grand Fitness: opened 2026 in Batumi with 9 certified coaches, a dedicated boxing zone, sauna and class studio. Built on one principle — better than yesterday.",
   },
   hero: {
     eyebrow: "Grand Fitness · Batumi · 2026",

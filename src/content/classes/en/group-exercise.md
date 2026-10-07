@@ -103,7 +103,7 @@ coach:
   eyebrow: Your Coach
   name: Joni
   role: Group Fitness Coach
-  quote: „If you're not smiling by the end of my class, I'll work harder next time.“
+  quote: “If you're not smiling by the end of my class, I'll work harder next time.”
   bio: Pure energy, every single session — and behind the fun, a serious coach. Joni scales every exercise for every level in the room, watches form like a hawk, knows every regular by name and makes every newcomer feel like one. His classes have a waiting list for a reason.
   stats:
   - num: 7+
@@ -151,7 +151,6 @@ pairs:
     linkLabel: Full class page →
 magazine:
   tag: From the Magazine
-  title: 'Joining a Gym in Batumi: The Complete Beginner’s Guide'
   href: /magazine/gym-beginners-guide-batumi/
   linkLabel: Read article →
 cta:

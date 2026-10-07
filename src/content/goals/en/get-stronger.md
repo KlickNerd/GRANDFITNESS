@@ -109,7 +109,7 @@ coach:
   eyebrow: "★ Head Coach · Your coach for this goal"
   name: "Gurgen"
   role: "Head Coach"
-  quote: "„Strength is the most honest thing in this gym. The bar doesn't care about excuses — it only moves when you've earned it. My job is to make sure you earn it faster than you thought possible.“"
+  quote: "“Strength is the most honest thing in this gym. The bar doesn't care about excuses — it only moves when you've earned it. My job is to make sure you earn it faster than you thought possible.”"
   bio: "Strength & conditioning is Gurgen's home turf: over a decade of coaching, 500+ clients from first-time squatters to champions, and the standards this entire gym was built on. When you train for strength at Grand Fitness, you're training in his system — and if you want him in your corner personally, 1-on-1 sessions with the Head Coach are available."
   image: "coaches/gurgen.jpg"
   alt: "Gurgen, Head Coach at Grand Fitness Batumi"
@@ -152,10 +152,10 @@ testimonials:
   eyebrow: "Proof over promises"
   title: "Members who<br>got stronger."
   items:
-    - quote: "„I've trained under a lot of coaches. Gurgen is the first one who saw exactly what I was capable of before I did — and then got me there.“"
+    - quote: "“I've trained under a lot of coaches. Gurgen is the first one who saw exactly what I was capable of before I did — and then got me there.”"
       who: "— Levan T., 28 · Batumi"
       featured: true
-    - quote: "„Added 40kg to my deadlift in six months. Every session had a purpose and every week had a plan.“"
+    - quote: "“Added 40kg to my deadlift in six months. Every session had a purpose and every week had a plan.”"
       who: "— Beka S., 30 · Batumi"
 faq:
   eyebrow: "Questions & Answers"
@@ -176,7 +176,6 @@ faq:
 magazine:
   href: "/magazine/progressive-overload-explained/"
   tag: "From the Magazine"
-  title: "Progressive Overload: The Only Training Principle You Can’t Skip"
   linkLabel: "Read article →"
 cta:
   eyebrow: "Take the first step"
