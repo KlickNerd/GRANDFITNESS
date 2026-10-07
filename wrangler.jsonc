@@ -1,5 +1,6 @@
 // Cloudflare Workers, static assets only: no Worker script, no adapter.
-// Deploy with `npm run deploy` (builds, then uploads ./dist).
+// Deployed automatically by Workers Builds on every push to main (build: `npm run build`,
+// deploy: `npx wrangler deploy`), or by hand with `npm run deploy`.
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "grandfitness",
@@ -8,7 +9,12 @@
     "directory": "./dist",
     // /about → /about/ (the site uses trailing-slash URLs)
     "html_handling": "auto-trailing-slash",
-    // Unknown URLs get the nearest 404.html (so /ka/... gets the Georgian one)
+    // Unknown URLs get the nearest 404.html (/en/... gets the English one, /ru/... the Russian one)
     "not_found_handling": "404-page"
-  }
+  },
+  // grandfitness.ge serves the site; www gets a redirect rule to the bare domain (Cloudflare dashboard).
+  "routes": [
+    { "pattern": "grandfitness.ge", "custom_domain": true },
+    { "pattern": "www.grandfitness.ge", "custom_domain": true }
+  ]
 }

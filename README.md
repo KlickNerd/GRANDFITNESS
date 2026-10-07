@@ -39,9 +39,17 @@ npm run preview   # serve dist/ locally the way Cloudflare does (wrangler dev)
 
 ## Deployment
 
-`npm run deploy` builds the site and uploads `dist/` to Cloudflare Workers (static assets, see
-`wrangler.jsonc`). Connect the GitHub repo in the Cloudflare dashboard (Workers → Import a repository,
-build command `npm run build`, deploy command `npx wrangler deploy`) to deploy on every push to `main`.
+The site runs on Cloudflare Workers (static assets only, see `wrangler.jsonc`) at grandfitness.ge.
+
+- **Automatic:** Cloudflare Workers Builds is connected to this GitHub repo. Every push to `main` builds
+  and deploys the site (build command `npm run build`, deploy command `npx wrangler deploy`); other
+  branches get a preview URL. Node version: `.node-version`.
+- **Checks:** GitHub Actions (`.github/workflows/check.yml`) runs `check`, `translations` and `build`
+  on every pull request and push, so a broken change shows a red ✗ before it's merged.
+- **By hand:** `npx wrangler login` once, then `npm run deploy`.
+
+Workflow: make changes on a branch, open a pull request, merge it when the check is green. Merging
+to `main` publishes the site within a few minutes.
 
 Paths keep the old site's form (`/about/`, `/coaches/mariam/`, …). Georgian is the default language at
 the root; English lives under `/en/`. Old `/ka/…` links redirect permanently to the root (`public/_redirects`).
