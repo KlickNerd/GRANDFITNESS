@@ -44,10 +44,11 @@ The site runs on Cloudflare Workers (static assets only, see `wrangler.jsonc`) a
 - **Automatic:** GitHub Actions (`.github/workflows/check.yml`) runs `check`, `translations` and `build`
   on every pull request and push. On `main` it then deploys with `npx wrangler deploy`, so a broken
   change never goes live. Node version: `.node-version`.
-- **Secrets** (repo Settings → Secrets and variables → Actions; only the repo owner can add them):
+- **Secrets** (repo Settings → Secrets and variables → Actions, or `gh secret set <NAME>`):
   `CLOUDFLARE_API_TOKEN` (Cloudflare API token, template "Edit Cloudflare Workers", plus Zone → DNS →
   Edit for grandfitness.ge so the custom domain can be attached) and `CLOUDFLARE_ACCOUNT_ID`.
   Without them the deploy step is skipped.
+- **www:** a Cloudflare Redirect Rule ("Redirect from WWW to root") sends www.grandfitness.ge to grandfitness.ge.
 - **Redeploy by hand:** Actions tab → "Check and deploy" → Run workflow, or locally `npx wrangler login`
   once, then `npm run deploy`.
 
