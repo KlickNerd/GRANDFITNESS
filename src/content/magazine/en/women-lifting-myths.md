@@ -28,6 +28,6 @@ Energy naturally varies across the cycle — smart training varies with it, rath
 
 ## Myth 5: "The weight room isn't for people like me"
 
-This one isn't answered with studies — it's answered with an environment. It's exactly why [our women's fitness program](/goals/womens-fitness/) exists: small-group sessions built around women, led by a female coach, with zero judgment as the house rule. Two hundred women in, Salome's favorite result is still the same: members who walk into the gym like they own the place. Because here, they do.
+This one isn't answered with studies — it's answered with an environment. It's exactly why [our women's fitness program](/en/goals/womens-fitness/) exists: small-group sessions built around women, led by a female coach, with zero judgment as the house rule. Two hundred women in, Salome's favorite result is still the same: members who walk into the gym like they own the place. Because here, they do.
 
-**See it for yourself:** [come try a session — and bring a friend](/contact/). Details on the [Women's Fitness page](/goals/womens-fitness/).
+**See it for yourself:** [come try a session — and bring a friend](/en/contact/). Details on the [Women's Fitness page](/en/goals/womens-fitness/).

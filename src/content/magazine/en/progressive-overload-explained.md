@@ -24,11 +24,11 @@ The chart above is a typical beginner's squat: small jumps of 2.5–5 kg, almost
 
 - **More weight** — the classic. Same exercise, slightly heavier. Best for the big lifts.
 - **More reps** — same weight, one or two more quality reps. Perfect between weight jumps.
-- **More sets** — extra volume for a muscle group. The main driver in [muscle building](/goals/build-muscle/).
+- **More sets** — extra volume for a muscle group. The main driver in [muscle building](/en/goals/build-muscle/).
 - **Better reps** — fuller range, more control, shorter rest. Progress that doesn't show on the bar but shows in the mirror.
 
 ## Why most people accidentally skip it
 
-Because without a log, memory lies. "About what I did last week" is how people lift the same weights for years. The fix costs nothing: **write down every set** — weight, reps, how it felt. Next session, beat the log by the smallest possible margin. At Grand Fitness this isn't optional advice; it's how our [entire strength method](/goals/get-stronger/) is built, and why coaches like Gurgen and Nika track every single session.
+Because without a log, memory lies. "About what I did last week" is how people lift the same weights for years. The fix costs nothing: **write down every set** — weight, reps, how it felt. Next session, beat the log by the smallest possible margin. At Grand Fitness this isn't optional advice; it's how our [entire strength method](/en/goals/get-stronger/) is built, and why coaches like Gurgen and Nika track every single session.
 
-**Want your numbers to finally move?** [Book your first session](/contact/) — we'll set your baseline, and then we'll beat it. Week after week.
+**Want your numbers to finally move?** [Book your first session](/en/contact/) — we'll set your baseline, and then we'll beat it. Week after week.

@@ -1,1 +1,4 @@
 /sitemap.xml /sitemap-index.xml 301
+# Georgian moved from /ka/ to the root: keep old links and search results working.
+/ka /  301
+/ka/* /:splat 301

@@ -1,12 +1,13 @@
 # Grand Fitness website — rules for Claude
 
 Static marketing site for Grand Fitness, Batumi. Astro + Tailwind CSS v4 + Starwind UI,
-deployed to Cloudflare Workers (static assets). English at `/`, Georgian at `/ka/`, Russian at `/ru/`.
+deployed to Cloudflare Workers (static assets). Georgian (default) at `/`, English at `/en/`, Russian at `/ru/`.
+English is the source language: every translation is written from and checked against it.
 
 ## Commands
 
 Run everything inside the Nix dev shell (Node 22): `nix develop -c <command>`.
-Without Nix, use Node ≥ 22.12 directly.
+Without Nix, use Node ≥ 22.18 directly.
 
 - `npm run dev` — local preview at http://localhost:4321
 - `npm run build` — must pass before every commit
@@ -31,11 +32,11 @@ Without Nix, use Node ≥ 22.12 directly.
    `src/i18n/pages/<page>/<locale>.ts` (static pages), `src/content/<collection>/<locale>/*.md`
    (coaches, classes, goals, magazine) or `src/i18n/ui/<locale>.ts` (nav, footer, consent).
 6. **Links are written unprefixed** (`/contact/`). Render them through `localizeHref(href, locale)`
-   or `<CtaButton>`: they become `/ka/contact/` on Georgian pages when that page exists.
+   or `<CtaButton>`: they become `/en/contact/` on English pages and `/ru/contact/` on Russian ones.
 7. **Photos** live in `src/assets/img/` and are referenced by path (`"space/sauna.jpg"`) through
    `img()` / `optionalImg()` from `@/lib/images`, `<Photo>` or `<Image>`. Never use `/img/...`
    URLs or CSS background images.
-8. Georgian has no capital letters: `uppercase` is switched off on `/ka/` pages automatically. Keep it that way.
+8. Georgian has no capital letters: `uppercase` is switched off on Georgian pages automatically. Keep it that way.
 9. **Fonts are self-hosted** through `fonts` in `astro.config.mjs` (no Google Fonts `<link>`s, ever).
    The stacks in `global.css` list Bebas Neue / DM Sans first, then Oswald / Manrope (Cyrillic) and
    Noto Sans Georgian, so Latin text looks identical in every language and only Georgian or Russian

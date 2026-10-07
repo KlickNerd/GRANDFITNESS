@@ -70,7 +70,7 @@ export default {
       linkLabel,
     },
   ],
-  note: 'Not sure which one fits? Come by and figure it out together with a coach — <a class="font-semibold tracking-[0.04em] text-gold hover:underline" href="/contact/">book it here</a>.',
+  note: 'Not sure which one fits? Come by and figure it out together with a coach — <a class="font-semibold tracking-[0.04em] text-gold hover:underline" href="/en/contact/">book it here</a>.',
   cta: {
     eyebrow: "Whatever your goal",
     title: 'Ready for your<br>first <span class="text-gold">session?</span>',

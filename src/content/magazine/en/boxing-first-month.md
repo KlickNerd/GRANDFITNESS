@@ -32,4 +32,4 @@ Combinations flow without a mental checklist, your feet move on autopilot, and p
 - **Frequency:** two classes a week is the learning sweet spot. We run four weekly slots, all included in every membership.
 - **Fitness required:** none. Boxing is how you get fit — every drill scales, and you rest as needed in the early weeks.
 
-**Start your week 1:** the [full class page](/classes/boxing/) has the schedule and FAQ — then [book your first class](/contact/). The bags — and Tyson, Ali and Rocky on the walls — are waiting.
+**Start your week 1:** the [full class page](/en/classes/boxing/) has the schedule and FAQ — then [book your first class](/en/contact/). The bags — and Tyson, Ali and Rocky on the walls — are waiting.

@@ -6,15 +6,15 @@ import tailwindcss from "@tailwindcss/vite";
 import { rename, rm } from "node:fs/promises";
 
 /**
- * Astro only writes the root 404 page as 404.html; src/pages/ka/404.astro would become
- * ka/404/index.html. Cloudflare serves the nearest 404.html, so move it there.
+ * Astro only writes the root 404 page as 404.html; src/pages/en/404.astro would become
+ * en/404/index.html. Cloudflare serves the nearest 404.html, so move it there.
  */
 /** @type {import("astro").AstroIntegration} */
 const localized404 = {
   name: "localized-404",
   hooks: {
     "astro:build:done": async ({ dir }) => {
-      for (const locale of ["ka", "ru"]) {
+      for (const locale of ["en", "ru"]) {
         try {
           await rename(
             new URL(`${locale}/404/index.html`, dir),
@@ -37,8 +37,8 @@ export default defineConfig({
   // Keep quotes and dashes exactly as written (no automatic curly quotes / en dashes).
   markdown: { processor: satteri({ features: { smartPunctuation: false } }) },
   i18n: {
-    locales: ["en", "ka", "ru"],
-    defaultLocale: "en",
+    locales: ["ka", "en", "ru"],
+    defaultLocale: "ka",
     routing: { prefixDefaultLocale: false },
   },
   // Fonts are downloaded at build time and served from grandfitness.ge (no requests to Google).
@@ -92,7 +92,7 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) => !/\/404\/?$/.test(page),
-      i18n: { defaultLocale: "en", locales: { en: "en", ka: "ka", ru: "ru" } },
+      i18n: { defaultLocale: "ka", locales: { ka: "ka", en: "en", ru: "ru" } },
     }),
     localized404,
   ],

@@ -14,7 +14,7 @@ Every membership at Grand Fitness includes the sauna, and members quickly split 
 
 - **Circulation on overdrive.** Heat dilates blood vessels and raises blood flow — fresh nutrients into worked muscles, metabolic leftovers out. It's one plausible reason regular sauna users report noticeably less next-day soreness.
 - **A cardio-adjacent stimulus.** Your heart rate in a hot sauna resembles a brisk walk. Finnish long-term research — the world's most sauna-obsessed dataset — consistently links frequent sauna use with better cardiovascular outcomes. The sauna isn't a workout replacement; it's a surprisingly active kind of rest.
-- **The relaxation switch.** Post-sauna, the nervous system swings toward its rest-and-recover mode: muscles unclench, stress drops, and most people sleep noticeably better that night. Since deep sleep is where [actual training adaptation happens](/magazine/sleep-recovery/), this might be the sauna's most valuable gift.
+- **The relaxation switch.** Post-sauna, the nervous system swings toward its rest-and-recover mode: muscles unclench, stress drops, and most people sleep noticeably better that night. Since deep sleep is where [actual training adaptation happens](/en/magazine/sleep-recovery/), this might be the sauna's most valuable gift.
 - **The ritual effect.** Underrated and real: a built-in reward at the end of every session makes the whole gym habit stickier. Ten quiet minutes of heat is a finish line worth showing up for.
 
 ## How to sauna like you know what you're doing
@@ -26,4 +26,4 @@ Every membership at Grand Fitness includes the sauna, and members quickly split 
 
 ## The best part of the deal
 
-In many gyms, the sauna is an upsell. Here it's simply included — with every membership and even with a single [day pass](/pricing/), where it's literally step four of [your first day](/goals/get-started/). Train, stretch, sit in the heat, let it sink in. We're fairly sure it's the most convincing ten minutes in the building.
+In many gyms, the sauna is an upsell. Here it's simply included — with every membership and even with a single [day pass](/en/pricing/), where it's literally step four of [your first day](/en/goals/get-started/). Train, stretch, sit in the heat, let it sink in. We're fairly sure it's the most convincing ten minutes in the building.

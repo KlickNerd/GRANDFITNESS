@@ -1,5 +1,5 @@
 import { getCollection } from "astro:content";
-import type { Locale } from "@/i18n/config";
+import { sourceLocale, type Locale } from "@/i18n/config";
 import { pageExists } from "@/i18n/routes";
 
 /**
@@ -10,7 +10,7 @@ import { pageExists } from "@/i18n/routes";
 export function existing<T>(items: T[], href: (item: T) => string = (item) => (item as { href: string }).href): T[] {
   return items.filter((item) => {
     const target = href(item);
-    return !/^\/(coaches|classes|goals|magazine)\/[^/]+\/$/.test(target) || pageExists(target, "en");
+    return !/^\/(coaches|classes|goals|magazine)\/[^/]+\/$/.test(target) || pageExists(target, sourceLocale);
   });
 }
 

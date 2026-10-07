@@ -70,7 +70,7 @@ export default {
       linkLabel,
     },
   ],
-  note: 'ვერ გადაწყვიტე, რომელი გიხდება? მოდი და მწვრთნელთან ერთად აირჩიე — <a class="font-semibold tracking-[0.04em] text-gold hover:underline" href="/ka/contact/">დაჯავშნე აქ</a>.',
+  note: 'ვერ გადაწყვიტე, რომელი გიხდება? მოდი და მწვრთნელთან ერთად აირჩიე — <a class="font-semibold tracking-[0.04em] text-gold hover:underline" href="/contact/">დაჯავშნე აქ</a>.',
   cta: {
     eyebrow: "როგორიც არ უნდა იყოს შენი მიზანი",
     title: 'მზად ხარ<br>პირველი <span class="text-gold">ვარჯიშისთვის?</span>',

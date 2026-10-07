@@ -1,4 +1,4 @@
-import { defaultLocale, locales, localizePath, type Locale } from "./config";
+import { defaultLocale, locales, localizePath, sourceLocale, type Locale } from "./config";
 
 /**
  * Which page exists in which language — derived from the files, never hand-maintained.
@@ -52,13 +52,16 @@ export function isLiveLocale(locale: Locale): boolean {
 
 /**
  * Turns an unprefixed internal link into the right one for `locale`:
- * the translated page when it exists, otherwise the English page.
+ * the translated page when it exists, otherwise the English (source) page.
  * External links, anchors, mailto: and tel: pass through untouched.
  */
 export function localizeHref(href: string, locale: Locale): string {
-  if (locale === defaultLocale || !href.startsWith("/") || href.startsWith("//")) return href;
-  const suffix = href.slice(href.split(/[?#]/)[0].length);
-  return pageExists(href, locale) ? localizePath(href.split(/[?#]/)[0], locale) + suffix : href;
+  if (!href.startsWith("/") || href.startsWith("//")) return href;
+  const [pathname] = href.split(/[?#]/);
+  const suffix = href.slice(pathname.length);
+  if (pageExists(pathname, locale)) return localizePath(pathname, locale) + suffix;
+  if (pageExists(pathname, sourceLocale)) return localizePath(pathname, sourceLocale) + suffix;
+  return href; // not a page (a file in public/)
 }
 
 /**
@@ -66,7 +69,7 @@ export function localizeHref(href: string, locale: Locale): string {
  * e.g. "პროფილი →" → "პროფილი (EN) →". The marker disappears by itself once the page is translated.
  */
 export function untranslatedLabel(label: string, href: string, locale: Locale): string {
-  if (locale === defaultLocale || !href.startsWith("/") || pageExists(href, locale)) return label;
+  if (locale === sourceLocale || !href.startsWith("/") || pageExists(href, locale)) return label;
   const [, text, arrow = ""] = label.match(/^(.*?)(\s*[→↓]\s*)?$/)!;
   return `${text} (EN)${arrow}`;
 }

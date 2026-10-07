@@ -14,7 +14,8 @@
  *  - numbers inside text (prices, hours, counts) that English doesn't have — printed as warnings
  *    to double-check ("Ten years" → "10 წელი" is fine), they don't fail the run
  *  - inline links (href="…" in HTML, [text](…) in Markdown) not pointing to the same page
- *    in the translation's language (/ka/…, /ru/…)
+ *    in the translation's language (Georgian /…, Russian /ru/…), and English inline links
+ *    that don't point to English pages (/en/…)
  *  - text that still looks English
  * Exit code 1 if anything is wrong.
  */
@@ -23,9 +24,10 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { parse as parseYaml } from "yaml";
+import { defaultLocale, locales as allLocales, localizePath, sourceLocale } from "../src/i18n/config.ts";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const LOCALES = ["ka", "ru"];
+const LOCALES = allLocales.filter((l) => l !== sourceLocale);
 const [onlyLocale, filter] = process.argv.slice(2);
 const locales = onlyLocale ? [onlyLocale] : LOCALES;
 
@@ -56,9 +58,23 @@ function inlineLinks(text) {
   return links;
 }
 
+const isInternal = (href) => href.startsWith("/") && !href.startsWith("//");
+const sourcePrefix = `/${sourceLocale}/`;
+
+/** English "/en/contact/" → "/contact/" in Georgian, "/ru/contact/" in Russian. */
 function expectedInline(enHref, locale) {
-  if (!enHref.startsWith("/") || enHref.startsWith("//")) return enHref;
-  return `/${locale}${enHref}`;
+  if (!isInternal(enHref) || !enHref.startsWith(sourcePrefix)) return enHref;
+  return localizePath(enHref.slice(sourcePrefix.length - 1), locale);
+}
+
+/** Inline links in English text must point to English pages: "/en/contact/", not "/contact/" (Georgian). */
+function checkSourceLinks(file, value, keyPath = []) {
+  if (Array.isArray(value)) return value.forEach((v, i) => checkSourceLinks(file, v, [...keyPath, i]));
+  if (value && typeof value === "object") return Object.entries(value).forEach(([k, v]) => checkSourceLinks(file, v, [...keyPath, k]));
+  if (typeof value !== "string") return;
+  for (const href of inlineLinks(value))
+    if (isInternal(href) && !href.startsWith(sourcePrefix) && defaultLocale !== sourceLocale)
+      report(file, `${keyPath.join(".")}: English inline link "${href}" should be "/${sourceLocale}${href}"`);
 }
 
 function englishLeftovers(text) {
@@ -152,6 +168,7 @@ async function checkCollections() {
       const enFile = path.join(enDir, name);
       if (filter && !enFile.includes(filter)) continue;
       const en = splitMarkdown(await readFile(enFile, "utf8"));
+      checkSourceLinks(enFile, { ...en.data, body: en.body });
       for (const locale of locales) {
         const trFile = path.join(contentDir, collection, locale, name);
         if (!existsSync(trFile)) {
@@ -175,6 +192,7 @@ async function checkPageTexts() {
     const enFile = path.join(pagesDir, page, "en.ts");
     if (!existsSync(enFile) || (filter && !enFile.includes(filter))) continue;
     const en = (await import(pathToFileURL(enFile).href)).default;
+    checkSourceLinks(enFile, en);
     for (const locale of locales) {
       const trFile = path.join(pagesDir, page, `${locale}.ts`);
       if (!existsSync(trFile)) {

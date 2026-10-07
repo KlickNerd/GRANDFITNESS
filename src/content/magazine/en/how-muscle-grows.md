@@ -16,7 +16,7 @@ Ask ten people in any gym how to build muscle and you'll get ten programs, four 
 
 **Step 1 — Stimulus.** Hard sets close to failure signal the muscle: "what we have isn't enough." Roughly 10–20 challenging sets per muscle group per week, mostly in the 6–12 rep range, is the well-researched sweet spot.
 
-**Step 2 — Materials.** Roughly 1.6–2.2 g of protein per kilo of bodyweight daily, plus enough total food. No materials, no construction — training in a big calorie deficit is how people work hard to stay the same. (Our [protein timing guide](/magazine/protein-timing/) covers the details.)
+**Step 2 — Materials.** Roughly 1.6–2.2 g of protein per kilo of bodyweight daily, plus enough total food. No materials, no construction — training in a big calorie deficit is how people work hard to stay the same. (Our [protein timing guide](/en/magazine/protein-timing/) covers the details.)
 
 **Step 3 — Construction.** The building happens between sessions — during rest days and, above all, sleep. Growth hormone peaks in deep sleep; skip the hours and you donate your gains back.
 
@@ -30,4 +30,4 @@ Ask ten people in any gym how to build muscle and you'll get ten programs, four 
 
 ## The shortcut that actually exists
 
-There's no hack — but there is a fast lane: a structured program, every set logged, and someone who adjusts the plan when the log stalls. That's precisely what [the Grand Fitness hypertrophy method](/goals/build-muscle/) does, coached by Nika — ten years of training, a 240 kg deadlift, zero bro-science. [Get in touch](/contact/) — bring the consistency, we bring the plan.
+There's no hack — but there is a fast lane: a structured program, every set logged, and someone who adjusts the plan when the log stalls. That's precisely what [the Grand Fitness hypertrophy method](/en/goals/build-muscle/) does, coached by Nika — ten years of training, a 240 kg deadlift, zero bro-science. [Get in touch](/en/contact/) — bring the consistency, we bring the plan.

@@ -34,8 +34,9 @@ Coach profiles, class pages, goal pages and articles work the same way with Mark
 ## Rules for translated text
 
 - Keep image paths, `href` fields, slugs, numbers and prices exactly as in English.
-- Links written *inside* text (`href="/…"` in HTML strings, `[text](/…)` in Markdown) point to
-  the translated page: `/contact/` becomes `/ka/contact/` or `/ru/contact/`.
+- Links written *inside* text (`href="/…"` in HTML strings, `[text](/…)` in Markdown) are written
+  with the language's own prefix: `/en/contact/` in English, `/contact/` in Georgian (the default,
+  no prefix), `/ru/contact/` in Russian.
   Structured `href:` fields stay unprefixed; the site adds the language itself.
 - Never write "(EN)" into a label: it's added automatically when a link target isn't translated.
 

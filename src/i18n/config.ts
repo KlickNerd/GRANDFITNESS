@@ -1,14 +1,18 @@
 /**
  * Languages of the site.
  *
- * English lives at the root (/pricing/), every other language under its prefix
- * (/ka/pricing/, /ru/pricing/). A page only exists in a language when that
+ * Georgian lives at the root (/pricing/), every other language under its prefix
+ * (/en/pricing/, /ru/pricing/). A page only exists in a language when that
  * language has a copy file for it — see src/i18n/pages/README.md.
  */
-export const locales = ["en", "ka", "ru"] as const;
+export const locales = ["ka", "en", "ru"] as const;
 export type Locale = (typeof locales)[number];
 
-export const defaultLocale: Locale = "en";
+/** The language at the root URL (no prefix). */
+export const defaultLocale: Locale = "ka";
+
+/** The language every translation is written from and checked against (scripts/check-translations.mjs). */
+export const sourceLocale: Locale = "en";
 
 export const localeMeta: Record<Locale, { name: string; ogLocale: string }> = {
   en: { name: "English", ogLocale: "en_US" },
@@ -20,13 +24,13 @@ export function isLocale(value: unknown): value is Locale {
   return typeof value === "string" && (locales as readonly string[]).includes(value);
 }
 
-/** "/pricing/" + "ka" → "/ka/pricing/"; English stays unprefixed. */
+/** "/pricing/" + "en" → "/en/pricing/"; Georgian stays unprefixed. */
 export function localizePath(path: string, locale: Locale): string {
   const clean = path.startsWith("/") ? path : `/${path}`;
   return locale === defaultLocale ? clean : `/${locale}${clean === "/" ? "/" : clean}`;
 }
 
-/** Route param for src/pages/[...locale]/ — undefined means English (no prefix). */
+/** Route param for src/pages/[...locale]/ — undefined means Georgian (no prefix). */
 export function localeParam(locale: Locale): string | undefined {
   return locale === defaultLocale ? undefined : locale;
 }

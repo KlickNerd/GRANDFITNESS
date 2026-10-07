@@ -23,6 +23,6 @@ Zone 2 is the underrated hero: at a conversational pace, your body burns the hig
 
 ## Why classes beat lonely treadmill hours
 
-Here's the practical problem with zone training alone: discipline. Left to ourselves, we drift into the mushy middle. A structured [aerobic class](/classes/aerobic/) solves it musically — the session is literally choreographed through the zones: warm-up in 1–2, a long aerobic middle in 3, peaks touching 4, cool-down back to 1. You get textbook zone distribution without watching a single number, plus music and a room full of energy. It's also, not coincidentally, the most enjoyable 45 minutes of cardio in Batumi — Joni's classes run four times a week, including the famous Monday 08:00.
+Here's the practical problem with zone training alone: discipline. Left to ourselves, we drift into the mushy middle. A structured [aerobic class](/en/classes/aerobic/) solves it musically — the session is literally choreographed through the zones: warm-up in 1–2, a long aerobic middle in 3, peaks touching 4, cool-down back to 1. You get textbook zone distribution without watching a single number, plus music and a room full of energy. It's also, not coincidentally, the most enjoyable 45 minutes of cardio in Batumi — Joni's classes run four times a week, including the famous Monday 08:00.
 
-**Put your zones to work:** [book your first class](/contact/) and the whole cardio-with-a-view floor comes with it. More on sustainable fat loss in our [Feel Great Again program](/goals/feel-great/).
+**Put your zones to work:** [book your first class](/en/contact/) and the whole cardio-with-a-view floor comes with it. More on sustainable fat loss in our [Feel Great Again program](/en/goals/feel-great/).

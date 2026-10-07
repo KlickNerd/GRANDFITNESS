@@ -30,6 +30,6 @@ Fitness is usually vague — "I feel fitter, I think?" Scored workouts delete th
 
 ## Do you need to be fit first?
 
-A small training base helps your first WODs be fun instead of purely humbling — a few weeks of general training or our [Group Exercise class](/classes/group-exercise/) does the job. Beyond that: scaling exists precisely so a beginner and an athlete can share a floor, a workout and a finish line. The full details, schedule and FAQ live on our [Cross Fit class page](/classes/crossfit/).
+A small training base helps your first WODs be fun instead of purely humbling — a few weeks of general training or our [Group Exercise class](/en/classes/group-exercise/) does the job. Beyond that: scaling exists precisely so a beginner and an athlete can share a floor, a workout and a finish line. The full details, schedule and FAQ live on our [Cross Fit class page](/en/classes/crossfit/).
 
-**Face your first WOD:** [book your first class](/contact/) — scaled exactly to you, with the crew cheering your last rep. Fair warning: the scoreboard is habit-forming.
+**Face your first WOD:** [book your first class](/en/contact/) — scaled exactly to you, with the crew cheering your last rep. Fair warning: the scoreboard is habit-forming.

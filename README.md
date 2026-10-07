@@ -10,8 +10,8 @@ menus, dialogs and FAQs use native HTML (`popover`, `<dialog>`, `<details>`).
 
 | Language | URL | Status |
 |---|---|---|
-| English | `/` | all pages |
-| Georgian | `/ka/` | all pages |
+| Georgian (default) | `/` | all pages |
+| English | `/en/` | all pages (the source every translation is checked against) |
 | Russian | `/ru/` | all pages |
 
 Translations are checked against English with `npm run translations` (`scripts/check-translations.mjs`).
@@ -26,7 +26,7 @@ The rules Claude follows are in [`CLAUDE.md`](CLAUDE.md).
 
 ## Local development
 
-With Nix: `nix develop` opens a shell with Node 22. Without Nix: install Node ≥ 22.12.
+With Nix: `nix develop` opens a shell with Node 22. Without Nix: install Node ≥ 22.18.
 
 ```sh
 npm install
@@ -43,4 +43,5 @@ npm run preview   # serve dist/ locally the way Cloudflare does (wrangler dev)
 `wrangler.jsonc`). Connect the GitHub repo in the Cloudflare dashboard (Workers → Import a repository,
 build command `npm run build`, deploy command `npx wrangler deploy`) to deploy on every push to `main`.
 
-URLs are identical to the old site (`/about/`, `/coaches/mariam/`, `/ka/pricing/`, …).
+Paths keep the old site's form (`/about/`, `/coaches/mariam/`, …). Georgian is the default language at
+the root; English lives under `/en/`. Old `/ka/…` links redirect permanently to the root (`public/_redirects`).
