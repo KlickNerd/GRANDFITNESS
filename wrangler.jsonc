@@ -1,6 +1,6 @@
 // Cloudflare Workers, static assets only: no Worker script, no adapter.
-// Deployed automatically by Workers Builds on every push to main (build: `npm run build`,
-// deploy: `npx wrangler deploy`), or by hand with `npm run deploy`.
+// Deployed by GitHub Actions on every push to main (.github/workflows/check.yml runs
+// `npx wrangler deploy` after the checks pass), or by hand with `npm run deploy`.
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "grandfitness",

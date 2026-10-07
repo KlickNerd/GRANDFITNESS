@@ -41,12 +41,15 @@ npm run preview   # serve dist/ locally the way Cloudflare does (wrangler dev)
 
 The site runs on Cloudflare Workers (static assets only, see `wrangler.jsonc`) at grandfitness.ge.
 
-- **Automatic:** Cloudflare Workers Builds is connected to this GitHub repo. Every push to `main` builds
-  and deploys the site (build command `npm run build`, deploy command `npx wrangler deploy`); other
-  branches get a preview URL. Node version: `.node-version`.
-- **Checks:** GitHub Actions (`.github/workflows/check.yml`) runs `check`, `translations` and `build`
-  on every pull request and push, so a broken change shows a red ✗ before it's merged.
-- **By hand:** `npx wrangler login` once, then `npm run deploy`.
+- **Automatic:** GitHub Actions (`.github/workflows/check.yml`) runs `check`, `translations` and `build`
+  on every pull request and push. On `main` it then deploys with `npx wrangler deploy`, so a broken
+  change never goes live. Node version: `.node-version`.
+- **Secrets** (repo Settings → Secrets and variables → Actions; only the repo owner can add them):
+  `CLOUDFLARE_API_TOKEN` (Cloudflare API token, template "Edit Cloudflare Workers", plus Zone → DNS →
+  Edit for grandfitness.ge so the custom domain can be attached) and `CLOUDFLARE_ACCOUNT_ID`.
+  Without them the deploy step is skipped.
+- **Redeploy by hand:** Actions tab → "Check and deploy" → Run workflow, or locally `npx wrangler login`
+  once, then `npm run deploy`.
 
 Workflow: make changes on a branch, open a pull request, merge it when the check is green. Merging
 to `main` publishes the site within a few minutes.
