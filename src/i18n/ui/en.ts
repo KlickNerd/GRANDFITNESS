@@ -9,6 +9,7 @@ const en = {
     { href: "/#prices", label: "Prices" },
     { href: "/#coaches", label: "Coaches" },
     { href: "/#gym", label: "The gym" },
+    { href: "/#faq", label: "FAQ" },
     { href: "/#contact", label: "Contact" },
   ],
   navHome: "Home",

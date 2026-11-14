@@ -44,14 +44,14 @@ const itemClass = "py-[0.28rem] text-[0.92rem] text-muted-foreground";
       </div>
 
       <div>
-        <h2 class={titleClass}>{f.hoursTitle}</h2>
+        <p class={titleClass}>{f.hoursTitle}</p>
         <ul>
           {f.hours.map((line) => <li class={itemClass}>{line}</li>)}
         </ul>
       </div>
 
       <div>
-        <h2 class={titleClass}>{f.contactTitle}</h2>
+        <p class={titleClass}>{f.contactTitle}</p>
         <ul>
           {f.address.map((line) => <li class={itemClass}>{line}</li>)}
           <li class={itemClass}><a href="tel:+995557192727" class="hover:text-gold">+995 557 19 27 27</a></li>

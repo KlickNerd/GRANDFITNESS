@@ -2,43 +2,20 @@ import type { Copy } from "./types";
 
 export default {
   meta: {
-    title: "Фитнес-клуб в Батуми | Grand Fitness — Better Than Yesterday",
+    title: "Тренажёрный зал в Батуми с сауной | Grand Fitness",
     description:
-      "Grand Fitness, ул. Багратиони, 196, Батуми. Открыто каждый день 08:00–24:00. Разовое посещение 25 лари, месяц 140 лари — сауна включена в любую цену.",
-  },
-  jsonLd: {
-    "@context": "https://schema.org",
-    "@type": "HealthClub",
-    name: "Grand Fitness",
-    slogan: "Better Than Yesterday",
-    url: "https://grandfitness.ge",
-    telephone: "+995557192727",
-    email: "info@grandfitness.ge",
-    priceRange: "25–1320 GEL",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "196 Bagrationi St",
-      addressLocality: "Batumi",
-      postalCode: "6000",
-      addressCountry: "GE",
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "08:00",
-      closes: "23:59",
-    },
-    sameAs: ["https://www.instagram.com/grand_fitness_batumi/", "https://www.facebook.com/61585147224532/"],
+      "Grand Fitness — тренажёрный зал в Батуми, ул. Багратиони, 196. Ежедневно 08:00–24:00. Разовое посещение 25 лари, месяц 140, студентам 120. Сауна включена.",
   },
   hero: {
-    title: 'BETTER<br>THAN<span class="block text-gold">YESTERDAY.</span>',
-    lead: "Grand Fitness — тренажёрный зал на улице Багратиони в Батуми, открыт каждый день с 08:00 до 24:00. Сауна включена в любую цену.",
+    heading: "Тренажёрный зал и сауна в Батуми",
+    slogan: 'BETTER<br>THAN<span class="block text-gold">YESTERDAY.</span>',
+    lead: "Grand Fitness — полностью оборудованный тренажёрный зал на ул. Багратиони, 196. Открыт каждый день с 08:00 до 24:00. Сауна включена в любую цену.",
     primary: { label: "Смотреть цены", href: "/#prices" },
     secondary: { label: "Как нас найти", href: "/#contact" },
   },
   prices: {
     title: "Цены",
-    lead: "В любом варианте тебе доступны весь зал и сауна.",
+    lead: "Цены на абонементы в тренажёрный зал в Батуми. В любом варианте тебе доступны весь зал и сауна.",
     currency: "₾",
     plans: [
       { name: "Разовое посещение", amount: "25" },
@@ -93,13 +70,51 @@ export default {
   },
   space: {
     title: "Зал",
-    lead: "Тренажёры, стойки, свободные веса, кардиозона, раздевалки и сауна.",
+    lead: "Полностью оборудованный тренажёрный зал в Батуми: тренажёры, стойки, свободные веса, кардиозона, раздевалки и сауна.",
     photos: [
-      { src: "space/training-floor.jpg", caption: "Тренажёрный зал", alt: "Основной тренажёрный зал Grand Fitness" },
+      { src: "space/training-floor.jpg", caption: "Тренажёрный зал", alt: "Тренажёрный зал Grand Fitness в Батуми" },
       { src: "space/free-weights.jpg", caption: "Свободные веса", alt: "Зона свободных весов" },
       { src: "space/cardio-zone.jpg", caption: "Кардиозона", alt: "Кардиотренажёры" },
       { src: "space/lockers.jpg", caption: "Раздевалки", alt: "Раздевалка" },
       { src: "space/sauna.jpg", caption: "Сауна", alt: "Сауна в Grand Fitness" },
+    ],
+  },
+  faq: {
+    title: "Вопросы",
+    lead: "Коротко о ценах, часах работы и первом посещении.",
+    items: [
+      {
+        q: "Можно прийти всего на один день?",
+        a: "Да. Разовое посещение стоит 25 лари и включает сауну. Абонемент не нужен.",
+      },
+      {
+        q: "Сколько стоит абонемент на месяц?",
+        a: "Месяц стоит 140 лари. Более длинные абонементы: 3 месяца — 390 лари, 6 месяцев — 700 лари, 1 год — 1320 лари.",
+      },
+      {
+        q: "Сауна входит в стоимость?",
+        a: "Да, в любую цену, и в разовое посещение тоже.",
+      },
+      {
+        q: "Есть скидка для студентов?",
+        a: "Да. Студенты платят за месяц 120 лари вместо 140.",
+      },
+      {
+        q: "Есть скидка для друзей?",
+        a: "Да. Если четыре человека покупают абонемент на месяц вместе, каждый платит 120 лари вместо 140.",
+      },
+      {
+        q: "Что нужно для входа?",
+        a: "Для всех абонементов, кроме разового посещения, нужен личный пропуск, который покупается один раз: карта за 10 лари, браслет или стикер за 20 лари.",
+      },
+      {
+        q: "Когда открыт зал?",
+        a: "Каждый день, с понедельника по воскресенье, с 08:00 до 24:00.",
+      },
+      {
+        q: "Где находится Grand Fitness?",
+        a: "Ул. Багратиони, 196, Батуми. Звони +995 557 19 27 27 или пиши нам в Instagram.",
+      },
     ],
   },
   contact: {

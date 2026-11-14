@@ -1,66 +1,29 @@
 # Grand Fitness — grandfitness.ge
 
-Website for Grand Fitness, Batumi. Black & gold design, Bebas Neue + DM Sans (+ Noto Sans Georgian, Oswald and Manrope for Cyrillic).
+Website of Grand Fitness, a gym in Batumi. Astro (static) + Tailwind CSS v4, hosted on Cloudflare Workers.
+Georgian at `/`, English at `/en/`, Russian at `/ru/`. Rules for editing: [`CLAUDE.md`](CLAUDE.md).
 
-Built with [Astro](https://astro.build) (static output), [Tailwind CSS v4](https://tailwindcss.com) and
-[Starwind UI](https://starwind.dev), hosted on Cloudflare Workers. No UI framework, almost no JavaScript:
-menus, dialogs and FAQs use native HTML (`popover`, `<dialog>`, `<details>`).
+## Current state
 
-## Current state: single page
+One page (prices, coaches, the gym, FAQ, contact) plus privacy, imprint and 404, with only facts confirmed
+by Grand Fitness. The full demo site is kept on the `full-site` branch (tag `v1-full-demo`) until its
+details are verified; its old URLs redirect (302) to the homepage (`public/_redirects`).
 
-The site is one page (prices, sauna, coaches, photos, contact) plus privacy, imprint and 404, with
-only facts confirmed by Grand Fitness. The full demo site (about, goals, coach profiles, classes,
-pricing page, magazine, contact form) is kept on the `full-site` branch (tag `v1-full-demo`) until
-its details are verified. Its old URLs redirect temporarily (302) to the homepage (`public/_redirects`).
+## Commands
 
-## Languages
-
-| Language | URL | Status |
-|---|---|---|
-| Georgian (default) | `/` | all pages |
-| English | `/en/` | all pages (the source every translation is checked against) |
-| Russian | `/ru/` | all pages |
-
-Translations are checked against English with `npm run translations` (`scripts/check-translations.mjs`).
-Each page's text lives in one file per language (`src/i18n/pages/<page>/<locale>.ts`), separate from the
-layout. Adding a translation is described in [`src/i18n/pages/README.md`](src/i18n/pages/README.md).
-hreflang tags, the sitemap and the language switcher update themselves.
-
-## Editing
-
-Changes are made through Claude: describe the change, Claude edits the files and pushes.
-The rules Claude follows are in [`CLAUDE.md`](CLAUDE.md).
-
-## Local development
-
-With Nix: `nix develop` opens a shell with Node 22. Without Nix: install Node ≥ 22.18.
+Node ≥ 22.18 (or `nix develop`).
 
 ```sh
 npm install
-npm run dev       # http://localhost:4321
-npm run build     # static site in dist/
-npm run check     # type check (missing translation fields fail here)
-npm run translations  # compare every translation with English
-npm run preview   # serve dist/ locally the way Cloudflare does (wrangler dev)
+npm run dev           # http://localhost:4321
+npm run check         # type check
+npm run translations  # compare Georgian and Russian with English
+npm run build         # static site in dist/
 ```
 
 ## Deployment
 
-The site runs on Cloudflare Workers (static assets only, see `wrangler.jsonc`) at grandfitness.ge.
-
-- **Automatic:** GitHub Actions (`.github/workflows/check.yml`) runs `check`, `translations` and `build`
-  on every pull request and push. On `main` it then deploys with `npx wrangler deploy`, so a broken
-  change never goes live. Node version: `.node-version`.
-- **Secrets** (repo Settings → Secrets and variables → Actions, or `gh secret set <NAME>`):
-  `CLOUDFLARE_API_TOKEN` (Cloudflare API token, template "Edit Cloudflare Workers", plus Zone → DNS →
-  Edit for grandfitness.ge so the custom domain can be attached) and `CLOUDFLARE_ACCOUNT_ID`.
-  Without them the deploy step is skipped.
-- **www:** a Cloudflare Redirect Rule ("Redirect from WWW to root") sends www.grandfitness.ge to grandfitness.ge.
-- **Redeploy by hand:** Actions tab → "Check and deploy" → Run workflow, or locally `npx wrangler login`
-  once, then `npm run deploy`.
-
-Workflow: make changes on a branch, open a pull request, merge it when the check is green. Merging
-to `main` publishes the site within a few minutes.
-
-Paths end with a slash (`/privacy/`). Georgian is the default language at
-the root; English lives under `/en/`. Old `/ka/…` links redirect permanently to the root (`public/_redirects`).
+Every push to `main` runs check, translations and build in GitHub Actions, then deploys with
+`npx wrangler deploy`. A failing check never goes live. Needs the repository secrets
+`CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` (`gh secret set <NAME>`).
+www.grandfitness.ge redirects to grandfitness.ge (Cloudflare Redirect Rule).

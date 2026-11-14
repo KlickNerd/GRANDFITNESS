@@ -13,11 +13,11 @@ interface Head {
  */
 export interface Copy {
   meta: Meta;
-  /** schema.org structured data (HealthClub). */
-  jsonLd: Record<string, unknown>;
   hero: {
-    /** html */
-    title: string;
+    /** The page's <h1>: what and where, in the words people search with ("Gym and sauna in Batumi"). */
+    heading: string;
+    /** html: the big slogan under the heading. */
+    slogan: string;
     lead: string;
     primary: Cta;
     secondary: Cta;
@@ -43,6 +43,10 @@ export interface Copy {
   /** Photo mosaic: the first photo is shown large. */
   space: Head & {
     photos: { src: string; caption: string; alt: string }[];
+  };
+  /** Questions people search for; also published as FAQPage structured data. */
+  faq: Head & {
+    items: { q: string; a: string }[];
   };
   contact: Head & {
     /** Address, hours, phone, email; `link` adds a small gold link under the value. */

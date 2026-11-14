@@ -92,6 +92,8 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) => !/\/404\/?$/.test(page),
+      // Tells crawlers when the pages last changed (the build date), so updates get recrawled sooner.
+      lastmod: new Date(),
       i18n: { defaultLocale: "ka", locales: { ka: "ka", en: "en", ru: "ru" } },
     }),
     localized404,

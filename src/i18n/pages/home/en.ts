@@ -2,43 +2,20 @@ import type { Copy } from "./types";
 
 export default {
   meta: {
-    title: "Gym in Batumi | Grand Fitness — Better Than Yesterday",
+    title: "Gym in Batumi with Sauna | Grand Fitness",
     description:
-      "Grand Fitness, 196 Bagrationi St, Batumi. Open daily 08:00–24:00. Single visit 25 GEL, monthly 140 GEL — sauna included in every price.",
-  },
-  jsonLd: {
-    "@context": "https://schema.org",
-    "@type": "HealthClub",
-    name: "Grand Fitness",
-    slogan: "Better Than Yesterday",
-    url: "https://grandfitness.ge",
-    telephone: "+995557192727",
-    email: "info@grandfitness.ge",
-    priceRange: "25–1320 GEL",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "196 Bagrationi St",
-      addressLocality: "Batumi",
-      postalCode: "6000",
-      addressCountry: "GE",
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "08:00",
-      closes: "23:59",
-    },
-    sameAs: ["https://www.instagram.com/grand_fitness_batumi/", "https://www.facebook.com/61585147224532/"],
+      "Grand Fitness is a gym in Batumi at 196 Bagrationi St, open daily 08:00–24:00. Day pass 25 GEL, monthly 140 GEL, students 120 GEL. Sauna included in every price.",
   },
   hero: {
-    title: 'BETTER<br>THAN<span class="block text-gold">YESTERDAY.</span>',
-    lead: "Grand Fitness is a gym on Bagrationi Street in Batumi, open every day from 08:00 to 24:00. The sauna is included in every price.",
+    heading: "Gym and sauna in Batumi",
+    slogan: 'BETTER<br>THAN<span class="block text-gold">YESTERDAY.</span>',
+    lead: "Grand Fitness is a fully equipped gym at 196 Bagrationi St, open every day from 08:00 to 24:00. The sauna is included in every price.",
     primary: { label: "See prices", href: "/#prices" },
     secondary: { label: "Find us", href: "/#contact" },
   },
   prices: {
     title: "Prices",
-    lead: "Every option gives you the whole gym and the sauna.",
+    lead: "Gym membership prices in Batumi. Every option includes the whole gym and the sauna.",
     currency: "₾",
     plans: [
       { name: "Single visit", amount: "25" },
@@ -93,13 +70,51 @@ export default {
   },
   space: {
     title: "The gym",
-    lead: "Machines, racks, free weights, a cardio zone, locker rooms and a sauna.",
+    lead: "A fully equipped gym in Batumi: machines, racks, free weights, a cardio zone, locker rooms and a sauna.",
     photos: [
-      { src: "space/training-floor.jpg", caption: "Training floor", alt: "The main training floor at Grand Fitness" },
+      { src: "space/training-floor.jpg", caption: "Training floor", alt: "Training floor of the Grand Fitness gym in Batumi" },
       { src: "space/free-weights.jpg", caption: "Free weights", alt: "Free weights area" },
       { src: "space/cardio-zone.jpg", caption: "Cardio zone", alt: "Cardio machines" },
       { src: "space/lockers.jpg", caption: "Locker rooms", alt: "Locker room" },
       { src: "space/sauna.jpg", caption: "Sauna", alt: "The sauna at Grand Fitness" },
+    ],
+  },
+  faq: {
+    title: "Questions",
+    lead: "Quick answers about prices, hours and your first visit.",
+    items: [
+      {
+        q: "Can I come for just one day?",
+        a: "Yes. A single visit costs 25 GEL and includes the sauna. No membership needed.",
+      },
+      {
+        q: "How much is a monthly gym membership?",
+        a: "One month costs 140 GEL. Longer memberships: 3 months 390 GEL, 6 months 700 GEL, 1 year 1320 GEL.",
+      },
+      {
+        q: "Is the sauna included?",
+        a: "Yes, in every price, the single visit too.",
+      },
+      {
+        q: "Is there a student discount?",
+        a: "Yes. Students pay 120 GEL for one month instead of 140 GEL.",
+      },
+      {
+        q: "Is there a discount for friends?",
+        a: "Yes. When four people buy a one-month membership together, each pays 120 GEL instead of 140 GEL.",
+      },
+      {
+        q: "Do I need a card to get in?",
+        a: "Every membership except the single visit needs a personal access item, bought once: a card for 10 GEL, or a wristband or sticker for 20 GEL.",
+      },
+      {
+        q: "When is the gym open?",
+        a: "Every day, Monday to Sunday, from 08:00 to 24:00.",
+      },
+      {
+        q: "Where is Grand Fitness?",
+        a: "At 196 Bagrationi St, Batumi. Call +995 557 19 27 27 or message us on Instagram.",
+      },
     ],
   },
   contact: {

@@ -9,6 +9,7 @@ const ka = {
     { href: "/#prices", label: "ფასები" },
     { href: "/#coaches", label: "მწვრთნელები" },
     { href: "/#gym", label: "დარბაზი" },
+    { href: "/#faq", label: "კითხვები" },
     { href: "/#contact", label: "კონტაქტი" },
   ],
   navHome: "მთავარი",

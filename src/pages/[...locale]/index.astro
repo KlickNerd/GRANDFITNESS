@@ -8,6 +8,7 @@ import type { Locale } from "@/i18n/config";
 import { localizeHref } from "@/i18n/routes";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { img, optionalImg } from "@/lib/images";
+import { homeSchema } from "@/lib/schema";
 
 export const getStaticPaths = () => staticPathsFor<Copy>(copies);
 
@@ -26,7 +27,7 @@ const fadeUp = "animate-in fade-in slide-in-from-bottom-7 fill-mode-both motion-
 const [mainPhoto, ...smallPhotos] = t.space.photos;
 ---
 
-<BaseLayout locale={locale} title={t.meta.title} description={t.meta.description} jsonLd={t.jsonLd}>
+<BaseLayout locale={locale} title={t.meta.title} description={t.meta.description} jsonLd={homeSchema(t, locale, Astro.site!)}>
   <!-- HERO: the reception wall with the Grand Fitness sign, slogan, two ways forward. -->
   <header class="relative flex min-h-[min(92svh,960px)] items-end overflow-hidden bg-black">
     <div class="absolute inset-0" aria-hidden="true">
@@ -47,12 +48,16 @@ const [mainPhoto, ...smallPhotos] = t.space.photos;
     </div>
 
     <div class="wrap relative z-2 pb-16 lg:pb-24">
-      <h1
+      <!-- The <h1> says what and where in searchable words; the slogan stays the big visual line. -->
+      <h1 class:list={[fadeUp, "mb-5 text-[1.05rem] font-semibold tracking-[0.02em] text-gold animation-duration-800 delay-100"]}>
+        {t.hero.heading}
+      </h1>
+      <p
         class:list={[
           fadeUp,
-          "font-display text-[clamp(4rem,11vw,10rem)] leading-[0.88]! tracking-[0.02em] text-white animation-duration-900 delay-100",
+          "font-display text-[clamp(4rem,11vw,10rem)] leading-[0.88] tracking-[0.02em] text-white animation-duration-900 delay-200",
         ]}
-        set:html={t.hero.title}
+        set:html={t.hero.slogan}
       />
       <p class:list={[fadeUp, "mt-8 max-w-[46ch] text-[1.1rem] leading-[1.7] text-[#c4c4bc] animation-duration-900 delay-300"]}>
         {t.hero.lead}
@@ -189,8 +194,34 @@ const [mainPhoto, ...smallPhotos] = t.space.photos;
     </div>
   </section>
 
+  <!-- FAQ: answers to what people search for (also FAQPage structured data). Native <details>, one open at a time. -->
+  <section id="faq" class:list={[section, "bg-dark"]}>
+    <div class="wrap grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
+      <div>
+        <h2 class={h2}>{t.faq.title}</h2>
+        <p class={lead}>{t.faq.lead}</p>
+      </div>
+      <div class="border-t border-line">
+        {
+          t.faq.items.map((item, i) => (
+            <details name="faq" open={i === 0} class="group border-b border-line">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-[1.1rem] font-semibold text-white transition-colors hover:text-gold focus-visible:text-gold [&::-webkit-details-marker]:hidden">
+                <h3>{item.q}</h3>
+                <span class="relative size-4 shrink-0" aria-hidden="true">
+                  <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 bg-gold"></span>
+                  <span class="absolute inset-y-0 left-1/2 w-0.5 -translate-x-1/2 bg-gold transition-transform duration-200 group-open:scale-y-0"></span>
+                </span>
+              </summary>
+              <p class="max-w-[60ch] pb-6 text-[1rem] leading-[1.7] text-muted-foreground">{item.a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT: every verified way to reach the gym, next to the reception photo. -->
-  <section id="contact" class:list={[section, "bg-dark"]}>
+  <section id="contact" class:list={[section, "bg-black"]}>
     <div class="wrap grid items-center gap-14 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
       <div>
         <h2 class={h2}>{t.contact.title}</h2>

@@ -9,6 +9,7 @@ const ru = {
     { href: "/#prices", label: "Цены" },
     { href: "/#coaches", label: "Тренеры" },
     { href: "/#gym", label: "Зал" },
+    { href: "/#faq", label: "Вопросы" },
     { href: "/#contact", label: "Контакты" },
   ],
   navHome: "Главная",
