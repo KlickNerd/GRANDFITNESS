@@ -10,6 +10,6 @@ export default {
   lead: "This page doesn't exist — but the training floor definitely does.",
   buttons: [
     { label: "Back to Homepage", href: "/" },
-    { label: "View Classes", href: "/classes/", style: "outline" },
+    { label: "See prices", href: "/#prices", style: "outline" },
   ],
 } satisfies Copy;

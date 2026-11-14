@@ -10,6 +10,6 @@ export default {
   lead: "გვერდი ვერ მოიძებნა — მაგრამ ვარჯიში ადგილზეა. 😉",
   buttons: [
     { label: "მთავარ გვერდზე", href: "/" },
-    { label: "ნახე ვარჯიშები", href: "/classes/", style: "outline" },
+    { label: "ნახე ფასები", href: "/#prices", style: "outline" },
   ],
 } satisfies Copy;

@@ -6,29 +6,17 @@ const en = {
   /** Screen-reader name of the main navigation. */
   navLabel: "Main",
   nav: [
-    { href: "/about/", label: "About" },
-    { href: "/goals/", label: "Goals" },
-    { href: "/coaches/", label: "Coaches" },
-    { href: "/classes/", label: "Classes" },
-    { href: "/pricing/", label: "Pricing" },
-    { href: "/magazine/", label: "Magazine" },
+    { href: "/#prices", label: "Prices" },
+    { href: "/#coaches", label: "Coaches" },
+    { href: "/#gym", label: "The gym" },
+    { href: "/#contact", label: "Contact" },
   ],
   navHome: "Home",
-  navCta: { href: "/contact/", label: "Join Now" },
+  navCta: { href: "tel:+995557192727", label: "Call us" },
   /** Label of the link that switches *to* this language. */
   switchTo: "English version",
   footer: {
     slogan: "Better Than Yesterday",
-    about:
-      "Batumi's premier fitness club — 9 expert coaches, 5 group classes, and a community built around one shared goal: becoming better every single day.",
-    navTitle: "Navigation",
-    nav: [
-      { href: "/about/", label: "About Us" },
-      { href: "/coaches/", label: "Coaches" },
-      { href: "/classes/", label: "Classes" },
-      { href: "/pricing/", label: "Pricing" },
-      { href: "/magazine/", label: "Magazine" },
-    ],
     hoursTitle: "Opening Hours",
     hours: ["Monday – Sunday", "08:00 – 24:00", "Open every day"],
     contactTitle: "Contact",

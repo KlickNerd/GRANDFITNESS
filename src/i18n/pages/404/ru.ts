@@ -10,6 +10,6 @@ export default {
   lead: "Такой страницы не существует — а вот тренажёрный зал точно есть.",
   buttons: [
     { label: "На главную", href: "/" },
-    { label: "Смотреть тренировки", href: "/classes/", style: "outline" },
+    { label: "Смотреть цены", href: "/#prices", style: "outline" },
   ],
 } satisfies Copy;

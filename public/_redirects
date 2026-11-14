@@ -2,3 +2,48 @@
 # Georgian moved from /ka/ to the root: keep old links and search results working.
 /ka /  301
 /ka/* /:splat 301
+
+# Temporary (302) while the site is a single page: the sections below return once their
+# details are verified (full demo site: branch full-site). Old links land on the homepage.
+/about / 302
+/about/* / 302
+/goals / 302
+/goals/* / 302
+/coaches / 302
+/coaches/* / 302
+/classes / 302
+/classes/* / 302
+/pricing / 302
+/pricing/* / 302
+/magazine / 302
+/magazine/* / 302
+/contact / 302
+/contact/* / 302
+/en/about /en/ 302
+/en/about/* /en/ 302
+/en/goals /en/ 302
+/en/goals/* /en/ 302
+/en/coaches /en/ 302
+/en/coaches/* /en/ 302
+/en/classes /en/ 302
+/en/classes/* /en/ 302
+/en/pricing /en/ 302
+/en/pricing/* /en/ 302
+/en/magazine /en/ 302
+/en/magazine/* /en/ 302
+/en/contact /en/ 302
+/en/contact/* /en/ 302
+/ru/about /ru/ 302
+/ru/about/* /ru/ 302
+/ru/goals /ru/ 302
+/ru/goals/* /ru/ 302
+/ru/coaches /ru/ 302
+/ru/coaches/* /ru/ 302
+/ru/classes /ru/ 302
+/ru/classes/* /ru/ 302
+/ru/pricing /ru/ 302
+/ru/pricing/* /ru/ 302
+/ru/magazine /ru/ 302
+/ru/magazine/* /ru/ 302
+/ru/contact /ru/ 302
+/ru/contact/* /ru/ 302

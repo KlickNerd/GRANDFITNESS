@@ -6,6 +6,13 @@ Built with [Astro](https://astro.build) (static output), [Tailwind CSS v4](https
 [Starwind UI](https://starwind.dev), hosted on Cloudflare Workers. No UI framework, almost no JavaScript:
 menus, dialogs and FAQs use native HTML (`popover`, `<dialog>`, `<details>`).
 
+## Current state: single page
+
+The site is one page (prices, sauna, coaches, photos, contact) plus privacy, imprint and 404, with
+only facts confirmed by Grand Fitness. The full demo site (about, goals, coach profiles, classes,
+pricing page, magazine, contact form) is kept on the `full-site` branch (tag `v1-full-demo`) until
+its details are verified. Its old URLs redirect temporarily (302) to the homepage (`public/_redirects`).
+
 ## Languages
 
 | Language | URL | Status |
@@ -55,5 +62,5 @@ The site runs on Cloudflare Workers (static assets only, see `wrangler.jsonc`) a
 Workflow: make changes on a branch, open a pull request, merge it when the check is green. Merging
 to `main` publishes the site within a few minutes.
 
-Paths keep the old site's form (`/about/`, `/coaches/mariam/`, …). Georgian is the default language at
+Paths end with a slash (`/privacy/`). Georgian is the default language at
 the root; English lives under `/en/`. Old `/ka/…` links redirect permanently to the root (`public/_redirects`).

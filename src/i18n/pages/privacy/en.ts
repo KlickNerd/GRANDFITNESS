@@ -4,7 +4,7 @@ export default {
   meta: {
     title: "Privacy Policy | Grand Fitness Batumi",
     description:
-      "Privacy policy of Grand Fitness Batumi: how we handle personal data under the Law of Georgia on Personal Data Protection — contact form, hosting, cookies and your rights.",
+      "Privacy policy of Grand Fitness Batumi: how we handle personal data under the Law of Georgia on Personal Data Protection — hosting, cookies and your rights.",
   },
   hero: {
     eyebrow: "Legal",
@@ -32,15 +32,12 @@ export default {
         "<h3>2.1 Visiting this website (hosting &amp; server logs)</h3>",
         "<p>This website is delivered via <strong>Cloudflare, Inc.</strong> (USA/global network). When you visit any page, Cloudflare technically processes connection data such as your IP address, date and time of access, requested page, browser type and referring page. This processing is technically necessary to deliver the website securely and to protect it against attacks. Log data is not used by us to identify individual visitors.</p>",
         "<p><em>Legal basis:</em> our legitimate interest in operating a secure, functional website (Art. 5 of the Law — lawful processing necessary for legitimate interests).</p>",
-        "<h3>2.2 Contact form</h3>",
-        "<p>When you use our contact form, the data you enter (name, email address, optional phone number, chosen topic and your message) is transmitted to us by our form processing provider <strong>FormSubmit</strong> and delivered to our mailbox (info@grandfitness.ge). We use this data exclusively to answer your enquiry and for any follow-up communication you request (for example, booking your first session).</p>",
-        "<p><em>Legal basis:</em> your consent, given by actively submitting the form, and the necessity of processing to respond to your request. We keep enquiry emails only as long as needed to handle your request and any legal retention obligations, after which they are deleted.</p>",
-        "<h3>2.3 Contacting us directly</h3>",
+        "<h3>2.2 Contacting us directly</h3>",
         "<p>If you contact us by phone, email, Instagram or Facebook, we process the contact details and message content you provide, solely to handle your enquiry.</p>",
-        "<h3>2.4 Fonts &amp; links to third parties</h3>",
+        "<h3>2.3 Fonts &amp; links to third parties</h3>",
         "<p><strong>Fonts:</strong> all fonts used on this website are hosted on our own servers. Loading a page does not transmit any data to Google or any other font provider.</p>",
         "<p><strong>Links to third parties:</strong> our website links to external services such as Instagram, Facebook and Google Maps. This privacy policy does not apply to those services — when you follow such a link, the privacy policy of the respective provider applies. We do not embed social media tracking elements (such as pixels or plugins) on this website.</p>",
-        "<h3>2.5 What we do NOT do</h3>",
+        "<h3>2.4 What we do NOT do</h3>",
         "<p>We currently do not use advertising trackers, marketing pixels, or profiling of website visitors. We do not sell personal data. Should we introduce analytics in the future, this policy will be updated first.</p>",
       ].join("\n"),
     },
@@ -53,7 +50,7 @@ export default {
     {
       title: "4. Data Transfers Outside Georgia",
       body: [
-        "<p>Our hosting (Cloudflare) and form processing (FormSubmit) involve providers whose servers may be located outside Georgia, including in the United States and the European Union. We select providers that maintain recognized data protection and security standards, and we transmit only the minimum data technically required.</p>",
+        "<p>Our hosting provider (Cloudflare) operates servers that may be located outside Georgia, including in the United States and the European Union. We select providers that maintain recognized data protection and security standards, and we transmit only the minimum data technically required.</p>",
       ].join("\n"),
     },
     {

@@ -161,6 +161,7 @@ function bodyShape(body) {
 
 async function checkCollections() {
   const contentDir = path.join(ROOT, "src/content");
+  if (!existsSync(contentDir)) return; // no collections (yet)
   for (const collection of await readdir(contentDir)) {
     const enDir = path.join(contentDir, collection, "en");
     if (!existsSync(enDir)) continue;

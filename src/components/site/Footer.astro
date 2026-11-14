@@ -1,6 +1,6 @@
 ---
 import type { Locale } from "@/i18n/config";
-import { localizeHref, untranslatedLabel } from "@/i18n/routes";
+import { localizeHref } from "@/i18n/routes";
 import { useUi } from "@/i18n/ui";
 
 interface Props {
@@ -20,13 +20,12 @@ const itemClass = "py-[0.28rem] text-[0.92rem] text-muted-foreground";
 
 <footer class="border-t border-line bg-dark pt-[4.5rem] pb-8">
   <div class="wrap">
-    <div class="mb-14 grid grid-cols-2 gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+    <div class="mb-14 grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
       <div>
         <a href={localizeHref("/", locale)} class="mb-[0.3rem] block font-brand text-[1.7rem] tracking-[0.06em]">
           GRAND<span class="text-gold">FITNESS</span>
         </a>
         <span lang="en" class="text-[0.85rem] tracking-[0.15em] text-gold uppercase">{f.slogan}</span>
-        <p class="mt-4 text-[0.92rem] text-muted-foreground">{f.about}</p>
         <div class="mt-[1.4rem] flex gap-[0.8rem]">
           {
             socials.map((s) => (
@@ -42,21 +41,6 @@ const itemClass = "py-[0.28rem] text-[0.92rem] text-muted-foreground";
             ))
           }
         </div>
-      </div>
-
-      <div>
-        <h2 class={titleClass}>{f.navTitle}</h2>
-        <ul>
-          {
-            f.nav.map((item) => (
-              <li class={itemClass}>
-                <a href={localizeHref(item.href, locale)} class="hover:text-gold">
-                  {untranslatedLabel(item.label, item.href, locale)}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
       </div>
 
       <div>

@@ -4,6 +4,11 @@ Static marketing site for Grand Fitness, Batumi. Astro + Tailwind CSS v4 + Starw
 deployed to Cloudflare Workers (static assets). Georgian (default) at `/`, English at `/en/`, Russian at `/ru/`.
 English is the source language: every translation is written from and checked against it.
 
+**Current state:** a single page (`src/pages/[...locale]/index.astro`: prices, coaches, the gym,
+contact) plus privacy, imprint and 404. Only facts confirmed by Grand Fitness go on it. The full demo
+site lives on the `full-site` branch (tag `v1-full-demo`); do not bring its sections back to `main`
+until the owner has verified their content. Nav links are section anchors (`/#prices`).
+
 ## Commands
 
 Run everything inside the Nix dev shell (Node 22): `nix develop -c <command>`.
@@ -29,12 +34,11 @@ Without Nix, use Node ≥ 22.18 directly.
    Use `wrap` for the 1200px container. Breakpoints: `md` = 761px, `lg` = 1001px, `xl` = 1201px.
 4. **Dark only.** There is no light theme; never add `dark:` variants or a theme toggle.
 5. **Never hardcode text in page templates.** All visible text lives in
-   `src/i18n/pages/<page>/<locale>.ts` (static pages), `src/content/<collection>/<locale>/*.md`
-   (coaches, classes, goals, magazine) or `src/i18n/ui/<locale>.ts` (nav, footer, consent).
+   `src/i18n/pages/<page>/<locale>.ts` (pages) or `src/i18n/ui/<locale>.ts` (nav, footer, consent).
 6. **Links are written unprefixed** (`/contact/`). Render them through `localizeHref(href, locale)`
    or `<CtaButton>`: they become `/en/contact/` on English pages and `/ru/contact/` on Russian ones.
 7. **Photos** live in `src/assets/img/` and are referenced by path (`"space/sauna.jpg"`) through
-   `img()` / `optionalImg()` from `@/lib/images`, `<Photo>` or `<Image>`. Never use `/img/...`
+   `img()` / `optionalImg()` from `@/lib/images` and `<Image>`. Never use `/img/...`
    URLs or CSS background images.
 8. Georgian has no capital letters: `uppercase` is switched off on Georgian pages automatically. Keep it that way.
 9. **Fonts are self-hosted** through `fonts` in `astro.config.mjs` (no Google Fonts `<link>`s, ever).
@@ -52,12 +56,10 @@ Without Nix, use Node ≥ 22.18 directly.
 src/pages/[...locale]/…        page templates (one file serves every language)
 src/i18n/pages/<page>/         page text: types.ts (shape), en.ts, ka.ts, index.ts (languages)
 src/i18n/ui/                   nav, footer, consent text per language
-src/content/<collection>/      coaches, classes, goals, magazine — Markdown per language
-src/collections/               collection schemas
 src/components/site/           Nav, Footer, Consent (used by BaseLayout)
-src/components/ui/             shared blocks: Section, SectionHead, PageHero, Card, CtaButton,
-                               CtaSection, Faq, Photo, Stats, QuoteCard, Pill, Tag, …
-src/components/<section>/      blocks used by one section: home, coaches, classes, goals, magazine, pages
+src/components/ui/             shared blocks: Section, PageHero, Card, CtaButton, CtaSection, …
+src/components/home/           HomeButton (homepage buttons)
+src/components/pages/          LegalPage (privacy, imprint), NotFound
 src/components/starwind/       Starwind UI components (copied into the repo, ours to edit)
 src/layouts/BaseLayout.astro   <head>, SEO, hreflang, skip link, <main>, nav, footer
 ```
@@ -68,14 +70,8 @@ src/layouts/BaseLayout.astro   <head>, SEO, hreflang, skip link, <main>, nav, fo
   language that has the page (`index.ts` lists them).
 - **Translate a page:** see `src/i18n/pages/README.md`. Every page exists in en, ka and ru: when you
   change text in one language, change the other two as well, then run `npm run translations`.
-- **Add a coach / class / goal / article:** add a Markdown file to `src/content/<collection>/en/`,
-  copying an existing one's frontmatter, plus its translations in `ka/` and `ru/` (same file name and
-  keys), then add its teaser card to the homepage / index copy files in all three languages.
-- **Remove a coach / class / goal / article:** delete its Markdown files (en, ka, ru). Teaser cards pointing to it
-  disappear from the homepage and index pages automatically (`existing()` in `src/collections/teasers.ts`).
-- **Coach photos** are set in the profile (`photo:` in `src/content/coaches/<locale>/<slug>.md`, the same
-  path in all three languages — the translation checker enforces it); teaser cards use the English one.
-  A coach without a photo (currently Luka) shows a dark placeholder.
+- **Prices, coaches, contact facts:** all in `src/i18n/pages/home/<locale>.ts` (en, ka, ru). Coach
+  photos are `src/assets/img/coaches/<name>.jpg`; a coach without a photo shows a dark placeholder.
 - **Scroll fade-in:** add the `data-reveal` attribute to an element.
 - Strings that may contain inline HTML (`<br>`, `<span class="text-gold">`) are marked `html` in
   the page's `types.ts` and rendered with `set:html`.
