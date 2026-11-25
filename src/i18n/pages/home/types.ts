@@ -44,6 +44,8 @@ export interface Copy {
   };
   /** Gym photos: a swipe gallery on phones and tablets, a mosaic on desktop (first two large, then four). */
   space: Head & {
+    /** Label of the button that closes an enlarged photo. */
+    close: string;
     /** `caption` names only the rooms that need it (sauna, cardio zone, locker rooms); `alt` describes every photo. */
     photos: { src: string; caption?: string; alt: string }[];
   };

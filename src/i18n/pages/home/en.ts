@@ -73,6 +73,7 @@ export default {
   },
   space: {
     title: "The gym",
+    close: "Close photo",
     photos: [
       { src: "space/training-floor.jpg", caption: "Room to train", alt: "Training floor of the Grand Fitness gym in Batumi" },
       { src: "space/sauna.jpg", caption: "Sauna", alt: "The sauna at Grand Fitness" },

@@ -73,6 +73,7 @@ export default {
   },
   space: {
     title: "Зал",
+    close: "Закрыть фото",
     photos: [
       { src: "space/training-floor.jpg", caption: "Простор для тренировок", alt: "Тренажёрный зал Grand Fitness в Батуми" },
       { src: "space/sauna.jpg", caption: "Сауна", alt: "Сауна в Grand Fitness" },

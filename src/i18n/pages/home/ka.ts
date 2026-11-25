@@ -73,6 +73,7 @@ export default {
   },
   space: {
     title: "დარბაზი",
+    close: "ფოტოს დახურვა",
     photos: [
       { src: "space/training-floor.jpg", caption: "სივრცე ვარჯიშისთვის", alt: "გრანდ ფიტნესის სავარჯიშო დარბაზი ბათუმში" },
       { src: "space/sauna.jpg", caption: "საუნა", alt: "საუნა გრანდ ფიტნესში" },

@@ -227,7 +227,7 @@
   }
 }
 
-/* No page scrolling behind the open mobile menu. */
-html:has(#site-menu:popover-open) {
+/* No page scrolling behind the open mobile menu or an enlarged photo. */
+html:has([popover]:popover-open) {
   overflow: hidden;
 }
