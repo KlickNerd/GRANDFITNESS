@@ -19,7 +19,7 @@ export default {
         "<p>Контролёром, ответственным за обработку персональных данных на этом сайте, является:</p>",
         "<p>ООО «Гранд Фитнес» (Ltd Grand Fitness)<br>",
         "под коммерческим наименованием <strong>Grand Fitness</strong><br>",
-        "ул. Багратиони, 196, Батуми 6000, Грузия<br>",
+        "ул. Багратиони, 196и, Батуми 6000, Грузия<br>",
         "Идентификационный код: 445784358<br>",
         "Телефон: +995 557 19 27 27<br>",
         "Эл. почта: <a href=\"mailto:info@grandfitness.ge\" class=\"font-semibold tracking-[0.04em] text-gold hover:underline\">info@grandfitness.ge</a></p>",

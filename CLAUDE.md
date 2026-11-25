@@ -40,7 +40,7 @@ Without Nix, use Node ≥ 22.18 directly.
 6. **Links are written unprefixed** (`/contact/`). Render them through `localizeHref(href, locale)`
    or `<CtaButton>`: they become `/en/contact/` on English pages and `/ru/contact/` on Russian ones.
 7. **Photos** live in `src/assets/img/` and are referenced by path (`"space/sauna.jpg"`) through
-   `img()` / `optionalImg()` from `@/lib/images` and `<Image>`. Never use `/img/...`
+   `img()` / `optionalImg()` from `@/lib/images` and `<Image format="avif">`. Never use `/img/...`
    URLs or CSS background images.
 8. Georgian has no capital letters: `uppercase` is switched off on Georgian pages automatically. Keep it that way.
 9. **Fonts are self-hosted** through `fonts` in `astro.config.mjs` (no Google Fonts `<link>`s, ever).
@@ -59,9 +59,9 @@ src/pages/[...locale]/…        page templates (one file serves every language)
 src/i18n/pages/<page>/         page text: types.ts (shape), en.ts, ka.ts, index.ts (languages)
 src/i18n/ui/                   nav, footer, consent text per language
 src/components/site/           Nav, Footer, Consent (used by BaseLayout)
-src/components/ui/             shared blocks: Section, PageHero, Card, CtaButton, CtaSection, …
+src/components/ui/             shared blocks: Section, PageHero, CtaButton, CtaSection, Eyebrow, Lead
 src/components/pages/          LegalPage (privacy, imprint), NotFound
-src/components/starwind/       Starwind UI components (copied into the repo, ours to edit)
+src/components/starwind/       Starwind UI button (copied into the repo, ours to edit)
 src/layouts/BaseLayout.astro   <head>, SEO, hreflang, skip link, <main>, nav, footer
 ```
 

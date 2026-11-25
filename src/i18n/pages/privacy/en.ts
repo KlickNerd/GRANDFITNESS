@@ -19,7 +19,7 @@ export default {
         "<p>The controller responsible for the processing of personal data on this website is:</p>",
         "<p>Ltd Grand Fitness (შპს გრანდ ფიტნესი)<br>",
         "operating as <strong>Grand Fitness</strong><br>",
-        "196 Bagrationi St, Batumi 6000, Georgia<br>",
+        "196i Bagrationi St, Batumi 6000, Georgia<br>",
         "Identification number: 445784358<br>",
         "Phone: +995 557 19 27 27<br>",
         "Email: <a href=\"mailto:info@grandfitness.ge\" class=\"font-semibold tracking-[0.04em] text-gold hover:underline\">info@grandfitness.ge</a></p>",

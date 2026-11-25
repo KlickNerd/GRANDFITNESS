@@ -4,7 +4,7 @@ export default {
   meta: {
     title: "Gym in Batumi with Sauna | Grand Fitness",
     description:
-      "Grand Fitness is a gym in Batumi at 196 Bagrationi St, open daily 08:00–24:00. Single visit 25 GEL, monthly 140 GEL, students 120 GEL. Sauna included in every price.",
+      "Grand Fitness is a gym in Batumi at 196i Bagrationi St, open daily 08:00–24:00. Single visit 25 GEL, monthly 140 GEL, students 120 GEL. Sauna included in every price.",
   },
   hero: {
     heading: "Gym and sauna in Batumi",
@@ -13,7 +13,7 @@ export default {
   facts: {
     items: [
       { tag: "Opening hours", value: "08:00 – 24:00", note: "Every day" },
-      { tag: "Address", value: "196 Bagrationi St", note: "Batumi. Get directions", href: "https://www.google.com/maps/dir/?api=1&destination=Grand+Fitness+196+Bagrationi+St+Batumi" },
+      { tag: "Address", value: "196i Bagrationi St", note: "Batumi. Get directions", href: "https://www.google.com/maps/dir/?api=1&destination=Grand+Fitness+196i+Bagrationi+St+Batumi" },
       { tag: "Single visit", value: "25 ₾", note: "See all prices", href: "/#prices" },
       { tag: "Phone", value: "+995 557 19 27 27", note: "Call us", href: "tel:+995557192727" },
     ],
@@ -115,7 +115,7 @@ export default {
       },
       {
         q: "Where is Grand Fitness?",
-        a: "Grand Fitness is at 196 Bagrationi St, Batumi. You can call +995 557 19 27 27 or message us on Instagram.",
+        a: "Grand Fitness is at 196i Bagrationi St, Batumi. You can call +995 557 19 27 27 or message us on Instagram.",
       },
     ],
   },
@@ -124,9 +124,9 @@ export default {
     items: [
       {
         tag: "Address",
-        value: "196 Bagrationi St",
+        value: "196i Bagrationi St",
         note: "Batumi 6000, Georgia",
-        link: { label: "Get directions", href: "https://www.google.com/maps/dir/?api=1&destination=Grand+Fitness+196+Bagrationi+St+Batumi" },
+        link: { label: "Get directions", href: "https://www.google.com/maps/dir/?api=1&destination=Grand+Fitness+196i+Bagrationi+St+Batumi" },
       },
       { tag: "Opening hours", value: "08:00 – 24:00", note: "Every day" },
       { tag: "Phone", value: "+995 557 19 27 27", href: "tel:+995557192727" },
@@ -137,6 +137,6 @@ export default {
       { label: "Instagram", href: "https://www.instagram.com/grand_fitness_batumi/" },
       { label: "Facebook", href: "https://www.facebook.com/61585147224532/" },
     ],
-    image: { src: "hero-bg.jpg", alt: "Grand Fitness reception, 196 Bagrationi St, Batumi" },
+    image: { src: "hero-bg.jpg", alt: "Grand Fitness reception, 196i Bagrationi St, Batumi" },
   },
 } satisfies Copy;

@@ -4,7 +4,7 @@ export default {
   meta: {
     title: "Тренажёрный зал в Батуми с сауной | Grand Fitness",
     description:
-      "Grand Fitness — тренажёрный зал в Батуми, ул. Багратиони, 196. Ежедневно 08:00–24:00. Разовое посещение 25 лари, месяц 140, студентам 120. Сауна включена.",
+      "Grand Fitness — тренажёрный зал в Батуми, ул. Багратиони, 196и. Ежедневно 08:00–24:00. Разовое посещение 25 лари, месяц 140, студентам 120. Сауна включена.",
   },
   hero: {
     heading: "Тренажёрный зал и сауна в Батуми",
@@ -13,7 +13,7 @@ export default {
   facts: {
     items: [
       { tag: "Часы работы", value: "08:00 – 24:00", note: "Ежедневно" },
-      { tag: "Адрес", value: "Багратиони,\u00a0196", note: "Батуми. Построить маршрут", href: "https://www.google.com/maps/dir/?api=1&destination=Grand+Fitness+196+Bagrationi+St+Batumi" },
+      { tag: "Адрес", value: "Багратиони,\u00a0196и", note: "Батуми. Построить маршрут", href: "https://www.google.com/maps/dir/?api=1&destination=Grand+Fitness+196i+Bagrationi+St+Batumi" },
       { tag: "Разовое посещение", value: "25 ₾", note: "Смотреть все цены", href: "/#prices" },
       { tag: "Телефон", value: "+995 557 19 27 27", note: "Позвонить", href: "tel:+995557192727" },
     ],
@@ -115,7 +115,7 @@ export default {
       },
       {
         q: "Где находится Grand Fitness?",
-        a: "Наш адрес: Батуми, ул. Багратиони, 196. Звоните по телефону +995 557 19 27 27 или пишите нам в Instagram.",
+        a: "Наш адрес: Батуми, ул. Багратиони, 196и. Звоните по телефону +995 557 19 27 27 или пишите нам в Instagram.",
       },
     ],
   },
@@ -124,9 +124,9 @@ export default {
     items: [
       {
         tag: "Адрес",
-        value: "ул. Багратиони, 196",
+        value: "ул. Багратиони, 196и",
         note: "Батуми 6000, Грузия",
-        link: { label: "Построить маршрут", href: "https://www.google.com/maps/dir/?api=1&destination=Grand+Fitness+196+Bagrationi+St+Batumi" },
+        link: { label: "Построить маршрут", href: "https://www.google.com/maps/dir/?api=1&destination=Grand+Fitness+196i+Bagrationi+St+Batumi" },
       },
       { tag: "Часы работы", value: "08:00 – 24:00", note: "Ежедневно" },
       { tag: "Телефон", value: "+995 557 19 27 27", href: "tel:+995557192727" },
@@ -137,6 +137,6 @@ export default {
       { label: "Instagram", href: "https://www.instagram.com/grand_fitness_batumi/" },
       { label: "Facebook", href: "https://www.facebook.com/61585147224532/" },
     ],
-    image: { src: "hero-bg.jpg", alt: "Ресепшен Grand Fitness, ул. Багратиони, 196, Батуми" },
+    image: { src: "hero-bg.jpg", alt: "Ресепшен Grand Fitness, ул. Багратиони, 196и, Батуми" },
   },
 } satisfies Copy;

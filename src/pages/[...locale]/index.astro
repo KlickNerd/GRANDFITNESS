@@ -35,6 +35,7 @@ const mosaic = ["lg:col-span-7", "lg:col-span-5"];
   <header class="relative flex flex-col lg:min-h-[min(90svh,940px,70vw)] justify-end overflow-hidden bg-black pt-24">
     <div class="absolute inset-0" aria-hidden="true">
       <Image
+        format="avif"
         src={img("about-main.jpg")}
         alt=""
         widths={[800, 1400]}
@@ -87,7 +88,7 @@ const mosaic = ["lg:col-span-7", "lg:col-span-5"];
                         fact.href && "group-hover:text-gold group-focus-visible:text-gold",
                         // Numbers stay large in every language; only the street name (longer in Georgian and Russian) is set smaller.
                         i === 1
-                          ? "text-[1.6rem] lg:text-[clamp(1.1rem,2.3vw,2.1rem)] [&:lang(ka)]:text-[1.25rem] lg:[&:lang(ka)]:text-[clamp(1rem,1.6vw,1.45rem)] [&:lang(ru)]:text-[1.4rem] lg:[&:lang(ru)]:text-[clamp(0.95rem,1.9vw,1.7rem)]"
+                          ? "text-[1.6rem] lg:text-[clamp(1.1rem,2.3vw,2.1rem)] [&:lang(ka)]:text-[1.25rem] lg:[&:lang(ka)]:text-[clamp(0.95rem,1.4vw,1.3rem)] [&:lang(ru)]:text-[1.4rem] lg:[&:lang(ru)]:text-[clamp(0.95rem,1.9vw,1.7rem)]"
                           : "text-[1.6rem] whitespace-nowrap lg:text-[clamp(1.4rem,2.3vw,2.1rem)]",
                       ]}
                     >
@@ -203,6 +204,7 @@ const mosaic = ["lg:col-span-7", "lg:col-span-5"];
               <li class="relative overflow-hidden bg-card lg:even:translate-y-10">
                 {photo ? (
                   <Image
+                    format="avif"
                     src={photo}
                     alt={coach.alt}
                     widths={[300, 500, 700]}
@@ -249,6 +251,7 @@ const mosaic = ["lg:col-span-7", "lg:col-span-5"];
             ]}
           >
             <Image
+              format="avif"
               src={img(photo.src)}
               alt={photo.alt}
               widths={i < 2 ? [700, 1100, 1400] : [500, 800, 1100]}
@@ -340,6 +343,7 @@ const mosaic = ["lg:col-span-7", "lg:col-span-5"];
         </dl>
       </div>
       <Image
+        format="avif"
         src={img(t.contact.image.src)}
         alt={t.contact.image.alt}
         widths={[500, 800, 1100]}

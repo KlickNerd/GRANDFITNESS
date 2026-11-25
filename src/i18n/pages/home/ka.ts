@@ -4,7 +4,7 @@ export default {
   meta: {
     title: "ფიტნეს დარბაზი ბათუმში საუნით | Grand Fitness",
     description:
-      "გრანდ ფიტნესი — სპორტული დარბაზი ბათუმში, ბაგრატიონის ქ. 196. ყოველდღე 08:00–24:00. ერთჯერადი ვიზიტი — 25 ლარი, ერთი თვე — 140 ლარი, სტუდენტური — 120 ლარი. საუნა შედის ფასში.",
+      "გრანდ ფიტნესი — სპორტული დარბაზი ბათუმში, ბაგრატიონის ქ. 196ი. ყოველდღე 08:00–24:00. ერთჯერადი ვიზიტი — 25 ლარი, ერთი თვე — 140 ლარი, სტუდენტური — 120 ლარი. საუნა შედის ფასში.",
   },
   hero: {
     heading: "ფიტნეს დარბაზი და საუნა ბათუმში",
@@ -13,7 +13,7 @@ export default {
   facts: {
     items: [
       { tag: "სამუშაო საათები", value: "08:00 – 24:00", note: "ყოველდღე" },
-      { tag: "მისამართი", value: "ბაგრატიონის ქ.\u00a0196", note: "ბათუმი. ნახეთ მარშრუტი", href: "https://www.google.com/maps/dir/?api=1&destination=Grand+Fitness+196+Bagrationi+St+Batumi" },
+      { tag: "მისამართი", value: "ბაგრატიონის ქ.\u00a0196ი", note: "ბათუმი. ნახეთ მარშრუტი", href: "https://www.google.com/maps/dir/?api=1&destination=Grand+Fitness+196i+Bagrationi+St+Batumi" },
       { tag: "ერთჯერადი ვიზიტი", value: "25 ₾", note: "ნახეთ ყველა ფასი", href: "/#prices" },
       { tag: "ტელეფონი", value: "+995 557 19 27 27", note: "დაგვირეკეთ", href: "tel:+995557192727" },
     ],
@@ -115,7 +115,7 @@ export default {
       },
       {
         q: "სად მდებარეობს გრანდ ფიტნესი?",
-        a: "გრანდ ფიტნესის მისამართია: ბაგრატიონის ქ. 196, ბათუმი. შეგიძლიათ დაგვირეკოთ ნომერზე +995 557 19 27 27 ან მოგვწეროთ Instagram-ზე.",
+        a: "გრანდ ფიტნესის მისამართია: ბაგრატიონის ქ. 196ი, ბათუმი. შეგიძლიათ დაგვირეკოთ ნომერზე +995 557 19 27 27 ან მოგვწეროთ Instagram-ზე.",
       },
     ],
   },
@@ -124,9 +124,9 @@ export default {
     items: [
       {
         tag: "მისამართი",
-        value: "ბაგრატიონის ქ. 196",
+        value: "ბაგრატიონის ქ. 196ი",
         note: "ბათუმი 6000, საქართველო",
-        link: { label: "ნახეთ მარშრუტი", href: "https://www.google.com/maps/dir/?api=1&destination=Grand+Fitness+196+Bagrationi+St+Batumi" },
+        link: { label: "ნახეთ მარშრუტი", href: "https://www.google.com/maps/dir/?api=1&destination=Grand+Fitness+196i+Bagrationi+St+Batumi" },
       },
       { tag: "სამუშაო საათები", value: "08:00 – 24:00", note: "ყოველდღე" },
       { tag: "ტელეფონი", value: "+995 557 19 27 27", href: "tel:+995557192727" },
@@ -137,6 +137,6 @@ export default {
       { label: "Instagram", href: "https://www.instagram.com/grand_fitness_batumi/" },
       { label: "Facebook", href: "https://www.facebook.com/61585147224532/" },
     ],
-    image: { src: "hero-bg.jpg", alt: "გრანდ ფიტნესის რეცეფცია, ბაგრატიონის ქ. 196, ბათუმი" },
+    image: { src: "hero-bg.jpg", alt: "გრანდ ფიტნესის რეცეფცია, ბაგრატიონის ქ. 196ი, ბათუმი" },
   },
 } satisfies Copy;

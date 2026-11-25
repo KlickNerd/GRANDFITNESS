@@ -4,7 +4,7 @@ export default {
   meta: {
     title: "Imprint | Grand Fitness Batumi",
     description:
-      "Imprint and legal information for Grand Fitness, 196 Bagrationi St, Batumi, Georgia: company details, contact and liability notes.",
+      "Imprint and legal information for Grand Fitness, 196i Bagrationi St, Batumi, Georgia: company details, contact and liability notes.",
   },
   hero: {
     eyebrow: "Legal",
@@ -17,7 +17,7 @@ export default {
       body: [
         "<p>Ltd Grand Fitness (შპს გრანდ ფიტნესი)<br>",
         "operating as <strong>Grand Fitness</strong></p>",
-        "<p>196 Bagrationi St<br>",
+        "<p>196i Bagrationi St<br>",
         "Batumi 6000, Georgia</p>",
         "<p>Identification / registration number: 445784358<br>",
         "Registered with: National Agency of Public Registry of Georgia (NAPR)</p>",

@@ -20,7 +20,7 @@ const en = {
     hoursTitle: "Opening Hours",
     hours: ["Monday – Sunday", "08:00 – 24:00", "Open every day"],
     contactTitle: "Contact",
-    address: ["Grand Fitness", "196 Bagrationi St", "Batumi 6000, Georgia"],
+    address: ["Grand Fitness", "196i Bagrationi St", "Batumi 6000, Georgia"],
     copyright: "© 2026 Grand Fitness Batumi. All rights reserved.",
     privacy: "Privacy Policy",
     imprint: "Imprint",

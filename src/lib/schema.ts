@@ -16,13 +16,13 @@ const business = {
   email: "info@grandfitness.ge",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "196 Bagrationi St",
+    streetAddress: "196i Bagrationi St",
     addressLocality: "Batumi",
     addressRegion: "Adjara",
     postalCode: "6000",
     addressCountry: "GE",
   },
-  hasMap: "https://maps.google.com/?q=Grand+Fitness+196+Bagrationi+St+Batumi",
+  hasMap: "https://maps.google.com/?q=Grand+Fitness+196i+Bagrationi+St+Batumi",
   sameAs: ["https://www.instagram.com/grand_fitness_batumi/", "https://www.facebook.com/61585147224532/"],
   amenities: ["Sauna", "Locker rooms", "Free weights", "Cardio zone"],
 };
