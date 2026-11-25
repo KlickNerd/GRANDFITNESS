@@ -4,7 +4,7 @@ export default {
   meta: {
     title: "Imprint | Grand Fitness Batumi",
     description:
-      "Imprint and legal information for Grand Fitness, 196 Bagrationi St, Batumi, Georgia — company details, contact and liability notes.",
+      "Imprint and legal information for Grand Fitness, 196 Bagrationi St, Batumi, Georgia: company details, contact and liability notes.",
   },
   hero: {
     eyebrow: "Legal",

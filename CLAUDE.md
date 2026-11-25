@@ -4,10 +4,12 @@ Static marketing site for Grand Fitness, Batumi. Astro + Tailwind CSS v4 + Starw
 deployed to Cloudflare Workers (static assets). Georgian (default) at `/`, English at `/en/`, Russian at `/ru/`.
 English is the source language: every translation is written from and checked against it.
 
-**Current state:** a single page (`src/pages/[...locale]/index.astro`: prices, coaches, the gym,
-contact) plus privacy, imprint and 404. Only facts confirmed by Grand Fitness go on it. The full demo
+**Current state:** a single page (`src/pages/[...locale]/index.astro`: hero with a facts strip, prices,
+coaches, the gym, FAQ, contact) plus privacy, imprint and 404. Only facts confirmed by Grand Fitness go on it. The full demo
 site lives on the `full-site` branch (tag `v1-full-demo`); do not bring its sections back to `main`
 until the owner has verified their content. Nav links are section anchors (`/#prices`).
+All text addresses the reader formally (Georgian თქვენ, Russian «вы»). JavaScript is kept to a few
+small inline scripts (nav scroll state, privacy notice, open/closed status); don't add more.
 
 ## Commands
 
@@ -58,7 +60,6 @@ src/i18n/pages/<page>/         page text: types.ts (shape), en.ts, ka.ts, index.
 src/i18n/ui/                   nav, footer, consent text per language
 src/components/site/           Nav, Footer, Consent (used by BaseLayout)
 src/components/ui/             shared blocks: Section, PageHero, Card, CtaButton, CtaSection, …
-src/components/home/           HomeButton (homepage buttons)
 src/components/pages/          LegalPage (privacy, imprint), NotFound
 src/components/starwind/       Starwind UI components (copied into the repo, ours to edit)
 src/layouts/BaseLayout.astro   <head>, SEO, hreflang, skip link, <main>, nav, footer
@@ -72,7 +73,6 @@ src/layouts/BaseLayout.astro   <head>, SEO, hreflang, skip link, <main>, nav, fo
   change text in one language, change the other two as well, then run `npm run translations`.
 - **Prices, coaches, contact facts:** all in `src/i18n/pages/home/<locale>.ts` (en, ka, ru). Coach
   photos are `src/assets/img/coaches/<name>.jpg`; a coach without a photo shows a dark placeholder.
-- **Scroll fade-in:** add the `data-reveal` attribute to an element.
 - Strings that may contain inline HTML (`<br>`, `<span class="text-gold">`) are marked `html` in
   the page's `types.ts` and rendered with `set:html`.
 

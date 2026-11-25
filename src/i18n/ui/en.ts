@@ -10,10 +10,9 @@ const en = {
     { href: "/#coaches", label: "Coaches" },
     { href: "/#gym", label: "The gym" },
     { href: "/#faq", label: "FAQ" },
-    { href: "/#contact", label: "Contact" },
+    { href: "/#contact", label: "Contact us" },
   ],
   navHome: "Home",
-  navCta: { href: "tel:+995557192727", label: "Call us" },
   /** Label of the link that switches *to* this language. */
   switchTo: "English version",
   footer: {
@@ -30,9 +29,9 @@ const en = {
     /** Language the banner text is written in (lets a not-yet-translated banner keep English styling). */
     lang: "en",
     label: "Privacy notice",
-    title: "Your privacy, plainly.",
-    text: "No tracking cookies on this site — only technically necessary storage. Fonts are hosted on our own servers.",
-    ok: "Got it",
+    title: "Your privacy",
+    text: "This site uses no tracking cookies, only technically necessary storage. Fonts are hosted on our own servers.",
+    ok: "OK",
     details: "Details",
   },
 };

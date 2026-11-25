@@ -225,18 +225,6 @@
   @view-transition {
     navigation: auto;
   }
-
-  /* Scroll reveal: content is only hidden when JS is running (html.js),
-     so it is always visible without JS or with reduced motion. */
-  html.js [data-reveal] {
-    transition:
-      opacity 0.6s ease,
-      translate 0.6s ease;
-  }
-  html.js [data-reveal]:not(.is-visible) {
-    opacity: 0;
-    translate: 0 24px;
-  }
 }
 
 /* No page scrolling behind the open mobile menu. */

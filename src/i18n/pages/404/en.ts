@@ -3,13 +3,13 @@ import type { Copy } from "./types";
 export default {
   meta: {
     title: "Page Not Found | Grand Fitness",
-    description: "This page doesn't exist — but your comeback does. Head back to Grand Fitness Batumi.",
+    description: "This page does not exist. Return to the Grand Fitness Batumi homepage.",
   },
   eyebrow: "404 — Page not found",
   title: 'Wrong turn.<br><span class="text-gold">Right gym.</span>',
-  lead: "This page doesn't exist — but the training floor definitely does.",
+  lead: "This page does not exist. Please return to the homepage or see our prices.",
   buttons: [
-    { label: "Back to Homepage", href: "/" },
+    { label: "Back to homepage", href: "/" },
     { label: "See prices", href: "/#prices", style: "outline" },
   ],
 } satisfies Copy;

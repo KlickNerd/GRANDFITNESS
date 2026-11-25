@@ -20,14 +20,14 @@ const { locale, copy: t } = Astro.props;
     eyebrow={t.hero.eyebrow}
     title={t.hero.title}
     lead={t.hero.lead}
-    titleClass="wrap-break-word [&:lang(ka)]:text-[clamp(2.2rem,6vw,4.5rem)]"
+    titleClass="wrap-break-word [&:lang(ka)]:text-[clamp(1.3rem,6vw,4.5rem)] [&:lang(ru)]:text-[clamp(2rem,8vw,7rem)]"
   />
 
   <Section class="pt-4 md:pt-4">
     <div
       class:list={[
         "mx-auto max-w-[772px]",
-        "[&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:text-[2.2rem]",
+        "[&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:text-[clamp(1.45rem,6vw,2.2rem)]",
         "[&_h3]:mt-[2.2rem] [&_h3]:mb-[0.8rem] [&_h3]:text-[1.6rem]",
         "[&_p]:my-[1.1rem] [&_p]:text-body",
         "[&_ul]:my-[1.1rem] [&_ul]:ml-[1.2rem] [&_ul]:list-disc [&_ul]:text-body [&_li]:my-[0.4rem]",

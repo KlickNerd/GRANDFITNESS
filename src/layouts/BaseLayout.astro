@@ -92,8 +92,6 @@ const showAlternates = !noindex && alternates.length > 1;
 
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 
-    <!-- Lets CSS hide [data-reveal] content only when JS can reveal it again. -->
-    <script is:inline>document.documentElement.classList.add("js");</script>
     <slot name="head" />
   </head>
   <body>
@@ -112,25 +110,5 @@ const showAlternates = !noindex && alternates.length > 1;
 
     <Footer locale={locale} />
     <Consent locale={locale} />
-
-    <script>
-      // Scroll reveal for [data-reveal] (CSS in global.css; skipped with reduced motion).
-      const items = document.querySelectorAll<HTMLElement>("[data-reveal]");
-      if ("IntersectionObserver" in window) {
-        const io = new IntersectionObserver(
-          (entries) => {
-            for (const entry of entries) {
-              if (!entry.isIntersecting) continue;
-              entry.target.classList.add("is-visible");
-              io.unobserve(entry.target);
-            }
-          },
-          { threshold: 0.12 },
-        );
-        items.forEach((el) => io.observe(el));
-      } else {
-        items.forEach((el) => el.classList.add("is-visible"));
-      }
-    </script>
   </body>
 </html>

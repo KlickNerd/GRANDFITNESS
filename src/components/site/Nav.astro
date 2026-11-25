@@ -18,8 +18,9 @@ const links = ui.nav.map((item) => ({
   href: localizeHref(item.href, locale),
   label: item.label,
   current: path === item.href || path.startsWith(item.href),
+  // The contact link is the one highlighted item of the desktop menu (gold outline).
+  highlight: item.href === "/#contact",
 }));
-const cta = { href: localizeHref(ui.navCta.href, locale), label: ui.navCta.label };
 const languages = languageLinks(locale, path);
 
 // Georgian and Russian labels run longer, so their nav collapses to the burger earlier (≤1200px instead of ≤1000px).
@@ -32,17 +33,18 @@ const wide = locale !== "en";
   class="fixed inset-x-0 top-0 z-100 py-[1.4rem] transition-[background-color,padding,box-shadow] duration-300 data-scrolled:bg-black/96 data-scrolled:py-[0.9rem] data-scrolled:shadow-[0_1px_0_var(--color-line)] data-scrolled:backdrop-blur-sm"
 >
   <div class="wrap flex items-center justify-between">
-    <a href={home} class="font-brand text-[1.7rem] tracking-[0.06em]">GRAND<span class="text-gold">FITNESS</span></a>
+    <a href={home} class="font-brand text-[2rem] leading-none tracking-[0.06em] lg:text-[2.4rem]">GRAND<span class="text-gold">FITNESS</span></a>
 
-    <div class:list={["hidden items-center", wide ? "gap-[1.4rem] xl:flex" : "gap-[2.2rem] lg:flex"]}>
+    <div class:list={["hidden items-center", wide ? "gap-[1.4rem] xl:flex" : "gap-[1.3rem] lg:flex xl:gap-[2.2rem]"]}>
       {
         links.map((link) => (
           <a
             href={link.href}
             aria-current={link.current ? "page" : undefined}
             class:list={[
-              "text-[0.92rem] font-medium transition-colors duration-200 hover:text-gold aria-[current=page]:text-gold",
+              "text-[1rem] font-medium transition-colors duration-200 aria-[current=page]:text-gold",
               wide ? "tracking-[0.01em]" : "tracking-[0.04em]",
+              link.highlight ? "border border-gold px-4 py-1.5 text-gold hover:bg-gold hover:text-black" : "hover:text-gold",
             ]}
           >
             {link.label}
@@ -57,18 +59,12 @@ const wide = locale !== "en";
             lang={lang.locale}
             title={lang.label}
             aria-label={lang.label}
-            class="inline-flex items-center border border-line p-[0.35rem_0.45rem] leading-none opacity-75 transition-all duration-200 hover:border-gold hover:opacity-100"
+            class="inline-flex items-center border border-line p-[0.35rem_0.45rem] leading-none [&_svg]:h-[17px] [&_svg]:w-[25px] opacity-75 transition-all duration-200 hover:border-gold hover:opacity-100"
           >
             <Flag locale={lang.locale} />
           </a>
         ))
       }
-      <a
-        href={cta.href}
-        class="shrink-0 border border-gold px-[1.3rem] py-[0.45rem] font-display text-[1.05rem] whitespace-nowrap tracking-[0.08em] text-gold transition-colors hover:bg-gold hover:text-black"
-      >
-        {cta.label}
-      </a>
     </div>
 
     <button
@@ -105,20 +101,34 @@ const wide = locale !== "en";
           <a
             href={link.href}
             aria-current={link.current ? "page" : undefined}
-            class="font-display text-[2.6rem] tracking-[0.05em] [&:lang(ka)]:text-[2rem] hover:text-gold"
+            class:list={[
+              "font-display tracking-[0.05em]",
+              // Same highlighted item as the desktop menu; smaller so the longer label stays on one line.
+              link.highlight
+                ? "mt-2 border border-gold px-6 py-2.5 text-[1.9rem] whitespace-nowrap text-gold hover:bg-gold hover:text-black [&:lang(ka)]:text-[1.5rem]"
+                : "text-[2.6rem] hover:text-gold [&:lang(ka)]:text-[2rem]",
+            ]}
           >
             {link.label}
           </a>
         ))
       }
-      {
-        languages.map((lang) => (
-          <a href={lang.href} hreflang={lang.locale} lang={lang.locale} class="font-display text-[2.6rem] tracking-[0.05em] [&:lang(ka)]:text-[2rem] hover:text-gold">
-            {lang.label}
-          </a>
-        ))
-      }
-      <a href={cta.href} class="font-display text-[2.6rem] tracking-[0.05em] [&:lang(ka)]:text-[2rem] text-gold">{cta.label}</a>
+      <div class="mt-4 flex gap-4">
+        {
+          languages.map((lang) => (
+            <a
+              href={lang.href}
+              hreflang={lang.locale}
+              lang={lang.locale}
+              title={lang.label}
+              aria-label={lang.label}
+              class="inline-flex items-center border border-line p-3 leading-none transition-colors hover:border-gold [&_svg]:h-[26px] [&_svg]:w-[39px]"
+            >
+              <Flag locale={lang.locale} />
+            </a>
+          ))
+        }
+      </div>
     </div>
   </div>
 </nav>

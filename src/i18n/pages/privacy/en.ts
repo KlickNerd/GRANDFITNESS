@@ -4,12 +4,12 @@ export default {
   meta: {
     title: "Privacy Policy | Grand Fitness Batumi",
     description:
-      "Privacy policy of Grand Fitness Batumi: how we handle personal data under the Law of Georgia on Personal Data Protection — hosting, cookies and your rights.",
+      "Privacy policy of Grand Fitness Batumi: how we handle personal data under the Law of Georgia on Personal Data Protection, including hosting, cookies and your rights.",
   },
   hero: {
     eyebrow: "Legal",
     title: "Privacy<br><span class=\"text-gold\">Policy.</span>",
-    lead: "How we handle your personal data — plainly explained, in accordance with the Law of Georgia on Personal Data Protection.",
+    lead: "How we handle your personal data in accordance with the Law of Georgia on Personal Data Protection, explained plainly.",
   },
   updated: "Last updated: October 6, 2026",
   sections: [
@@ -33,10 +33,10 @@ export default {
         "<p>This website is delivered via <strong>Cloudflare, Inc.</strong> (USA/global network). When you visit any page, Cloudflare technically processes connection data such as your IP address, date and time of access, requested page, browser type and referring page. This processing is technically necessary to deliver the website securely and to protect it against attacks. Log data is not used by us to identify individual visitors.</p>",
         "<p><em>Legal basis:</em> our legitimate interest in operating a secure, functional website (Art. 5 of the Law — lawful processing necessary for legitimate interests).</p>",
         "<h3>2.2 Contacting us directly</h3>",
-        "<p>If you contact us by phone, email, Instagram or Facebook, we process the contact details and message content you provide, solely to handle your enquiry.</p>",
+        "<p>If you contact us by phone, email, Instagram or Facebook, we process the contact details and message content you provide, solely to handle your inquiry.</p>",
         "<h3>2.3 Fonts &amp; links to third parties</h3>",
         "<p><strong>Fonts:</strong> all fonts used on this website are hosted on our own servers. Loading a page does not transmit any data to Google or any other font provider.</p>",
-        "<p><strong>Links to third parties:</strong> our website links to external services such as Instagram, Facebook and Google Maps. This privacy policy does not apply to those services — when you follow such a link, the privacy policy of the respective provider applies. We do not embed social media tracking elements (such as pixels or plugins) on this website.</p>",
+        "<p><strong>Links to third parties:</strong> our website links to external services such as Instagram, Facebook and Google Maps. This privacy policy does not apply to those services. When you follow such a link, the privacy policy of the respective provider applies. We do not embed social media tracking elements (such as pixels or plugins) on this website.</p>",
         "<h3>2.4 What we do NOT do</h3>",
         "<p>We currently do not use advertising trackers, marketing pixels, or profiling of website visitors. We do not sell personal data. Should we introduce analytics in the future, this policy will be updated first.</p>",
       ].join("\n"),
@@ -44,7 +44,7 @@ export default {
     {
       title: "3. Cookies & Local Storage",
       body: [
-        "<p>This website does not set tracking cookies. We use one item of local browser storage (\"gf-consent\") solely to remember that you have seen and dismissed our cookie notice — this contains no personal data and is never transmitted to us. No third-party services are loaded by this website.</p>",
+        "<p>This website does not set tracking cookies. We use one item of local browser storage (\"gf-consent\") solely to remember that you have seen and dismissed our cookie notice. It contains no personal data and is never transmitted to us. No third-party services are loaded by this website.</p>",
       ].join("\n"),
     },
     {
@@ -65,7 +65,7 @@ export default {
         "<li>withdraw any consent you have given, at any time, with effect for the future;</li>",
         "<li>object to processing based on legitimate interests.</li>",
         "</ul>",
-        "<p>To exercise any of these rights, simply contact us at <a href=\"mailto:info@grandfitness.ge\" class=\"font-semibold tracking-[0.04em] text-gold hover:underline\">info@grandfitness.ge</a>. We respond to requests within the timeframes set by the Law.</p>",
+        "<p>To exercise any of these rights, please contact us at <a href=\"mailto:info@grandfitness.ge\" class=\"font-semibold tracking-[0.04em] text-gold hover:underline\">info@grandfitness.ge</a>. We respond to requests within the timeframes set by the Law.</p>",
       ].join("\n"),
     },
     {
